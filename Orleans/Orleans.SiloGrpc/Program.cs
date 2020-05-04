@@ -1,10 +1,14 @@
+using CalculationService.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using Orleans.Grains.Sample;
 using Orleans.Hosting;
+using Orleans.SiloGrpc.Api;
 using Serilog;
 using Serilog.Events;
 
@@ -22,35 +26,33 @@ namespace Orleans.SiloGrpc
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder
-                        .ConfigureServices(services =>
+                        .ConfigureServices((context, services) =>
                         {
                             services.AddGrpc();
-
-                            services.AddCors(options =>
+                            // EndpointDefaults { "Protocols": "Http1AndHttp2" } requires some weired handshake to be done by the client. So using Http2 only for now here
+                        })
+                        .Configure((context, app) =>
+                        {
+                            if (context.HostingEnvironment.IsDevelopment())
                             {
-                                options.AddPolicy("GrpcService",
-                                    builder =>
+                                app.UseDeveloperExceptionPage();
+                            }
+
+                            app.UseRouting();
+                            app.UseEndpoints(endpoints =>
+                            {
+                                endpoints.MapGrpcService<GreeterService>();
+                                // endpoints.MapGrpcService<FakeDataSource>();
+                                
+                                endpoints.MapGet("/",
+                                    async context =>
                                     {
-                                        builder
-                                            .WithOrigins(
-                                                "http://localhost:62653",
-                                                "http://localhost:62654")
-                                            .AllowAnyMethod()
-                                            .AllowAnyHeader();
+                                        await context.Response.WriteAsync(
+                                            "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
                                     });
                             });
                         })
-                        .Configure(app =>
-                       {
-                           app.UseCors("GrpcService");
-
-                           app.UseRouting();
-                           app.UseEndpoints(endpoints =>
-                           {
-                               endpoints.MapDefaultControllerRoute();
-                           });
-                       })
-                       .UseUrls("http://localhost:8082");
+                        .UseUrls("http://localhost:8082");
                 })
                 .ConfigureLogging(builder =>
                 {
