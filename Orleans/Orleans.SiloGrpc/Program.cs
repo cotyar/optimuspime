@@ -1,4 +1,6 @@
+using System;
 using CalculationService.Services;
+using Grpc.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -17,6 +19,7 @@ namespace Orleans.SiloGrpc
     {
         public static void Main(string[] args)
         {
+            AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true); // Allows to send unencrypted gRPC requests
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -25,7 +28,7 @@ namespace Orleans.SiloGrpc
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder
-                        .ConfigureServices((context, services) =>
+                        .ConfigureServices((webHostBuilderContext, services) =>
                         {
                             services.AddGrpc();
                             // EndpointDefaults { "Protocols": "Http1AndHttp2" } requires some weired handshake to be done by the client. So using Http2 only for now here
@@ -41,12 +44,13 @@ namespace Orleans.SiloGrpc
                             app.UseEndpoints(endpoints =>
                             {
                                 endpoints.MapGrpcService<GreeterService>();
-                                endpoints.MapGrpcService<FakeDataSource>();
+                                // endpoints.MapGrpcService<SimpleProxyDataSource>();
+                                endpoints.MapGrpcService<CacheDataSource>();
                                 
                                 endpoints.MapGet("/",
-                                    async context =>
+                                    async httpContext =>
                                     {
-                                        await context.Response.WriteAsync(
+                                        await httpContext.Response.WriteAsync(
                                             "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
                                     });
                             });
@@ -68,6 +72,11 @@ namespace Orleans.SiloGrpc
                     services.Configure<ConsoleLifetimeOptions>(options =>
                     {
                         options.SuppressStatusMessages = true;
+                    });
+                    services.AddGrpcClient<CalculationService.DataSource.DataSourceClient>(o =>
+                    {
+                        o.Address = new Uri("http://localhost:8085");
+                        o.ChannelOptionsActions.Add(options => options.Credentials = ChannelCredentials.Insecure); // TODO: Probably not needed
                     });
                 })
                 .UseOrleans(builder =>

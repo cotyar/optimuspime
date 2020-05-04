@@ -8,7 +8,7 @@ namespace Orleans.Grains.Cache
 {
     public interface ICacheItemGrain : IGrainWithStringKey
     {
-        Task<ImmutableArray<StoredValue>?> GetAsync(MonikerVersionPartId item);
+        Task<ImmutableArray<StoredValue>> GetAsync(MonikerVersionPartId monikerVersionPartId);
 
         Task InvalidateAsync();
         

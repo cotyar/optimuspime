@@ -14,26 +14,27 @@ namespace Orleans.Grains.Cache
 {
     public class CacheItemGrain : Grain, ICacheItemGrain
     {
-        private readonly ILogger<TodoGrain> logger;
+        private readonly ILogger<TodoGrain> _logger;
         private readonly DataSource.DataSourceClient _dataSourceClient;
 
         private string GrainType => GetType().Name;
         private string GrainKey => this.GetPrimaryKeyString();
 
-        private ImmutableArray<StoredValue>? _storedValue;
+        private ImmutableArray<StoredValue> _storedValue;
+        private bool _loaded;
         private bool _notExists;
 
         public CacheItemGrain(ILogger<TodoGrain> logger, DataSource.DataSourceClient dataSourceClient)
         {
-            this.logger = logger;
+            _logger = logger;
             _dataSourceClient = dataSourceClient;
         }
 
-        public async Task<ImmutableArray<StoredValue>?> GetAsync(MonikerVersionPartId item)
+        public async Task<ImmutableArray<StoredValue>> GetAsync(MonikerVersionPartId monikerVersionPartId)
         {
             if (_notExists) return ImmutableArray<StoredValue>.Empty;
 
-            if (_storedValue != null) return _storedValue;
+            if (_loaded) return _storedValue;
             
             var items = await _dataSourceClient.Get(
                 new DataSourceGetRequest
@@ -42,11 +43,10 @@ namespace Orleans.Grains.Cache
                     {
                         Version = new MonikerVersionId
                         {
-                            Id = item.Id,
-                            Version = item.Version,
-                            Timestamp = item.Timestamp
+                            Id = monikerVersionPartId.Id,
+                            Version = monikerVersionPartId.Version,
+                            Timestamp = monikerVersionPartId.Timestamp
                         }
-
                     }
                 }).ResponseStream.ReadAllAsync().ToArrayAsync();
             var anyError = items.FirstOrDefault(item => item.RespCase == Error);
@@ -57,11 +57,13 @@ namespace Orleans.Grains.Cache
             if (anyNotFound != null)
             {
                 _storedValue = ImmutableArray<StoredValue>.Empty;
+                _loaded = true;
                 _notExists = true;
             }
             else
             {
                 _storedValue = ImmutableArray.Create(items.Select(item => item.Success).ToArray());
+                _loaded = true;
             }
 
             return _storedValue;
@@ -69,7 +71,7 @@ namespace Orleans.Grains.Cache
 
         public Task InvalidateAsync()
         {
-            logger.Info($"Item '{GrainKey}' has been invalidated");
+            _logger.Info($"Item '{GrainKey}' has been invalidated");
             DeactivateOnIdle();
             return Task.CompletedTask;
         }
