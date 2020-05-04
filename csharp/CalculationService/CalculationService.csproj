@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="AutoFixture" Version="4.11.0" />
+        <PackageReference Include="FastHashes" Version="1.7.5" />
+        <PackageReference Include="Google.Protobuf.Tools" Version="3.11.4" />
+        <PackageReference Include="Grpc.AspNetCore" Version="2.28.0" />
+        <PackageReference Include="System.Linq.Async" Version="4.1.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="..\ProtosGenerated\Cache.cs">
+        <Link>Protos\Cache.cs</Link>
+      </Compile>
+      <Compile Include="..\ProtosGenerated\CacheGrpc.cs">
+        <Link>Protos\CacheGrpc.cs</Link>
+      </Compile>
+      <Compile Include="..\ProtosGenerated\Greet.cs">
+        <Link>Protos\Greet.cs</Link>
+      </Compile>
+      <Compile Include="..\ProtosGenerated\GreetGrpc.cs">
+        <Link>Protos\GreetGrpc.cs</Link>
+      </Compile>
+      <Compile Include="..\ProtosGenerated\Moniker.cs">
+        <Link>Protos\Moniker.cs</Link>
+      </Compile>
+    </ItemGroup>
+
+</Project>

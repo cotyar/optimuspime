@@ -16,7 +16,7 @@
     <PackageReference Include="FastHashes" Version="1.7.5" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.28.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Blazor.HttpClient" Version="3.1.0-preview4.19579.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.HttpClient" Version="3.2.0-preview3.20168.3" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="4.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="3.1.3" />
@@ -43,10 +43,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="..\..\Protos\generated\csharp\Greet.cs">
+    <Compile Include="..\..\ProtosGenerated\Greet.cs">
       <Link>Protos\Greet.cs</Link>
     </Compile>
-    <Compile Include="..\..\Protos\generated\csharp\GreetGrpc.cs">
+    <Compile Include="..\..\ProtosGenerated\GreetGrpc.cs">
       <Link>Protos\GreetGrpc.cs</Link>
     </Compile>
   </ItemGroup>

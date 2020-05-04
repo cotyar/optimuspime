@@ -22,10 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="..\..\Protos\generated\csharp\Cache.cs">
+    <Compile Include="..\..\ProtosGenerated\Cache.cs">
       <Link>Protos\Cache.cs</Link>
     </Compile>
-    <Compile Include="..\..\Protos\generated\csharp\CacheGrpc.cs">
+    <Compile Include="..\..\ProtosGenerated\CacheGrpc.cs">
       <Link>Protos\CacheGrpc.cs</Link>
     </Compile>
   </ItemGroup>

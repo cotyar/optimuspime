@@ -11,11 +11,11 @@ namespace Orleans.Blazor.ServerSide.Services
 {
     public class ClusterService : IHostedService
     {
-        private readonly ILogger<ClusterService> logger;
+        private readonly ILogger<ClusterService> _logger;
 
         public ClusterService(ILogger<ClusterService> logger)
         {
-            this.logger = logger;
+            _logger = logger;
 
             Client = new ClientBuilder()
                 .ConfigureApplicationParts(manager => manager.AddApplicationPart(typeof(IWeatherGrain).Assembly).WithReferences())
@@ -28,7 +28,7 @@ namespace Orleans.Blazor.ServerSide.Services
         {
             await Client.Connect(async error =>
             {
-                logger.LogError(error, error.Message);
+                _logger.LogError(error, error.Message);
                 await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken);
                 return true;
             });
