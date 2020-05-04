@@ -5,10 +5,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
 using Orleans.Grains.Sample;
 using Orleans.Hosting;
-using Orleans.SiloGrpc.Api;
+using Orleans.SiloGrpc.Services;
 using Serilog;
 using Serilog.Events;
 
@@ -42,7 +41,7 @@ namespace Orleans.SiloGrpc
                             app.UseEndpoints(endpoints =>
                             {
                                 endpoints.MapGrpcService<GreeterService>();
-                                // endpoints.MapGrpcService<FakeDataSource>();
+                                endpoints.MapGrpcService<FakeDataSource>();
                                 
                                 endpoints.MapGet("/",
                                     async context =>
