@@ -5,7 +5,8 @@ using AutoFixture;
 using CalculationService;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
-using Microsoft.Extensions.Logging; // using FastHashes;
+using Microsoft.Extensions.Logging;
+// using FastHashes;
 
 namespace Orleans.SiloGrpc.Services
 {
@@ -24,12 +25,15 @@ namespace Orleans.SiloGrpc.Services
             // _hash = new SipHash();
         }
 
-        private StoredValueChecksum HashString(string str) => //new StoredValueChecksum { Hash = BitConverter.ToUInt64(_hash.ComputeHash(Encoding.UTF8.GetBytes(str))) };
+        private static StoredValueChecksum HashString(string str) => //new StoredValueChecksum { Hash = BitConverter.ToUInt64(_hash.ComputeHash(Encoding.UTF8.GetBytes(str))) };
             new StoredValueChecksum { Hash = 12345 };
 
         public override async Task Get(DataSourceGetRequest request, IServerStreamWriter<DataSourceGetResponse> responseStream, ServerCallContext context)
         {
-            PointInTime ToPointInTime(DateTimeOffset dto) => new PointInTime { Time = Timestamp.FromDateTimeOffset(dto) };
+            static PointInTime ToPointInTime(DateTimeOffset dto) => new PointInTime { Time = Timestamp.FromDateTimeOffset(dto) };
+
+            var requestUid = Guid.NewGuid().ToString(); // TODO: Bind the UID to the request 
+            _logger.LogInformation($"Started processing Get request: '{requestUid}' from '{context.Peer}'");
             
             foreach (var i in Enumerable.Range(0, _rowsInTheResponse))
             {
@@ -59,6 +63,8 @@ namespace Orleans.SiloGrpc.Services
 
                 await responseStream.WriteAsync(response);
             }
+
+            _logger.LogInformation($"Finished processing Get request: '{requestUid}' from '{context.Peer}'");
         }
     }
 }
