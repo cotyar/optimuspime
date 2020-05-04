@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <ServerGarbageCollection>true</ServerGarbageCollection>
+    <ConcurrentGarbageCollection>true</ConcurrentGarbageCollection>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;IDE0009</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoFixture" Version="4.11.0" />
+    <PackageReference Include="FastHashes" Version="1.7.5" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.28.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.HttpClient" Version="3.1.0-preview4.19579.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="4.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Orleans.Server" Version="3.1.6" />
+    <PackageReference Include="OrleansDashboard" Version="3.1.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.2-dev-10265" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="4.0.0-dev-00834" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
+    <PackageReference Include="System.Linq.Async" Version="4.1.1" />
+  </ItemGroup>
+
+  <!-- Unfortunately this is needed to make Rider intellisence work on generated files -->
+<!--  <ItemGroup>-->
+<!--    <Compile Include="obj\Debug\netstandard2.1\Moniker.cs" /> -->
+<!--    <Compile Include="obj\Debug\netstandard2.1\MonikerGrpc.cs" />-->
+<!--    <Compile Include="obj\Debug\netstandard2.1\Cache.cs" />-->
+<!--    <Compile Include="obj\Debug\netstandard2.1\CacheGrpc.cs" />-->
+<!--  </ItemGroup>-->
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Orleans.Grains\Orleans.Grains.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\Protos\generated\csharp\Greet.cs">
+      <Link>Protos\Greet.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Protos\generated\csharp\GreetGrpc.cs">
+      <Link>Protos\GreetGrpc.cs</Link>
+    </Compile>
+  </ItemGroup>
+
+</Project>
