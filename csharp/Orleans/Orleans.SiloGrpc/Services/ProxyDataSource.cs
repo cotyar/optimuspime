@@ -11,17 +11,16 @@ using Microsoft.Extensions.Logging;
 
 namespace Orleans.SiloGrpc.Services
 {
-    public class SimpleProxyDataSource : DataSource.DataSourceBase
+    public class ProxyDataSource : DataSource.DataSourceBase
     {
         private readonly ILogger<FakeDataSource> _logger;
-        private GrpcChannel _channel;
+        private readonly GrpcChannel _channel;
 
-        public SimpleProxyDataSource(ILogger<FakeDataSource> logger)
+        public ProxyDataSource(ILogger<FakeDataSource> logger)
         {
             _logger = logger;
             _channel = GrpcChannel.ForAddress("http://localhost:8085");
         }
-
 
         public override async Task Get(DataSourceGetRequest request, IServerStreamWriter<DataSourceGetResponse> responseStream, ServerCallContext context)
         {

@@ -29,64 +29,56 @@ namespace CalculationService {
             "ChVEYXRhU291cmNlR2V0UmVzcG9uc2USJAoHc3VjY2VzcxgBIAEoCzIRLmNh",
             "bGMuU3RvcmVkVmFsdWVIABIjCghub3RGb3VuZBgCIAEoCzIPLmNhbGMuTW9u",
             "aWtlcklkSAASIQoFZXJyb3IYZCABKAsyEC5jYWxjLkNhY2hlRXJyb3JIAEIG",
-            "CgRSZXNwImQKD0NhY2hlUHV0UmVxdWVzdBIgCgV2YWx1ZRgBIAEoCzIRLmNh",
-            "bGMuU3RvcmVkVmFsdWUSLwoLcmV0YWluVW50aWwYAiABKAsyGi5nb29nbGUu",
-            "cHJvdG9idWYuVGltZXN0YW1wImwKEENhY2hlUHV0UmVzcG9uc2USLQoHc3Vj",
-            "Y2VzcxgBIAEoCzIaLmNhbGMuU3RvcmVkVmFsdWUuTWV0YWRhdGFIABIhCgVl",
-            "cnJvchhkIAEoCzIQLmNhbGMuQ2FjaGVFcnJvckgAQgYKBFJlc3AiMQoSQ2Fj",
-            "aGVSZW1vdmVSZXF1ZXN0EhsKAmlkGAEgASgLMg8uY2FsYy5Nb25pa2VySWQi",
-            "kAEKE0NhY2hlUmVtb3ZlUmVzcG9uc2USKQoHc3VjY2VzcxgBIAEoCzIWLmdv",
-            "b2dsZS5wcm90b2J1Zi5FbXB0eUgAEiMKCG5vdEZvdW5kGAIgASgLMg8uY2Fs",
-            "Yy5Nb25pa2VySWRIABIhCgVlcnJvchhkIAEoCzIQLmNhbGMuQ2FjaGVFcnJv",
-            "ckgAQgYKBFJlc3AiEwoRQ2FjaGVDbGVhclJlcXVlc3QiagoSQ2FjaGVDbGVh",
-            "clJlc3BvbnNlEikKB3N1Y2Nlc3MYASABKAsyFi5nb29nbGUucHJvdG9idWYu",
-            "RW1wdHlIABIhCgVlcnJvchhkIAEoCzIQLmNhbGMuQ2FjaGVFcnJvckgAQgYK",
-            "BFJlc3AiMAoKQ2FjaGVFcnJvchIiCgVlcnJvchgBIAEoCzITLmNhbGMuSW50",
-            "ZXJuYWxFcnJvciIwChdNb25pdG9yaW5nVXBkYXRlUmVxdWVzdBIVCg1jb3Jy",
-            "ZWxhdGlvbklkGAEgASgJIj8KGE1vbml0b3JpbmdVcGRhdGVSZXNwb25zZRIj",
-            "CgZzdGF0dXMYASABKAsyEy5jYWxjLlJlcGxpY2FTdGF0dXMiuQIKDVJlcGxp",
-            "Y2FTdGF0dXMSEQoJcmVwbGljYUlkGAEgASgJEjMKDmNvbm5lY3Rpb25JbmZv",
-            "GAIgASgLMhsuY2FsYy5SZXBsaWNhQ29ubmVjdGlvbkluZm8SKwoHc3RhcnRl",
-            "ZBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASMAoMY3VycmVu",
-            "dENsb2NrGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBInCghj",
-            "b3VudGVycxgKIAEoCzIVLmNhbGMuUmVwbGljYUNvdW50ZXJzEiwKDmNvbGxl",
-            "Y3RlZFN0YXRzGAsgASgLMhQuY2FsYy5Db2xsZWN0ZWRTdGF0cxIqCg1jbHVz",
-            "dGVyU3RhdHVzGAwgASgLMhMuY2FsYy5DbHVzdGVyU3RhdHVzIpIBCg1DbHVz",
-            "dGVyU3RhdHVzEjMKCHJlcGxpY2FzGAEgAygLMiEuY2FsYy5DbHVzdGVyU3Rh",
-            "dHVzLlJlcGxpY2FzRW50cnkaTAoNUmVwbGljYXNFbnRyeRILCgNrZXkYASAB",
-            "KAkSKgoFdmFsdWUYAiABKAsyGy5jYWxjLlJlcGxpY2FDb25uZWN0aW9uSW5m",
-            "bzoCOAEiMwoVUmVwbGljYUNvbm5lY3Rpb25JbmZvEgwKBGhvc3QYASABKAkS",
-            "DAoEcG9ydBgCIAEoDSK6AgoPUmVwbGljYUNvdW50ZXJzEhMKC2FkZHNDb3Vu",
-            "dGVyGAEgASgEEhYKDmRlbGV0ZXNDb3VudGVyGAIgASgEEhQKDGNvcHlzQ291",
-            "bnRlchgDIAEoBBISCgpnZXRDb3VudGVyGAQgASgEEhcKD2NvbnRhaW5zQ291",
-            "bnRlchgFIAEoBBIYChBrZXlTZWFyY2hDb3VudGVyGAYgASgEEh0KFW1ldGFk",
-            "YXRhU2VhcmNoQ291bnRlchgHIAEoBBIZChFwYWdlU2VhcmNoQ291bnRlchgI",
-            "IAEoBBIWCg5sYXJnZXN0S2V5U2l6ZRgKIAEoDRIYChBsYXJnZXN0VmFsdWVT",
-            "aXplGAsgASgNEhYKDnJlcGxpY2F0ZWRBZGRzGA8gASgEEhkKEXJlcGxpY2F0",
-            "ZWREZWxldGVzGBAgASgEIncKDkNvbGxlY3RlZFN0YXRzEhYKDm5vbkV4cGly",
-            "ZWRLZXlzGAogASgEEg8KB2FsbEtleXMYCyABKAQSEgoKYWN0aXZlS2V5cxgM",
-            "IAEoBBITCgtkZWxldGVkS2V5cxgNIAEoBBITCgtleHBpcmVkS2V5cxgOIAEo",
-            "BDJQCgpEYXRhU291cmNlEkIKA0dldBIaLmNhbGMuRGF0YVNvdXJjZUdldFJl",
-            "cXVlc3QaGy5jYWxjLkRhdGFTb3VyY2VHZXRSZXNwb25zZSIAMAEyxwEKDENh",
-            "Y2hlQ29udHJvbBI4CgNQdXQSFS5jYWxjLkNhY2hlUHV0UmVxdWVzdBoWLmNh",
-            "bGMuQ2FjaGVQdXRSZXNwb25zZSIAKAESPwoGUmVtb3ZlEhguY2FsYy5DYWNo",
-            "ZVJlbW92ZVJlcXVlc3QaGS5jYWxjLkNhY2hlUmVtb3ZlUmVzcG9uc2UiABI8",
-            "CgVDbGVhchIXLmNhbGMuQ2FjaGVDbGVhclJlcXVlc3QaGC5jYWxjLkNhY2hl",
-            "Q2xlYXJSZXNwb25zZSIAMrEBChFNb25pdG9yaW5nU2VydmljZRJMCglHZXRT",
-            "dGF0dXMSHS5jYWxjLk1vbml0b3JpbmdVcGRhdGVSZXF1ZXN0Gh4uY2FsYy5N",
-            "b25pdG9yaW5nVXBkYXRlUmVzcG9uc2UiABJOCglTdWJzY3JpYmUSHS5jYWxj",
-            "Lk1vbml0b3JpbmdVcGRhdGVSZXF1ZXN0Gh4uY2FsYy5Nb25pdG9yaW5nVXBk",
-            "YXRlUmVzcG9uc2UiADABQhWqAhJDYWxjdWxhdGlvblNlcnZpY2VQAGIGcHJv",
-            "dG8z"));
+            "CgRSZXNwIjUKFkNhY2hlSW52YWxpZGF0ZVJlcXVlc3QSGwoCaWQYASABKAsy",
+            "Dy5jYWxjLk1vbmlrZXJJZCKUAQoXQ2FjaGVJbnZhbGlkYXRlUmVzcG9uc2US",
+            "KQoHc3VjY2VzcxgBIAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eUgAEiMK",
+            "CG5vdEZvdW5kGAIgASgLMg8uY2FsYy5Nb25pa2VySWRIABIhCgVlcnJvchhk",
+            "IAEoCzIQLmNhbGMuQ2FjaGVFcnJvckgAQgYKBFJlc3AiEwoRQ2FjaGVDbGVh",
+            "clJlcXVlc3QiagoSQ2FjaGVDbGVhclJlc3BvbnNlEikKB3N1Y2Nlc3MYASAB",
+            "KAsyFi5nb29nbGUucHJvdG9idWYuRW1wdHlIABIhCgVlcnJvchhkIAEoCzIQ",
+            "LmNhbGMuQ2FjaGVFcnJvckgAQgYKBFJlc3AiMAoKQ2FjaGVFcnJvchIiCgVl",
+            "cnJvchgBIAEoCzITLmNhbGMuSW50ZXJuYWxFcnJvciIwChdNb25pdG9yaW5n",
+            "VXBkYXRlUmVxdWVzdBIVCg1jb3JyZWxhdGlvbklkGAEgASgJIj8KGE1vbml0",
+            "b3JpbmdVcGRhdGVSZXNwb25zZRIjCgZzdGF0dXMYASABKAsyEy5jYWxjLlJl",
+            "cGxpY2FTdGF0dXMiuQIKDVJlcGxpY2FTdGF0dXMSEQoJcmVwbGljYUlkGAEg",
+            "ASgJEjMKDmNvbm5lY3Rpb25JbmZvGAIgASgLMhsuY2FsYy5SZXBsaWNhQ29u",
+            "bmVjdGlvbkluZm8SKwoHc3RhcnRlZBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1",
+            "Zi5UaW1lc3RhbXASMAoMY3VycmVudENsb2NrGAUgASgLMhouZ29vZ2xlLnBy",
+            "b3RvYnVmLlRpbWVzdGFtcBInCghjb3VudGVycxgKIAEoCzIVLmNhbGMuUmVw",
+            "bGljYUNvdW50ZXJzEiwKDmNvbGxlY3RlZFN0YXRzGAsgASgLMhQuY2FsYy5D",
+            "b2xsZWN0ZWRTdGF0cxIqCg1jbHVzdGVyU3RhdHVzGAwgASgLMhMuY2FsYy5D",
+            "bHVzdGVyU3RhdHVzIpIBCg1DbHVzdGVyU3RhdHVzEjMKCHJlcGxpY2FzGAEg",
+            "AygLMiEuY2FsYy5DbHVzdGVyU3RhdHVzLlJlcGxpY2FzRW50cnkaTAoNUmVw",
+            "bGljYXNFbnRyeRILCgNrZXkYASABKAkSKgoFdmFsdWUYAiABKAsyGy5jYWxj",
+            "LlJlcGxpY2FDb25uZWN0aW9uSW5mbzoCOAEiMwoVUmVwbGljYUNvbm5lY3Rp",
+            "b25JbmZvEgwKBGhvc3QYASABKAkSDAoEcG9ydBgCIAEoDSK6AgoPUmVwbGlj",
+            "YUNvdW50ZXJzEhMKC2FkZHNDb3VudGVyGAEgASgEEhYKDmRlbGV0ZXNDb3Vu",
+            "dGVyGAIgASgEEhQKDGNvcHlzQ291bnRlchgDIAEoBBISCgpnZXRDb3VudGVy",
+            "GAQgASgEEhcKD2NvbnRhaW5zQ291bnRlchgFIAEoBBIYChBrZXlTZWFyY2hD",
+            "b3VudGVyGAYgASgEEh0KFW1ldGFkYXRhU2VhcmNoQ291bnRlchgHIAEoBBIZ",
+            "ChFwYWdlU2VhcmNoQ291bnRlchgIIAEoBBIWCg5sYXJnZXN0S2V5U2l6ZRgK",
+            "IAEoDRIYChBsYXJnZXN0VmFsdWVTaXplGAsgASgNEhYKDnJlcGxpY2F0ZWRB",
+            "ZGRzGA8gASgEEhkKEXJlcGxpY2F0ZWREZWxldGVzGBAgASgEIncKDkNvbGxl",
+            "Y3RlZFN0YXRzEhYKDm5vbkV4cGlyZWRLZXlzGAogASgEEg8KB2FsbEtleXMY",
+            "CyABKAQSEgoKYWN0aXZlS2V5cxgMIAEoBBITCgtkZWxldGVkS2V5cxgNIAEo",
+            "BBITCgtleHBpcmVkS2V5cxgOIAEoBDJQCgpEYXRhU291cmNlEkIKA0dldBIa",
+            "LmNhbGMuRGF0YVNvdXJjZUdldFJlcXVlc3QaGy5jYWxjLkRhdGFTb3VyY2VH",
+            "ZXRSZXNwb25zZSIAMAEymQEKDENhY2hlQ29udHJvbBJLCgpJbnZhbGlkYXRl",
+            "EhwuY2FsYy5DYWNoZUludmFsaWRhdGVSZXF1ZXN0Gh0uY2FsYy5DYWNoZUlu",
+            "dmFsaWRhdGVSZXNwb25zZSIAEjwKBUNsZWFyEhcuY2FsYy5DYWNoZUNsZWFy",
+            "UmVxdWVzdBoYLmNhbGMuQ2FjaGVDbGVhclJlc3BvbnNlIgAysQEKEU1vbml0",
+            "b3JpbmdTZXJ2aWNlEkwKCUdldFN0YXR1cxIdLmNhbGMuTW9uaXRvcmluZ1Vw",
+            "ZGF0ZVJlcXVlc3QaHi5jYWxjLk1vbml0b3JpbmdVcGRhdGVSZXNwb25zZSIA",
+            "Ek4KCVN1YnNjcmliZRIdLmNhbGMuTW9uaXRvcmluZ1VwZGF0ZVJlcXVlc3Qa",
+            "Hi5jYWxjLk1vbml0b3JpbmdVcGRhdGVSZXNwb25zZSIAMAFCFaoCEkNhbGN1",
+            "bGF0aW9uU2VydmljZVAAYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::CalculationService.MonikerReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::CalculationService.DataSourceGetRequest), global::CalculationService.DataSourceGetRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CalculationService.DataSourceGetResponse), global::CalculationService.DataSourceGetResponse.Parser, new[]{ "Success", "NotFound", "Error" }, new[]{ "Resp" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::CalculationService.CachePutRequest), global::CalculationService.CachePutRequest.Parser, new[]{ "Value", "RetainUntil" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::CalculationService.CachePutResponse), global::CalculationService.CachePutResponse.Parser, new[]{ "Success", "Error" }, new[]{ "Resp" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::CalculationService.CacheRemoveRequest), global::CalculationService.CacheRemoveRequest.Parser, new[]{ "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::CalculationService.CacheRemoveResponse), global::CalculationService.CacheRemoveResponse.Parser, new[]{ "Success", "NotFound", "Error" }, new[]{ "Resp" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::CalculationService.CacheInvalidateRequest), global::CalculationService.CacheInvalidateRequest.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::CalculationService.CacheInvalidateResponse), global::CalculationService.CacheInvalidateResponse.Parser, new[]{ "Success", "NotFound", "Error" }, new[]{ "Resp" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CalculationService.CacheClearRequest), global::CalculationService.CacheClearRequest.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CalculationService.CacheClearResponse), global::CalculationService.CacheClearResponse.Parser, new[]{ "Success", "Error" }, new[]{ "Resp" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CalculationService.CacheError), global::CalculationService.CacheError.Parser, new[]{ "Error" }, null, null, null, null),
@@ -481,11 +473,11 @@ namespace CalculationService {
 
   }
 
-  public sealed partial class CachePutRequest : pb::IMessage<CachePutRequest> {
-    private static readonly pb::MessageParser<CachePutRequest> _parser = new pb::MessageParser<CachePutRequest>(() => new CachePutRequest());
+  public sealed partial class CacheInvalidateRequest : pb::IMessage<CacheInvalidateRequest> {
+    private static readonly pb::MessageParser<CacheInvalidateRequest> _parser = new pb::MessageParser<CacheInvalidateRequest>(() => new CacheInvalidateRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<CachePutRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<CacheInvalidateRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -498,397 +490,21 @@ namespace CalculationService {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CachePutRequest() {
+    public CacheInvalidateRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CachePutRequest(CachePutRequest other) : this() {
-      value_ = other.value_ != null ? other.value_.Clone() : null;
-      retainUntil_ = other.retainUntil_ != null ? other.retainUntil_.Clone() : null;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CachePutRequest Clone() {
-      return new CachePutRequest(this);
-    }
-
-    /// <summary>Field number for the "value" field.</summary>
-    public const int ValueFieldNumber = 1;
-    private global::CalculationService.StoredValue value_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::CalculationService.StoredValue Value {
-      get { return value_; }
-      set {
-        value_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "retainUntil" field.</summary>
-    public const int RetainUntilFieldNumber = 2;
-    private global::Google.Protobuf.WellKnownTypes.Timestamp retainUntil_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Protobuf.WellKnownTypes.Timestamp RetainUntil {
-      get { return retainUntil_; }
-      set {
-        retainUntil_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as CachePutRequest);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(CachePutRequest other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (!object.Equals(Value, other.Value)) return false;
-      if (!object.Equals(RetainUntil, other.RetainUntil)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (value_ != null) hash ^= Value.GetHashCode();
-      if (retainUntil_ != null) hash ^= RetainUntil.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (value_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Value);
-      }
-      if (retainUntil_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(RetainUntil);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (value_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Value);
-      }
-      if (retainUntil_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RetainUntil);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(CachePutRequest other) {
-      if (other == null) {
-        return;
-      }
-      if (other.value_ != null) {
-        if (value_ == null) {
-          Value = new global::CalculationService.StoredValue();
-        }
-        Value.MergeFrom(other.Value);
-      }
-      if (other.retainUntil_ != null) {
-        if (retainUntil_ == null) {
-          RetainUntil = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-        }
-        RetainUntil.MergeFrom(other.RetainUntil);
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            if (value_ == null) {
-              Value = new global::CalculationService.StoredValue();
-            }
-            input.ReadMessage(Value);
-            break;
-          }
-          case 18: {
-            if (retainUntil_ == null) {
-              RetainUntil = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(RetainUntil);
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  /// <summary>
-  /// TODO: Change to streaming?
-  /// </summary>
-  public sealed partial class CachePutResponse : pb::IMessage<CachePutResponse> {
-    private static readonly pb::MessageParser<CachePutResponse> _parser = new pb::MessageParser<CachePutResponse>(() => new CachePutResponse());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<CachePutResponse> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[3]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CachePutResponse() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CachePutResponse(CachePutResponse other) : this() {
-      switch (other.RespCase) {
-        case RespOneofCase.Success:
-          Success = other.Success.Clone();
-          break;
-        case RespOneofCase.Error:
-          Error = other.Error.Clone();
-          break;
-      }
-
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CachePutResponse Clone() {
-      return new CachePutResponse(this);
-    }
-
-    /// <summary>Field number for the "success" field.</summary>
-    public const int SuccessFieldNumber = 1;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::CalculationService.StoredValue.Types.Metadata Success {
-      get { return respCase_ == RespOneofCase.Success ? (global::CalculationService.StoredValue.Types.Metadata) resp_ : null; }
-      set {
-        resp_ = value;
-        respCase_ = value == null ? RespOneofCase.None : RespOneofCase.Success;
-      }
-    }
-
-    /// <summary>Field number for the "error" field.</summary>
-    public const int ErrorFieldNumber = 100;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::CalculationService.CacheError Error {
-      get { return respCase_ == RespOneofCase.Error ? (global::CalculationService.CacheError) resp_ : null; }
-      set {
-        resp_ = value;
-        respCase_ = value == null ? RespOneofCase.None : RespOneofCase.Error;
-      }
-    }
-
-    private object resp_;
-    /// <summary>Enum of possible cases for the "Resp" oneof.</summary>
-    public enum RespOneofCase {
-      None = 0,
-      Success = 1,
-      Error = 100,
-    }
-    private RespOneofCase respCase_ = RespOneofCase.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public RespOneofCase RespCase {
-      get { return respCase_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void ClearResp() {
-      respCase_ = RespOneofCase.None;
-      resp_ = null;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as CachePutResponse);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(CachePutResponse other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (!object.Equals(Success, other.Success)) return false;
-      if (!object.Equals(Error, other.Error)) return false;
-      if (RespCase != other.RespCase) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (respCase_ == RespOneofCase.Success) hash ^= Success.GetHashCode();
-      if (respCase_ == RespOneofCase.Error) hash ^= Error.GetHashCode();
-      hash ^= (int) respCase_;
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (respCase_ == RespOneofCase.Success) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Success);
-      }
-      if (respCase_ == RespOneofCase.Error) {
-        output.WriteRawTag(162, 6);
-        output.WriteMessage(Error);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (respCase_ == RespOneofCase.Success) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Success);
-      }
-      if (respCase_ == RespOneofCase.Error) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Error);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(CachePutResponse other) {
-      if (other == null) {
-        return;
-      }
-      switch (other.RespCase) {
-        case RespOneofCase.Success:
-          if (Success == null) {
-            Success = new global::CalculationService.StoredValue.Types.Metadata();
-          }
-          Success.MergeFrom(other.Success);
-          break;
-        case RespOneofCase.Error:
-          if (Error == null) {
-            Error = new global::CalculationService.CacheError();
-          }
-          Error.MergeFrom(other.Error);
-          break;
-      }
-
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            global::CalculationService.StoredValue.Types.Metadata subBuilder = new global::CalculationService.StoredValue.Types.Metadata();
-            if (respCase_ == RespOneofCase.Success) {
-              subBuilder.MergeFrom(Success);
-            }
-            input.ReadMessage(subBuilder);
-            Success = subBuilder;
-            break;
-          }
-          case 802: {
-            global::CalculationService.CacheError subBuilder = new global::CalculationService.CacheError();
-            if (respCase_ == RespOneofCase.Error) {
-              subBuilder.MergeFrom(Error);
-            }
-            input.ReadMessage(subBuilder);
-            Error = subBuilder;
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class CacheRemoveRequest : pb::IMessage<CacheRemoveRequest> {
-    private static readonly pb::MessageParser<CacheRemoveRequest> _parser = new pb::MessageParser<CacheRemoveRequest>(() => new CacheRemoveRequest());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<CacheRemoveRequest> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[4]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CacheRemoveRequest() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CacheRemoveRequest(CacheRemoveRequest other) : this() {
+    public CacheInvalidateRequest(CacheInvalidateRequest other) : this() {
       id_ = other.id_ != null ? other.id_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CacheRemoveRequest Clone() {
-      return new CacheRemoveRequest(this);
+    public CacheInvalidateRequest Clone() {
+      return new CacheInvalidateRequest(this);
     }
 
     /// <summary>Field number for the "id" field.</summary>
@@ -904,11 +520,11 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as CacheRemoveRequest);
+      return Equals(other as CacheInvalidateRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(CacheRemoveRequest other) {
+    public bool Equals(CacheInvalidateRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -958,7 +574,7 @@ namespace CalculationService {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(CacheRemoveRequest other) {
+    public void MergeFrom(CacheInvalidateRequest other) {
       if (other == null) {
         return;
       }
@@ -992,15 +608,15 @@ namespace CalculationService {
 
   }
 
-  public sealed partial class CacheRemoveResponse : pb::IMessage<CacheRemoveResponse> {
-    private static readonly pb::MessageParser<CacheRemoveResponse> _parser = new pb::MessageParser<CacheRemoveResponse>(() => new CacheRemoveResponse());
+  public sealed partial class CacheInvalidateResponse : pb::IMessage<CacheInvalidateResponse> {
+    private static readonly pb::MessageParser<CacheInvalidateResponse> _parser = new pb::MessageParser<CacheInvalidateResponse>(() => new CacheInvalidateResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<CacheRemoveResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<CacheInvalidateResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[5]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1009,14 +625,14 @@ namespace CalculationService {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CacheRemoveResponse() {
+    public CacheInvalidateResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CacheRemoveResponse(CacheRemoveResponse other) : this() {
+    public CacheInvalidateResponse(CacheInvalidateResponse other) : this() {
       switch (other.RespCase) {
         case RespOneofCase.Success:
           Success = other.Success.Clone();
@@ -1033,8 +649,8 @@ namespace CalculationService {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CacheRemoveResponse Clone() {
-      return new CacheRemoveResponse(this);
+    public CacheInvalidateResponse Clone() {
+      return new CacheInvalidateResponse(this);
     }
 
     /// <summary>Field number for the "success" field.</summary>
@@ -1092,11 +708,11 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as CacheRemoveResponse);
+      return Equals(other as CacheInvalidateResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(CacheRemoveResponse other) {
+    public bool Equals(CacheInvalidateResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1166,7 +782,7 @@ namespace CalculationService {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(CacheRemoveResponse other) {
+    public void MergeFrom(CacheInvalidateResponse other) {
       if (other == null) {
         return;
       }
@@ -1243,7 +859,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[6]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1344,7 +960,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[7]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1548,7 +1164,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[8]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1683,7 +1299,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[9]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1812,7 +1428,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[10]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1947,7 +1563,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[11]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2283,7 +1899,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[12]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2404,7 +2020,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[13]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2564,7 +2180,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[14]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3001,7 +2617,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[15]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -44,8 +44,9 @@ namespace Orleans.SiloGrpc
                             app.UseEndpoints(endpoints =>
                             {
                                 endpoints.MapGrpcService<GreeterService>();
-                                // endpoints.MapGrpcService<SimpleProxyDataSource>();
+                                // endpoints.MapGrpcService<ProxyDataSource>();
                                 endpoints.MapGrpcService<CacheDataSource>();
+                                endpoints.MapGrpcService<CacheControl>();
                                 
                                 endpoints.MapGet("/",
                                     async httpContext =>

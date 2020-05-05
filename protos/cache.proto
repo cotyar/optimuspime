@@ -32,28 +32,28 @@ message DataSourceGetResponse {
 //////////////////////
 
 service CacheControl {
-  rpc Put(stream CachePutRequest) returns (CachePutResponse) {}
-  rpc Remove(CacheRemoveRequest) returns (CacheRemoveResponse) {}
+  //rpc Put(stream CachePutRequest) returns (CachePutResponse) {}
+  rpc Invalidate(CacheInvalidateRequest) returns (CacheInvalidateResponse) {}
   rpc Clear(CacheClearRequest) returns (CacheClearResponse) {}
 }
 
-message CachePutRequest {
-  StoredValue value                     = 1;
-  google.protobuf.Timestamp retainUntil = 2;
-}
+//message CachePutRequest {
+//  StoredValue value                     = 1;
+//  google.protobuf.Timestamp retainUntil = 2;
+//}
 
-message CachePutResponse { // TODO: Change to streaming?
-  oneof Resp {
-    StoredValue.Metadata  success = 1;
-    CacheError            error   = 100;
-  }
-}
+//message CachePutResponse { // TODO: Change to streaming?
+//  oneof Resp {
+//    StoredValue.Metadata  success = 1;
+//    CacheError            error   = 100;
+//  }
+//}
 
-message CacheRemoveRequest {
+message CacheInvalidateRequest {
   MonikerId id = 1;
 }
 
-message CacheRemoveResponse {
+message CacheInvalidateResponse {
   oneof Resp {
     google.protobuf.Empty success   = 1;
     MonikerId             notFound  = 2;

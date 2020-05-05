@@ -99,26 +99,17 @@ namespace CalculationService {
   {
     static readonly string __ServiceName = "calc.CacheControl";
 
-    static readonly grpc::Marshaller<global::CalculationService.CachePutRequest> __Marshaller_calc_CachePutRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::CalculationService.CachePutRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::CalculationService.CachePutResponse> __Marshaller_calc_CachePutResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::CalculationService.CachePutResponse.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::CalculationService.CacheRemoveRequest> __Marshaller_calc_CacheRemoveRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::CalculationService.CacheRemoveRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::CalculationService.CacheRemoveResponse> __Marshaller_calc_CacheRemoveResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::CalculationService.CacheRemoveResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::CalculationService.CacheInvalidateRequest> __Marshaller_calc_CacheInvalidateRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::CalculationService.CacheInvalidateRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::CalculationService.CacheInvalidateResponse> __Marshaller_calc_CacheInvalidateResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::CalculationService.CacheInvalidateResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::CalculationService.CacheClearRequest> __Marshaller_calc_CacheClearRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::CalculationService.CacheClearRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::CalculationService.CacheClearResponse> __Marshaller_calc_CacheClearResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::CalculationService.CacheClearResponse.Parser.ParseFrom);
 
-    static readonly grpc::Method<global::CalculationService.CachePutRequest, global::CalculationService.CachePutResponse> __Method_Put = new grpc::Method<global::CalculationService.CachePutRequest, global::CalculationService.CachePutResponse>(
-        grpc::MethodType.ClientStreaming,
-        __ServiceName,
-        "Put",
-        __Marshaller_calc_CachePutRequest,
-        __Marshaller_calc_CachePutResponse);
-
-    static readonly grpc::Method<global::CalculationService.CacheRemoveRequest, global::CalculationService.CacheRemoveResponse> __Method_Remove = new grpc::Method<global::CalculationService.CacheRemoveRequest, global::CalculationService.CacheRemoveResponse>(
+    static readonly grpc::Method<global::CalculationService.CacheInvalidateRequest, global::CalculationService.CacheInvalidateResponse> __Method_Invalidate = new grpc::Method<global::CalculationService.CacheInvalidateRequest, global::CalculationService.CacheInvalidateResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "Remove",
-        __Marshaller_calc_CacheRemoveRequest,
-        __Marshaller_calc_CacheRemoveResponse);
+        "Invalidate",
+        __Marshaller_calc_CacheInvalidateRequest,
+        __Marshaller_calc_CacheInvalidateResponse);
 
     static readonly grpc::Method<global::CalculationService.CacheClearRequest, global::CalculationService.CacheClearResponse> __Method_Clear = new grpc::Method<global::CalculationService.CacheClearRequest, global::CalculationService.CacheClearResponse>(
         grpc::MethodType.Unary,
@@ -137,12 +128,13 @@ namespace CalculationService {
     [grpc::BindServiceMethod(typeof(CacheControl), "BindService")]
     public abstract partial class CacheControlBase
     {
-      public virtual global::System.Threading.Tasks.Task<global::CalculationService.CachePutResponse> Put(grpc::IAsyncStreamReader<global::CalculationService.CachePutRequest> requestStream, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      public virtual global::System.Threading.Tasks.Task<global::CalculationService.CacheRemoveResponse> Remove(global::CalculationService.CacheRemoveRequest request, grpc::ServerCallContext context)
+      /// <summary>
+      ///rpc Put(stream CachePutRequest) returns (CachePutResponse) {}
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::CalculationService.CacheInvalidateResponse> Invalidate(global::CalculationService.CacheInvalidateRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -177,29 +169,49 @@ namespace CalculationService {
       {
       }
 
-      public virtual grpc::AsyncClientStreamingCall<global::CalculationService.CachePutRequest, global::CalculationService.CachePutResponse> Put(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      /// <summary>
+      ///rpc Put(stream CachePutRequest) returns (CachePutResponse) {}
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::CalculationService.CacheInvalidateResponse Invalidate(global::CalculationService.CacheInvalidateRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return Put(new grpc::CallOptions(headers, deadline, cancellationToken));
+        return Invalidate(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncClientStreamingCall<global::CalculationService.CachePutRequest, global::CalculationService.CachePutResponse> Put(grpc::CallOptions options)
+      /// <summary>
+      ///rpc Put(stream CachePutRequest) returns (CachePutResponse) {}
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::CalculationService.CacheInvalidateResponse Invalidate(global::CalculationService.CacheInvalidateRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncClientStreamingCall(__Method_Put, null, options);
+        return CallInvoker.BlockingUnaryCall(__Method_Invalidate, null, options, request);
       }
-      public virtual global::CalculationService.CacheRemoveResponse Remove(global::CalculationService.CacheRemoveRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      /// <summary>
+      ///rpc Put(stream CachePutRequest) returns (CachePutResponse) {}
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::CalculationService.CacheInvalidateResponse> InvalidateAsync(global::CalculationService.CacheInvalidateRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return Remove(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return InvalidateAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::CalculationService.CacheRemoveResponse Remove(global::CalculationService.CacheRemoveRequest request, grpc::CallOptions options)
+      /// <summary>
+      ///rpc Put(stream CachePutRequest) returns (CachePutResponse) {}
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::CalculationService.CacheInvalidateResponse> InvalidateAsync(global::CalculationService.CacheInvalidateRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.BlockingUnaryCall(__Method_Remove, null, options, request);
-      }
-      public virtual grpc::AsyncUnaryCall<global::CalculationService.CacheRemoveResponse> RemoveAsync(global::CalculationService.CacheRemoveRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return RemoveAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      public virtual grpc::AsyncUnaryCall<global::CalculationService.CacheRemoveResponse> RemoveAsync(global::CalculationService.CacheRemoveRequest request, grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncUnaryCall(__Method_Remove, null, options, request);
+        return CallInvoker.AsyncUnaryCall(__Method_Invalidate, null, options, request);
       }
       public virtual global::CalculationService.CacheClearResponse Clear(global::CalculationService.CacheClearRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
@@ -229,8 +241,7 @@ namespace CalculationService {
     public static grpc::ServerServiceDefinition BindService(CacheControlBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_Put, serviceImpl.Put)
-          .AddMethod(__Method_Remove, serviceImpl.Remove)
+          .AddMethod(__Method_Invalidate, serviceImpl.Invalidate)
           .AddMethod(__Method_Clear, serviceImpl.Clear).Build();
     }
 
@@ -240,8 +251,7 @@ namespace CalculationService {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, CacheControlBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_Put, serviceImpl == null ? null : new grpc::ClientStreamingServerMethod<global::CalculationService.CachePutRequest, global::CalculationService.CachePutResponse>(serviceImpl.Put));
-      serviceBinder.AddMethod(__Method_Remove, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::CalculationService.CacheRemoveRequest, global::CalculationService.CacheRemoveResponse>(serviceImpl.Remove));
+      serviceBinder.AddMethod(__Method_Invalidate, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::CalculationService.CacheInvalidateRequest, global::CalculationService.CacheInvalidateResponse>(serviceImpl.Invalidate));
       serviceBinder.AddMethod(__Method_Clear, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::CalculationService.CacheClearRequest, global::CalculationService.CacheClearResponse>(serviceImpl.Clear));
     }
 

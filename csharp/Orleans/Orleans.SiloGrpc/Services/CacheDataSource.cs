@@ -26,8 +26,6 @@ namespace Orleans.SiloGrpc.Services
 
         public override async Task Get(DataSourceGetRequest request, IServerStreamWriter<DataSourceGetResponse> responseStream, ServerCallContext context)
         {
-            // static PointInTime ToPointInTime(DateTimeOffset dto) => new PointInTime { Time = Timestamp.FromDateTimeOffset(dto) };
-
             var requestUid = Guid.NewGuid().ToString(); // TODO: Bind the UID to the request 
             _logger.LogInformation($"Started processing Get request: '{requestUid}' from '{context.Peer}'");
 
