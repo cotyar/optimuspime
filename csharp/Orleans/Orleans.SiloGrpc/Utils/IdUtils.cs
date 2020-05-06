@@ -28,6 +28,18 @@ namespace Orleans.SiloGrpc.Utils
             return (grainKey, monikerVersionPartId);
         }
 
+        public static (string, MonikerVersionPartId) ToGrainKey(this MonikerVersionId monikerId)
+        {
+            var (grainKey, monikerVersionPartId) =
+                ($"{monikerId.Id.Key}||{monikerId.Version}",
+                    new MonikerVersionPartId
+                    {
+                        Id = monikerId.Id,
+                        Version = monikerId.Version
+                    });
+            return (grainKey, monikerVersionPartId);
+        }
+
         public static (MonikerIdentifier, ulong, PointInTime) Deconstruct(this DataSourceGetRequest request)
         {
             return request.Id.MonikerCase switch

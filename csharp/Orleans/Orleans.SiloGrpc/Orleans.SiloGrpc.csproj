@@ -14,7 +14,9 @@
   <ItemGroup>
     <PackageReference Include="AutoFixture" Version="4.11.0" />
     <PackageReference Include="FastHashes" Version="1.7.5" />
+    <PackageReference Include="Google.Api.CommonProtos" Version="2.0.0" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.28.0" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.28.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.HttpClient" Version="3.2.0-preview3.20168.3" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
@@ -29,17 +31,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
     <PackageReference Include="System.Linq.Async" Version="4.1.1" />
   </ItemGroup>
-
-  <!-- Unfortunately this is needed to make Rider intellisence work on generated files -->
-<!--  <ItemGroup>-->
-<!--    <Compile Include="obj\Debug\netstandard2.1\Moniker.cs" /> -->
-<!--    <Compile Include="obj\Debug\netstandard2.1\MonikerGrpc.cs" />-->
-<!--    <Compile Include="obj\Debug\netstandard2.1\Cache.cs" />-->
-<!--    <Compile Include="obj\Debug\netstandard2.1\CacheGrpc.cs" />-->
-<!--  </ItemGroup>-->
   
   <ItemGroup>
     <ProjectReference Include="..\Orleans.Grains\Orleans.Grains.csproj" />
+    <ProjectReference Include="..\..\GrpcHttp\Microsoft.AspNetCore.Grpc.HttpApi\Microsoft.AspNetCore.Grpc.HttpApi.csproj" />
+    <ProjectReference Include="..\..\GrpcHttp\Microsoft.AspNetCore.Grpc.Swagger\Microsoft.AspNetCore.Grpc.Swagger.csproj" />
   </ItemGroup>
 
   <ItemGroup>

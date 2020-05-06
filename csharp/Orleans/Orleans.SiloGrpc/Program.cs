@@ -79,6 +79,7 @@ namespace Orleans.SiloGrpc
                         o.Address = new Uri("http://127.0.0.1:8085");
                         o.ChannelOptionsActions.Add(options => options.Credentials = ChannelCredentials.Insecure); // TODO: Probably not needed
                     });
+                    services.AddGrpcHttpApi();
                 })
                 .UseOrleans(builder =>
                 {
@@ -93,6 +94,7 @@ namespace Orleans.SiloGrpc
                     builder.UseDashboard(options =>
                     {
                         options.HideTrace = true;
+                        options.Port = 8081;
                     });
                 });
     }

@@ -12,8 +12,16 @@ namespace CalculationService {
   {
     static readonly string __ServiceName = "calc.DataSource";
 
-    static readonly grpc::Marshaller<global::CalculationService.DataSourceGetRequest> __Marshaller_calc_DataSourceGetRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::CalculationService.DataSourceGetRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::CalculationService.DataSourceGetVersionRequest> __Marshaller_calc_DataSourceGetVersionRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::CalculationService.DataSourceGetVersionRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::CalculationService.DataSourceGetResponse> __Marshaller_calc_DataSourceGetResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::CalculationService.DataSourceGetResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::CalculationService.DataSourceGetRequest> __Marshaller_calc_DataSourceGetRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::CalculationService.DataSourceGetRequest.Parser.ParseFrom);
+
+    static readonly grpc::Method<global::CalculationService.DataSourceGetVersionRequest, global::CalculationService.DataSourceGetResponse> __Method_GetVersion = new grpc::Method<global::CalculationService.DataSourceGetVersionRequest, global::CalculationService.DataSourceGetResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetVersion",
+        __Marshaller_calc_DataSourceGetVersionRequest,
+        __Marshaller_calc_DataSourceGetResponse);
 
     static readonly grpc::Method<global::CalculationService.DataSourceGetRequest, global::CalculationService.DataSourceGetResponse> __Method_Get = new grpc::Method<global::CalculationService.DataSourceGetRequest, global::CalculationService.DataSourceGetResponse>(
         grpc::MethodType.ServerStreaming,
@@ -32,6 +40,11 @@ namespace CalculationService {
     [grpc::BindServiceMethod(typeof(DataSource), "BindService")]
     public abstract partial class DataSourceBase
     {
+      public virtual global::System.Threading.Tasks.Task<global::CalculationService.DataSourceGetResponse> GetVersion(global::CalculationService.DataSourceGetVersionRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
       public virtual global::System.Threading.Tasks.Task Get(global::CalculationService.DataSourceGetRequest request, grpc::IServerStreamWriter<global::CalculationService.DataSourceGetResponse> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
@@ -62,6 +75,22 @@ namespace CalculationService {
       {
       }
 
+      public virtual global::CalculationService.DataSourceGetResponse GetVersion(global::CalculationService.DataSourceGetVersionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetVersion(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::CalculationService.DataSourceGetResponse GetVersion(global::CalculationService.DataSourceGetVersionRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetVersion, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::CalculationService.DataSourceGetResponse> GetVersionAsync(global::CalculationService.DataSourceGetVersionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetVersionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::CalculationService.DataSourceGetResponse> GetVersionAsync(global::CalculationService.DataSourceGetVersionRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetVersion, null, options, request);
+      }
       public virtual grpc::AsyncServerStreamingCall<global::CalculationService.DataSourceGetResponse> Get(global::CalculationService.DataSourceGetRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return Get(request, new grpc::CallOptions(headers, deadline, cancellationToken));
@@ -82,6 +111,7 @@ namespace CalculationService {
     public static grpc::ServerServiceDefinition BindService(DataSourceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
+          .AddMethod(__Method_GetVersion, serviceImpl.GetVersion)
           .AddMethod(__Method_Get, serviceImpl.Get).Build();
     }
 
@@ -91,6 +121,7 @@ namespace CalculationService {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, DataSourceBase serviceImpl)
     {
+      serviceBinder.AddMethod(__Method_GetVersion, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::CalculationService.DataSourceGetVersionRequest, global::CalculationService.DataSourceGetResponse>(serviceImpl.GetVersion));
       serviceBinder.AddMethod(__Method_Get, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::CalculationService.DataSourceGetRequest, global::CalculationService.DataSourceGetResponse>(serviceImpl.Get));
     }
 

@@ -63,7 +63,7 @@ namespace Orleans.Silo
                                endpoints.MapDefaultControllerRoute();
                            });
                        })
-                        .UseUrls("http://localhost:8081");
+                        .UseUrls("http://localhost:8084");
                 })
                 .ConfigureLogging(builder =>
                 {
@@ -95,6 +95,7 @@ namespace Orleans.Silo
                     builder.UseDashboard(options =>
                     {
                         options.HideTrace = true;
+                        options.Port = 8083;
                     });
                 });
     }

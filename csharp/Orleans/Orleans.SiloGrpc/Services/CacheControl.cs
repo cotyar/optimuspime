@@ -18,13 +18,11 @@ namespace Orleans.SiloGrpc.Services
     {
         private readonly ILogger<FakeDataSource> _logger;
         private readonly IClusterClient _orleansClient;
-        private GrpcChannel _channel;
 
         public CacheControl(ILogger<FakeDataSource> logger, IClusterClient orleansClient)
         {
             _logger = logger;
             _orleansClient = orleansClient;
-            _channel = GrpcChannel.ForAddress("http://localhost:8085");
         }
 
         public override async Task<CacheInvalidateResponse> Invalidate(CacheInvalidateRequest request, ServerCallContext context)

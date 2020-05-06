@@ -8,11 +8,11 @@ services:
       context: .
       dockerfile: Orleans/Orleans.SiloGrpc/Dockerfile
     ports:
-      - 8080
+      - 8081
       - 8082
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:8080
+      - ASPNETCORE_URLS=http://+:8081
     volumes:
       - ~/.vsdbg:/remote_debugger:rw
   fake-datasource:

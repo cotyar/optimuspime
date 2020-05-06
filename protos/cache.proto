@@ -4,6 +4,8 @@ option csharp_namespace = "CalculationService";
 
 package calc;
 
+import "google/api/annotations.proto";
+
 import public "moniker.proto";
 
 
@@ -12,8 +14,19 @@ import public "moniker.proto";
 //////////////////////
 
 service DataSource {
-  rpc Get(DataSourceGetRequest) returns (stream DataSourceGetResponse) {}
+  rpc GetVersion(DataSourceGetVersionRequest) returns (DataSourceGetResponse) {
+    option (google.api.http) = {
+      get: "/v1/datasource/{id.id.key}/{id.version}"
+    };
+  }
+
+  rpc Get(DataSourceGetRequest) returns (stream DataSourceGetResponse) { }
 }
+
+message DataSourceGetVersionRequest {
+  MonikerVersionId id = 1;
+}
+
 
 message DataSourceGetRequest {
   MonikerId id = 1;
@@ -33,8 +46,19 @@ message DataSourceGetResponse {
 
 service CacheControl {
   //rpc Put(stream CachePutRequest) returns (CachePutResponse) {}
-  rpc Invalidate(CacheInvalidateRequest) returns (CacheInvalidateResponse) {}
-  rpc Clear(CacheClearRequest) returns (CacheClearResponse) {}
+  rpc Invalidate(CacheInvalidateRequest) returns (CacheInvalidateResponse) {
+    option (google.api.http) = {
+      delete: "/v1/invalidate/{id.id.key}/{id.version}"
+      body: "*"
+    };
+  }
+
+  rpc Clear(CacheClearRequest) returns (CacheClearResponse) {
+    option (google.api.http) = {
+      delete: "/v1/clear"
+      body: "*"
+    };
+  }
 }
 
 //message CachePutRequest {
@@ -50,7 +74,7 @@ service CacheControl {
 //}
 
 message CacheInvalidateRequest {
-  MonikerId id = 1;
+  MonikerVersionId id = 1;
 }
 
 message CacheInvalidateResponse {

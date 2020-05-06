@@ -24,57 +24,65 @@ namespace CalculationService {
     static CacheReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgtjYWNoZS5wcm90bxIEY2FsYxoNbW9uaWtlci5wcm90byIzChREYXRhU291",
-            "cmNlR2V0UmVxdWVzdBIbCgJpZBgBIAEoCzIPLmNhbGMuTW9uaWtlcklkIo0B",
-            "ChVEYXRhU291cmNlR2V0UmVzcG9uc2USJAoHc3VjY2VzcxgBIAEoCzIRLmNh",
-            "bGMuU3RvcmVkVmFsdWVIABIjCghub3RGb3VuZBgCIAEoCzIPLmNhbGMuTW9u",
-            "aWtlcklkSAASIQoFZXJyb3IYZCABKAsyEC5jYWxjLkNhY2hlRXJyb3JIAEIG",
-            "CgRSZXNwIjUKFkNhY2hlSW52YWxpZGF0ZVJlcXVlc3QSGwoCaWQYASABKAsy",
-            "Dy5jYWxjLk1vbmlrZXJJZCKUAQoXQ2FjaGVJbnZhbGlkYXRlUmVzcG9uc2US",
-            "KQoHc3VjY2VzcxgBIAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eUgAEiMK",
-            "CG5vdEZvdW5kGAIgASgLMg8uY2FsYy5Nb25pa2VySWRIABIhCgVlcnJvchhk",
-            "IAEoCzIQLmNhbGMuQ2FjaGVFcnJvckgAQgYKBFJlc3AiEwoRQ2FjaGVDbGVh",
-            "clJlcXVlc3QiagoSQ2FjaGVDbGVhclJlc3BvbnNlEikKB3N1Y2Nlc3MYASAB",
-            "KAsyFi5nb29nbGUucHJvdG9idWYuRW1wdHlIABIhCgVlcnJvchhkIAEoCzIQ",
-            "LmNhbGMuQ2FjaGVFcnJvckgAQgYKBFJlc3AiMAoKQ2FjaGVFcnJvchIiCgVl",
-            "cnJvchgBIAEoCzITLmNhbGMuSW50ZXJuYWxFcnJvciIwChdNb25pdG9yaW5n",
-            "VXBkYXRlUmVxdWVzdBIVCg1jb3JyZWxhdGlvbklkGAEgASgJIj8KGE1vbml0",
-            "b3JpbmdVcGRhdGVSZXNwb25zZRIjCgZzdGF0dXMYASABKAsyEy5jYWxjLlJl",
-            "cGxpY2FTdGF0dXMiuQIKDVJlcGxpY2FTdGF0dXMSEQoJcmVwbGljYUlkGAEg",
-            "ASgJEjMKDmNvbm5lY3Rpb25JbmZvGAIgASgLMhsuY2FsYy5SZXBsaWNhQ29u",
-            "bmVjdGlvbkluZm8SKwoHc3RhcnRlZBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1",
-            "Zi5UaW1lc3RhbXASMAoMY3VycmVudENsb2NrGAUgASgLMhouZ29vZ2xlLnBy",
-            "b3RvYnVmLlRpbWVzdGFtcBInCghjb3VudGVycxgKIAEoCzIVLmNhbGMuUmVw",
-            "bGljYUNvdW50ZXJzEiwKDmNvbGxlY3RlZFN0YXRzGAsgASgLMhQuY2FsYy5D",
-            "b2xsZWN0ZWRTdGF0cxIqCg1jbHVzdGVyU3RhdHVzGAwgASgLMhMuY2FsYy5D",
-            "bHVzdGVyU3RhdHVzIpIBCg1DbHVzdGVyU3RhdHVzEjMKCHJlcGxpY2FzGAEg",
-            "AygLMiEuY2FsYy5DbHVzdGVyU3RhdHVzLlJlcGxpY2FzRW50cnkaTAoNUmVw",
-            "bGljYXNFbnRyeRILCgNrZXkYASABKAkSKgoFdmFsdWUYAiABKAsyGy5jYWxj",
-            "LlJlcGxpY2FDb25uZWN0aW9uSW5mbzoCOAEiMwoVUmVwbGljYUNvbm5lY3Rp",
-            "b25JbmZvEgwKBGhvc3QYASABKAkSDAoEcG9ydBgCIAEoDSK6AgoPUmVwbGlj",
-            "YUNvdW50ZXJzEhMKC2FkZHNDb3VudGVyGAEgASgEEhYKDmRlbGV0ZXNDb3Vu",
-            "dGVyGAIgASgEEhQKDGNvcHlzQ291bnRlchgDIAEoBBISCgpnZXRDb3VudGVy",
-            "GAQgASgEEhcKD2NvbnRhaW5zQ291bnRlchgFIAEoBBIYChBrZXlTZWFyY2hD",
-            "b3VudGVyGAYgASgEEh0KFW1ldGFkYXRhU2VhcmNoQ291bnRlchgHIAEoBBIZ",
-            "ChFwYWdlU2VhcmNoQ291bnRlchgIIAEoBBIWCg5sYXJnZXN0S2V5U2l6ZRgK",
-            "IAEoDRIYChBsYXJnZXN0VmFsdWVTaXplGAsgASgNEhYKDnJlcGxpY2F0ZWRB",
-            "ZGRzGA8gASgEEhkKEXJlcGxpY2F0ZWREZWxldGVzGBAgASgEIncKDkNvbGxl",
-            "Y3RlZFN0YXRzEhYKDm5vbkV4cGlyZWRLZXlzGAogASgEEg8KB2FsbEtleXMY",
-            "CyABKAQSEgoKYWN0aXZlS2V5cxgMIAEoBBITCgtkZWxldGVkS2V5cxgNIAEo",
-            "BBITCgtleHBpcmVkS2V5cxgOIAEoBDJQCgpEYXRhU291cmNlEkIKA0dldBIa",
-            "LmNhbGMuRGF0YVNvdXJjZUdldFJlcXVlc3QaGy5jYWxjLkRhdGFTb3VyY2VH",
-            "ZXRSZXNwb25zZSIAMAEymQEKDENhY2hlQ29udHJvbBJLCgpJbnZhbGlkYXRl",
-            "EhwuY2FsYy5DYWNoZUludmFsaWRhdGVSZXF1ZXN0Gh0uY2FsYy5DYWNoZUlu",
-            "dmFsaWRhdGVSZXNwb25zZSIAEjwKBUNsZWFyEhcuY2FsYy5DYWNoZUNsZWFy",
-            "UmVxdWVzdBoYLmNhbGMuQ2FjaGVDbGVhclJlc3BvbnNlIgAysQEKEU1vbml0",
-            "b3JpbmdTZXJ2aWNlEkwKCUdldFN0YXR1cxIdLmNhbGMuTW9uaXRvcmluZ1Vw",
-            "ZGF0ZVJlcXVlc3QaHi5jYWxjLk1vbml0b3JpbmdVcGRhdGVSZXNwb25zZSIA",
-            "Ek4KCVN1YnNjcmliZRIdLmNhbGMuTW9uaXRvcmluZ1VwZGF0ZVJlcXVlc3Qa",
-            "Hi5jYWxjLk1vbml0b3JpbmdVcGRhdGVSZXNwb25zZSIAMAFCFaoCEkNhbGN1",
-            "bGF0aW9uU2VydmljZVAAYgZwcm90bzM="));
+            "CgtjYWNoZS5wcm90bxIEY2FsYxocZ29vZ2xlL2FwaS9hbm5vdGF0aW9ucy5w",
+            "cm90bxoNbW9uaWtlci5wcm90byJBChtEYXRhU291cmNlR2V0VmVyc2lvblJl",
+            "cXVlc3QSIgoCaWQYASABKAsyFi5jYWxjLk1vbmlrZXJWZXJzaW9uSWQiMwoU",
+            "RGF0YVNvdXJjZUdldFJlcXVlc3QSGwoCaWQYASABKAsyDy5jYWxjLk1vbmlr",
+            "ZXJJZCKNAQoVRGF0YVNvdXJjZUdldFJlc3BvbnNlEiQKB3N1Y2Nlc3MYASAB",
+            "KAsyES5jYWxjLlN0b3JlZFZhbHVlSAASIwoIbm90Rm91bmQYAiABKAsyDy5j",
+            "YWxjLk1vbmlrZXJJZEgAEiEKBWVycm9yGGQgASgLMhAuY2FsYy5DYWNoZUVy",
+            "cm9ySABCBgoEUmVzcCI8ChZDYWNoZUludmFsaWRhdGVSZXF1ZXN0EiIKAmlk",
+            "GAEgASgLMhYuY2FsYy5Nb25pa2VyVmVyc2lvbklkIpQBChdDYWNoZUludmFs",
+            "aWRhdGVSZXNwb25zZRIpCgdzdWNjZXNzGAEgASgLMhYuZ29vZ2xlLnByb3Rv",
+            "YnVmLkVtcHR5SAASIwoIbm90Rm91bmQYAiABKAsyDy5jYWxjLk1vbmlrZXJJ",
+            "ZEgAEiEKBWVycm9yGGQgASgLMhAuY2FsYy5DYWNoZUVycm9ySABCBgoEUmVz",
+            "cCITChFDYWNoZUNsZWFyUmVxdWVzdCJqChJDYWNoZUNsZWFyUmVzcG9uc2US",
+            "KQoHc3VjY2VzcxgBIAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eUgAEiEK",
+            "BWVycm9yGGQgASgLMhAuY2FsYy5DYWNoZUVycm9ySABCBgoEUmVzcCIwCgpD",
+            "YWNoZUVycm9yEiIKBWVycm9yGAEgASgLMhMuY2FsYy5JbnRlcm5hbEVycm9y",
+            "IjAKF01vbml0b3JpbmdVcGRhdGVSZXF1ZXN0EhUKDWNvcnJlbGF0aW9uSWQY",
+            "ASABKAkiPwoYTW9uaXRvcmluZ1VwZGF0ZVJlc3BvbnNlEiMKBnN0YXR1cxgB",
+            "IAEoCzITLmNhbGMuUmVwbGljYVN0YXR1cyK5AgoNUmVwbGljYVN0YXR1cxIR",
+            "CglyZXBsaWNhSWQYASABKAkSMwoOY29ubmVjdGlvbkluZm8YAiABKAsyGy5j",
+            "YWxjLlJlcGxpY2FDb25uZWN0aW9uSW5mbxIrCgdzdGFydGVkGAMgASgLMhou",
+            "Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIwCgxjdXJyZW50Q2xvY2sYBSAB",
+            "KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEicKCGNvdW50ZXJzGAog",
+            "ASgLMhUuY2FsYy5SZXBsaWNhQ291bnRlcnMSLAoOY29sbGVjdGVkU3RhdHMY",
+            "CyABKAsyFC5jYWxjLkNvbGxlY3RlZFN0YXRzEioKDWNsdXN0ZXJTdGF0dXMY",
+            "DCABKAsyEy5jYWxjLkNsdXN0ZXJTdGF0dXMikgEKDUNsdXN0ZXJTdGF0dXMS",
+            "MwoIcmVwbGljYXMYASADKAsyIS5jYWxjLkNsdXN0ZXJTdGF0dXMuUmVwbGlj",
+            "YXNFbnRyeRpMCg1SZXBsaWNhc0VudHJ5EgsKA2tleRgBIAEoCRIqCgV2YWx1",
+            "ZRgCIAEoCzIbLmNhbGMuUmVwbGljYUNvbm5lY3Rpb25JbmZvOgI4ASIzChVS",
+            "ZXBsaWNhQ29ubmVjdGlvbkluZm8SDAoEaG9zdBgBIAEoCRIMCgRwb3J0GAIg",
+            "ASgNIroCCg9SZXBsaWNhQ291bnRlcnMSEwoLYWRkc0NvdW50ZXIYASABKAQS",
+            "FgoOZGVsZXRlc0NvdW50ZXIYAiABKAQSFAoMY29weXNDb3VudGVyGAMgASgE",
+            "EhIKCmdldENvdW50ZXIYBCABKAQSFwoPY29udGFpbnNDb3VudGVyGAUgASgE",
+            "EhgKEGtleVNlYXJjaENvdW50ZXIYBiABKAQSHQoVbWV0YWRhdGFTZWFyY2hD",
+            "b3VudGVyGAcgASgEEhkKEXBhZ2VTZWFyY2hDb3VudGVyGAggASgEEhYKDmxh",
+            "cmdlc3RLZXlTaXplGAogASgNEhgKEGxhcmdlc3RWYWx1ZVNpemUYCyABKA0S",
+            "FgoOcmVwbGljYXRlZEFkZHMYDyABKAQSGQoRcmVwbGljYXRlZERlbGV0ZXMY",
+            "ECABKAQidwoOQ29sbGVjdGVkU3RhdHMSFgoObm9uRXhwaXJlZEtleXMYCiAB",
+            "KAQSDwoHYWxsS2V5cxgLIAEoBBISCgphY3RpdmVLZXlzGAwgASgEEhMKC2Rl",
+            "bGV0ZWRLZXlzGA0gASgEEhMKC2V4cGlyZWRLZXlzGA4gASgEMs8BCgpEYXRh",
+            "U291cmNlEn0KCkdldFZlcnNpb24SIS5jYWxjLkRhdGFTb3VyY2VHZXRWZXJz",
+            "aW9uUmVxdWVzdBobLmNhbGMuRGF0YVNvdXJjZUdldFJlc3BvbnNlIi+C0+ST",
+            "AikSJy92MS9kYXRhc291cmNlL3tpZC5pZC5rZXl9L3tpZC52ZXJzaW9ufRJC",
+            "CgNHZXQSGi5jYWxjLkRhdGFTb3VyY2VHZXRSZXF1ZXN0GhsuY2FsYy5EYXRh",
+            "U291cmNlR2V0UmVzcG9uc2UiADABMt8BCgxDYWNoZUNvbnRyb2wSfQoKSW52",
+            "YWxpZGF0ZRIcLmNhbGMuQ2FjaGVJbnZhbGlkYXRlUmVxdWVzdBodLmNhbGMu",
+            "Q2FjaGVJbnZhbGlkYXRlUmVzcG9uc2UiMoLT5JMCLConL3YxL2ludmFsaWRh",
+            "dGUve2lkLmlkLmtleX0ve2lkLnZlcnNpb259OgEqElAKBUNsZWFyEhcuY2Fs",
+            "Yy5DYWNoZUNsZWFyUmVxdWVzdBoYLmNhbGMuQ2FjaGVDbGVhclJlc3BvbnNl",
+            "IhSC0+STAg4qCS92MS9jbGVhcjoBKjKxAQoRTW9uaXRvcmluZ1NlcnZpY2US",
+            "TAoJR2V0U3RhdHVzEh0uY2FsYy5Nb25pdG9yaW5nVXBkYXRlUmVxdWVzdBoe",
+            "LmNhbGMuTW9uaXRvcmluZ1VwZGF0ZVJlc3BvbnNlIgASTgoJU3Vic2NyaWJl",
+            "Eh0uY2FsYy5Nb25pdG9yaW5nVXBkYXRlUmVxdWVzdBoeLmNhbGMuTW9uaXRv",
+            "cmluZ1VwZGF0ZVJlc3BvbnNlIgAwAUIVqgISQ2FsY3VsYXRpb25TZXJ2aWNl",
+            "UAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::CalculationService.MonikerReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::CalculationService.MonikerReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::CalculationService.DataSourceGetVersionRequest), global::CalculationService.DataSourceGetVersionRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CalculationService.DataSourceGetRequest), global::CalculationService.DataSourceGetRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CalculationService.DataSourceGetResponse), global::CalculationService.DataSourceGetResponse.Parser, new[]{ "Success", "NotFound", "Error" }, new[]{ "Resp" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CalculationService.CacheInvalidateRequest), global::CalculationService.CacheInvalidateRequest.Parser, new[]{ "Id" }, null, null, null, null),
@@ -95,6 +103,141 @@ namespace CalculationService {
 
   }
   #region Messages
+  public sealed partial class DataSourceGetVersionRequest : pb::IMessage<DataSourceGetVersionRequest> {
+    private static readonly pb::MessageParser<DataSourceGetVersionRequest> _parser = new pb::MessageParser<DataSourceGetVersionRequest>(() => new DataSourceGetVersionRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DataSourceGetVersionRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DataSourceGetVersionRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DataSourceGetVersionRequest(DataSourceGetVersionRequest other) : this() {
+      id_ = other.id_ != null ? other.id_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DataSourceGetVersionRequest Clone() {
+      return new DataSourceGetVersionRequest(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private global::CalculationService.MonikerVersionId id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::CalculationService.MonikerVersionId Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DataSourceGetVersionRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DataSourceGetVersionRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Id, other.Id)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (id_ != null) hash ^= Id.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (id_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Id);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (id_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Id);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DataSourceGetVersionRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.id_ != null) {
+        if (id_ == null) {
+          Id = new global::CalculationService.MonikerVersionId();
+        }
+        Id.MergeFrom(other.Id);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (id_ == null) {
+              Id = new global::CalculationService.MonikerVersionId();
+            }
+            input.ReadMessage(Id);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class DataSourceGetRequest : pb::IMessage<DataSourceGetRequest> {
     private static readonly pb::MessageParser<DataSourceGetRequest> _parser = new pb::MessageParser<DataSourceGetRequest>(() => new DataSourceGetRequest());
     private pb::UnknownFieldSet _unknownFields;
@@ -103,7 +246,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[0]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -238,7 +381,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[1]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -481,7 +624,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[2]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -509,9 +652,9 @@ namespace CalculationService {
 
     /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
-    private global::CalculationService.MonikerId id_;
+    private global::CalculationService.MonikerVersionId id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::CalculationService.MonikerId Id {
+    public global::CalculationService.MonikerVersionId Id {
       get { return id_; }
       set {
         id_ = value;
@@ -580,7 +723,7 @@ namespace CalculationService {
       }
       if (other.id_ != null) {
         if (id_ == null) {
-          Id = new global::CalculationService.MonikerId();
+          Id = new global::CalculationService.MonikerVersionId();
         }
         Id.MergeFrom(other.Id);
       }
@@ -597,7 +740,7 @@ namespace CalculationService {
             break;
           case 10: {
             if (id_ == null) {
-              Id = new global::CalculationService.MonikerId();
+              Id = new global::CalculationService.MonikerVersionId();
             }
             input.ReadMessage(Id);
             break;
@@ -616,7 +759,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[3]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -859,7 +1002,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[4]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -960,7 +1103,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[5]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1164,7 +1307,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[6]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1299,7 +1442,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[7]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1428,7 +1571,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[8]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1563,7 +1706,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[9]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1899,7 +2042,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[10]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2020,7 +2163,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[11]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2180,7 +2323,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[12]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2617,7 +2760,7 @@ namespace CalculationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[13]; }
+      get { return global::CalculationService.CacheReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
