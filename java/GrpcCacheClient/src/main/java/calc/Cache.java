@@ -4,11876 +4,11709 @@
 package calc;
 
 public final class Cache {
-  private Cache() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
-
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface DataSourceGetRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:calc.DataSourceGetRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.calc.MonikerId id = 1;</code>
-     */
-    boolean hasId();
-    /**
-     * <code>.calc.MonikerId id = 1;</code>
-     */
-    calc.Moniker.MonikerId getId();
-    /**
-     * <code>.calc.MonikerId id = 1;</code>
-     */
-    calc.Moniker.MonikerIdOrBuilder getIdOrBuilder();
-  }
-  /**
-   * Protobuf type {@code calc.DataSourceGetRequest}
-   */
-  public  static final class DataSourceGetRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:calc.DataSourceGetRequest)
-      DataSourceGetRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use DataSourceGetRequest.newBuilder() to construct.
-    private DataSourceGetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private DataSourceGetRequest() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private DataSourceGetRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              calc.Moniker.MonikerId.Builder subBuilder = null;
-              if (id_ != null) {
-                subBuilder = id_.toBuilder();
-              }
-              id_ = input.readMessage(calc.Moniker.MonikerId.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(id_);
-                id_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return calc.Cache.internal_static_calc_DataSourceGetRequest_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return calc.Cache.internal_static_calc_DataSourceGetRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              calc.Cache.DataSourceGetRequest.class, calc.Cache.DataSourceGetRequest.Builder.class);
-    }
-
-    public static final int ID_FIELD_NUMBER = 1;
-    private calc.Moniker.MonikerId id_;
-    /**
-     * <code>.calc.MonikerId id = 1;</code>
-     */
-    public boolean hasId() {
-      return id_ != null;
-    }
-    /**
-     * <code>.calc.MonikerId id = 1;</code>
-     */
-    public calc.Moniker.MonikerId getId() {
-      return id_ == null ? calc.Moniker.MonikerId.getDefaultInstance() : id_;
-    }
-    /**
-     * <code>.calc.MonikerId id = 1;</code>
-     */
-    public calc.Moniker.MonikerIdOrBuilder getIdOrBuilder() {
-      return getId();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (id_ != null) {
-        output.writeMessage(1, getId());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (id_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getId());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof calc.Cache.DataSourceGetRequest)) {
-        return super.equals(obj);
-      }
-      calc.Cache.DataSourceGetRequest other = (calc.Cache.DataSourceGetRequest) obj;
-
-      boolean result = true;
-      result = result && (hasId() == other.hasId());
-      if (hasId()) {
-        result = result && getId()
-            .equals(other.getId());
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + getId().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static calc.Cache.DataSourceGetRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.DataSourceGetRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.DataSourceGetRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.DataSourceGetRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.DataSourceGetRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.DataSourceGetRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.DataSourceGetRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.DataSourceGetRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.DataSourceGetRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static calc.Cache.DataSourceGetRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.DataSourceGetRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.DataSourceGetRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(calc.Cache.DataSourceGetRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code calc.DataSourceGetRequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:calc.DataSourceGetRequest)
-        calc.Cache.DataSourceGetRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return calc.Cache.internal_static_calc_DataSourceGetRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return calc.Cache.internal_static_calc_DataSourceGetRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                calc.Cache.DataSourceGetRequest.class, calc.Cache.DataSourceGetRequest.Builder.class);
-      }
-
-      // Construct using calc.Cache.DataSourceGetRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (idBuilder_ == null) {
-          id_ = null;
-        } else {
-          id_ = null;
-          idBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return calc.Cache.internal_static_calc_DataSourceGetRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public calc.Cache.DataSourceGetRequest getDefaultInstanceForType() {
-        return calc.Cache.DataSourceGetRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public calc.Cache.DataSourceGetRequest build() {
-        calc.Cache.DataSourceGetRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public calc.Cache.DataSourceGetRequest buildPartial() {
-        calc.Cache.DataSourceGetRequest result = new calc.Cache.DataSourceGetRequest(this);
-        if (idBuilder_ == null) {
-          result.id_ = id_;
-        } else {
-          result.id_ = idBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof calc.Cache.DataSourceGetRequest) {
-          return mergeFrom((calc.Cache.DataSourceGetRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(calc.Cache.DataSourceGetRequest other) {
-        if (other == calc.Cache.DataSourceGetRequest.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          mergeId(other.getId());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        calc.Cache.DataSourceGetRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (calc.Cache.DataSourceGetRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private calc.Moniker.MonikerId id_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder> idBuilder_;
-      /**
-       * <code>.calc.MonikerId id = 1;</code>
-       */
-      public boolean hasId() {
-        return idBuilder_ != null || id_ != null;
-      }
-      /**
-       * <code>.calc.MonikerId id = 1;</code>
-       */
-      public calc.Moniker.MonikerId getId() {
-        if (idBuilder_ == null) {
-          return id_ == null ? calc.Moniker.MonikerId.getDefaultInstance() : id_;
-        } else {
-          return idBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.calc.MonikerId id = 1;</code>
-       */
-      public Builder setId(calc.Moniker.MonikerId value) {
-        if (idBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          id_ = value;
-          onChanged();
-        } else {
-          idBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.MonikerId id = 1;</code>
-       */
-      public Builder setId(
-          calc.Moniker.MonikerId.Builder builderForValue) {
-        if (idBuilder_ == null) {
-          id_ = builderForValue.build();
-          onChanged();
-        } else {
-          idBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.MonikerId id = 1;</code>
-       */
-      public Builder mergeId(calc.Moniker.MonikerId value) {
-        if (idBuilder_ == null) {
-          if (id_ != null) {
-            id_ =
-              calc.Moniker.MonikerId.newBuilder(id_).mergeFrom(value).buildPartial();
-          } else {
-            id_ = value;
-          }
-          onChanged();
-        } else {
-          idBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.MonikerId id = 1;</code>
-       */
-      public Builder clearId() {
-        if (idBuilder_ == null) {
-          id_ = null;
-          onChanged();
-        } else {
-          id_ = null;
-          idBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.MonikerId id = 1;</code>
-       */
-      public calc.Moniker.MonikerId.Builder getIdBuilder() {
-        
-        onChanged();
-        return getIdFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.calc.MonikerId id = 1;</code>
-       */
-      public calc.Moniker.MonikerIdOrBuilder getIdOrBuilder() {
-        if (idBuilder_ != null) {
-          return idBuilder_.getMessageOrBuilder();
-        } else {
-          return id_ == null ?
-              calc.Moniker.MonikerId.getDefaultInstance() : id_;
-        }
-      }
-      /**
-       * <code>.calc.MonikerId id = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder> 
-          getIdFieldBuilder() {
-        if (idBuilder_ == null) {
-          idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder>(
-                  getId(),
-                  getParentForChildren(),
-                  isClean());
-          id_ = null;
-        }
-        return idBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:calc.DataSourceGetRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:calc.DataSourceGetRequest)
-    private static final calc.Cache.DataSourceGetRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new calc.Cache.DataSourceGetRequest();
-    }
-
-    public static calc.Cache.DataSourceGetRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<DataSourceGetRequest>
-        PARSER = new com.google.protobuf.AbstractParser<DataSourceGetRequest>() {
-      @java.lang.Override
-      public DataSourceGetRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DataSourceGetRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<DataSourceGetRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<DataSourceGetRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public calc.Cache.DataSourceGetRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface DataSourceGetResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:calc.DataSourceGetResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.calc.StoredValue success = 1;</code>
-     */
-    boolean hasSuccess();
-    /**
-     * <code>.calc.StoredValue success = 1;</code>
-     */
-    calc.Moniker.StoredValue getSuccess();
-    /**
-     * <code>.calc.StoredValue success = 1;</code>
-     */
-    calc.Moniker.StoredValueOrBuilder getSuccessOrBuilder();
-
-    /**
-     * <code>.calc.MonikerId notFound = 2;</code>
-     */
-    boolean hasNotFound();
-    /**
-     * <code>.calc.MonikerId notFound = 2;</code>
-     */
-    calc.Moniker.MonikerId getNotFound();
-    /**
-     * <code>.calc.MonikerId notFound = 2;</code>
-     */
-    calc.Moniker.MonikerIdOrBuilder getNotFoundOrBuilder();
-
-    /**
-     * <code>.calc.CacheError error = 100;</code>
-     */
-    boolean hasError();
-    /**
-     * <code>.calc.CacheError error = 100;</code>
-     */
-    calc.Cache.CacheError getError();
-    /**
-     * <code>.calc.CacheError error = 100;</code>
-     */
-    calc.Cache.CacheErrorOrBuilder getErrorOrBuilder();
-
-    public calc.Cache.DataSourceGetResponse.RespCase getRespCase();
-  }
-  /**
-   * Protobuf type {@code calc.DataSourceGetResponse}
-   */
-  public  static final class DataSourceGetResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:calc.DataSourceGetResponse)
-      DataSourceGetResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use DataSourceGetResponse.newBuilder() to construct.
-    private DataSourceGetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private DataSourceGetResponse() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private DataSourceGetResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              calc.Moniker.StoredValue.Builder subBuilder = null;
-              if (respCase_ == 1) {
-                subBuilder = ((calc.Moniker.StoredValue) resp_).toBuilder();
-              }
-              resp_ =
-                  input.readMessage(calc.Moniker.StoredValue.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((calc.Moniker.StoredValue) resp_);
-                resp_ = subBuilder.buildPartial();
-              }
-              respCase_ = 1;
-              break;
-            }
-            case 18: {
-              calc.Moniker.MonikerId.Builder subBuilder = null;
-              if (respCase_ == 2) {
-                subBuilder = ((calc.Moniker.MonikerId) resp_).toBuilder();
-              }
-              resp_ =
-                  input.readMessage(calc.Moniker.MonikerId.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((calc.Moniker.MonikerId) resp_);
-                resp_ = subBuilder.buildPartial();
-              }
-              respCase_ = 2;
-              break;
-            }
-            case 802: {
-              calc.Cache.CacheError.Builder subBuilder = null;
-              if (respCase_ == 100) {
-                subBuilder = ((calc.Cache.CacheError) resp_).toBuilder();
-              }
-              resp_ =
-                  input.readMessage(calc.Cache.CacheError.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((calc.Cache.CacheError) resp_);
-                resp_ = subBuilder.buildPartial();
-              }
-              respCase_ = 100;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return calc.Cache.internal_static_calc_DataSourceGetResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return calc.Cache.internal_static_calc_DataSourceGetResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              calc.Cache.DataSourceGetResponse.class, calc.Cache.DataSourceGetResponse.Builder.class);
-    }
-
-    private int respCase_ = 0;
-    private java.lang.Object resp_;
-    public enum RespCase
-        implements com.google.protobuf.Internal.EnumLite {
-      SUCCESS(1),
-      NOTFOUND(2),
-      ERROR(100),
-      RESP_NOT_SET(0);
-      private final int value;
-      private RespCase(int value) {
-        this.value = value;
-      }
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static RespCase valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static RespCase forNumber(int value) {
-        switch (value) {
-          case 1: return SUCCESS;
-          case 2: return NOTFOUND;
-          case 100: return ERROR;
-          case 0: return RESP_NOT_SET;
-          default: return null;
-        }
-      }
-      public int getNumber() {
-        return this.value;
-      }
-    };
-
-    public RespCase
-    getRespCase() {
-      return RespCase.forNumber(
-          respCase_);
-    }
-
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    /**
-     * <code>.calc.StoredValue success = 1;</code>
-     */
-    public boolean hasSuccess() {
-      return respCase_ == 1;
-    }
-    /**
-     * <code>.calc.StoredValue success = 1;</code>
-     */
-    public calc.Moniker.StoredValue getSuccess() {
-      if (respCase_ == 1) {
-         return (calc.Moniker.StoredValue) resp_;
-      }
-      return calc.Moniker.StoredValue.getDefaultInstance();
-    }
-    /**
-     * <code>.calc.StoredValue success = 1;</code>
-     */
-    public calc.Moniker.StoredValueOrBuilder getSuccessOrBuilder() {
-      if (respCase_ == 1) {
-         return (calc.Moniker.StoredValue) resp_;
-      }
-      return calc.Moniker.StoredValue.getDefaultInstance();
-    }
-
-    public static final int NOTFOUND_FIELD_NUMBER = 2;
-    /**
-     * <code>.calc.MonikerId notFound = 2;</code>
-     */
-    public boolean hasNotFound() {
-      return respCase_ == 2;
-    }
-    /**
-     * <code>.calc.MonikerId notFound = 2;</code>
-     */
-    public calc.Moniker.MonikerId getNotFound() {
-      if (respCase_ == 2) {
-         return (calc.Moniker.MonikerId) resp_;
-      }
-      return calc.Moniker.MonikerId.getDefaultInstance();
-    }
-    /**
-     * <code>.calc.MonikerId notFound = 2;</code>
-     */
-    public calc.Moniker.MonikerIdOrBuilder getNotFoundOrBuilder() {
-      if (respCase_ == 2) {
-         return (calc.Moniker.MonikerId) resp_;
-      }
-      return calc.Moniker.MonikerId.getDefaultInstance();
-    }
-
-    public static final int ERROR_FIELD_NUMBER = 100;
-    /**
-     * <code>.calc.CacheError error = 100;</code>
-     */
-    public boolean hasError() {
-      return respCase_ == 100;
-    }
-    /**
-     * <code>.calc.CacheError error = 100;</code>
-     */
-    public calc.Cache.CacheError getError() {
-      if (respCase_ == 100) {
-         return (calc.Cache.CacheError) resp_;
-      }
-      return calc.Cache.CacheError.getDefaultInstance();
-    }
-    /**
-     * <code>.calc.CacheError error = 100;</code>
-     */
-    public calc.Cache.CacheErrorOrBuilder getErrorOrBuilder() {
-      if (respCase_ == 100) {
-         return (calc.Cache.CacheError) resp_;
-      }
-      return calc.Cache.CacheError.getDefaultInstance();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (respCase_ == 1) {
-        output.writeMessage(1, (calc.Moniker.StoredValue) resp_);
-      }
-      if (respCase_ == 2) {
-        output.writeMessage(2, (calc.Moniker.MonikerId) resp_);
-      }
-      if (respCase_ == 100) {
-        output.writeMessage(100, (calc.Cache.CacheError) resp_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (respCase_ == 1) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (calc.Moniker.StoredValue) resp_);
-      }
-      if (respCase_ == 2) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (calc.Moniker.MonikerId) resp_);
-      }
-      if (respCase_ == 100) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(100, (calc.Cache.CacheError) resp_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof calc.Cache.DataSourceGetResponse)) {
-        return super.equals(obj);
-      }
-      calc.Cache.DataSourceGetResponse other = (calc.Cache.DataSourceGetResponse) obj;
-
-      boolean result = true;
-      result = result && getRespCase().equals(
-          other.getRespCase());
-      if (!result) return false;
-      switch (respCase_) {
-        case 1:
-          result = result && getSuccess()
-              .equals(other.getSuccess());
-          break;
-        case 2:
-          result = result && getNotFound()
-              .equals(other.getNotFound());
-          break;
-        case 100:
-          result = result && getError()
-              .equals(other.getError());
-          break;
-        case 0:
-        default:
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      switch (respCase_) {
-        case 1:
-          hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
-          hash = (53 * hash) + getSuccess().hashCode();
-          break;
-        case 2:
-          hash = (37 * hash) + NOTFOUND_FIELD_NUMBER;
-          hash = (53 * hash) + getNotFound().hashCode();
-          break;
-        case 100:
-          hash = (37 * hash) + ERROR_FIELD_NUMBER;
-          hash = (53 * hash) + getError().hashCode();
-          break;
-        case 0:
-        default:
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static calc.Cache.DataSourceGetResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.DataSourceGetResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.DataSourceGetResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.DataSourceGetResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.DataSourceGetResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.DataSourceGetResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.DataSourceGetResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.DataSourceGetResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.DataSourceGetResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static calc.Cache.DataSourceGetResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.DataSourceGetResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.DataSourceGetResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(calc.Cache.DataSourceGetResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code calc.DataSourceGetResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:calc.DataSourceGetResponse)
-        calc.Cache.DataSourceGetResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return calc.Cache.internal_static_calc_DataSourceGetResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return calc.Cache.internal_static_calc_DataSourceGetResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                calc.Cache.DataSourceGetResponse.class, calc.Cache.DataSourceGetResponse.Builder.class);
-      }
-
-      // Construct using calc.Cache.DataSourceGetResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        respCase_ = 0;
-        resp_ = null;
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return calc.Cache.internal_static_calc_DataSourceGetResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public calc.Cache.DataSourceGetResponse getDefaultInstanceForType() {
-        return calc.Cache.DataSourceGetResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public calc.Cache.DataSourceGetResponse build() {
-        calc.Cache.DataSourceGetResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public calc.Cache.DataSourceGetResponse buildPartial() {
-        calc.Cache.DataSourceGetResponse result = new calc.Cache.DataSourceGetResponse(this);
-        if (respCase_ == 1) {
-          if (successBuilder_ == null) {
-            result.resp_ = resp_;
-          } else {
-            result.resp_ = successBuilder_.build();
-          }
-        }
-        if (respCase_ == 2) {
-          if (notFoundBuilder_ == null) {
-            result.resp_ = resp_;
-          } else {
-            result.resp_ = notFoundBuilder_.build();
-          }
-        }
-        if (respCase_ == 100) {
-          if (errorBuilder_ == null) {
-            result.resp_ = resp_;
-          } else {
-            result.resp_ = errorBuilder_.build();
-          }
-        }
-        result.respCase_ = respCase_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof calc.Cache.DataSourceGetResponse) {
-          return mergeFrom((calc.Cache.DataSourceGetResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(calc.Cache.DataSourceGetResponse other) {
-        if (other == calc.Cache.DataSourceGetResponse.getDefaultInstance()) return this;
-        switch (other.getRespCase()) {
-          case SUCCESS: {
-            mergeSuccess(other.getSuccess());
-            break;
-          }
-          case NOTFOUND: {
-            mergeNotFound(other.getNotFound());
-            break;
-          }
-          case ERROR: {
-            mergeError(other.getError());
-            break;
-          }
-          case RESP_NOT_SET: {
-            break;
-          }
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        calc.Cache.DataSourceGetResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (calc.Cache.DataSourceGetResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int respCase_ = 0;
-      private java.lang.Object resp_;
-      public RespCase
-          getRespCase() {
-        return RespCase.forNumber(
-            respCase_);
-      }
-
-      public Builder clearResp() {
-        respCase_ = 0;
-        resp_ = null;
-        onChanged();
-        return this;
-      }
-
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Moniker.StoredValue, calc.Moniker.StoredValue.Builder, calc.Moniker.StoredValueOrBuilder> successBuilder_;
-      /**
-       * <code>.calc.StoredValue success = 1;</code>
-       */
-      public boolean hasSuccess() {
-        return respCase_ == 1;
-      }
-      /**
-       * <code>.calc.StoredValue success = 1;</code>
-       */
-      public calc.Moniker.StoredValue getSuccess() {
-        if (successBuilder_ == null) {
-          if (respCase_ == 1) {
-            return (calc.Moniker.StoredValue) resp_;
-          }
-          return calc.Moniker.StoredValue.getDefaultInstance();
-        } else {
-          if (respCase_ == 1) {
-            return successBuilder_.getMessage();
-          }
-          return calc.Moniker.StoredValue.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.calc.StoredValue success = 1;</code>
-       */
-      public Builder setSuccess(calc.Moniker.StoredValue value) {
-        if (successBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          resp_ = value;
-          onChanged();
-        } else {
-          successBuilder_.setMessage(value);
-        }
-        respCase_ = 1;
-        return this;
-      }
-      /**
-       * <code>.calc.StoredValue success = 1;</code>
-       */
-      public Builder setSuccess(
-          calc.Moniker.StoredValue.Builder builderForValue) {
-        if (successBuilder_ == null) {
-          resp_ = builderForValue.build();
-          onChanged();
-        } else {
-          successBuilder_.setMessage(builderForValue.build());
-        }
-        respCase_ = 1;
-        return this;
-      }
-      /**
-       * <code>.calc.StoredValue success = 1;</code>
-       */
-      public Builder mergeSuccess(calc.Moniker.StoredValue value) {
-        if (successBuilder_ == null) {
-          if (respCase_ == 1 &&
-              resp_ != calc.Moniker.StoredValue.getDefaultInstance()) {
-            resp_ = calc.Moniker.StoredValue.newBuilder((calc.Moniker.StoredValue) resp_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            resp_ = value;
-          }
-          onChanged();
-        } else {
-          if (respCase_ == 1) {
-            successBuilder_.mergeFrom(value);
-          }
-          successBuilder_.setMessage(value);
-        }
-        respCase_ = 1;
-        return this;
-      }
-      /**
-       * <code>.calc.StoredValue success = 1;</code>
-       */
-      public Builder clearSuccess() {
-        if (successBuilder_ == null) {
-          if (respCase_ == 1) {
-            respCase_ = 0;
-            resp_ = null;
-            onChanged();
-          }
-        } else {
-          if (respCase_ == 1) {
-            respCase_ = 0;
-            resp_ = null;
-          }
-          successBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.calc.StoredValue success = 1;</code>
-       */
-      public calc.Moniker.StoredValue.Builder getSuccessBuilder() {
-        return getSuccessFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.calc.StoredValue success = 1;</code>
-       */
-      public calc.Moniker.StoredValueOrBuilder getSuccessOrBuilder() {
-        if ((respCase_ == 1) && (successBuilder_ != null)) {
-          return successBuilder_.getMessageOrBuilder();
-        } else {
-          if (respCase_ == 1) {
-            return (calc.Moniker.StoredValue) resp_;
-          }
-          return calc.Moniker.StoredValue.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.calc.StoredValue success = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Moniker.StoredValue, calc.Moniker.StoredValue.Builder, calc.Moniker.StoredValueOrBuilder> 
-          getSuccessFieldBuilder() {
-        if (successBuilder_ == null) {
-          if (!(respCase_ == 1)) {
-            resp_ = calc.Moniker.StoredValue.getDefaultInstance();
-          }
-          successBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              calc.Moniker.StoredValue, calc.Moniker.StoredValue.Builder, calc.Moniker.StoredValueOrBuilder>(
-                  (calc.Moniker.StoredValue) resp_,
-                  getParentForChildren(),
-                  isClean());
-          resp_ = null;
-        }
-        respCase_ = 1;
-        onChanged();;
-        return successBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder> notFoundBuilder_;
-      /**
-       * <code>.calc.MonikerId notFound = 2;</code>
-       */
-      public boolean hasNotFound() {
-        return respCase_ == 2;
-      }
-      /**
-       * <code>.calc.MonikerId notFound = 2;</code>
-       */
-      public calc.Moniker.MonikerId getNotFound() {
-        if (notFoundBuilder_ == null) {
-          if (respCase_ == 2) {
-            return (calc.Moniker.MonikerId) resp_;
-          }
-          return calc.Moniker.MonikerId.getDefaultInstance();
-        } else {
-          if (respCase_ == 2) {
-            return notFoundBuilder_.getMessage();
-          }
-          return calc.Moniker.MonikerId.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.calc.MonikerId notFound = 2;</code>
-       */
-      public Builder setNotFound(calc.Moniker.MonikerId value) {
-        if (notFoundBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          resp_ = value;
-          onChanged();
-        } else {
-          notFoundBuilder_.setMessage(value);
-        }
-        respCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.calc.MonikerId notFound = 2;</code>
-       */
-      public Builder setNotFound(
-          calc.Moniker.MonikerId.Builder builderForValue) {
-        if (notFoundBuilder_ == null) {
-          resp_ = builderForValue.build();
-          onChanged();
-        } else {
-          notFoundBuilder_.setMessage(builderForValue.build());
-        }
-        respCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.calc.MonikerId notFound = 2;</code>
-       */
-      public Builder mergeNotFound(calc.Moniker.MonikerId value) {
-        if (notFoundBuilder_ == null) {
-          if (respCase_ == 2 &&
-              resp_ != calc.Moniker.MonikerId.getDefaultInstance()) {
-            resp_ = calc.Moniker.MonikerId.newBuilder((calc.Moniker.MonikerId) resp_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            resp_ = value;
-          }
-          onChanged();
-        } else {
-          if (respCase_ == 2) {
-            notFoundBuilder_.mergeFrom(value);
-          }
-          notFoundBuilder_.setMessage(value);
-        }
-        respCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.calc.MonikerId notFound = 2;</code>
-       */
-      public Builder clearNotFound() {
-        if (notFoundBuilder_ == null) {
-          if (respCase_ == 2) {
-            respCase_ = 0;
-            resp_ = null;
-            onChanged();
-          }
-        } else {
-          if (respCase_ == 2) {
-            respCase_ = 0;
-            resp_ = null;
-          }
-          notFoundBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.calc.MonikerId notFound = 2;</code>
-       */
-      public calc.Moniker.MonikerId.Builder getNotFoundBuilder() {
-        return getNotFoundFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.calc.MonikerId notFound = 2;</code>
-       */
-      public calc.Moniker.MonikerIdOrBuilder getNotFoundOrBuilder() {
-        if ((respCase_ == 2) && (notFoundBuilder_ != null)) {
-          return notFoundBuilder_.getMessageOrBuilder();
-        } else {
-          if (respCase_ == 2) {
-            return (calc.Moniker.MonikerId) resp_;
-          }
-          return calc.Moniker.MonikerId.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.calc.MonikerId notFound = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder> 
-          getNotFoundFieldBuilder() {
-        if (notFoundBuilder_ == null) {
-          if (!(respCase_ == 2)) {
-            resp_ = calc.Moniker.MonikerId.getDefaultInstance();
-          }
-          notFoundBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder>(
-                  (calc.Moniker.MonikerId) resp_,
-                  getParentForChildren(),
-                  isClean());
-          resp_ = null;
-        }
-        respCase_ = 2;
-        onChanged();;
-        return notFoundBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Cache.CacheError, calc.Cache.CacheError.Builder, calc.Cache.CacheErrorOrBuilder> errorBuilder_;
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public boolean hasError() {
-        return respCase_ == 100;
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public calc.Cache.CacheError getError() {
-        if (errorBuilder_ == null) {
-          if (respCase_ == 100) {
-            return (calc.Cache.CacheError) resp_;
-          }
-          return calc.Cache.CacheError.getDefaultInstance();
-        } else {
-          if (respCase_ == 100) {
-            return errorBuilder_.getMessage();
-          }
-          return calc.Cache.CacheError.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public Builder setError(calc.Cache.CacheError value) {
-        if (errorBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          resp_ = value;
-          onChanged();
-        } else {
-          errorBuilder_.setMessage(value);
-        }
-        respCase_ = 100;
-        return this;
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public Builder setError(
-          calc.Cache.CacheError.Builder builderForValue) {
-        if (errorBuilder_ == null) {
-          resp_ = builderForValue.build();
-          onChanged();
-        } else {
-          errorBuilder_.setMessage(builderForValue.build());
-        }
-        respCase_ = 100;
-        return this;
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public Builder mergeError(calc.Cache.CacheError value) {
-        if (errorBuilder_ == null) {
-          if (respCase_ == 100 &&
-              resp_ != calc.Cache.CacheError.getDefaultInstance()) {
-            resp_ = calc.Cache.CacheError.newBuilder((calc.Cache.CacheError) resp_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            resp_ = value;
-          }
-          onChanged();
-        } else {
-          if (respCase_ == 100) {
-            errorBuilder_.mergeFrom(value);
-          }
-          errorBuilder_.setMessage(value);
-        }
-        respCase_ = 100;
-        return this;
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public Builder clearError() {
-        if (errorBuilder_ == null) {
-          if (respCase_ == 100) {
-            respCase_ = 0;
-            resp_ = null;
-            onChanged();
-          }
-        } else {
-          if (respCase_ == 100) {
-            respCase_ = 0;
-            resp_ = null;
-          }
-          errorBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public calc.Cache.CacheError.Builder getErrorBuilder() {
-        return getErrorFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public calc.Cache.CacheErrorOrBuilder getErrorOrBuilder() {
-        if ((respCase_ == 100) && (errorBuilder_ != null)) {
-          return errorBuilder_.getMessageOrBuilder();
-        } else {
-          if (respCase_ == 100) {
-            return (calc.Cache.CacheError) resp_;
-          }
-          return calc.Cache.CacheError.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Cache.CacheError, calc.Cache.CacheError.Builder, calc.Cache.CacheErrorOrBuilder> 
-          getErrorFieldBuilder() {
-        if (errorBuilder_ == null) {
-          if (!(respCase_ == 100)) {
-            resp_ = calc.Cache.CacheError.getDefaultInstance();
-          }
-          errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              calc.Cache.CacheError, calc.Cache.CacheError.Builder, calc.Cache.CacheErrorOrBuilder>(
-                  (calc.Cache.CacheError) resp_,
-                  getParentForChildren(),
-                  isClean());
-          resp_ = null;
-        }
-        respCase_ = 100;
-        onChanged();;
-        return errorBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:calc.DataSourceGetResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:calc.DataSourceGetResponse)
-    private static final calc.Cache.DataSourceGetResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new calc.Cache.DataSourceGetResponse();
-    }
-
-    public static calc.Cache.DataSourceGetResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<DataSourceGetResponse>
-        PARSER = new com.google.protobuf.AbstractParser<DataSourceGetResponse>() {
-      @java.lang.Override
-      public DataSourceGetResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DataSourceGetResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<DataSourceGetResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<DataSourceGetResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public calc.Cache.DataSourceGetResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface CacheInvalidateRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:calc.CacheInvalidateRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.calc.MonikerId id = 1;</code>
-     */
-    boolean hasId();
-    /**
-     * <code>.calc.MonikerId id = 1;</code>
-     */
-    calc.Moniker.MonikerId getId();
-    /**
-     * <code>.calc.MonikerId id = 1;</code>
-     */
-    calc.Moniker.MonikerIdOrBuilder getIdOrBuilder();
-  }
-  /**
-   * Protobuf type {@code calc.CacheInvalidateRequest}
-   */
-  public  static final class CacheInvalidateRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:calc.CacheInvalidateRequest)
-      CacheInvalidateRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use CacheInvalidateRequest.newBuilder() to construct.
-    private CacheInvalidateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private CacheInvalidateRequest() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private CacheInvalidateRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              calc.Moniker.MonikerId.Builder subBuilder = null;
-              if (id_ != null) {
-                subBuilder = id_.toBuilder();
-              }
-              id_ = input.readMessage(calc.Moniker.MonikerId.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(id_);
-                id_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return calc.Cache.internal_static_calc_CacheInvalidateRequest_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return calc.Cache.internal_static_calc_CacheInvalidateRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              calc.Cache.CacheInvalidateRequest.class, calc.Cache.CacheInvalidateRequest.Builder.class);
-    }
-
-    public static final int ID_FIELD_NUMBER = 1;
-    private calc.Moniker.MonikerId id_;
-    /**
-     * <code>.calc.MonikerId id = 1;</code>
-     */
-    public boolean hasId() {
-      return id_ != null;
-    }
-    /**
-     * <code>.calc.MonikerId id = 1;</code>
-     */
-    public calc.Moniker.MonikerId getId() {
-      return id_ == null ? calc.Moniker.MonikerId.getDefaultInstance() : id_;
-    }
-    /**
-     * <code>.calc.MonikerId id = 1;</code>
-     */
-    public calc.Moniker.MonikerIdOrBuilder getIdOrBuilder() {
-      return getId();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (id_ != null) {
-        output.writeMessage(1, getId());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (id_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getId());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof calc.Cache.CacheInvalidateRequest)) {
-        return super.equals(obj);
-      }
-      calc.Cache.CacheInvalidateRequest other = (calc.Cache.CacheInvalidateRequest) obj;
-
-      boolean result = true;
-      result = result && (hasId() == other.hasId());
-      if (hasId()) {
-        result = result && getId()
-            .equals(other.getId());
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + getId().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static calc.Cache.CacheInvalidateRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.CacheInvalidateRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.CacheInvalidateRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.CacheInvalidateRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.CacheInvalidateRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.CacheInvalidateRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.CacheInvalidateRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.CacheInvalidateRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.CacheInvalidateRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static calc.Cache.CacheInvalidateRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.CacheInvalidateRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.CacheInvalidateRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(calc.Cache.CacheInvalidateRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code calc.CacheInvalidateRequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:calc.CacheInvalidateRequest)
-        calc.Cache.CacheInvalidateRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return calc.Cache.internal_static_calc_CacheInvalidateRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return calc.Cache.internal_static_calc_CacheInvalidateRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                calc.Cache.CacheInvalidateRequest.class, calc.Cache.CacheInvalidateRequest.Builder.class);
-      }
-
-      // Construct using calc.Cache.CacheInvalidateRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (idBuilder_ == null) {
-          id_ = null;
-        } else {
-          id_ = null;
-          idBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return calc.Cache.internal_static_calc_CacheInvalidateRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public calc.Cache.CacheInvalidateRequest getDefaultInstanceForType() {
-        return calc.Cache.CacheInvalidateRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public calc.Cache.CacheInvalidateRequest build() {
-        calc.Cache.CacheInvalidateRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public calc.Cache.CacheInvalidateRequest buildPartial() {
-        calc.Cache.CacheInvalidateRequest result = new calc.Cache.CacheInvalidateRequest(this);
-        if (idBuilder_ == null) {
-          result.id_ = id_;
-        } else {
-          result.id_ = idBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof calc.Cache.CacheInvalidateRequest) {
-          return mergeFrom((calc.Cache.CacheInvalidateRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(calc.Cache.CacheInvalidateRequest other) {
-        if (other == calc.Cache.CacheInvalidateRequest.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          mergeId(other.getId());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        calc.Cache.CacheInvalidateRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (calc.Cache.CacheInvalidateRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private calc.Moniker.MonikerId id_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder> idBuilder_;
-      /**
-       * <code>.calc.MonikerId id = 1;</code>
-       */
-      public boolean hasId() {
-        return idBuilder_ != null || id_ != null;
-      }
-      /**
-       * <code>.calc.MonikerId id = 1;</code>
-       */
-      public calc.Moniker.MonikerId getId() {
-        if (idBuilder_ == null) {
-          return id_ == null ? calc.Moniker.MonikerId.getDefaultInstance() : id_;
-        } else {
-          return idBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.calc.MonikerId id = 1;</code>
-       */
-      public Builder setId(calc.Moniker.MonikerId value) {
-        if (idBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          id_ = value;
-          onChanged();
-        } else {
-          idBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.MonikerId id = 1;</code>
-       */
-      public Builder setId(
-          calc.Moniker.MonikerId.Builder builderForValue) {
-        if (idBuilder_ == null) {
-          id_ = builderForValue.build();
-          onChanged();
-        } else {
-          idBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.MonikerId id = 1;</code>
-       */
-      public Builder mergeId(calc.Moniker.MonikerId value) {
-        if (idBuilder_ == null) {
-          if (id_ != null) {
-            id_ =
-              calc.Moniker.MonikerId.newBuilder(id_).mergeFrom(value).buildPartial();
-          } else {
-            id_ = value;
-          }
-          onChanged();
-        } else {
-          idBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.MonikerId id = 1;</code>
-       */
-      public Builder clearId() {
-        if (idBuilder_ == null) {
-          id_ = null;
-          onChanged();
-        } else {
-          id_ = null;
-          idBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.MonikerId id = 1;</code>
-       */
-      public calc.Moniker.MonikerId.Builder getIdBuilder() {
-        
-        onChanged();
-        return getIdFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.calc.MonikerId id = 1;</code>
-       */
-      public calc.Moniker.MonikerIdOrBuilder getIdOrBuilder() {
-        if (idBuilder_ != null) {
-          return idBuilder_.getMessageOrBuilder();
-        } else {
-          return id_ == null ?
-              calc.Moniker.MonikerId.getDefaultInstance() : id_;
-        }
-      }
-      /**
-       * <code>.calc.MonikerId id = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder> 
-          getIdFieldBuilder() {
-        if (idBuilder_ == null) {
-          idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder>(
-                  getId(),
-                  getParentForChildren(),
-                  isClean());
-          id_ = null;
-        }
-        return idBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:calc.CacheInvalidateRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:calc.CacheInvalidateRequest)
-    private static final calc.Cache.CacheInvalidateRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new calc.Cache.CacheInvalidateRequest();
-    }
-
-    public static calc.Cache.CacheInvalidateRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CacheInvalidateRequest>
-        PARSER = new com.google.protobuf.AbstractParser<CacheInvalidateRequest>() {
-      @java.lang.Override
-      public CacheInvalidateRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CacheInvalidateRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CacheInvalidateRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CacheInvalidateRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public calc.Cache.CacheInvalidateRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface CacheInvalidateResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:calc.CacheInvalidateResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.google.protobuf.Empty success = 1;</code>
-     */
-    boolean hasSuccess();
-    /**
-     * <code>.google.protobuf.Empty success = 1;</code>
-     */
-    com.google.protobuf.Empty getSuccess();
-    /**
-     * <code>.google.protobuf.Empty success = 1;</code>
-     */
-    com.google.protobuf.EmptyOrBuilder getSuccessOrBuilder();
-
-    /**
-     * <code>.calc.MonikerId notFound = 2;</code>
-     */
-    boolean hasNotFound();
-    /**
-     * <code>.calc.MonikerId notFound = 2;</code>
-     */
-    calc.Moniker.MonikerId getNotFound();
-    /**
-     * <code>.calc.MonikerId notFound = 2;</code>
-     */
-    calc.Moniker.MonikerIdOrBuilder getNotFoundOrBuilder();
-
-    /**
-     * <code>.calc.CacheError error = 100;</code>
-     */
-    boolean hasError();
-    /**
-     * <code>.calc.CacheError error = 100;</code>
-     */
-    calc.Cache.CacheError getError();
-    /**
-     * <code>.calc.CacheError error = 100;</code>
-     */
-    calc.Cache.CacheErrorOrBuilder getErrorOrBuilder();
-
-    public calc.Cache.CacheInvalidateResponse.RespCase getRespCase();
-  }
-  /**
-   * Protobuf type {@code calc.CacheInvalidateResponse}
-   */
-  public  static final class CacheInvalidateResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:calc.CacheInvalidateResponse)
-      CacheInvalidateResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use CacheInvalidateResponse.newBuilder() to construct.
-    private CacheInvalidateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private CacheInvalidateResponse() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private CacheInvalidateResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.Empty.Builder subBuilder = null;
-              if (respCase_ == 1) {
-                subBuilder = ((com.google.protobuf.Empty) resp_).toBuilder();
-              }
-              resp_ =
-                  input.readMessage(com.google.protobuf.Empty.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.protobuf.Empty) resp_);
-                resp_ = subBuilder.buildPartial();
-              }
-              respCase_ = 1;
-              break;
-            }
-            case 18: {
-              calc.Moniker.MonikerId.Builder subBuilder = null;
-              if (respCase_ == 2) {
-                subBuilder = ((calc.Moniker.MonikerId) resp_).toBuilder();
-              }
-              resp_ =
-                  input.readMessage(calc.Moniker.MonikerId.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((calc.Moniker.MonikerId) resp_);
-                resp_ = subBuilder.buildPartial();
-              }
-              respCase_ = 2;
-              break;
-            }
-            case 802: {
-              calc.Cache.CacheError.Builder subBuilder = null;
-              if (respCase_ == 100) {
-                subBuilder = ((calc.Cache.CacheError) resp_).toBuilder();
-              }
-              resp_ =
-                  input.readMessage(calc.Cache.CacheError.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((calc.Cache.CacheError) resp_);
-                resp_ = subBuilder.buildPartial();
-              }
-              respCase_ = 100;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return calc.Cache.internal_static_calc_CacheInvalidateResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return calc.Cache.internal_static_calc_CacheInvalidateResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              calc.Cache.CacheInvalidateResponse.class, calc.Cache.CacheInvalidateResponse.Builder.class);
-    }
-
-    private int respCase_ = 0;
-    private java.lang.Object resp_;
-    public enum RespCase
-        implements com.google.protobuf.Internal.EnumLite {
-      SUCCESS(1),
-      NOTFOUND(2),
-      ERROR(100),
-      RESP_NOT_SET(0);
-      private final int value;
-      private RespCase(int value) {
-        this.value = value;
-      }
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static RespCase valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static RespCase forNumber(int value) {
-        switch (value) {
-          case 1: return SUCCESS;
-          case 2: return NOTFOUND;
-          case 100: return ERROR;
-          case 0: return RESP_NOT_SET;
-          default: return null;
-        }
-      }
-      public int getNumber() {
-        return this.value;
-      }
-    };
-
-    public RespCase
-    getRespCase() {
-      return RespCase.forNumber(
-          respCase_);
-    }
-
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    /**
-     * <code>.google.protobuf.Empty success = 1;</code>
-     */
-    public boolean hasSuccess() {
-      return respCase_ == 1;
-    }
-    /**
-     * <code>.google.protobuf.Empty success = 1;</code>
-     */
-    public com.google.protobuf.Empty getSuccess() {
-      if (respCase_ == 1) {
-         return (com.google.protobuf.Empty) resp_;
-      }
-      return com.google.protobuf.Empty.getDefaultInstance();
-    }
-    /**
-     * <code>.google.protobuf.Empty success = 1;</code>
-     */
-    public com.google.protobuf.EmptyOrBuilder getSuccessOrBuilder() {
-      if (respCase_ == 1) {
-         return (com.google.protobuf.Empty) resp_;
-      }
-      return com.google.protobuf.Empty.getDefaultInstance();
-    }
-
-    public static final int NOTFOUND_FIELD_NUMBER = 2;
-    /**
-     * <code>.calc.MonikerId notFound = 2;</code>
-     */
-    public boolean hasNotFound() {
-      return respCase_ == 2;
-    }
-    /**
-     * <code>.calc.MonikerId notFound = 2;</code>
-     */
-    public calc.Moniker.MonikerId getNotFound() {
-      if (respCase_ == 2) {
-         return (calc.Moniker.MonikerId) resp_;
-      }
-      return calc.Moniker.MonikerId.getDefaultInstance();
-    }
-    /**
-     * <code>.calc.MonikerId notFound = 2;</code>
-     */
-    public calc.Moniker.MonikerIdOrBuilder getNotFoundOrBuilder() {
-      if (respCase_ == 2) {
-         return (calc.Moniker.MonikerId) resp_;
-      }
-      return calc.Moniker.MonikerId.getDefaultInstance();
-    }
-
-    public static final int ERROR_FIELD_NUMBER = 100;
-    /**
-     * <code>.calc.CacheError error = 100;</code>
-     */
-    public boolean hasError() {
-      return respCase_ == 100;
-    }
-    /**
-     * <code>.calc.CacheError error = 100;</code>
-     */
-    public calc.Cache.CacheError getError() {
-      if (respCase_ == 100) {
-         return (calc.Cache.CacheError) resp_;
-      }
-      return calc.Cache.CacheError.getDefaultInstance();
-    }
-    /**
-     * <code>.calc.CacheError error = 100;</code>
-     */
-    public calc.Cache.CacheErrorOrBuilder getErrorOrBuilder() {
-      if (respCase_ == 100) {
-         return (calc.Cache.CacheError) resp_;
-      }
-      return calc.Cache.CacheError.getDefaultInstance();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (respCase_ == 1) {
-        output.writeMessage(1, (com.google.protobuf.Empty) resp_);
-      }
-      if (respCase_ == 2) {
-        output.writeMessage(2, (calc.Moniker.MonikerId) resp_);
-      }
-      if (respCase_ == 100) {
-        output.writeMessage(100, (calc.Cache.CacheError) resp_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (respCase_ == 1) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (com.google.protobuf.Empty) resp_);
-      }
-      if (respCase_ == 2) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (calc.Moniker.MonikerId) resp_);
-      }
-      if (respCase_ == 100) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(100, (calc.Cache.CacheError) resp_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof calc.Cache.CacheInvalidateResponse)) {
-        return super.equals(obj);
-      }
-      calc.Cache.CacheInvalidateResponse other = (calc.Cache.CacheInvalidateResponse) obj;
-
-      boolean result = true;
-      result = result && getRespCase().equals(
-          other.getRespCase());
-      if (!result) return false;
-      switch (respCase_) {
-        case 1:
-          result = result && getSuccess()
-              .equals(other.getSuccess());
-          break;
-        case 2:
-          result = result && getNotFound()
-              .equals(other.getNotFound());
-          break;
-        case 100:
-          result = result && getError()
-              .equals(other.getError());
-          break;
-        case 0:
-        default:
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      switch (respCase_) {
-        case 1:
-          hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
-          hash = (53 * hash) + getSuccess().hashCode();
-          break;
-        case 2:
-          hash = (37 * hash) + NOTFOUND_FIELD_NUMBER;
-          hash = (53 * hash) + getNotFound().hashCode();
-          break;
-        case 100:
-          hash = (37 * hash) + ERROR_FIELD_NUMBER;
-          hash = (53 * hash) + getError().hashCode();
-          break;
-        case 0:
-        default:
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static calc.Cache.CacheInvalidateResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.CacheInvalidateResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.CacheInvalidateResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.CacheInvalidateResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.CacheInvalidateResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.CacheInvalidateResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.CacheInvalidateResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.CacheInvalidateResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.CacheInvalidateResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static calc.Cache.CacheInvalidateResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.CacheInvalidateResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.CacheInvalidateResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(calc.Cache.CacheInvalidateResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code calc.CacheInvalidateResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:calc.CacheInvalidateResponse)
-        calc.Cache.CacheInvalidateResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return calc.Cache.internal_static_calc_CacheInvalidateResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return calc.Cache.internal_static_calc_CacheInvalidateResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                calc.Cache.CacheInvalidateResponse.class, calc.Cache.CacheInvalidateResponse.Builder.class);
-      }
-
-      // Construct using calc.Cache.CacheInvalidateResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        respCase_ = 0;
-        resp_ = null;
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return calc.Cache.internal_static_calc_CacheInvalidateResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public calc.Cache.CacheInvalidateResponse getDefaultInstanceForType() {
-        return calc.Cache.CacheInvalidateResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public calc.Cache.CacheInvalidateResponse build() {
-        calc.Cache.CacheInvalidateResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public calc.Cache.CacheInvalidateResponse buildPartial() {
-        calc.Cache.CacheInvalidateResponse result = new calc.Cache.CacheInvalidateResponse(this);
-        if (respCase_ == 1) {
-          if (successBuilder_ == null) {
-            result.resp_ = resp_;
-          } else {
-            result.resp_ = successBuilder_.build();
-          }
-        }
-        if (respCase_ == 2) {
-          if (notFoundBuilder_ == null) {
-            result.resp_ = resp_;
-          } else {
-            result.resp_ = notFoundBuilder_.build();
-          }
-        }
-        if (respCase_ == 100) {
-          if (errorBuilder_ == null) {
-            result.resp_ = resp_;
-          } else {
-            result.resp_ = errorBuilder_.build();
-          }
-        }
-        result.respCase_ = respCase_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof calc.Cache.CacheInvalidateResponse) {
-          return mergeFrom((calc.Cache.CacheInvalidateResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(calc.Cache.CacheInvalidateResponse other) {
-        if (other == calc.Cache.CacheInvalidateResponse.getDefaultInstance()) return this;
-        switch (other.getRespCase()) {
-          case SUCCESS: {
-            mergeSuccess(other.getSuccess());
-            break;
-          }
-          case NOTFOUND: {
-            mergeNotFound(other.getNotFound());
-            break;
-          }
-          case ERROR: {
-            mergeError(other.getError());
-            break;
-          }
-          case RESP_NOT_SET: {
-            break;
-          }
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        calc.Cache.CacheInvalidateResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (calc.Cache.CacheInvalidateResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int respCase_ = 0;
-      private java.lang.Object resp_;
-      public RespCase
-          getRespCase() {
-        return RespCase.forNumber(
-            respCase_);
-      }
-
-      public Builder clearResp() {
-        respCase_ = 0;
-        resp_ = null;
-        onChanged();
-        return this;
-      }
-
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> successBuilder_;
-      /**
-       * <code>.google.protobuf.Empty success = 1;</code>
-       */
-      public boolean hasSuccess() {
-        return respCase_ == 1;
-      }
-      /**
-       * <code>.google.protobuf.Empty success = 1;</code>
-       */
-      public com.google.protobuf.Empty getSuccess() {
-        if (successBuilder_ == null) {
-          if (respCase_ == 1) {
-            return (com.google.protobuf.Empty) resp_;
-          }
-          return com.google.protobuf.Empty.getDefaultInstance();
-        } else {
-          if (respCase_ == 1) {
-            return successBuilder_.getMessage();
-          }
-          return com.google.protobuf.Empty.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.google.protobuf.Empty success = 1;</code>
-       */
-      public Builder setSuccess(com.google.protobuf.Empty value) {
-        if (successBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          resp_ = value;
-          onChanged();
-        } else {
-          successBuilder_.setMessage(value);
-        }
-        respCase_ = 1;
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Empty success = 1;</code>
-       */
-      public Builder setSuccess(
-          com.google.protobuf.Empty.Builder builderForValue) {
-        if (successBuilder_ == null) {
-          resp_ = builderForValue.build();
-          onChanged();
-        } else {
-          successBuilder_.setMessage(builderForValue.build());
-        }
-        respCase_ = 1;
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Empty success = 1;</code>
-       */
-      public Builder mergeSuccess(com.google.protobuf.Empty value) {
-        if (successBuilder_ == null) {
-          if (respCase_ == 1 &&
-              resp_ != com.google.protobuf.Empty.getDefaultInstance()) {
-            resp_ = com.google.protobuf.Empty.newBuilder((com.google.protobuf.Empty) resp_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            resp_ = value;
-          }
-          onChanged();
-        } else {
-          if (respCase_ == 1) {
-            successBuilder_.mergeFrom(value);
-          }
-          successBuilder_.setMessage(value);
-        }
-        respCase_ = 1;
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Empty success = 1;</code>
-       */
-      public Builder clearSuccess() {
-        if (successBuilder_ == null) {
-          if (respCase_ == 1) {
-            respCase_ = 0;
-            resp_ = null;
-            onChanged();
-          }
-        } else {
-          if (respCase_ == 1) {
-            respCase_ = 0;
-            resp_ = null;
-          }
-          successBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Empty success = 1;</code>
-       */
-      public com.google.protobuf.Empty.Builder getSuccessBuilder() {
-        return getSuccessFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.Empty success = 1;</code>
-       */
-      public com.google.protobuf.EmptyOrBuilder getSuccessOrBuilder() {
-        if ((respCase_ == 1) && (successBuilder_ != null)) {
-          return successBuilder_.getMessageOrBuilder();
-        } else {
-          if (respCase_ == 1) {
-            return (com.google.protobuf.Empty) resp_;
-          }
-          return com.google.protobuf.Empty.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.google.protobuf.Empty success = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> 
-          getSuccessFieldBuilder() {
-        if (successBuilder_ == null) {
-          if (!(respCase_ == 1)) {
-            resp_ = com.google.protobuf.Empty.getDefaultInstance();
-          }
-          successBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder>(
-                  (com.google.protobuf.Empty) resp_,
-                  getParentForChildren(),
-                  isClean());
-          resp_ = null;
-        }
-        respCase_ = 1;
-        onChanged();;
-        return successBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder> notFoundBuilder_;
-      /**
-       * <code>.calc.MonikerId notFound = 2;</code>
-       */
-      public boolean hasNotFound() {
-        return respCase_ == 2;
-      }
-      /**
-       * <code>.calc.MonikerId notFound = 2;</code>
-       */
-      public calc.Moniker.MonikerId getNotFound() {
-        if (notFoundBuilder_ == null) {
-          if (respCase_ == 2) {
-            return (calc.Moniker.MonikerId) resp_;
-          }
-          return calc.Moniker.MonikerId.getDefaultInstance();
-        } else {
-          if (respCase_ == 2) {
-            return notFoundBuilder_.getMessage();
-          }
-          return calc.Moniker.MonikerId.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.calc.MonikerId notFound = 2;</code>
-       */
-      public Builder setNotFound(calc.Moniker.MonikerId value) {
-        if (notFoundBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          resp_ = value;
-          onChanged();
-        } else {
-          notFoundBuilder_.setMessage(value);
-        }
-        respCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.calc.MonikerId notFound = 2;</code>
-       */
-      public Builder setNotFound(
-          calc.Moniker.MonikerId.Builder builderForValue) {
-        if (notFoundBuilder_ == null) {
-          resp_ = builderForValue.build();
-          onChanged();
-        } else {
-          notFoundBuilder_.setMessage(builderForValue.build());
-        }
-        respCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.calc.MonikerId notFound = 2;</code>
-       */
-      public Builder mergeNotFound(calc.Moniker.MonikerId value) {
-        if (notFoundBuilder_ == null) {
-          if (respCase_ == 2 &&
-              resp_ != calc.Moniker.MonikerId.getDefaultInstance()) {
-            resp_ = calc.Moniker.MonikerId.newBuilder((calc.Moniker.MonikerId) resp_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            resp_ = value;
-          }
-          onChanged();
-        } else {
-          if (respCase_ == 2) {
-            notFoundBuilder_.mergeFrom(value);
-          }
-          notFoundBuilder_.setMessage(value);
-        }
-        respCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.calc.MonikerId notFound = 2;</code>
-       */
-      public Builder clearNotFound() {
-        if (notFoundBuilder_ == null) {
-          if (respCase_ == 2) {
-            respCase_ = 0;
-            resp_ = null;
-            onChanged();
-          }
-        } else {
-          if (respCase_ == 2) {
-            respCase_ = 0;
-            resp_ = null;
-          }
-          notFoundBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.calc.MonikerId notFound = 2;</code>
-       */
-      public calc.Moniker.MonikerId.Builder getNotFoundBuilder() {
-        return getNotFoundFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.calc.MonikerId notFound = 2;</code>
-       */
-      public calc.Moniker.MonikerIdOrBuilder getNotFoundOrBuilder() {
-        if ((respCase_ == 2) && (notFoundBuilder_ != null)) {
-          return notFoundBuilder_.getMessageOrBuilder();
-        } else {
-          if (respCase_ == 2) {
-            return (calc.Moniker.MonikerId) resp_;
-          }
-          return calc.Moniker.MonikerId.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.calc.MonikerId notFound = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder> 
-          getNotFoundFieldBuilder() {
-        if (notFoundBuilder_ == null) {
-          if (!(respCase_ == 2)) {
-            resp_ = calc.Moniker.MonikerId.getDefaultInstance();
-          }
-          notFoundBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder>(
-                  (calc.Moniker.MonikerId) resp_,
-                  getParentForChildren(),
-                  isClean());
-          resp_ = null;
-        }
-        respCase_ = 2;
-        onChanged();;
-        return notFoundBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Cache.CacheError, calc.Cache.CacheError.Builder, calc.Cache.CacheErrorOrBuilder> errorBuilder_;
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public boolean hasError() {
-        return respCase_ == 100;
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public calc.Cache.CacheError getError() {
-        if (errorBuilder_ == null) {
-          if (respCase_ == 100) {
-            return (calc.Cache.CacheError) resp_;
-          }
-          return calc.Cache.CacheError.getDefaultInstance();
-        } else {
-          if (respCase_ == 100) {
-            return errorBuilder_.getMessage();
-          }
-          return calc.Cache.CacheError.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public Builder setError(calc.Cache.CacheError value) {
-        if (errorBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          resp_ = value;
-          onChanged();
-        } else {
-          errorBuilder_.setMessage(value);
-        }
-        respCase_ = 100;
-        return this;
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public Builder setError(
-          calc.Cache.CacheError.Builder builderForValue) {
-        if (errorBuilder_ == null) {
-          resp_ = builderForValue.build();
-          onChanged();
-        } else {
-          errorBuilder_.setMessage(builderForValue.build());
-        }
-        respCase_ = 100;
-        return this;
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public Builder mergeError(calc.Cache.CacheError value) {
-        if (errorBuilder_ == null) {
-          if (respCase_ == 100 &&
-              resp_ != calc.Cache.CacheError.getDefaultInstance()) {
-            resp_ = calc.Cache.CacheError.newBuilder((calc.Cache.CacheError) resp_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            resp_ = value;
-          }
-          onChanged();
-        } else {
-          if (respCase_ == 100) {
-            errorBuilder_.mergeFrom(value);
-          }
-          errorBuilder_.setMessage(value);
-        }
-        respCase_ = 100;
-        return this;
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public Builder clearError() {
-        if (errorBuilder_ == null) {
-          if (respCase_ == 100) {
-            respCase_ = 0;
-            resp_ = null;
-            onChanged();
-          }
-        } else {
-          if (respCase_ == 100) {
-            respCase_ = 0;
-            resp_ = null;
-          }
-          errorBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public calc.Cache.CacheError.Builder getErrorBuilder() {
-        return getErrorFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public calc.Cache.CacheErrorOrBuilder getErrorOrBuilder() {
-        if ((respCase_ == 100) && (errorBuilder_ != null)) {
-          return errorBuilder_.getMessageOrBuilder();
-        } else {
-          if (respCase_ == 100) {
-            return (calc.Cache.CacheError) resp_;
-          }
-          return calc.Cache.CacheError.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Cache.CacheError, calc.Cache.CacheError.Builder, calc.Cache.CacheErrorOrBuilder> 
-          getErrorFieldBuilder() {
-        if (errorBuilder_ == null) {
-          if (!(respCase_ == 100)) {
-            resp_ = calc.Cache.CacheError.getDefaultInstance();
-          }
-          errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              calc.Cache.CacheError, calc.Cache.CacheError.Builder, calc.Cache.CacheErrorOrBuilder>(
-                  (calc.Cache.CacheError) resp_,
-                  getParentForChildren(),
-                  isClean());
-          resp_ = null;
-        }
-        respCase_ = 100;
-        onChanged();;
-        return errorBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:calc.CacheInvalidateResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:calc.CacheInvalidateResponse)
-    private static final calc.Cache.CacheInvalidateResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new calc.Cache.CacheInvalidateResponse();
-    }
-
-    public static calc.Cache.CacheInvalidateResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CacheInvalidateResponse>
-        PARSER = new com.google.protobuf.AbstractParser<CacheInvalidateResponse>() {
-      @java.lang.Override
-      public CacheInvalidateResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CacheInvalidateResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CacheInvalidateResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CacheInvalidateResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public calc.Cache.CacheInvalidateResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface CacheClearRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:calc.CacheClearRequest)
-      com.google.protobuf.MessageOrBuilder {
-  }
-  /**
-   * Protobuf type {@code calc.CacheClearRequest}
-   */
-  public  static final class CacheClearRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:calc.CacheClearRequest)
-      CacheClearRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use CacheClearRequest.newBuilder() to construct.
-    private CacheClearRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private CacheClearRequest() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private CacheClearRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return calc.Cache.internal_static_calc_CacheClearRequest_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return calc.Cache.internal_static_calc_CacheClearRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              calc.Cache.CacheClearRequest.class, calc.Cache.CacheClearRequest.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof calc.Cache.CacheClearRequest)) {
-        return super.equals(obj);
-      }
-      calc.Cache.CacheClearRequest other = (calc.Cache.CacheClearRequest) obj;
-
-      boolean result = true;
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static calc.Cache.CacheClearRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.CacheClearRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.CacheClearRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.CacheClearRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.CacheClearRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.CacheClearRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.CacheClearRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.CacheClearRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.CacheClearRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static calc.Cache.CacheClearRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.CacheClearRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.CacheClearRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(calc.Cache.CacheClearRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code calc.CacheClearRequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:calc.CacheClearRequest)
-        calc.Cache.CacheClearRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return calc.Cache.internal_static_calc_CacheClearRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return calc.Cache.internal_static_calc_CacheClearRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                calc.Cache.CacheClearRequest.class, calc.Cache.CacheClearRequest.Builder.class);
-      }
-
-      // Construct using calc.Cache.CacheClearRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return calc.Cache.internal_static_calc_CacheClearRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public calc.Cache.CacheClearRequest getDefaultInstanceForType() {
-        return calc.Cache.CacheClearRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public calc.Cache.CacheClearRequest build() {
-        calc.Cache.CacheClearRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public calc.Cache.CacheClearRequest buildPartial() {
-        calc.Cache.CacheClearRequest result = new calc.Cache.CacheClearRequest(this);
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof calc.Cache.CacheClearRequest) {
-          return mergeFrom((calc.Cache.CacheClearRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(calc.Cache.CacheClearRequest other) {
-        if (other == calc.Cache.CacheClearRequest.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        calc.Cache.CacheClearRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (calc.Cache.CacheClearRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:calc.CacheClearRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:calc.CacheClearRequest)
-    private static final calc.Cache.CacheClearRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new calc.Cache.CacheClearRequest();
-    }
-
-    public static calc.Cache.CacheClearRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CacheClearRequest>
-        PARSER = new com.google.protobuf.AbstractParser<CacheClearRequest>() {
-      @java.lang.Override
-      public CacheClearRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CacheClearRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CacheClearRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CacheClearRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public calc.Cache.CacheClearRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface CacheClearResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:calc.CacheClearResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.google.protobuf.Empty success = 1;</code>
-     */
-    boolean hasSuccess();
-    /**
-     * <code>.google.protobuf.Empty success = 1;</code>
-     */
-    com.google.protobuf.Empty getSuccess();
-    /**
-     * <code>.google.protobuf.Empty success = 1;</code>
-     */
-    com.google.protobuf.EmptyOrBuilder getSuccessOrBuilder();
-
-    /**
-     * <code>.calc.CacheError error = 100;</code>
-     */
-    boolean hasError();
-    /**
-     * <code>.calc.CacheError error = 100;</code>
-     */
-    calc.Cache.CacheError getError();
-    /**
-     * <code>.calc.CacheError error = 100;</code>
-     */
-    calc.Cache.CacheErrorOrBuilder getErrorOrBuilder();
-
-    public calc.Cache.CacheClearResponse.RespCase getRespCase();
-  }
-  /**
-   * Protobuf type {@code calc.CacheClearResponse}
-   */
-  public  static final class CacheClearResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:calc.CacheClearResponse)
-      CacheClearResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use CacheClearResponse.newBuilder() to construct.
-    private CacheClearResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private CacheClearResponse() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private CacheClearResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.Empty.Builder subBuilder = null;
-              if (respCase_ == 1) {
-                subBuilder = ((com.google.protobuf.Empty) resp_).toBuilder();
-              }
-              resp_ =
-                  input.readMessage(com.google.protobuf.Empty.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.protobuf.Empty) resp_);
-                resp_ = subBuilder.buildPartial();
-              }
-              respCase_ = 1;
-              break;
-            }
-            case 802: {
-              calc.Cache.CacheError.Builder subBuilder = null;
-              if (respCase_ == 100) {
-                subBuilder = ((calc.Cache.CacheError) resp_).toBuilder();
-              }
-              resp_ =
-                  input.readMessage(calc.Cache.CacheError.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((calc.Cache.CacheError) resp_);
-                resp_ = subBuilder.buildPartial();
-              }
-              respCase_ = 100;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return calc.Cache.internal_static_calc_CacheClearResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return calc.Cache.internal_static_calc_CacheClearResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              calc.Cache.CacheClearResponse.class, calc.Cache.CacheClearResponse.Builder.class);
-    }
-
-    private int respCase_ = 0;
-    private java.lang.Object resp_;
-    public enum RespCase
-        implements com.google.protobuf.Internal.EnumLite {
-      SUCCESS(1),
-      ERROR(100),
-      RESP_NOT_SET(0);
-      private final int value;
-      private RespCase(int value) {
-        this.value = value;
-      }
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static RespCase valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static RespCase forNumber(int value) {
-        switch (value) {
-          case 1: return SUCCESS;
-          case 100: return ERROR;
-          case 0: return RESP_NOT_SET;
-          default: return null;
-        }
-      }
-      public int getNumber() {
-        return this.value;
-      }
-    };
-
-    public RespCase
-    getRespCase() {
-      return RespCase.forNumber(
-          respCase_);
-    }
-
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    /**
-     * <code>.google.protobuf.Empty success = 1;</code>
-     */
-    public boolean hasSuccess() {
-      return respCase_ == 1;
-    }
-    /**
-     * <code>.google.protobuf.Empty success = 1;</code>
-     */
-    public com.google.protobuf.Empty getSuccess() {
-      if (respCase_ == 1) {
-         return (com.google.protobuf.Empty) resp_;
-      }
-      return com.google.protobuf.Empty.getDefaultInstance();
-    }
-    /**
-     * <code>.google.protobuf.Empty success = 1;</code>
-     */
-    public com.google.protobuf.EmptyOrBuilder getSuccessOrBuilder() {
-      if (respCase_ == 1) {
-         return (com.google.protobuf.Empty) resp_;
-      }
-      return com.google.protobuf.Empty.getDefaultInstance();
-    }
-
-    public static final int ERROR_FIELD_NUMBER = 100;
-    /**
-     * <code>.calc.CacheError error = 100;</code>
-     */
-    public boolean hasError() {
-      return respCase_ == 100;
-    }
-    /**
-     * <code>.calc.CacheError error = 100;</code>
-     */
-    public calc.Cache.CacheError getError() {
-      if (respCase_ == 100) {
-         return (calc.Cache.CacheError) resp_;
-      }
-      return calc.Cache.CacheError.getDefaultInstance();
-    }
-    /**
-     * <code>.calc.CacheError error = 100;</code>
-     */
-    public calc.Cache.CacheErrorOrBuilder getErrorOrBuilder() {
-      if (respCase_ == 100) {
-         return (calc.Cache.CacheError) resp_;
-      }
-      return calc.Cache.CacheError.getDefaultInstance();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (respCase_ == 1) {
-        output.writeMessage(1, (com.google.protobuf.Empty) resp_);
-      }
-      if (respCase_ == 100) {
-        output.writeMessage(100, (calc.Cache.CacheError) resp_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (respCase_ == 1) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (com.google.protobuf.Empty) resp_);
-      }
-      if (respCase_ == 100) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(100, (calc.Cache.CacheError) resp_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof calc.Cache.CacheClearResponse)) {
-        return super.equals(obj);
-      }
-      calc.Cache.CacheClearResponse other = (calc.Cache.CacheClearResponse) obj;
-
-      boolean result = true;
-      result = result && getRespCase().equals(
-          other.getRespCase());
-      if (!result) return false;
-      switch (respCase_) {
-        case 1:
-          result = result && getSuccess()
-              .equals(other.getSuccess());
-          break;
-        case 100:
-          result = result && getError()
-              .equals(other.getError());
-          break;
-        case 0:
-        default:
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      switch (respCase_) {
-        case 1:
-          hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
-          hash = (53 * hash) + getSuccess().hashCode();
-          break;
-        case 100:
-          hash = (37 * hash) + ERROR_FIELD_NUMBER;
-          hash = (53 * hash) + getError().hashCode();
-          break;
-        case 0:
-        default:
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static calc.Cache.CacheClearResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.CacheClearResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.CacheClearResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.CacheClearResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.CacheClearResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.CacheClearResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.CacheClearResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.CacheClearResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.CacheClearResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static calc.Cache.CacheClearResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.CacheClearResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.CacheClearResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(calc.Cache.CacheClearResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code calc.CacheClearResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:calc.CacheClearResponse)
-        calc.Cache.CacheClearResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return calc.Cache.internal_static_calc_CacheClearResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return calc.Cache.internal_static_calc_CacheClearResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                calc.Cache.CacheClearResponse.class, calc.Cache.CacheClearResponse.Builder.class);
-      }
-
-      // Construct using calc.Cache.CacheClearResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        respCase_ = 0;
-        resp_ = null;
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return calc.Cache.internal_static_calc_CacheClearResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public calc.Cache.CacheClearResponse getDefaultInstanceForType() {
-        return calc.Cache.CacheClearResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public calc.Cache.CacheClearResponse build() {
-        calc.Cache.CacheClearResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public calc.Cache.CacheClearResponse buildPartial() {
-        calc.Cache.CacheClearResponse result = new calc.Cache.CacheClearResponse(this);
-        if (respCase_ == 1) {
-          if (successBuilder_ == null) {
-            result.resp_ = resp_;
-          } else {
-            result.resp_ = successBuilder_.build();
-          }
-        }
-        if (respCase_ == 100) {
-          if (errorBuilder_ == null) {
-            result.resp_ = resp_;
-          } else {
-            result.resp_ = errorBuilder_.build();
-          }
-        }
-        result.respCase_ = respCase_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof calc.Cache.CacheClearResponse) {
-          return mergeFrom((calc.Cache.CacheClearResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(calc.Cache.CacheClearResponse other) {
-        if (other == calc.Cache.CacheClearResponse.getDefaultInstance()) return this;
-        switch (other.getRespCase()) {
-          case SUCCESS: {
-            mergeSuccess(other.getSuccess());
-            break;
-          }
-          case ERROR: {
-            mergeError(other.getError());
-            break;
-          }
-          case RESP_NOT_SET: {
-            break;
-          }
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        calc.Cache.CacheClearResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (calc.Cache.CacheClearResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int respCase_ = 0;
-      private java.lang.Object resp_;
-      public RespCase
-          getRespCase() {
-        return RespCase.forNumber(
-            respCase_);
-      }
-
-      public Builder clearResp() {
-        respCase_ = 0;
-        resp_ = null;
-        onChanged();
-        return this;
-      }
-
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> successBuilder_;
-      /**
-       * <code>.google.protobuf.Empty success = 1;</code>
-       */
-      public boolean hasSuccess() {
-        return respCase_ == 1;
-      }
-      /**
-       * <code>.google.protobuf.Empty success = 1;</code>
-       */
-      public com.google.protobuf.Empty getSuccess() {
-        if (successBuilder_ == null) {
-          if (respCase_ == 1) {
-            return (com.google.protobuf.Empty) resp_;
-          }
-          return com.google.protobuf.Empty.getDefaultInstance();
-        } else {
-          if (respCase_ == 1) {
-            return successBuilder_.getMessage();
-          }
-          return com.google.protobuf.Empty.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.google.protobuf.Empty success = 1;</code>
-       */
-      public Builder setSuccess(com.google.protobuf.Empty value) {
-        if (successBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          resp_ = value;
-          onChanged();
-        } else {
-          successBuilder_.setMessage(value);
-        }
-        respCase_ = 1;
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Empty success = 1;</code>
-       */
-      public Builder setSuccess(
-          com.google.protobuf.Empty.Builder builderForValue) {
-        if (successBuilder_ == null) {
-          resp_ = builderForValue.build();
-          onChanged();
-        } else {
-          successBuilder_.setMessage(builderForValue.build());
-        }
-        respCase_ = 1;
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Empty success = 1;</code>
-       */
-      public Builder mergeSuccess(com.google.protobuf.Empty value) {
-        if (successBuilder_ == null) {
-          if (respCase_ == 1 &&
-              resp_ != com.google.protobuf.Empty.getDefaultInstance()) {
-            resp_ = com.google.protobuf.Empty.newBuilder((com.google.protobuf.Empty) resp_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            resp_ = value;
-          }
-          onChanged();
-        } else {
-          if (respCase_ == 1) {
-            successBuilder_.mergeFrom(value);
-          }
-          successBuilder_.setMessage(value);
-        }
-        respCase_ = 1;
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Empty success = 1;</code>
-       */
-      public Builder clearSuccess() {
-        if (successBuilder_ == null) {
-          if (respCase_ == 1) {
-            respCase_ = 0;
-            resp_ = null;
-            onChanged();
-          }
-        } else {
-          if (respCase_ == 1) {
-            respCase_ = 0;
-            resp_ = null;
-          }
-          successBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Empty success = 1;</code>
-       */
-      public com.google.protobuf.Empty.Builder getSuccessBuilder() {
-        return getSuccessFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.Empty success = 1;</code>
-       */
-      public com.google.protobuf.EmptyOrBuilder getSuccessOrBuilder() {
-        if ((respCase_ == 1) && (successBuilder_ != null)) {
-          return successBuilder_.getMessageOrBuilder();
-        } else {
-          if (respCase_ == 1) {
-            return (com.google.protobuf.Empty) resp_;
-          }
-          return com.google.protobuf.Empty.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.google.protobuf.Empty success = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> 
-          getSuccessFieldBuilder() {
-        if (successBuilder_ == null) {
-          if (!(respCase_ == 1)) {
-            resp_ = com.google.protobuf.Empty.getDefaultInstance();
-          }
-          successBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder>(
-                  (com.google.protobuf.Empty) resp_,
-                  getParentForChildren(),
-                  isClean());
-          resp_ = null;
-        }
-        respCase_ = 1;
-        onChanged();;
-        return successBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Cache.CacheError, calc.Cache.CacheError.Builder, calc.Cache.CacheErrorOrBuilder> errorBuilder_;
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public boolean hasError() {
-        return respCase_ == 100;
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public calc.Cache.CacheError getError() {
-        if (errorBuilder_ == null) {
-          if (respCase_ == 100) {
-            return (calc.Cache.CacheError) resp_;
-          }
-          return calc.Cache.CacheError.getDefaultInstance();
-        } else {
-          if (respCase_ == 100) {
-            return errorBuilder_.getMessage();
-          }
-          return calc.Cache.CacheError.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public Builder setError(calc.Cache.CacheError value) {
-        if (errorBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          resp_ = value;
-          onChanged();
-        } else {
-          errorBuilder_.setMessage(value);
-        }
-        respCase_ = 100;
-        return this;
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public Builder setError(
-          calc.Cache.CacheError.Builder builderForValue) {
-        if (errorBuilder_ == null) {
-          resp_ = builderForValue.build();
-          onChanged();
-        } else {
-          errorBuilder_.setMessage(builderForValue.build());
-        }
-        respCase_ = 100;
-        return this;
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public Builder mergeError(calc.Cache.CacheError value) {
-        if (errorBuilder_ == null) {
-          if (respCase_ == 100 &&
-              resp_ != calc.Cache.CacheError.getDefaultInstance()) {
-            resp_ = calc.Cache.CacheError.newBuilder((calc.Cache.CacheError) resp_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            resp_ = value;
-          }
-          onChanged();
-        } else {
-          if (respCase_ == 100) {
-            errorBuilder_.mergeFrom(value);
-          }
-          errorBuilder_.setMessage(value);
-        }
-        respCase_ = 100;
-        return this;
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public Builder clearError() {
-        if (errorBuilder_ == null) {
-          if (respCase_ == 100) {
-            respCase_ = 0;
-            resp_ = null;
-            onChanged();
-          }
-        } else {
-          if (respCase_ == 100) {
-            respCase_ = 0;
-            resp_ = null;
-          }
-          errorBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public calc.Cache.CacheError.Builder getErrorBuilder() {
-        return getErrorFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      public calc.Cache.CacheErrorOrBuilder getErrorOrBuilder() {
-        if ((respCase_ == 100) && (errorBuilder_ != null)) {
-          return errorBuilder_.getMessageOrBuilder();
-        } else {
-          if (respCase_ == 100) {
-            return (calc.Cache.CacheError) resp_;
-          }
-          return calc.Cache.CacheError.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.calc.CacheError error = 100;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Cache.CacheError, calc.Cache.CacheError.Builder, calc.Cache.CacheErrorOrBuilder> 
-          getErrorFieldBuilder() {
-        if (errorBuilder_ == null) {
-          if (!(respCase_ == 100)) {
-            resp_ = calc.Cache.CacheError.getDefaultInstance();
-          }
-          errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              calc.Cache.CacheError, calc.Cache.CacheError.Builder, calc.Cache.CacheErrorOrBuilder>(
-                  (calc.Cache.CacheError) resp_,
-                  getParentForChildren(),
-                  isClean());
-          resp_ = null;
-        }
-        respCase_ = 100;
-        onChanged();;
-        return errorBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:calc.CacheClearResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:calc.CacheClearResponse)
-    private static final calc.Cache.CacheClearResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new calc.Cache.CacheClearResponse();
-    }
-
-    public static calc.Cache.CacheClearResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CacheClearResponse>
-        PARSER = new com.google.protobuf.AbstractParser<CacheClearResponse>() {
-      @java.lang.Override
-      public CacheClearResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CacheClearResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CacheClearResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CacheClearResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public calc.Cache.CacheClearResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface CacheErrorOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:calc.CacheError)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.calc.InternalError error = 1;</code>
-     */
-    boolean hasError();
-    /**
-     * <code>.calc.InternalError error = 1;</code>
-     */
-    calc.Moniker.InternalError getError();
-    /**
-     * <code>.calc.InternalError error = 1;</code>
-     */
-    calc.Moniker.InternalErrorOrBuilder getErrorOrBuilder();
-  }
-  /**
-   * Protobuf type {@code calc.CacheError}
-   */
-  public  static final class CacheError extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:calc.CacheError)
-      CacheErrorOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use CacheError.newBuilder() to construct.
-    private CacheError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private CacheError() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private CacheError(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              calc.Moniker.InternalError.Builder subBuilder = null;
-              if (error_ != null) {
-                subBuilder = error_.toBuilder();
-              }
-              error_ = input.readMessage(calc.Moniker.InternalError.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(error_);
-                error_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return calc.Cache.internal_static_calc_CacheError_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return calc.Cache.internal_static_calc_CacheError_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              calc.Cache.CacheError.class, calc.Cache.CacheError.Builder.class);
-    }
-
-    public static final int ERROR_FIELD_NUMBER = 1;
-    private calc.Moniker.InternalError error_;
-    /**
-     * <code>.calc.InternalError error = 1;</code>
-     */
-    public boolean hasError() {
-      return error_ != null;
-    }
-    /**
-     * <code>.calc.InternalError error = 1;</code>
-     */
-    public calc.Moniker.InternalError getError() {
-      return error_ == null ? calc.Moniker.InternalError.getDefaultInstance() : error_;
-    }
-    /**
-     * <code>.calc.InternalError error = 1;</code>
-     */
-    public calc.Moniker.InternalErrorOrBuilder getErrorOrBuilder() {
-      return getError();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (error_ != null) {
-        output.writeMessage(1, getError());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (error_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getError());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof calc.Cache.CacheError)) {
-        return super.equals(obj);
-      }
-      calc.Cache.CacheError other = (calc.Cache.CacheError) obj;
-
-      boolean result = true;
-      result = result && (hasError() == other.hasError());
-      if (hasError()) {
-        result = result && getError()
-            .equals(other.getError());
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasError()) {
-        hash = (37 * hash) + ERROR_FIELD_NUMBER;
-        hash = (53 * hash) + getError().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static calc.Cache.CacheError parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.CacheError parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.CacheError parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.CacheError parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.CacheError parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.CacheError parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.CacheError parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.CacheError parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.CacheError parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static calc.Cache.CacheError parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.CacheError parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.CacheError parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(calc.Cache.CacheError prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code calc.CacheError}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:calc.CacheError)
-        calc.Cache.CacheErrorOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return calc.Cache.internal_static_calc_CacheError_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return calc.Cache.internal_static_calc_CacheError_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                calc.Cache.CacheError.class, calc.Cache.CacheError.Builder.class);
-      }
-
-      // Construct using calc.Cache.CacheError.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (errorBuilder_ == null) {
-          error_ = null;
-        } else {
-          error_ = null;
-          errorBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return calc.Cache.internal_static_calc_CacheError_descriptor;
-      }
-
-      @java.lang.Override
-      public calc.Cache.CacheError getDefaultInstanceForType() {
-        return calc.Cache.CacheError.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public calc.Cache.CacheError build() {
-        calc.Cache.CacheError result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public calc.Cache.CacheError buildPartial() {
-        calc.Cache.CacheError result = new calc.Cache.CacheError(this);
-        if (errorBuilder_ == null) {
-          result.error_ = error_;
-        } else {
-          result.error_ = errorBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof calc.Cache.CacheError) {
-          return mergeFrom((calc.Cache.CacheError)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(calc.Cache.CacheError other) {
-        if (other == calc.Cache.CacheError.getDefaultInstance()) return this;
-        if (other.hasError()) {
-          mergeError(other.getError());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        calc.Cache.CacheError parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (calc.Cache.CacheError) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private calc.Moniker.InternalError error_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Moniker.InternalError, calc.Moniker.InternalError.Builder, calc.Moniker.InternalErrorOrBuilder> errorBuilder_;
-      /**
-       * <code>.calc.InternalError error = 1;</code>
-       */
-      public boolean hasError() {
-        return errorBuilder_ != null || error_ != null;
-      }
-      /**
-       * <code>.calc.InternalError error = 1;</code>
-       */
-      public calc.Moniker.InternalError getError() {
-        if (errorBuilder_ == null) {
-          return error_ == null ? calc.Moniker.InternalError.getDefaultInstance() : error_;
-        } else {
-          return errorBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.calc.InternalError error = 1;</code>
-       */
-      public Builder setError(calc.Moniker.InternalError value) {
-        if (errorBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          error_ = value;
-          onChanged();
-        } else {
-          errorBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.InternalError error = 1;</code>
-       */
-      public Builder setError(
-          calc.Moniker.InternalError.Builder builderForValue) {
-        if (errorBuilder_ == null) {
-          error_ = builderForValue.build();
-          onChanged();
-        } else {
-          errorBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.InternalError error = 1;</code>
-       */
-      public Builder mergeError(calc.Moniker.InternalError value) {
-        if (errorBuilder_ == null) {
-          if (error_ != null) {
-            error_ =
-              calc.Moniker.InternalError.newBuilder(error_).mergeFrom(value).buildPartial();
-          } else {
-            error_ = value;
-          }
-          onChanged();
-        } else {
-          errorBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.InternalError error = 1;</code>
-       */
-      public Builder clearError() {
-        if (errorBuilder_ == null) {
-          error_ = null;
-          onChanged();
-        } else {
-          error_ = null;
-          errorBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.InternalError error = 1;</code>
-       */
-      public calc.Moniker.InternalError.Builder getErrorBuilder() {
-        
-        onChanged();
-        return getErrorFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.calc.InternalError error = 1;</code>
-       */
-      public calc.Moniker.InternalErrorOrBuilder getErrorOrBuilder() {
-        if (errorBuilder_ != null) {
-          return errorBuilder_.getMessageOrBuilder();
-        } else {
-          return error_ == null ?
-              calc.Moniker.InternalError.getDefaultInstance() : error_;
-        }
-      }
-      /**
-       * <code>.calc.InternalError error = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Moniker.InternalError, calc.Moniker.InternalError.Builder, calc.Moniker.InternalErrorOrBuilder> 
-          getErrorFieldBuilder() {
-        if (errorBuilder_ == null) {
-          errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              calc.Moniker.InternalError, calc.Moniker.InternalError.Builder, calc.Moniker.InternalErrorOrBuilder>(
-                  getError(),
-                  getParentForChildren(),
-                  isClean());
-          error_ = null;
-        }
-        return errorBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:calc.CacheError)
-    }
-
-    // @@protoc_insertion_point(class_scope:calc.CacheError)
-    private static final calc.Cache.CacheError DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new calc.Cache.CacheError();
-    }
-
-    public static calc.Cache.CacheError getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CacheError>
-        PARSER = new com.google.protobuf.AbstractParser<CacheError>() {
-      @java.lang.Override
-      public CacheError parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CacheError(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CacheError> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CacheError> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public calc.Cache.CacheError getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface MonitoringUpdateRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:calc.MonitoringUpdateRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string correlationId = 1;</code>
-     */
-    java.lang.String getCorrelationId();
-    /**
-     * <code>string correlationId = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getCorrelationIdBytes();
-  }
-  /**
-   * Protobuf type {@code calc.MonitoringUpdateRequest}
-   */
-  public  static final class MonitoringUpdateRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:calc.MonitoringUpdateRequest)
-      MonitoringUpdateRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use MonitoringUpdateRequest.newBuilder() to construct.
-    private MonitoringUpdateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private MonitoringUpdateRequest() {
-      correlationId_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private MonitoringUpdateRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              correlationId_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return calc.Cache.internal_static_calc_MonitoringUpdateRequest_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return calc.Cache.internal_static_calc_MonitoringUpdateRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              calc.Cache.MonitoringUpdateRequest.class, calc.Cache.MonitoringUpdateRequest.Builder.class);
-    }
-
-    public static final int CORRELATIONID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object correlationId_;
-    /**
-     * <code>string correlationId = 1;</code>
-     */
-    public java.lang.String getCorrelationId() {
-      java.lang.Object ref = correlationId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        correlationId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string correlationId = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getCorrelationIdBytes() {
-      java.lang.Object ref = correlationId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        correlationId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getCorrelationIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, correlationId_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getCorrelationIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, correlationId_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof calc.Cache.MonitoringUpdateRequest)) {
-        return super.equals(obj);
-      }
-      calc.Cache.MonitoringUpdateRequest other = (calc.Cache.MonitoringUpdateRequest) obj;
-
-      boolean result = true;
-      result = result && getCorrelationId()
-          .equals(other.getCorrelationId());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CORRELATIONID_FIELD_NUMBER;
-      hash = (53 * hash) + getCorrelationId().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static calc.Cache.MonitoringUpdateRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.MonitoringUpdateRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.MonitoringUpdateRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.MonitoringUpdateRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.MonitoringUpdateRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.MonitoringUpdateRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.MonitoringUpdateRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.MonitoringUpdateRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.MonitoringUpdateRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static calc.Cache.MonitoringUpdateRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.MonitoringUpdateRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.MonitoringUpdateRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(calc.Cache.MonitoringUpdateRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code calc.MonitoringUpdateRequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:calc.MonitoringUpdateRequest)
-        calc.Cache.MonitoringUpdateRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return calc.Cache.internal_static_calc_MonitoringUpdateRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return calc.Cache.internal_static_calc_MonitoringUpdateRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                calc.Cache.MonitoringUpdateRequest.class, calc.Cache.MonitoringUpdateRequest.Builder.class);
-      }
-
-      // Construct using calc.Cache.MonitoringUpdateRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        correlationId_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return calc.Cache.internal_static_calc_MonitoringUpdateRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public calc.Cache.MonitoringUpdateRequest getDefaultInstanceForType() {
-        return calc.Cache.MonitoringUpdateRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public calc.Cache.MonitoringUpdateRequest build() {
-        calc.Cache.MonitoringUpdateRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public calc.Cache.MonitoringUpdateRequest buildPartial() {
-        calc.Cache.MonitoringUpdateRequest result = new calc.Cache.MonitoringUpdateRequest(this);
-        result.correlationId_ = correlationId_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof calc.Cache.MonitoringUpdateRequest) {
-          return mergeFrom((calc.Cache.MonitoringUpdateRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(calc.Cache.MonitoringUpdateRequest other) {
-        if (other == calc.Cache.MonitoringUpdateRequest.getDefaultInstance()) return this;
-        if (!other.getCorrelationId().isEmpty()) {
-          correlationId_ = other.correlationId_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        calc.Cache.MonitoringUpdateRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (calc.Cache.MonitoringUpdateRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object correlationId_ = "";
-      /**
-       * <code>string correlationId = 1;</code>
-       */
-      public java.lang.String getCorrelationId() {
-        java.lang.Object ref = correlationId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          correlationId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string correlationId = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getCorrelationIdBytes() {
-        java.lang.Object ref = correlationId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          correlationId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string correlationId = 1;</code>
-       */
-      public Builder setCorrelationId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        correlationId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string correlationId = 1;</code>
-       */
-      public Builder clearCorrelationId() {
-        
-        correlationId_ = getDefaultInstance().getCorrelationId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string correlationId = 1;</code>
-       */
-      public Builder setCorrelationIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        correlationId_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:calc.MonitoringUpdateRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:calc.MonitoringUpdateRequest)
-    private static final calc.Cache.MonitoringUpdateRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new calc.Cache.MonitoringUpdateRequest();
-    }
-
-    public static calc.Cache.MonitoringUpdateRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<MonitoringUpdateRequest>
-        PARSER = new com.google.protobuf.AbstractParser<MonitoringUpdateRequest>() {
-      @java.lang.Override
-      public MonitoringUpdateRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MonitoringUpdateRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<MonitoringUpdateRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<MonitoringUpdateRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public calc.Cache.MonitoringUpdateRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface MonitoringUpdateResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:calc.MonitoringUpdateResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.calc.ReplicaStatus status = 1;</code>
-     */
-    boolean hasStatus();
-    /**
-     * <code>.calc.ReplicaStatus status = 1;</code>
-     */
-    calc.Cache.ReplicaStatus getStatus();
-    /**
-     * <code>.calc.ReplicaStatus status = 1;</code>
-     */
-    calc.Cache.ReplicaStatusOrBuilder getStatusOrBuilder();
-  }
-  /**
-   * Protobuf type {@code calc.MonitoringUpdateResponse}
-   */
-  public  static final class MonitoringUpdateResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:calc.MonitoringUpdateResponse)
-      MonitoringUpdateResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use MonitoringUpdateResponse.newBuilder() to construct.
-    private MonitoringUpdateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private MonitoringUpdateResponse() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private MonitoringUpdateResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              calc.Cache.ReplicaStatus.Builder subBuilder = null;
-              if (status_ != null) {
-                subBuilder = status_.toBuilder();
-              }
-              status_ = input.readMessage(calc.Cache.ReplicaStatus.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(status_);
-                status_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return calc.Cache.internal_static_calc_MonitoringUpdateResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return calc.Cache.internal_static_calc_MonitoringUpdateResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              calc.Cache.MonitoringUpdateResponse.class, calc.Cache.MonitoringUpdateResponse.Builder.class);
-    }
-
-    public static final int STATUS_FIELD_NUMBER = 1;
-    private calc.Cache.ReplicaStatus status_;
-    /**
-     * <code>.calc.ReplicaStatus status = 1;</code>
-     */
-    public boolean hasStatus() {
-      return status_ != null;
-    }
-    /**
-     * <code>.calc.ReplicaStatus status = 1;</code>
-     */
-    public calc.Cache.ReplicaStatus getStatus() {
-      return status_ == null ? calc.Cache.ReplicaStatus.getDefaultInstance() : status_;
-    }
-    /**
-     * <code>.calc.ReplicaStatus status = 1;</code>
-     */
-    public calc.Cache.ReplicaStatusOrBuilder getStatusOrBuilder() {
-      return getStatus();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (status_ != null) {
-        output.writeMessage(1, getStatus());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (status_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getStatus());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof calc.Cache.MonitoringUpdateResponse)) {
-        return super.equals(obj);
-      }
-      calc.Cache.MonitoringUpdateResponse other = (calc.Cache.MonitoringUpdateResponse) obj;
-
-      boolean result = true;
-      result = result && (hasStatus() == other.hasStatus());
-      if (hasStatus()) {
-        result = result && getStatus()
-            .equals(other.getStatus());
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasStatus()) {
-        hash = (37 * hash) + STATUS_FIELD_NUMBER;
-        hash = (53 * hash) + getStatus().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static calc.Cache.MonitoringUpdateResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.MonitoringUpdateResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.MonitoringUpdateResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.MonitoringUpdateResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.MonitoringUpdateResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.MonitoringUpdateResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.MonitoringUpdateResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.MonitoringUpdateResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.MonitoringUpdateResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static calc.Cache.MonitoringUpdateResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.MonitoringUpdateResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.MonitoringUpdateResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(calc.Cache.MonitoringUpdateResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code calc.MonitoringUpdateResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:calc.MonitoringUpdateResponse)
-        calc.Cache.MonitoringUpdateResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return calc.Cache.internal_static_calc_MonitoringUpdateResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return calc.Cache.internal_static_calc_MonitoringUpdateResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                calc.Cache.MonitoringUpdateResponse.class, calc.Cache.MonitoringUpdateResponse.Builder.class);
-      }
-
-      // Construct using calc.Cache.MonitoringUpdateResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (statusBuilder_ == null) {
-          status_ = null;
-        } else {
-          status_ = null;
-          statusBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return calc.Cache.internal_static_calc_MonitoringUpdateResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public calc.Cache.MonitoringUpdateResponse getDefaultInstanceForType() {
-        return calc.Cache.MonitoringUpdateResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public calc.Cache.MonitoringUpdateResponse build() {
-        calc.Cache.MonitoringUpdateResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public calc.Cache.MonitoringUpdateResponse buildPartial() {
-        calc.Cache.MonitoringUpdateResponse result = new calc.Cache.MonitoringUpdateResponse(this);
-        if (statusBuilder_ == null) {
-          result.status_ = status_;
-        } else {
-          result.status_ = statusBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof calc.Cache.MonitoringUpdateResponse) {
-          return mergeFrom((calc.Cache.MonitoringUpdateResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(calc.Cache.MonitoringUpdateResponse other) {
-        if (other == calc.Cache.MonitoringUpdateResponse.getDefaultInstance()) return this;
-        if (other.hasStatus()) {
-          mergeStatus(other.getStatus());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        calc.Cache.MonitoringUpdateResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (calc.Cache.MonitoringUpdateResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private calc.Cache.ReplicaStatus status_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Cache.ReplicaStatus, calc.Cache.ReplicaStatus.Builder, calc.Cache.ReplicaStatusOrBuilder> statusBuilder_;
-      /**
-       * <code>.calc.ReplicaStatus status = 1;</code>
-       */
-      public boolean hasStatus() {
-        return statusBuilder_ != null || status_ != null;
-      }
-      /**
-       * <code>.calc.ReplicaStatus status = 1;</code>
-       */
-      public calc.Cache.ReplicaStatus getStatus() {
-        if (statusBuilder_ == null) {
-          return status_ == null ? calc.Cache.ReplicaStatus.getDefaultInstance() : status_;
-        } else {
-          return statusBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.calc.ReplicaStatus status = 1;</code>
-       */
-      public Builder setStatus(calc.Cache.ReplicaStatus value) {
-        if (statusBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          status_ = value;
-          onChanged();
-        } else {
-          statusBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.ReplicaStatus status = 1;</code>
-       */
-      public Builder setStatus(
-          calc.Cache.ReplicaStatus.Builder builderForValue) {
-        if (statusBuilder_ == null) {
-          status_ = builderForValue.build();
-          onChanged();
-        } else {
-          statusBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.ReplicaStatus status = 1;</code>
-       */
-      public Builder mergeStatus(calc.Cache.ReplicaStatus value) {
-        if (statusBuilder_ == null) {
-          if (status_ != null) {
-            status_ =
-              calc.Cache.ReplicaStatus.newBuilder(status_).mergeFrom(value).buildPartial();
-          } else {
-            status_ = value;
-          }
-          onChanged();
-        } else {
-          statusBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.ReplicaStatus status = 1;</code>
-       */
-      public Builder clearStatus() {
-        if (statusBuilder_ == null) {
-          status_ = null;
-          onChanged();
-        } else {
-          status_ = null;
-          statusBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.ReplicaStatus status = 1;</code>
-       */
-      public calc.Cache.ReplicaStatus.Builder getStatusBuilder() {
-        
-        onChanged();
-        return getStatusFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.calc.ReplicaStatus status = 1;</code>
-       */
-      public calc.Cache.ReplicaStatusOrBuilder getStatusOrBuilder() {
-        if (statusBuilder_ != null) {
-          return statusBuilder_.getMessageOrBuilder();
-        } else {
-          return status_ == null ?
-              calc.Cache.ReplicaStatus.getDefaultInstance() : status_;
-        }
-      }
-      /**
-       * <code>.calc.ReplicaStatus status = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Cache.ReplicaStatus, calc.Cache.ReplicaStatus.Builder, calc.Cache.ReplicaStatusOrBuilder> 
-          getStatusFieldBuilder() {
-        if (statusBuilder_ == null) {
-          statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              calc.Cache.ReplicaStatus, calc.Cache.ReplicaStatus.Builder, calc.Cache.ReplicaStatusOrBuilder>(
-                  getStatus(),
-                  getParentForChildren(),
-                  isClean());
-          status_ = null;
-        }
-        return statusBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:calc.MonitoringUpdateResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:calc.MonitoringUpdateResponse)
-    private static final calc.Cache.MonitoringUpdateResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new calc.Cache.MonitoringUpdateResponse();
-    }
-
-    public static calc.Cache.MonitoringUpdateResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<MonitoringUpdateResponse>
-        PARSER = new com.google.protobuf.AbstractParser<MonitoringUpdateResponse>() {
-      @java.lang.Override
-      public MonitoringUpdateResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MonitoringUpdateResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<MonitoringUpdateResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<MonitoringUpdateResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public calc.Cache.MonitoringUpdateResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ReplicaStatusOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:calc.ReplicaStatus)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string replicaId = 1;</code>
-     */
-    java.lang.String getReplicaId();
-    /**
-     * <code>string replicaId = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getReplicaIdBytes();
-
-    /**
-     * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
-     */
-    boolean hasConnectionInfo();
-    /**
-     * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
-     */
-    calc.Cache.ReplicaConnectionInfo getConnectionInfo();
-    /**
-     * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
-     */
-    calc.Cache.ReplicaConnectionInfoOrBuilder getConnectionInfoOrBuilder();
-
-    /**
-     * <code>.google.protobuf.Timestamp started = 3;</code>
-     */
-    boolean hasStarted();
-    /**
-     * <code>.google.protobuf.Timestamp started = 3;</code>
-     */
-    com.google.protobuf.Timestamp getStarted();
-    /**
-     * <code>.google.protobuf.Timestamp started = 3;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getStartedOrBuilder();
-
-    /**
-     * <pre>
-     *  ReplicaConfig replicaConfig           = 4;
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp currentClock = 5;</code>
-     */
-    boolean hasCurrentClock();
-    /**
-     * <pre>
-     *  ReplicaConfig replicaConfig           = 4;
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp currentClock = 5;</code>
-     */
-    com.google.protobuf.Timestamp getCurrentClock();
-    /**
-     * <pre>
-     *  ReplicaConfig replicaConfig           = 4;
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp currentClock = 5;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getCurrentClockOrBuilder();
-
-    /**
-     * <code>.calc.ReplicaCounters counters = 10;</code>
-     */
-    boolean hasCounters();
-    /**
-     * <code>.calc.ReplicaCounters counters = 10;</code>
-     */
-    calc.Cache.ReplicaCounters getCounters();
-    /**
-     * <code>.calc.ReplicaCounters counters = 10;</code>
-     */
-    calc.Cache.ReplicaCountersOrBuilder getCountersOrBuilder();
-
-    /**
-     * <code>.calc.CollectedStats collectedStats = 11;</code>
-     */
-    boolean hasCollectedStats();
-    /**
-     * <code>.calc.CollectedStats collectedStats = 11;</code>
-     */
-    calc.Cache.CollectedStats getCollectedStats();
-    /**
-     * <code>.calc.CollectedStats collectedStats = 11;</code>
-     */
-    calc.Cache.CollectedStatsOrBuilder getCollectedStatsOrBuilder();
-
-    /**
-     * <code>.calc.ClusterStatus clusterStatus = 12;</code>
-     */
-    boolean hasClusterStatus();
-    /**
-     * <code>.calc.ClusterStatus clusterStatus = 12;</code>
-     */
-    calc.Cache.ClusterStatus getClusterStatus();
-    /**
-     * <code>.calc.ClusterStatus clusterStatus = 12;</code>
-     */
-    calc.Cache.ClusterStatusOrBuilder getClusterStatusOrBuilder();
-  }
-  /**
-   * Protobuf type {@code calc.ReplicaStatus}
-   */
-  public  static final class ReplicaStatus extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:calc.ReplicaStatus)
-      ReplicaStatusOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ReplicaStatus.newBuilder() to construct.
-    private ReplicaStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ReplicaStatus() {
-      replicaId_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ReplicaStatus(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              replicaId_ = s;
-              break;
-            }
-            case 18: {
-              calc.Cache.ReplicaConnectionInfo.Builder subBuilder = null;
-              if (connectionInfo_ != null) {
-                subBuilder = connectionInfo_.toBuilder();
-              }
-              connectionInfo_ = input.readMessage(calc.Cache.ReplicaConnectionInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(connectionInfo_);
-                connectionInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (started_ != null) {
-                subBuilder = started_.toBuilder();
-              }
-              started_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(started_);
-                started_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (currentClock_ != null) {
-                subBuilder = currentClock_.toBuilder();
-              }
-              currentClock_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(currentClock_);
-                currentClock_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 82: {
-              calc.Cache.ReplicaCounters.Builder subBuilder = null;
-              if (counters_ != null) {
-                subBuilder = counters_.toBuilder();
-              }
-              counters_ = input.readMessage(calc.Cache.ReplicaCounters.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(counters_);
-                counters_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 90: {
-              calc.Cache.CollectedStats.Builder subBuilder = null;
-              if (collectedStats_ != null) {
-                subBuilder = collectedStats_.toBuilder();
-              }
-              collectedStats_ = input.readMessage(calc.Cache.CollectedStats.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(collectedStats_);
-                collectedStats_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 98: {
-              calc.Cache.ClusterStatus.Builder subBuilder = null;
-              if (clusterStatus_ != null) {
-                subBuilder = clusterStatus_.toBuilder();
-              }
-              clusterStatus_ = input.readMessage(calc.Cache.ClusterStatus.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(clusterStatus_);
-                clusterStatus_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return calc.Cache.internal_static_calc_ReplicaStatus_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return calc.Cache.internal_static_calc_ReplicaStatus_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              calc.Cache.ReplicaStatus.class, calc.Cache.ReplicaStatus.Builder.class);
-    }
-
-    public static final int REPLICAID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object replicaId_;
-    /**
-     * <code>string replicaId = 1;</code>
-     */
-    public java.lang.String getReplicaId() {
-      java.lang.Object ref = replicaId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        replicaId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string replicaId = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getReplicaIdBytes() {
-      java.lang.Object ref = replicaId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        replicaId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CONNECTIONINFO_FIELD_NUMBER = 2;
-    private calc.Cache.ReplicaConnectionInfo connectionInfo_;
-    /**
-     * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
-     */
-    public boolean hasConnectionInfo() {
-      return connectionInfo_ != null;
-    }
-    /**
-     * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
-     */
-    public calc.Cache.ReplicaConnectionInfo getConnectionInfo() {
-      return connectionInfo_ == null ? calc.Cache.ReplicaConnectionInfo.getDefaultInstance() : connectionInfo_;
-    }
-    /**
-     * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
-     */
-    public calc.Cache.ReplicaConnectionInfoOrBuilder getConnectionInfoOrBuilder() {
-      return getConnectionInfo();
-    }
-
-    public static final int STARTED_FIELD_NUMBER = 3;
-    private com.google.protobuf.Timestamp started_;
-    /**
-     * <code>.google.protobuf.Timestamp started = 3;</code>
-     */
-    public boolean hasStarted() {
-      return started_ != null;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp started = 3;</code>
-     */
-    public com.google.protobuf.Timestamp getStarted() {
-      return started_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : started_;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp started = 3;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getStartedOrBuilder() {
-      return getStarted();
-    }
-
-    public static final int CURRENTCLOCK_FIELD_NUMBER = 5;
-    private com.google.protobuf.Timestamp currentClock_;
-    /**
-     * <pre>
-     *  ReplicaConfig replicaConfig           = 4;
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp currentClock = 5;</code>
-     */
-    public boolean hasCurrentClock() {
-      return currentClock_ != null;
-    }
-    /**
-     * <pre>
-     *  ReplicaConfig replicaConfig           = 4;
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp currentClock = 5;</code>
-     */
-    public com.google.protobuf.Timestamp getCurrentClock() {
-      return currentClock_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : currentClock_;
-    }
-    /**
-     * <pre>
-     *  ReplicaConfig replicaConfig           = 4;
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp currentClock = 5;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getCurrentClockOrBuilder() {
-      return getCurrentClock();
-    }
-
-    public static final int COUNTERS_FIELD_NUMBER = 10;
-    private calc.Cache.ReplicaCounters counters_;
-    /**
-     * <code>.calc.ReplicaCounters counters = 10;</code>
-     */
-    public boolean hasCounters() {
-      return counters_ != null;
-    }
-    /**
-     * <code>.calc.ReplicaCounters counters = 10;</code>
-     */
-    public calc.Cache.ReplicaCounters getCounters() {
-      return counters_ == null ? calc.Cache.ReplicaCounters.getDefaultInstance() : counters_;
-    }
-    /**
-     * <code>.calc.ReplicaCounters counters = 10;</code>
-     */
-    public calc.Cache.ReplicaCountersOrBuilder getCountersOrBuilder() {
-      return getCounters();
-    }
-
-    public static final int COLLECTEDSTATS_FIELD_NUMBER = 11;
-    private calc.Cache.CollectedStats collectedStats_;
-    /**
-     * <code>.calc.CollectedStats collectedStats = 11;</code>
-     */
-    public boolean hasCollectedStats() {
-      return collectedStats_ != null;
-    }
-    /**
-     * <code>.calc.CollectedStats collectedStats = 11;</code>
-     */
-    public calc.Cache.CollectedStats getCollectedStats() {
-      return collectedStats_ == null ? calc.Cache.CollectedStats.getDefaultInstance() : collectedStats_;
-    }
-    /**
-     * <code>.calc.CollectedStats collectedStats = 11;</code>
-     */
-    public calc.Cache.CollectedStatsOrBuilder getCollectedStatsOrBuilder() {
-      return getCollectedStats();
-    }
-
-    public static final int CLUSTERSTATUS_FIELD_NUMBER = 12;
-    private calc.Cache.ClusterStatus clusterStatus_;
-    /**
-     * <code>.calc.ClusterStatus clusterStatus = 12;</code>
-     */
-    public boolean hasClusterStatus() {
-      return clusterStatus_ != null;
-    }
-    /**
-     * <code>.calc.ClusterStatus clusterStatus = 12;</code>
-     */
-    public calc.Cache.ClusterStatus getClusterStatus() {
-      return clusterStatus_ == null ? calc.Cache.ClusterStatus.getDefaultInstance() : clusterStatus_;
-    }
-    /**
-     * <code>.calc.ClusterStatus clusterStatus = 12;</code>
-     */
-    public calc.Cache.ClusterStatusOrBuilder getClusterStatusOrBuilder() {
-      return getClusterStatus();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getReplicaIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, replicaId_);
-      }
-      if (connectionInfo_ != null) {
-        output.writeMessage(2, getConnectionInfo());
-      }
-      if (started_ != null) {
-        output.writeMessage(3, getStarted());
-      }
-      if (currentClock_ != null) {
-        output.writeMessage(5, getCurrentClock());
-      }
-      if (counters_ != null) {
-        output.writeMessage(10, getCounters());
-      }
-      if (collectedStats_ != null) {
-        output.writeMessage(11, getCollectedStats());
-      }
-      if (clusterStatus_ != null) {
-        output.writeMessage(12, getClusterStatus());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getReplicaIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, replicaId_);
-      }
-      if (connectionInfo_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getConnectionInfo());
-      }
-      if (started_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getStarted());
-      }
-      if (currentClock_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getCurrentClock());
-      }
-      if (counters_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getCounters());
-      }
-      if (collectedStats_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getCollectedStats());
-      }
-      if (clusterStatus_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getClusterStatus());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof calc.Cache.ReplicaStatus)) {
-        return super.equals(obj);
-      }
-      calc.Cache.ReplicaStatus other = (calc.Cache.ReplicaStatus) obj;
-
-      boolean result = true;
-      result = result && getReplicaId()
-          .equals(other.getReplicaId());
-      result = result && (hasConnectionInfo() == other.hasConnectionInfo());
-      if (hasConnectionInfo()) {
-        result = result && getConnectionInfo()
-            .equals(other.getConnectionInfo());
-      }
-      result = result && (hasStarted() == other.hasStarted());
-      if (hasStarted()) {
-        result = result && getStarted()
-            .equals(other.getStarted());
-      }
-      result = result && (hasCurrentClock() == other.hasCurrentClock());
-      if (hasCurrentClock()) {
-        result = result && getCurrentClock()
-            .equals(other.getCurrentClock());
-      }
-      result = result && (hasCounters() == other.hasCounters());
-      if (hasCounters()) {
-        result = result && getCounters()
-            .equals(other.getCounters());
-      }
-      result = result && (hasCollectedStats() == other.hasCollectedStats());
-      if (hasCollectedStats()) {
-        result = result && getCollectedStats()
-            .equals(other.getCollectedStats());
-      }
-      result = result && (hasClusterStatus() == other.hasClusterStatus());
-      if (hasClusterStatus()) {
-        result = result && getClusterStatus()
-            .equals(other.getClusterStatus());
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REPLICAID_FIELD_NUMBER;
-      hash = (53 * hash) + getReplicaId().hashCode();
-      if (hasConnectionInfo()) {
-        hash = (37 * hash) + CONNECTIONINFO_FIELD_NUMBER;
-        hash = (53 * hash) + getConnectionInfo().hashCode();
-      }
-      if (hasStarted()) {
-        hash = (37 * hash) + STARTED_FIELD_NUMBER;
-        hash = (53 * hash) + getStarted().hashCode();
-      }
-      if (hasCurrentClock()) {
-        hash = (37 * hash) + CURRENTCLOCK_FIELD_NUMBER;
-        hash = (53 * hash) + getCurrentClock().hashCode();
-      }
-      if (hasCounters()) {
-        hash = (37 * hash) + COUNTERS_FIELD_NUMBER;
-        hash = (53 * hash) + getCounters().hashCode();
-      }
-      if (hasCollectedStats()) {
-        hash = (37 * hash) + COLLECTEDSTATS_FIELD_NUMBER;
-        hash = (53 * hash) + getCollectedStats().hashCode();
-      }
-      if (hasClusterStatus()) {
-        hash = (37 * hash) + CLUSTERSTATUS_FIELD_NUMBER;
-        hash = (53 * hash) + getClusterStatus().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static calc.Cache.ReplicaStatus parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.ReplicaStatus parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.ReplicaStatus parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.ReplicaStatus parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.ReplicaStatus parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.ReplicaStatus parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.ReplicaStatus parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.ReplicaStatus parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.ReplicaStatus parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static calc.Cache.ReplicaStatus parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.ReplicaStatus parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.ReplicaStatus parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(calc.Cache.ReplicaStatus prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code calc.ReplicaStatus}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:calc.ReplicaStatus)
-        calc.Cache.ReplicaStatusOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return calc.Cache.internal_static_calc_ReplicaStatus_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return calc.Cache.internal_static_calc_ReplicaStatus_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                calc.Cache.ReplicaStatus.class, calc.Cache.ReplicaStatus.Builder.class);
-      }
-
-      // Construct using calc.Cache.ReplicaStatus.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        replicaId_ = "";
-
-        if (connectionInfoBuilder_ == null) {
-          connectionInfo_ = null;
-        } else {
-          connectionInfo_ = null;
-          connectionInfoBuilder_ = null;
-        }
-        if (startedBuilder_ == null) {
-          started_ = null;
-        } else {
-          started_ = null;
-          startedBuilder_ = null;
-        }
-        if (currentClockBuilder_ == null) {
-          currentClock_ = null;
-        } else {
-          currentClock_ = null;
-          currentClockBuilder_ = null;
-        }
-        if (countersBuilder_ == null) {
-          counters_ = null;
-        } else {
-          counters_ = null;
-          countersBuilder_ = null;
-        }
-        if (collectedStatsBuilder_ == null) {
-          collectedStats_ = null;
-        } else {
-          collectedStats_ = null;
-          collectedStatsBuilder_ = null;
-        }
-        if (clusterStatusBuilder_ == null) {
-          clusterStatus_ = null;
-        } else {
-          clusterStatus_ = null;
-          clusterStatusBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return calc.Cache.internal_static_calc_ReplicaStatus_descriptor;
-      }
-
-      @java.lang.Override
-      public calc.Cache.ReplicaStatus getDefaultInstanceForType() {
-        return calc.Cache.ReplicaStatus.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public calc.Cache.ReplicaStatus build() {
-        calc.Cache.ReplicaStatus result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public calc.Cache.ReplicaStatus buildPartial() {
-        calc.Cache.ReplicaStatus result = new calc.Cache.ReplicaStatus(this);
-        result.replicaId_ = replicaId_;
-        if (connectionInfoBuilder_ == null) {
-          result.connectionInfo_ = connectionInfo_;
-        } else {
-          result.connectionInfo_ = connectionInfoBuilder_.build();
-        }
-        if (startedBuilder_ == null) {
-          result.started_ = started_;
-        } else {
-          result.started_ = startedBuilder_.build();
-        }
-        if (currentClockBuilder_ == null) {
-          result.currentClock_ = currentClock_;
-        } else {
-          result.currentClock_ = currentClockBuilder_.build();
-        }
-        if (countersBuilder_ == null) {
-          result.counters_ = counters_;
-        } else {
-          result.counters_ = countersBuilder_.build();
-        }
-        if (collectedStatsBuilder_ == null) {
-          result.collectedStats_ = collectedStats_;
-        } else {
-          result.collectedStats_ = collectedStatsBuilder_.build();
-        }
-        if (clusterStatusBuilder_ == null) {
-          result.clusterStatus_ = clusterStatus_;
-        } else {
-          result.clusterStatus_ = clusterStatusBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof calc.Cache.ReplicaStatus) {
-          return mergeFrom((calc.Cache.ReplicaStatus)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(calc.Cache.ReplicaStatus other) {
-        if (other == calc.Cache.ReplicaStatus.getDefaultInstance()) return this;
-        if (!other.getReplicaId().isEmpty()) {
-          replicaId_ = other.replicaId_;
-          onChanged();
-        }
-        if (other.hasConnectionInfo()) {
-          mergeConnectionInfo(other.getConnectionInfo());
-        }
-        if (other.hasStarted()) {
-          mergeStarted(other.getStarted());
-        }
-        if (other.hasCurrentClock()) {
-          mergeCurrentClock(other.getCurrentClock());
-        }
-        if (other.hasCounters()) {
-          mergeCounters(other.getCounters());
-        }
-        if (other.hasCollectedStats()) {
-          mergeCollectedStats(other.getCollectedStats());
-        }
-        if (other.hasClusterStatus()) {
-          mergeClusterStatus(other.getClusterStatus());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        calc.Cache.ReplicaStatus parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (calc.Cache.ReplicaStatus) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object replicaId_ = "";
-      /**
-       * <code>string replicaId = 1;</code>
-       */
-      public java.lang.String getReplicaId() {
-        java.lang.Object ref = replicaId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          replicaId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string replicaId = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getReplicaIdBytes() {
-        java.lang.Object ref = replicaId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          replicaId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string replicaId = 1;</code>
-       */
-      public Builder setReplicaId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        replicaId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string replicaId = 1;</code>
-       */
-      public Builder clearReplicaId() {
-        
-        replicaId_ = getDefaultInstance().getReplicaId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string replicaId = 1;</code>
-       */
-      public Builder setReplicaIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        replicaId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private calc.Cache.ReplicaConnectionInfo connectionInfo_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Cache.ReplicaConnectionInfo, calc.Cache.ReplicaConnectionInfo.Builder, calc.Cache.ReplicaConnectionInfoOrBuilder> connectionInfoBuilder_;
-      /**
-       * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
-       */
-      public boolean hasConnectionInfo() {
-        return connectionInfoBuilder_ != null || connectionInfo_ != null;
-      }
-      /**
-       * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
-       */
-      public calc.Cache.ReplicaConnectionInfo getConnectionInfo() {
-        if (connectionInfoBuilder_ == null) {
-          return connectionInfo_ == null ? calc.Cache.ReplicaConnectionInfo.getDefaultInstance() : connectionInfo_;
-        } else {
-          return connectionInfoBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
-       */
-      public Builder setConnectionInfo(calc.Cache.ReplicaConnectionInfo value) {
-        if (connectionInfoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          connectionInfo_ = value;
-          onChanged();
-        } else {
-          connectionInfoBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
-       */
-      public Builder setConnectionInfo(
-          calc.Cache.ReplicaConnectionInfo.Builder builderForValue) {
-        if (connectionInfoBuilder_ == null) {
-          connectionInfo_ = builderForValue.build();
-          onChanged();
-        } else {
-          connectionInfoBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
-       */
-      public Builder mergeConnectionInfo(calc.Cache.ReplicaConnectionInfo value) {
-        if (connectionInfoBuilder_ == null) {
-          if (connectionInfo_ != null) {
-            connectionInfo_ =
-              calc.Cache.ReplicaConnectionInfo.newBuilder(connectionInfo_).mergeFrom(value).buildPartial();
-          } else {
-            connectionInfo_ = value;
-          }
-          onChanged();
-        } else {
-          connectionInfoBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
-       */
-      public Builder clearConnectionInfo() {
-        if (connectionInfoBuilder_ == null) {
-          connectionInfo_ = null;
-          onChanged();
-        } else {
-          connectionInfo_ = null;
-          connectionInfoBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
-       */
-      public calc.Cache.ReplicaConnectionInfo.Builder getConnectionInfoBuilder() {
-        
-        onChanged();
-        return getConnectionInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
-       */
-      public calc.Cache.ReplicaConnectionInfoOrBuilder getConnectionInfoOrBuilder() {
-        if (connectionInfoBuilder_ != null) {
-          return connectionInfoBuilder_.getMessageOrBuilder();
-        } else {
-          return connectionInfo_ == null ?
-              calc.Cache.ReplicaConnectionInfo.getDefaultInstance() : connectionInfo_;
-        }
-      }
-      /**
-       * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Cache.ReplicaConnectionInfo, calc.Cache.ReplicaConnectionInfo.Builder, calc.Cache.ReplicaConnectionInfoOrBuilder> 
-          getConnectionInfoFieldBuilder() {
-        if (connectionInfoBuilder_ == null) {
-          connectionInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              calc.Cache.ReplicaConnectionInfo, calc.Cache.ReplicaConnectionInfo.Builder, calc.Cache.ReplicaConnectionInfoOrBuilder>(
-                  getConnectionInfo(),
-                  getParentForChildren(),
-                  isClean());
-          connectionInfo_ = null;
-        }
-        return connectionInfoBuilder_;
-      }
-
-      private com.google.protobuf.Timestamp started_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startedBuilder_;
-      /**
-       * <code>.google.protobuf.Timestamp started = 3;</code>
-       */
-      public boolean hasStarted() {
-        return startedBuilder_ != null || started_ != null;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp started = 3;</code>
-       */
-      public com.google.protobuf.Timestamp getStarted() {
-        if (startedBuilder_ == null) {
-          return started_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : started_;
-        } else {
-          return startedBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.Timestamp started = 3;</code>
-       */
-      public Builder setStarted(com.google.protobuf.Timestamp value) {
-        if (startedBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          started_ = value;
-          onChanged();
-        } else {
-          startedBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp started = 3;</code>
-       */
-      public Builder setStarted(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (startedBuilder_ == null) {
-          started_ = builderForValue.build();
-          onChanged();
-        } else {
-          startedBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp started = 3;</code>
-       */
-      public Builder mergeStarted(com.google.protobuf.Timestamp value) {
-        if (startedBuilder_ == null) {
-          if (started_ != null) {
-            started_ =
-              com.google.protobuf.Timestamp.newBuilder(started_).mergeFrom(value).buildPartial();
-          } else {
-            started_ = value;
-          }
-          onChanged();
-        } else {
-          startedBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp started = 3;</code>
-       */
-      public Builder clearStarted() {
-        if (startedBuilder_ == null) {
-          started_ = null;
-          onChanged();
-        } else {
-          started_ = null;
-          startedBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp started = 3;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getStartedBuilder() {
-        
-        onChanged();
-        return getStartedFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.Timestamp started = 3;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getStartedOrBuilder() {
-        if (startedBuilder_ != null) {
-          return startedBuilder_.getMessageOrBuilder();
-        } else {
-          return started_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : started_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.Timestamp started = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getStartedFieldBuilder() {
-        if (startedBuilder_ == null) {
-          startedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getStarted(),
-                  getParentForChildren(),
-                  isClean());
-          started_ = null;
-        }
-        return startedBuilder_;
-      }
-
-      private com.google.protobuf.Timestamp currentClock_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> currentClockBuilder_;
-      /**
-       * <pre>
-       *  ReplicaConfig replicaConfig           = 4;
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp currentClock = 5;</code>
-       */
-      public boolean hasCurrentClock() {
-        return currentClockBuilder_ != null || currentClock_ != null;
-      }
-      /**
-       * <pre>
-       *  ReplicaConfig replicaConfig           = 4;
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp currentClock = 5;</code>
-       */
-      public com.google.protobuf.Timestamp getCurrentClock() {
-        if (currentClockBuilder_ == null) {
-          return currentClock_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : currentClock_;
-        } else {
-          return currentClockBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       *  ReplicaConfig replicaConfig           = 4;
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp currentClock = 5;</code>
-       */
-      public Builder setCurrentClock(com.google.protobuf.Timestamp value) {
-        if (currentClockBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          currentClock_ = value;
-          onChanged();
-        } else {
-          currentClockBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       *  ReplicaConfig replicaConfig           = 4;
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp currentClock = 5;</code>
-       */
-      public Builder setCurrentClock(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (currentClockBuilder_ == null) {
-          currentClock_ = builderForValue.build();
-          onChanged();
-        } else {
-          currentClockBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       *  ReplicaConfig replicaConfig           = 4;
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp currentClock = 5;</code>
-       */
-      public Builder mergeCurrentClock(com.google.protobuf.Timestamp value) {
-        if (currentClockBuilder_ == null) {
-          if (currentClock_ != null) {
-            currentClock_ =
-              com.google.protobuf.Timestamp.newBuilder(currentClock_).mergeFrom(value).buildPartial();
-          } else {
-            currentClock_ = value;
-          }
-          onChanged();
-        } else {
-          currentClockBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       *  ReplicaConfig replicaConfig           = 4;
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp currentClock = 5;</code>
-       */
-      public Builder clearCurrentClock() {
-        if (currentClockBuilder_ == null) {
-          currentClock_ = null;
-          onChanged();
-        } else {
-          currentClock_ = null;
-          currentClockBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       *  ReplicaConfig replicaConfig           = 4;
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp currentClock = 5;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getCurrentClockBuilder() {
-        
-        onChanged();
-        return getCurrentClockFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       *  ReplicaConfig replicaConfig           = 4;
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp currentClock = 5;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getCurrentClockOrBuilder() {
-        if (currentClockBuilder_ != null) {
-          return currentClockBuilder_.getMessageOrBuilder();
-        } else {
-          return currentClock_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : currentClock_;
-        }
-      }
-      /**
-       * <pre>
-       *  ReplicaConfig replicaConfig           = 4;
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp currentClock = 5;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getCurrentClockFieldBuilder() {
-        if (currentClockBuilder_ == null) {
-          currentClockBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getCurrentClock(),
-                  getParentForChildren(),
-                  isClean());
-          currentClock_ = null;
-        }
-        return currentClockBuilder_;
-      }
-
-      private calc.Cache.ReplicaCounters counters_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Cache.ReplicaCounters, calc.Cache.ReplicaCounters.Builder, calc.Cache.ReplicaCountersOrBuilder> countersBuilder_;
-      /**
-       * <code>.calc.ReplicaCounters counters = 10;</code>
-       */
-      public boolean hasCounters() {
-        return countersBuilder_ != null || counters_ != null;
-      }
-      /**
-       * <code>.calc.ReplicaCounters counters = 10;</code>
-       */
-      public calc.Cache.ReplicaCounters getCounters() {
-        if (countersBuilder_ == null) {
-          return counters_ == null ? calc.Cache.ReplicaCounters.getDefaultInstance() : counters_;
-        } else {
-          return countersBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.calc.ReplicaCounters counters = 10;</code>
-       */
-      public Builder setCounters(calc.Cache.ReplicaCounters value) {
-        if (countersBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          counters_ = value;
-          onChanged();
-        } else {
-          countersBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.ReplicaCounters counters = 10;</code>
-       */
-      public Builder setCounters(
-          calc.Cache.ReplicaCounters.Builder builderForValue) {
-        if (countersBuilder_ == null) {
-          counters_ = builderForValue.build();
-          onChanged();
-        } else {
-          countersBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.ReplicaCounters counters = 10;</code>
-       */
-      public Builder mergeCounters(calc.Cache.ReplicaCounters value) {
-        if (countersBuilder_ == null) {
-          if (counters_ != null) {
-            counters_ =
-              calc.Cache.ReplicaCounters.newBuilder(counters_).mergeFrom(value).buildPartial();
-          } else {
-            counters_ = value;
-          }
-          onChanged();
-        } else {
-          countersBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.ReplicaCounters counters = 10;</code>
-       */
-      public Builder clearCounters() {
-        if (countersBuilder_ == null) {
-          counters_ = null;
-          onChanged();
-        } else {
-          counters_ = null;
-          countersBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.ReplicaCounters counters = 10;</code>
-       */
-      public calc.Cache.ReplicaCounters.Builder getCountersBuilder() {
-        
-        onChanged();
-        return getCountersFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.calc.ReplicaCounters counters = 10;</code>
-       */
-      public calc.Cache.ReplicaCountersOrBuilder getCountersOrBuilder() {
-        if (countersBuilder_ != null) {
-          return countersBuilder_.getMessageOrBuilder();
-        } else {
-          return counters_ == null ?
-              calc.Cache.ReplicaCounters.getDefaultInstance() : counters_;
-        }
-      }
-      /**
-       * <code>.calc.ReplicaCounters counters = 10;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Cache.ReplicaCounters, calc.Cache.ReplicaCounters.Builder, calc.Cache.ReplicaCountersOrBuilder> 
-          getCountersFieldBuilder() {
-        if (countersBuilder_ == null) {
-          countersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              calc.Cache.ReplicaCounters, calc.Cache.ReplicaCounters.Builder, calc.Cache.ReplicaCountersOrBuilder>(
-                  getCounters(),
-                  getParentForChildren(),
-                  isClean());
-          counters_ = null;
-        }
-        return countersBuilder_;
-      }
-
-      private calc.Cache.CollectedStats collectedStats_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Cache.CollectedStats, calc.Cache.CollectedStats.Builder, calc.Cache.CollectedStatsOrBuilder> collectedStatsBuilder_;
-      /**
-       * <code>.calc.CollectedStats collectedStats = 11;</code>
-       */
-      public boolean hasCollectedStats() {
-        return collectedStatsBuilder_ != null || collectedStats_ != null;
-      }
-      /**
-       * <code>.calc.CollectedStats collectedStats = 11;</code>
-       */
-      public calc.Cache.CollectedStats getCollectedStats() {
-        if (collectedStatsBuilder_ == null) {
-          return collectedStats_ == null ? calc.Cache.CollectedStats.getDefaultInstance() : collectedStats_;
-        } else {
-          return collectedStatsBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.calc.CollectedStats collectedStats = 11;</code>
-       */
-      public Builder setCollectedStats(calc.Cache.CollectedStats value) {
-        if (collectedStatsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          collectedStats_ = value;
-          onChanged();
-        } else {
-          collectedStatsBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.CollectedStats collectedStats = 11;</code>
-       */
-      public Builder setCollectedStats(
-          calc.Cache.CollectedStats.Builder builderForValue) {
-        if (collectedStatsBuilder_ == null) {
-          collectedStats_ = builderForValue.build();
-          onChanged();
-        } else {
-          collectedStatsBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.CollectedStats collectedStats = 11;</code>
-       */
-      public Builder mergeCollectedStats(calc.Cache.CollectedStats value) {
-        if (collectedStatsBuilder_ == null) {
-          if (collectedStats_ != null) {
-            collectedStats_ =
-              calc.Cache.CollectedStats.newBuilder(collectedStats_).mergeFrom(value).buildPartial();
-          } else {
-            collectedStats_ = value;
-          }
-          onChanged();
-        } else {
-          collectedStatsBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.CollectedStats collectedStats = 11;</code>
-       */
-      public Builder clearCollectedStats() {
-        if (collectedStatsBuilder_ == null) {
-          collectedStats_ = null;
-          onChanged();
-        } else {
-          collectedStats_ = null;
-          collectedStatsBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.CollectedStats collectedStats = 11;</code>
-       */
-      public calc.Cache.CollectedStats.Builder getCollectedStatsBuilder() {
-        
-        onChanged();
-        return getCollectedStatsFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.calc.CollectedStats collectedStats = 11;</code>
-       */
-      public calc.Cache.CollectedStatsOrBuilder getCollectedStatsOrBuilder() {
-        if (collectedStatsBuilder_ != null) {
-          return collectedStatsBuilder_.getMessageOrBuilder();
-        } else {
-          return collectedStats_ == null ?
-              calc.Cache.CollectedStats.getDefaultInstance() : collectedStats_;
-        }
-      }
-      /**
-       * <code>.calc.CollectedStats collectedStats = 11;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Cache.CollectedStats, calc.Cache.CollectedStats.Builder, calc.Cache.CollectedStatsOrBuilder> 
-          getCollectedStatsFieldBuilder() {
-        if (collectedStatsBuilder_ == null) {
-          collectedStatsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              calc.Cache.CollectedStats, calc.Cache.CollectedStats.Builder, calc.Cache.CollectedStatsOrBuilder>(
-                  getCollectedStats(),
-                  getParentForChildren(),
-                  isClean());
-          collectedStats_ = null;
-        }
-        return collectedStatsBuilder_;
-      }
-
-      private calc.Cache.ClusterStatus clusterStatus_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Cache.ClusterStatus, calc.Cache.ClusterStatus.Builder, calc.Cache.ClusterStatusOrBuilder> clusterStatusBuilder_;
-      /**
-       * <code>.calc.ClusterStatus clusterStatus = 12;</code>
-       */
-      public boolean hasClusterStatus() {
-        return clusterStatusBuilder_ != null || clusterStatus_ != null;
-      }
-      /**
-       * <code>.calc.ClusterStatus clusterStatus = 12;</code>
-       */
-      public calc.Cache.ClusterStatus getClusterStatus() {
-        if (clusterStatusBuilder_ == null) {
-          return clusterStatus_ == null ? calc.Cache.ClusterStatus.getDefaultInstance() : clusterStatus_;
-        } else {
-          return clusterStatusBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.calc.ClusterStatus clusterStatus = 12;</code>
-       */
-      public Builder setClusterStatus(calc.Cache.ClusterStatus value) {
-        if (clusterStatusBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          clusterStatus_ = value;
-          onChanged();
-        } else {
-          clusterStatusBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.ClusterStatus clusterStatus = 12;</code>
-       */
-      public Builder setClusterStatus(
-          calc.Cache.ClusterStatus.Builder builderForValue) {
-        if (clusterStatusBuilder_ == null) {
-          clusterStatus_ = builderForValue.build();
-          onChanged();
-        } else {
-          clusterStatusBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.ClusterStatus clusterStatus = 12;</code>
-       */
-      public Builder mergeClusterStatus(calc.Cache.ClusterStatus value) {
-        if (clusterStatusBuilder_ == null) {
-          if (clusterStatus_ != null) {
-            clusterStatus_ =
-              calc.Cache.ClusterStatus.newBuilder(clusterStatus_).mergeFrom(value).buildPartial();
-          } else {
-            clusterStatus_ = value;
-          }
-          onChanged();
-        } else {
-          clusterStatusBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.ClusterStatus clusterStatus = 12;</code>
-       */
-      public Builder clearClusterStatus() {
-        if (clusterStatusBuilder_ == null) {
-          clusterStatus_ = null;
-          onChanged();
-        } else {
-          clusterStatus_ = null;
-          clusterStatusBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.calc.ClusterStatus clusterStatus = 12;</code>
-       */
-      public calc.Cache.ClusterStatus.Builder getClusterStatusBuilder() {
-        
-        onChanged();
-        return getClusterStatusFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.calc.ClusterStatus clusterStatus = 12;</code>
-       */
-      public calc.Cache.ClusterStatusOrBuilder getClusterStatusOrBuilder() {
-        if (clusterStatusBuilder_ != null) {
-          return clusterStatusBuilder_.getMessageOrBuilder();
-        } else {
-          return clusterStatus_ == null ?
-              calc.Cache.ClusterStatus.getDefaultInstance() : clusterStatus_;
-        }
-      }
-      /**
-       * <code>.calc.ClusterStatus clusterStatus = 12;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          calc.Cache.ClusterStatus, calc.Cache.ClusterStatus.Builder, calc.Cache.ClusterStatusOrBuilder> 
-          getClusterStatusFieldBuilder() {
-        if (clusterStatusBuilder_ == null) {
-          clusterStatusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              calc.Cache.ClusterStatus, calc.Cache.ClusterStatus.Builder, calc.Cache.ClusterStatusOrBuilder>(
-                  getClusterStatus(),
-                  getParentForChildren(),
-                  isClean());
-          clusterStatus_ = null;
-        }
-        return clusterStatusBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:calc.ReplicaStatus)
-    }
-
-    // @@protoc_insertion_point(class_scope:calc.ReplicaStatus)
-    private static final calc.Cache.ReplicaStatus DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new calc.Cache.ReplicaStatus();
-    }
-
-    public static calc.Cache.ReplicaStatus getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ReplicaStatus>
-        PARSER = new com.google.protobuf.AbstractParser<ReplicaStatus>() {
-      @java.lang.Override
-      public ReplicaStatus parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ReplicaStatus(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ReplicaStatus> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ReplicaStatus> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public calc.Cache.ReplicaStatus getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ClusterStatusOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:calc.ClusterStatus)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
-     */
-    int getReplicasCount();
-    /**
-     * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
-     */
-    boolean containsReplicas(
-        java.lang.String key);
-    /**
-     * Use {@link #getReplicasMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo>
-    getReplicas();
-    /**
-     * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
-     */
-    java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo>
-    getReplicasMap();
-    /**
-     * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
-     */
-
-    calc.Cache.ReplicaConnectionInfo getReplicasOrDefault(
-        java.lang.String key,
-        calc.Cache.ReplicaConnectionInfo defaultValue);
-    /**
-     * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
-     */
-
-    calc.Cache.ReplicaConnectionInfo getReplicasOrThrow(
-        java.lang.String key);
-  }
-  /**
-   * Protobuf type {@code calc.ClusterStatus}
-   */
-  public  static final class ClusterStatus extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:calc.ClusterStatus)
-      ClusterStatusOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ClusterStatus.newBuilder() to construct.
-    private ClusterStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ClusterStatus() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ClusterStatus(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                replicas_ = com.google.protobuf.MapField.newMapField(
-                    ReplicasDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, calc.Cache.ReplicaConnectionInfo>
-              replicas__ = input.readMessage(
-                  ReplicasDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              replicas_.getMutableMap().put(
-                  replicas__.getKey(), replicas__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return calc.Cache.internal_static_calc_ClusterStatus_descriptor;
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 1:
-          return internalGetReplicas();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return calc.Cache.internal_static_calc_ClusterStatus_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              calc.Cache.ClusterStatus.class, calc.Cache.ClusterStatus.Builder.class);
-    }
-
-    public static final int REPLICAS_FIELD_NUMBER = 1;
-    private static final class ReplicasDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, calc.Cache.ReplicaConnectionInfo> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, calc.Cache.ReplicaConnectionInfo>newDefaultInstance(
-                  calc.Cache.internal_static_calc_ClusterStatus_ReplicasEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  calc.Cache.ReplicaConnectionInfo.getDefaultInstance());
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, calc.Cache.ReplicaConnectionInfo> replicas_;
-    private com.google.protobuf.MapField<java.lang.String, calc.Cache.ReplicaConnectionInfo>
-    internalGetReplicas() {
-      if (replicas_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            ReplicasDefaultEntryHolder.defaultEntry);
-      }
-      return replicas_;
-    }
-
-    public int getReplicasCount() {
-      return internalGetReplicas().getMap().size();
-    }
-    /**
-     * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
-     */
-
-    public boolean containsReplicas(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetReplicas().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getReplicasMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> getReplicas() {
-      return getReplicasMap();
-    }
-    /**
-     * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
-     */
-
-    public java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> getReplicasMap() {
-      return internalGetReplicas().getMap();
-    }
-    /**
-     * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
-     */
-
-    public calc.Cache.ReplicaConnectionInfo getReplicasOrDefault(
-        java.lang.String key,
-        calc.Cache.ReplicaConnectionInfo defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> map =
-          internalGetReplicas().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
-     */
-
-    public calc.Cache.ReplicaConnectionInfo getReplicasOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> map =
-          internalGetReplicas().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetReplicas(),
-          ReplicasDefaultEntryHolder.defaultEntry,
-          1);
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      for (java.util.Map.Entry<java.lang.String, calc.Cache.ReplicaConnectionInfo> entry
-           : internalGetReplicas().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, calc.Cache.ReplicaConnectionInfo>
-        replicas__ = ReplicasDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, replicas__);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof calc.Cache.ClusterStatus)) {
-        return super.equals(obj);
-      }
-      calc.Cache.ClusterStatus other = (calc.Cache.ClusterStatus) obj;
-
-      boolean result = true;
-      result = result && internalGetReplicas().equals(
-          other.internalGetReplicas());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetReplicas().getMap().isEmpty()) {
-        hash = (37 * hash) + REPLICAS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetReplicas().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static calc.Cache.ClusterStatus parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.ClusterStatus parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.ClusterStatus parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.ClusterStatus parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.ClusterStatus parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.ClusterStatus parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.ClusterStatus parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.ClusterStatus parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.ClusterStatus parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static calc.Cache.ClusterStatus parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.ClusterStatus parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.ClusterStatus parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(calc.Cache.ClusterStatus prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code calc.ClusterStatus}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:calc.ClusterStatus)
-        calc.Cache.ClusterStatusOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return calc.Cache.internal_static_calc_ClusterStatus_descriptor;
-      }
-
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetReplicas();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetMutableReplicas();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return calc.Cache.internal_static_calc_ClusterStatus_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                calc.Cache.ClusterStatus.class, calc.Cache.ClusterStatus.Builder.class);
-      }
-
-      // Construct using calc.Cache.ClusterStatus.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        internalGetMutableReplicas().clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return calc.Cache.internal_static_calc_ClusterStatus_descriptor;
-      }
-
-      @java.lang.Override
-      public calc.Cache.ClusterStatus getDefaultInstanceForType() {
-        return calc.Cache.ClusterStatus.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public calc.Cache.ClusterStatus build() {
-        calc.Cache.ClusterStatus result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public calc.Cache.ClusterStatus buildPartial() {
-        calc.Cache.ClusterStatus result = new calc.Cache.ClusterStatus(this);
-        int from_bitField0_ = bitField0_;
-        result.replicas_ = internalGetReplicas();
-        result.replicas_.makeImmutable();
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof calc.Cache.ClusterStatus) {
-          return mergeFrom((calc.Cache.ClusterStatus)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(calc.Cache.ClusterStatus other) {
-        if (other == calc.Cache.ClusterStatus.getDefaultInstance()) return this;
-        internalGetMutableReplicas().mergeFrom(
-            other.internalGetReplicas());
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        calc.Cache.ClusterStatus parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (calc.Cache.ClusterStatus) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private com.google.protobuf.MapField<
-          java.lang.String, calc.Cache.ReplicaConnectionInfo> replicas_;
-      private com.google.protobuf.MapField<java.lang.String, calc.Cache.ReplicaConnectionInfo>
-      internalGetReplicas() {
-        if (replicas_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              ReplicasDefaultEntryHolder.defaultEntry);
-        }
-        return replicas_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, calc.Cache.ReplicaConnectionInfo>
-      internalGetMutableReplicas() {
-        onChanged();;
-        if (replicas_ == null) {
-          replicas_ = com.google.protobuf.MapField.newMapField(
-              ReplicasDefaultEntryHolder.defaultEntry);
-        }
-        if (!replicas_.isMutable()) {
-          replicas_ = replicas_.copy();
-        }
-        return replicas_;
-      }
-
-      public int getReplicasCount() {
-        return internalGetReplicas().getMap().size();
-      }
-      /**
-       * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
-       */
-
-      public boolean containsReplicas(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetReplicas().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getReplicasMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> getReplicas() {
-        return getReplicasMap();
-      }
-      /**
-       * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
-       */
-
-      public java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> getReplicasMap() {
-        return internalGetReplicas().getMap();
-      }
-      /**
-       * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
-       */
-
-      public calc.Cache.ReplicaConnectionInfo getReplicasOrDefault(
-          java.lang.String key,
-          calc.Cache.ReplicaConnectionInfo defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> map =
-            internalGetReplicas().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
-       */
-
-      public calc.Cache.ReplicaConnectionInfo getReplicasOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> map =
-            internalGetReplicas().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearReplicas() {
-        internalGetMutableReplicas().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
-       */
-
-      public Builder removeReplicas(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableReplicas().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo>
-      getMutableReplicas() {
-        return internalGetMutableReplicas().getMutableMap();
-      }
-      /**
-       * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
-       */
-      public Builder putReplicas(
-          java.lang.String key,
-          calc.Cache.ReplicaConnectionInfo value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableReplicas().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
-       */
-
-      public Builder putAllReplicas(
-          java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> values) {
-        internalGetMutableReplicas().getMutableMap()
-            .putAll(values);
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:calc.ClusterStatus)
-    }
-
-    // @@protoc_insertion_point(class_scope:calc.ClusterStatus)
-    private static final calc.Cache.ClusterStatus DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new calc.Cache.ClusterStatus();
-    }
-
-    public static calc.Cache.ClusterStatus getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ClusterStatus>
-        PARSER = new com.google.protobuf.AbstractParser<ClusterStatus>() {
-      @java.lang.Override
-      public ClusterStatus parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ClusterStatus(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ClusterStatus> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ClusterStatus> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public calc.Cache.ClusterStatus getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ReplicaConnectionInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:calc.ReplicaConnectionInfo)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string host = 1;</code>
-     */
-    java.lang.String getHost();
-    /**
-     * <code>string host = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getHostBytes();
-
-    /**
-     * <pre>
-     * Some other metadata?
-     * </pre>
-     *
-     * <code>uint32 port = 2;</code>
-     */
-    int getPort();
-  }
-  /**
-   * Protobuf type {@code calc.ReplicaConnectionInfo}
-   */
-  public  static final class ReplicaConnectionInfo extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:calc.ReplicaConnectionInfo)
-      ReplicaConnectionInfoOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ReplicaConnectionInfo.newBuilder() to construct.
-    private ReplicaConnectionInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ReplicaConnectionInfo() {
-      host_ = "";
-      port_ = 0;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ReplicaConnectionInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              host_ = s;
-              break;
-            }
-            case 16: {
-
-              port_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return calc.Cache.internal_static_calc_ReplicaConnectionInfo_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return calc.Cache.internal_static_calc_ReplicaConnectionInfo_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              calc.Cache.ReplicaConnectionInfo.class, calc.Cache.ReplicaConnectionInfo.Builder.class);
-    }
-
-    public static final int HOST_FIELD_NUMBER = 1;
-    private volatile java.lang.Object host_;
-    /**
-     * <code>string host = 1;</code>
-     */
-    public java.lang.String getHost() {
-      java.lang.Object ref = host_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        host_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string host = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getHostBytes() {
-      java.lang.Object ref = host_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        host_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PORT_FIELD_NUMBER = 2;
-    private int port_;
-    /**
-     * <pre>
-     * Some other metadata?
-     * </pre>
-     *
-     * <code>uint32 port = 2;</code>
-     */
-    public int getPort() {
-      return port_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getHostBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, host_);
-      }
-      if (port_ != 0) {
-        output.writeUInt32(2, port_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getHostBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, host_);
-      }
-      if (port_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, port_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof calc.Cache.ReplicaConnectionInfo)) {
-        return super.equals(obj);
-      }
-      calc.Cache.ReplicaConnectionInfo other = (calc.Cache.ReplicaConnectionInfo) obj;
-
-      boolean result = true;
-      result = result && getHost()
-          .equals(other.getHost());
-      result = result && (getPort()
-          == other.getPort());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + HOST_FIELD_NUMBER;
-      hash = (53 * hash) + getHost().hashCode();
-      hash = (37 * hash) + PORT_FIELD_NUMBER;
-      hash = (53 * hash) + getPort();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static calc.Cache.ReplicaConnectionInfo parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.ReplicaConnectionInfo parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.ReplicaConnectionInfo parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.ReplicaConnectionInfo parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.ReplicaConnectionInfo parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.ReplicaConnectionInfo parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.ReplicaConnectionInfo parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.ReplicaConnectionInfo parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.ReplicaConnectionInfo parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static calc.Cache.ReplicaConnectionInfo parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.ReplicaConnectionInfo parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.ReplicaConnectionInfo parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(calc.Cache.ReplicaConnectionInfo prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code calc.ReplicaConnectionInfo}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:calc.ReplicaConnectionInfo)
-        calc.Cache.ReplicaConnectionInfoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return calc.Cache.internal_static_calc_ReplicaConnectionInfo_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return calc.Cache.internal_static_calc_ReplicaConnectionInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                calc.Cache.ReplicaConnectionInfo.class, calc.Cache.ReplicaConnectionInfo.Builder.class);
-      }
-
-      // Construct using calc.Cache.ReplicaConnectionInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        host_ = "";
-
-        port_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return calc.Cache.internal_static_calc_ReplicaConnectionInfo_descriptor;
-      }
-
-      @java.lang.Override
-      public calc.Cache.ReplicaConnectionInfo getDefaultInstanceForType() {
-        return calc.Cache.ReplicaConnectionInfo.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public calc.Cache.ReplicaConnectionInfo build() {
-        calc.Cache.ReplicaConnectionInfo result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public calc.Cache.ReplicaConnectionInfo buildPartial() {
-        calc.Cache.ReplicaConnectionInfo result = new calc.Cache.ReplicaConnectionInfo(this);
-        result.host_ = host_;
-        result.port_ = port_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof calc.Cache.ReplicaConnectionInfo) {
-          return mergeFrom((calc.Cache.ReplicaConnectionInfo)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(calc.Cache.ReplicaConnectionInfo other) {
-        if (other == calc.Cache.ReplicaConnectionInfo.getDefaultInstance()) return this;
-        if (!other.getHost().isEmpty()) {
-          host_ = other.host_;
-          onChanged();
-        }
-        if (other.getPort() != 0) {
-          setPort(other.getPort());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        calc.Cache.ReplicaConnectionInfo parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (calc.Cache.ReplicaConnectionInfo) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object host_ = "";
-      /**
-       * <code>string host = 1;</code>
-       */
-      public java.lang.String getHost() {
-        java.lang.Object ref = host_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          host_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string host = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getHostBytes() {
-        java.lang.Object ref = host_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          host_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string host = 1;</code>
-       */
-      public Builder setHost(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        host_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string host = 1;</code>
-       */
-      public Builder clearHost() {
-        
-        host_ = getDefaultInstance().getHost();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string host = 1;</code>
-       */
-      public Builder setHostBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        host_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int port_ ;
-      /**
-       * <pre>
-       * Some other metadata?
-       * </pre>
-       *
-       * <code>uint32 port = 2;</code>
-       */
-      public int getPort() {
-        return port_;
-      }
-      /**
-       * <pre>
-       * Some other metadata?
-       * </pre>
-       *
-       * <code>uint32 port = 2;</code>
-       */
-      public Builder setPort(int value) {
-        
-        port_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Some other metadata?
-       * </pre>
-       *
-       * <code>uint32 port = 2;</code>
-       */
-      public Builder clearPort() {
-        
-        port_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:calc.ReplicaConnectionInfo)
-    }
-
-    // @@protoc_insertion_point(class_scope:calc.ReplicaConnectionInfo)
-    private static final calc.Cache.ReplicaConnectionInfo DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new calc.Cache.ReplicaConnectionInfo();
-    }
-
-    public static calc.Cache.ReplicaConnectionInfo getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ReplicaConnectionInfo>
-        PARSER = new com.google.protobuf.AbstractParser<ReplicaConnectionInfo>() {
-      @java.lang.Override
-      public ReplicaConnectionInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ReplicaConnectionInfo(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ReplicaConnectionInfo> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ReplicaConnectionInfo> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public calc.Cache.ReplicaConnectionInfo getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ReplicaCountersOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:calc.ReplicaCounters)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>uint64 addsCounter = 1;</code>
-     */
-    long getAddsCounter();
-
-    /**
-     * <code>uint64 deletesCounter = 2;</code>
-     */
-    long getDeletesCounter();
-
-    /**
-     * <code>uint64 copysCounter = 3;</code>
-     */
-    long getCopysCounter();
-
-    /**
-     * <code>uint64 getCounter = 4;</code>
-     */
-    long getGetCounter();
-
-    /**
-     * <code>uint64 containsCounter = 5;</code>
-     */
-    long getContainsCounter();
-
-    /**
-     * <code>uint64 keySearchCounter = 6;</code>
-     */
-    long getKeySearchCounter();
-
-    /**
-     * <code>uint64 metadataSearchCounter = 7;</code>
-     */
-    long getMetadataSearchCounter();
-
-    /**
-     * <code>uint64 pageSearchCounter = 8;</code>
-     */
-    long getPageSearchCounter();
-
-    /**
-     * <code>uint32 largestKeySize = 10;</code>
-     */
-    int getLargestKeySize();
-
-    /**
-     * <code>uint32 largestValueSize = 11;</code>
-     */
-    int getLargestValueSize();
-
-    /**
-     * <code>uint64 replicatedAdds = 15;</code>
-     */
-    long getReplicatedAdds();
-
-    /**
-     * <code>uint64 replicatedDeletes = 16;</code>
-     */
-    long getReplicatedDeletes();
-  }
-  /**
-   * Protobuf type {@code calc.ReplicaCounters}
-   */
-  public  static final class ReplicaCounters extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:calc.ReplicaCounters)
-      ReplicaCountersOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ReplicaCounters.newBuilder() to construct.
-    private ReplicaCounters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ReplicaCounters() {
-      addsCounter_ = 0L;
-      deletesCounter_ = 0L;
-      copysCounter_ = 0L;
-      getCounter_ = 0L;
-      containsCounter_ = 0L;
-      keySearchCounter_ = 0L;
-      metadataSearchCounter_ = 0L;
-      pageSearchCounter_ = 0L;
-      largestKeySize_ = 0;
-      largestValueSize_ = 0;
-      replicatedAdds_ = 0L;
-      replicatedDeletes_ = 0L;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ReplicaCounters(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              addsCounter_ = input.readUInt64();
-              break;
-            }
-            case 16: {
-
-              deletesCounter_ = input.readUInt64();
-              break;
-            }
-            case 24: {
-
-              copysCounter_ = input.readUInt64();
-              break;
-            }
-            case 32: {
-
-              getCounter_ = input.readUInt64();
-              break;
-            }
-            case 40: {
-
-              containsCounter_ = input.readUInt64();
-              break;
-            }
-            case 48: {
-
-              keySearchCounter_ = input.readUInt64();
-              break;
-            }
-            case 56: {
-
-              metadataSearchCounter_ = input.readUInt64();
-              break;
-            }
-            case 64: {
-
-              pageSearchCounter_ = input.readUInt64();
-              break;
-            }
-            case 80: {
-
-              largestKeySize_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              largestValueSize_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              replicatedAdds_ = input.readUInt64();
-              break;
-            }
-            case 128: {
-
-              replicatedDeletes_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return calc.Cache.internal_static_calc_ReplicaCounters_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return calc.Cache.internal_static_calc_ReplicaCounters_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              calc.Cache.ReplicaCounters.class, calc.Cache.ReplicaCounters.Builder.class);
-    }
-
-    public static final int ADDSCOUNTER_FIELD_NUMBER = 1;
-    private long addsCounter_;
-    /**
-     * <code>uint64 addsCounter = 1;</code>
-     */
-    public long getAddsCounter() {
-      return addsCounter_;
-    }
-
-    public static final int DELETESCOUNTER_FIELD_NUMBER = 2;
-    private long deletesCounter_;
-    /**
-     * <code>uint64 deletesCounter = 2;</code>
-     */
-    public long getDeletesCounter() {
-      return deletesCounter_;
-    }
-
-    public static final int COPYSCOUNTER_FIELD_NUMBER = 3;
-    private long copysCounter_;
-    /**
-     * <code>uint64 copysCounter = 3;</code>
-     */
-    public long getCopysCounter() {
-      return copysCounter_;
-    }
-
-    public static final int GETCOUNTER_FIELD_NUMBER = 4;
-    private long getCounter_;
-    /**
-     * <code>uint64 getCounter = 4;</code>
-     */
-    public long getGetCounter() {
-      return getCounter_;
-    }
-
-    public static final int CONTAINSCOUNTER_FIELD_NUMBER = 5;
-    private long containsCounter_;
-    /**
-     * <code>uint64 containsCounter = 5;</code>
-     */
-    public long getContainsCounter() {
-      return containsCounter_;
-    }
-
-    public static final int KEYSEARCHCOUNTER_FIELD_NUMBER = 6;
-    private long keySearchCounter_;
-    /**
-     * <code>uint64 keySearchCounter = 6;</code>
-     */
-    public long getKeySearchCounter() {
-      return keySearchCounter_;
-    }
-
-    public static final int METADATASEARCHCOUNTER_FIELD_NUMBER = 7;
-    private long metadataSearchCounter_;
-    /**
-     * <code>uint64 metadataSearchCounter = 7;</code>
-     */
-    public long getMetadataSearchCounter() {
-      return metadataSearchCounter_;
-    }
-
-    public static final int PAGESEARCHCOUNTER_FIELD_NUMBER = 8;
-    private long pageSearchCounter_;
-    /**
-     * <code>uint64 pageSearchCounter = 8;</code>
-     */
-    public long getPageSearchCounter() {
-      return pageSearchCounter_;
-    }
-
-    public static final int LARGESTKEYSIZE_FIELD_NUMBER = 10;
-    private int largestKeySize_;
-    /**
-     * <code>uint32 largestKeySize = 10;</code>
-     */
-    public int getLargestKeySize() {
-      return largestKeySize_;
-    }
-
-    public static final int LARGESTVALUESIZE_FIELD_NUMBER = 11;
-    private int largestValueSize_;
-    /**
-     * <code>uint32 largestValueSize = 11;</code>
-     */
-    public int getLargestValueSize() {
-      return largestValueSize_;
-    }
-
-    public static final int REPLICATEDADDS_FIELD_NUMBER = 15;
-    private long replicatedAdds_;
-    /**
-     * <code>uint64 replicatedAdds = 15;</code>
-     */
-    public long getReplicatedAdds() {
-      return replicatedAdds_;
-    }
-
-    public static final int REPLICATEDDELETES_FIELD_NUMBER = 16;
-    private long replicatedDeletes_;
-    /**
-     * <code>uint64 replicatedDeletes = 16;</code>
-     */
-    public long getReplicatedDeletes() {
-      return replicatedDeletes_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (addsCounter_ != 0L) {
-        output.writeUInt64(1, addsCounter_);
-      }
-      if (deletesCounter_ != 0L) {
-        output.writeUInt64(2, deletesCounter_);
-      }
-      if (copysCounter_ != 0L) {
-        output.writeUInt64(3, copysCounter_);
-      }
-      if (getCounter_ != 0L) {
-        output.writeUInt64(4, getCounter_);
-      }
-      if (containsCounter_ != 0L) {
-        output.writeUInt64(5, containsCounter_);
-      }
-      if (keySearchCounter_ != 0L) {
-        output.writeUInt64(6, keySearchCounter_);
-      }
-      if (metadataSearchCounter_ != 0L) {
-        output.writeUInt64(7, metadataSearchCounter_);
-      }
-      if (pageSearchCounter_ != 0L) {
-        output.writeUInt64(8, pageSearchCounter_);
-      }
-      if (largestKeySize_ != 0) {
-        output.writeUInt32(10, largestKeySize_);
-      }
-      if (largestValueSize_ != 0) {
-        output.writeUInt32(11, largestValueSize_);
-      }
-      if (replicatedAdds_ != 0L) {
-        output.writeUInt64(15, replicatedAdds_);
-      }
-      if (replicatedDeletes_ != 0L) {
-        output.writeUInt64(16, replicatedDeletes_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (addsCounter_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, addsCounter_);
-      }
-      if (deletesCounter_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, deletesCounter_);
-      }
-      if (copysCounter_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, copysCounter_);
-      }
-      if (getCounter_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, getCounter_);
-      }
-      if (containsCounter_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, containsCounter_);
-      }
-      if (keySearchCounter_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(6, keySearchCounter_);
-      }
-      if (metadataSearchCounter_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(7, metadataSearchCounter_);
-      }
-      if (pageSearchCounter_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(8, pageSearchCounter_);
-      }
-      if (largestKeySize_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, largestKeySize_);
-      }
-      if (largestValueSize_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, largestValueSize_);
-      }
-      if (replicatedAdds_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(15, replicatedAdds_);
-      }
-      if (replicatedDeletes_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(16, replicatedDeletes_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof calc.Cache.ReplicaCounters)) {
-        return super.equals(obj);
-      }
-      calc.Cache.ReplicaCounters other = (calc.Cache.ReplicaCounters) obj;
-
-      boolean result = true;
-      result = result && (getAddsCounter()
-          == other.getAddsCounter());
-      result = result && (getDeletesCounter()
-          == other.getDeletesCounter());
-      result = result && (getCopysCounter()
-          == other.getCopysCounter());
-      result = result && (getGetCounter()
-          == other.getGetCounter());
-      result = result && (getContainsCounter()
-          == other.getContainsCounter());
-      result = result && (getKeySearchCounter()
-          == other.getKeySearchCounter());
-      result = result && (getMetadataSearchCounter()
-          == other.getMetadataSearchCounter());
-      result = result && (getPageSearchCounter()
-          == other.getPageSearchCounter());
-      result = result && (getLargestKeySize()
-          == other.getLargestKeySize());
-      result = result && (getLargestValueSize()
-          == other.getLargestValueSize());
-      result = result && (getReplicatedAdds()
-          == other.getReplicatedAdds());
-      result = result && (getReplicatedDeletes()
-          == other.getReplicatedDeletes());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ADDSCOUNTER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAddsCounter());
-      hash = (37 * hash) + DELETESCOUNTER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getDeletesCounter());
-      hash = (37 * hash) + COPYSCOUNTER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCopysCounter());
-      hash = (37 * hash) + GETCOUNTER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getGetCounter());
-      hash = (37 * hash) + CONTAINSCOUNTER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getContainsCounter());
-      hash = (37 * hash) + KEYSEARCHCOUNTER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getKeySearchCounter());
-      hash = (37 * hash) + METADATASEARCHCOUNTER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMetadataSearchCounter());
-      hash = (37 * hash) + PAGESEARCHCOUNTER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getPageSearchCounter());
-      hash = (37 * hash) + LARGESTKEYSIZE_FIELD_NUMBER;
-      hash = (53 * hash) + getLargestKeySize();
-      hash = (37 * hash) + LARGESTVALUESIZE_FIELD_NUMBER;
-      hash = (53 * hash) + getLargestValueSize();
-      hash = (37 * hash) + REPLICATEDADDS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getReplicatedAdds());
-      hash = (37 * hash) + REPLICATEDDELETES_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getReplicatedDeletes());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static calc.Cache.ReplicaCounters parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.ReplicaCounters parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.ReplicaCounters parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.ReplicaCounters parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.ReplicaCounters parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.ReplicaCounters parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.ReplicaCounters parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.ReplicaCounters parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.ReplicaCounters parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static calc.Cache.ReplicaCounters parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.ReplicaCounters parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.ReplicaCounters parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(calc.Cache.ReplicaCounters prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code calc.ReplicaCounters}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:calc.ReplicaCounters)
-        calc.Cache.ReplicaCountersOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return calc.Cache.internal_static_calc_ReplicaCounters_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return calc.Cache.internal_static_calc_ReplicaCounters_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                calc.Cache.ReplicaCounters.class, calc.Cache.ReplicaCounters.Builder.class);
-      }
-
-      // Construct using calc.Cache.ReplicaCounters.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        addsCounter_ = 0L;
-
-        deletesCounter_ = 0L;
-
-        copysCounter_ = 0L;
-
-        getCounter_ = 0L;
-
-        containsCounter_ = 0L;
-
-        keySearchCounter_ = 0L;
-
-        metadataSearchCounter_ = 0L;
-
-        pageSearchCounter_ = 0L;
-
-        largestKeySize_ = 0;
-
-        largestValueSize_ = 0;
-
-        replicatedAdds_ = 0L;
-
-        replicatedDeletes_ = 0L;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return calc.Cache.internal_static_calc_ReplicaCounters_descriptor;
-      }
-
-      @java.lang.Override
-      public calc.Cache.ReplicaCounters getDefaultInstanceForType() {
-        return calc.Cache.ReplicaCounters.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public calc.Cache.ReplicaCounters build() {
-        calc.Cache.ReplicaCounters result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public calc.Cache.ReplicaCounters buildPartial() {
-        calc.Cache.ReplicaCounters result = new calc.Cache.ReplicaCounters(this);
-        result.addsCounter_ = addsCounter_;
-        result.deletesCounter_ = deletesCounter_;
-        result.copysCounter_ = copysCounter_;
-        result.getCounter_ = getCounter_;
-        result.containsCounter_ = containsCounter_;
-        result.keySearchCounter_ = keySearchCounter_;
-        result.metadataSearchCounter_ = metadataSearchCounter_;
-        result.pageSearchCounter_ = pageSearchCounter_;
-        result.largestKeySize_ = largestKeySize_;
-        result.largestValueSize_ = largestValueSize_;
-        result.replicatedAdds_ = replicatedAdds_;
-        result.replicatedDeletes_ = replicatedDeletes_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof calc.Cache.ReplicaCounters) {
-          return mergeFrom((calc.Cache.ReplicaCounters)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(calc.Cache.ReplicaCounters other) {
-        if (other == calc.Cache.ReplicaCounters.getDefaultInstance()) return this;
-        if (other.getAddsCounter() != 0L) {
-          setAddsCounter(other.getAddsCounter());
-        }
-        if (other.getDeletesCounter() != 0L) {
-          setDeletesCounter(other.getDeletesCounter());
-        }
-        if (other.getCopysCounter() != 0L) {
-          setCopysCounter(other.getCopysCounter());
-        }
-        if (other.getGetCounter() != 0L) {
-          setGetCounter(other.getGetCounter());
-        }
-        if (other.getContainsCounter() != 0L) {
-          setContainsCounter(other.getContainsCounter());
-        }
-        if (other.getKeySearchCounter() != 0L) {
-          setKeySearchCounter(other.getKeySearchCounter());
-        }
-        if (other.getMetadataSearchCounter() != 0L) {
-          setMetadataSearchCounter(other.getMetadataSearchCounter());
-        }
-        if (other.getPageSearchCounter() != 0L) {
-          setPageSearchCounter(other.getPageSearchCounter());
-        }
-        if (other.getLargestKeySize() != 0) {
-          setLargestKeySize(other.getLargestKeySize());
-        }
-        if (other.getLargestValueSize() != 0) {
-          setLargestValueSize(other.getLargestValueSize());
-        }
-        if (other.getReplicatedAdds() != 0L) {
-          setReplicatedAdds(other.getReplicatedAdds());
-        }
-        if (other.getReplicatedDeletes() != 0L) {
-          setReplicatedDeletes(other.getReplicatedDeletes());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        calc.Cache.ReplicaCounters parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (calc.Cache.ReplicaCounters) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private long addsCounter_ ;
-      /**
-       * <code>uint64 addsCounter = 1;</code>
-       */
-      public long getAddsCounter() {
-        return addsCounter_;
-      }
-      /**
-       * <code>uint64 addsCounter = 1;</code>
-       */
-      public Builder setAddsCounter(long value) {
-        
-        addsCounter_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 addsCounter = 1;</code>
-       */
-      public Builder clearAddsCounter() {
-        
-        addsCounter_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long deletesCounter_ ;
-      /**
-       * <code>uint64 deletesCounter = 2;</code>
-       */
-      public long getDeletesCounter() {
-        return deletesCounter_;
-      }
-      /**
-       * <code>uint64 deletesCounter = 2;</code>
-       */
-      public Builder setDeletesCounter(long value) {
-        
-        deletesCounter_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 deletesCounter = 2;</code>
-       */
-      public Builder clearDeletesCounter() {
-        
-        deletesCounter_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long copysCounter_ ;
-      /**
-       * <code>uint64 copysCounter = 3;</code>
-       */
-      public long getCopysCounter() {
-        return copysCounter_;
-      }
-      /**
-       * <code>uint64 copysCounter = 3;</code>
-       */
-      public Builder setCopysCounter(long value) {
-        
-        copysCounter_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 copysCounter = 3;</code>
-       */
-      public Builder clearCopysCounter() {
-        
-        copysCounter_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long getCounter_ ;
-      /**
-       * <code>uint64 getCounter = 4;</code>
-       */
-      public long getGetCounter() {
-        return getCounter_;
-      }
-      /**
-       * <code>uint64 getCounter = 4;</code>
-       */
-      public Builder setGetCounter(long value) {
-        
-        getCounter_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 getCounter = 4;</code>
-       */
-      public Builder clearGetCounter() {
-        
-        getCounter_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long containsCounter_ ;
-      /**
-       * <code>uint64 containsCounter = 5;</code>
-       */
-      public long getContainsCounter() {
-        return containsCounter_;
-      }
-      /**
-       * <code>uint64 containsCounter = 5;</code>
-       */
-      public Builder setContainsCounter(long value) {
-        
-        containsCounter_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 containsCounter = 5;</code>
-       */
-      public Builder clearContainsCounter() {
-        
-        containsCounter_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long keySearchCounter_ ;
-      /**
-       * <code>uint64 keySearchCounter = 6;</code>
-       */
-      public long getKeySearchCounter() {
-        return keySearchCounter_;
-      }
-      /**
-       * <code>uint64 keySearchCounter = 6;</code>
-       */
-      public Builder setKeySearchCounter(long value) {
-        
-        keySearchCounter_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 keySearchCounter = 6;</code>
-       */
-      public Builder clearKeySearchCounter() {
-        
-        keySearchCounter_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long metadataSearchCounter_ ;
-      /**
-       * <code>uint64 metadataSearchCounter = 7;</code>
-       */
-      public long getMetadataSearchCounter() {
-        return metadataSearchCounter_;
-      }
-      /**
-       * <code>uint64 metadataSearchCounter = 7;</code>
-       */
-      public Builder setMetadataSearchCounter(long value) {
-        
-        metadataSearchCounter_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 metadataSearchCounter = 7;</code>
-       */
-      public Builder clearMetadataSearchCounter() {
-        
-        metadataSearchCounter_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long pageSearchCounter_ ;
-      /**
-       * <code>uint64 pageSearchCounter = 8;</code>
-       */
-      public long getPageSearchCounter() {
-        return pageSearchCounter_;
-      }
-      /**
-       * <code>uint64 pageSearchCounter = 8;</code>
-       */
-      public Builder setPageSearchCounter(long value) {
-        
-        pageSearchCounter_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 pageSearchCounter = 8;</code>
-       */
-      public Builder clearPageSearchCounter() {
-        
-        pageSearchCounter_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int largestKeySize_ ;
-      /**
-       * <code>uint32 largestKeySize = 10;</code>
-       */
-      public int getLargestKeySize() {
-        return largestKeySize_;
-      }
-      /**
-       * <code>uint32 largestKeySize = 10;</code>
-       */
-      public Builder setLargestKeySize(int value) {
-        
-        largestKeySize_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 largestKeySize = 10;</code>
-       */
-      public Builder clearLargestKeySize() {
-        
-        largestKeySize_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int largestValueSize_ ;
-      /**
-       * <code>uint32 largestValueSize = 11;</code>
-       */
-      public int getLargestValueSize() {
-        return largestValueSize_;
-      }
-      /**
-       * <code>uint32 largestValueSize = 11;</code>
-       */
-      public Builder setLargestValueSize(int value) {
-        
-        largestValueSize_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 largestValueSize = 11;</code>
-       */
-      public Builder clearLargestValueSize() {
-        
-        largestValueSize_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long replicatedAdds_ ;
-      /**
-       * <code>uint64 replicatedAdds = 15;</code>
-       */
-      public long getReplicatedAdds() {
-        return replicatedAdds_;
-      }
-      /**
-       * <code>uint64 replicatedAdds = 15;</code>
-       */
-      public Builder setReplicatedAdds(long value) {
-        
-        replicatedAdds_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 replicatedAdds = 15;</code>
-       */
-      public Builder clearReplicatedAdds() {
-        
-        replicatedAdds_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long replicatedDeletes_ ;
-      /**
-       * <code>uint64 replicatedDeletes = 16;</code>
-       */
-      public long getReplicatedDeletes() {
-        return replicatedDeletes_;
-      }
-      /**
-       * <code>uint64 replicatedDeletes = 16;</code>
-       */
-      public Builder setReplicatedDeletes(long value) {
-        
-        replicatedDeletes_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 replicatedDeletes = 16;</code>
-       */
-      public Builder clearReplicatedDeletes() {
-        
-        replicatedDeletes_ = 0L;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:calc.ReplicaCounters)
-    }
-
-    // @@protoc_insertion_point(class_scope:calc.ReplicaCounters)
-    private static final calc.Cache.ReplicaCounters DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new calc.Cache.ReplicaCounters();
-    }
-
-    public static calc.Cache.ReplicaCounters getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ReplicaCounters>
-        PARSER = new com.google.protobuf.AbstractParser<ReplicaCounters>() {
-      @java.lang.Override
-      public ReplicaCounters parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ReplicaCounters(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ReplicaCounters> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ReplicaCounters> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public calc.Cache.ReplicaCounters getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface CollectedStatsOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:calc.CollectedStats)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>uint64 nonExpiredKeys = 10;</code>
-     */
-    long getNonExpiredKeys();
-
-    /**
-     * <code>uint64 allKeys = 11;</code>
-     */
-    long getAllKeys();
-
-    /**
-     * <code>uint64 activeKeys = 12;</code>
-     */
-    long getActiveKeys();
-
-    /**
-     * <code>uint64 deletedKeys = 13;</code>
-     */
-    long getDeletedKeys();
-
-    /**
-     * <code>uint64 expiredKeys = 14;</code>
-     */
-    long getExpiredKeys();
-  }
-  /**
-   * Protobuf type {@code calc.CollectedStats}
-   */
-  public  static final class CollectedStats extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:calc.CollectedStats)
-      CollectedStatsOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use CollectedStats.newBuilder() to construct.
-    private CollectedStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private CollectedStats() {
-      nonExpiredKeys_ = 0L;
-      allKeys_ = 0L;
-      activeKeys_ = 0L;
-      deletedKeys_ = 0L;
-      expiredKeys_ = 0L;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private CollectedStats(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 80: {
-
-              nonExpiredKeys_ = input.readUInt64();
-              break;
-            }
-            case 88: {
-
-              allKeys_ = input.readUInt64();
-              break;
-            }
-            case 96: {
-
-              activeKeys_ = input.readUInt64();
-              break;
-            }
-            case 104: {
-
-              deletedKeys_ = input.readUInt64();
-              break;
-            }
-            case 112: {
-
-              expiredKeys_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return calc.Cache.internal_static_calc_CollectedStats_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return calc.Cache.internal_static_calc_CollectedStats_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              calc.Cache.CollectedStats.class, calc.Cache.CollectedStats.Builder.class);
-    }
-
-    public static final int NONEXPIREDKEYS_FIELD_NUMBER = 10;
-    private long nonExpiredKeys_;
-    /**
-     * <code>uint64 nonExpiredKeys = 10;</code>
-     */
-    public long getNonExpiredKeys() {
-      return nonExpiredKeys_;
-    }
-
-    public static final int ALLKEYS_FIELD_NUMBER = 11;
-    private long allKeys_;
-    /**
-     * <code>uint64 allKeys = 11;</code>
-     */
-    public long getAllKeys() {
-      return allKeys_;
-    }
-
-    public static final int ACTIVEKEYS_FIELD_NUMBER = 12;
-    private long activeKeys_;
-    /**
-     * <code>uint64 activeKeys = 12;</code>
-     */
-    public long getActiveKeys() {
-      return activeKeys_;
-    }
-
-    public static final int DELETEDKEYS_FIELD_NUMBER = 13;
-    private long deletedKeys_;
-    /**
-     * <code>uint64 deletedKeys = 13;</code>
-     */
-    public long getDeletedKeys() {
-      return deletedKeys_;
-    }
-
-    public static final int EXPIREDKEYS_FIELD_NUMBER = 14;
-    private long expiredKeys_;
-    /**
-     * <code>uint64 expiredKeys = 14;</code>
-     */
-    public long getExpiredKeys() {
-      return expiredKeys_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (nonExpiredKeys_ != 0L) {
-        output.writeUInt64(10, nonExpiredKeys_);
-      }
-      if (allKeys_ != 0L) {
-        output.writeUInt64(11, allKeys_);
-      }
-      if (activeKeys_ != 0L) {
-        output.writeUInt64(12, activeKeys_);
-      }
-      if (deletedKeys_ != 0L) {
-        output.writeUInt64(13, deletedKeys_);
-      }
-      if (expiredKeys_ != 0L) {
-        output.writeUInt64(14, expiredKeys_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (nonExpiredKeys_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(10, nonExpiredKeys_);
-      }
-      if (allKeys_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(11, allKeys_);
-      }
-      if (activeKeys_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(12, activeKeys_);
-      }
-      if (deletedKeys_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(13, deletedKeys_);
-      }
-      if (expiredKeys_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(14, expiredKeys_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof calc.Cache.CollectedStats)) {
-        return super.equals(obj);
-      }
-      calc.Cache.CollectedStats other = (calc.Cache.CollectedStats) obj;
-
-      boolean result = true;
-      result = result && (getNonExpiredKeys()
-          == other.getNonExpiredKeys());
-      result = result && (getAllKeys()
-          == other.getAllKeys());
-      result = result && (getActiveKeys()
-          == other.getActiveKeys());
-      result = result && (getDeletedKeys()
-          == other.getDeletedKeys());
-      result = result && (getExpiredKeys()
-          == other.getExpiredKeys());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NONEXPIREDKEYS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getNonExpiredKeys());
-      hash = (37 * hash) + ALLKEYS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAllKeys());
-      hash = (37 * hash) + ACTIVEKEYS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getActiveKeys());
-      hash = (37 * hash) + DELETEDKEYS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getDeletedKeys());
-      hash = (37 * hash) + EXPIREDKEYS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getExpiredKeys());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static calc.Cache.CollectedStats parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.CollectedStats parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.CollectedStats parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.CollectedStats parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.CollectedStats parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static calc.Cache.CollectedStats parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static calc.Cache.CollectedStats parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.CollectedStats parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.CollectedStats parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static calc.Cache.CollectedStats parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static calc.Cache.CollectedStats parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static calc.Cache.CollectedStats parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(calc.Cache.CollectedStats prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code calc.CollectedStats}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:calc.CollectedStats)
-        calc.Cache.CollectedStatsOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return calc.Cache.internal_static_calc_CollectedStats_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return calc.Cache.internal_static_calc_CollectedStats_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                calc.Cache.CollectedStats.class, calc.Cache.CollectedStats.Builder.class);
-      }
-
-      // Construct using calc.Cache.CollectedStats.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        nonExpiredKeys_ = 0L;
-
-        allKeys_ = 0L;
-
-        activeKeys_ = 0L;
-
-        deletedKeys_ = 0L;
-
-        expiredKeys_ = 0L;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return calc.Cache.internal_static_calc_CollectedStats_descriptor;
-      }
-
-      @java.lang.Override
-      public calc.Cache.CollectedStats getDefaultInstanceForType() {
-        return calc.Cache.CollectedStats.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public calc.Cache.CollectedStats build() {
-        calc.Cache.CollectedStats result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public calc.Cache.CollectedStats buildPartial() {
-        calc.Cache.CollectedStats result = new calc.Cache.CollectedStats(this);
-        result.nonExpiredKeys_ = nonExpiredKeys_;
-        result.allKeys_ = allKeys_;
-        result.activeKeys_ = activeKeys_;
-        result.deletedKeys_ = deletedKeys_;
-        result.expiredKeys_ = expiredKeys_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof calc.Cache.CollectedStats) {
-          return mergeFrom((calc.Cache.CollectedStats)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(calc.Cache.CollectedStats other) {
-        if (other == calc.Cache.CollectedStats.getDefaultInstance()) return this;
-        if (other.getNonExpiredKeys() != 0L) {
-          setNonExpiredKeys(other.getNonExpiredKeys());
-        }
-        if (other.getAllKeys() != 0L) {
-          setAllKeys(other.getAllKeys());
-        }
-        if (other.getActiveKeys() != 0L) {
-          setActiveKeys(other.getActiveKeys());
-        }
-        if (other.getDeletedKeys() != 0L) {
-          setDeletedKeys(other.getDeletedKeys());
-        }
-        if (other.getExpiredKeys() != 0L) {
-          setExpiredKeys(other.getExpiredKeys());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        calc.Cache.CollectedStats parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (calc.Cache.CollectedStats) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private long nonExpiredKeys_ ;
-      /**
-       * <code>uint64 nonExpiredKeys = 10;</code>
-       */
-      public long getNonExpiredKeys() {
-        return nonExpiredKeys_;
-      }
-      /**
-       * <code>uint64 nonExpiredKeys = 10;</code>
-       */
-      public Builder setNonExpiredKeys(long value) {
-        
-        nonExpiredKeys_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 nonExpiredKeys = 10;</code>
-       */
-      public Builder clearNonExpiredKeys() {
-        
-        nonExpiredKeys_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long allKeys_ ;
-      /**
-       * <code>uint64 allKeys = 11;</code>
-       */
-      public long getAllKeys() {
-        return allKeys_;
-      }
-      /**
-       * <code>uint64 allKeys = 11;</code>
-       */
-      public Builder setAllKeys(long value) {
-        
-        allKeys_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 allKeys = 11;</code>
-       */
-      public Builder clearAllKeys() {
-        
-        allKeys_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long activeKeys_ ;
-      /**
-       * <code>uint64 activeKeys = 12;</code>
-       */
-      public long getActiveKeys() {
-        return activeKeys_;
-      }
-      /**
-       * <code>uint64 activeKeys = 12;</code>
-       */
-      public Builder setActiveKeys(long value) {
-        
-        activeKeys_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 activeKeys = 12;</code>
-       */
-      public Builder clearActiveKeys() {
-        
-        activeKeys_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long deletedKeys_ ;
-      /**
-       * <code>uint64 deletedKeys = 13;</code>
-       */
-      public long getDeletedKeys() {
-        return deletedKeys_;
-      }
-      /**
-       * <code>uint64 deletedKeys = 13;</code>
-       */
-      public Builder setDeletedKeys(long value) {
-        
-        deletedKeys_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 deletedKeys = 13;</code>
-       */
-      public Builder clearDeletedKeys() {
-        
-        deletedKeys_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long expiredKeys_ ;
-      /**
-       * <code>uint64 expiredKeys = 14;</code>
-       */
-      public long getExpiredKeys() {
-        return expiredKeys_;
-      }
-      /**
-       * <code>uint64 expiredKeys = 14;</code>
-       */
-      public Builder setExpiredKeys(long value) {
-        
-        expiredKeys_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 expiredKeys = 14;</code>
-       */
-      public Builder clearExpiredKeys() {
-        
-        expiredKeys_ = 0L;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:calc.CollectedStats)
-    }
-
-    // @@protoc_insertion_point(class_scope:calc.CollectedStats)
-    private static final calc.Cache.CollectedStats DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new calc.Cache.CollectedStats();
-    }
-
-    public static calc.Cache.CollectedStats getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CollectedStats>
-        PARSER = new com.google.protobuf.AbstractParser<CollectedStats>() {
-      @java.lang.Override
-      public CollectedStats parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CollectedStats(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CollectedStats> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CollectedStats> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public calc.Cache.CollectedStats getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_calc_DataSourceGetRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_calc_DataSourceGetRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_calc_DataSourceGetResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_calc_DataSourceGetResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_calc_CacheInvalidateRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_calc_CacheInvalidateRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_calc_CacheInvalidateResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_calc_CacheInvalidateResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_calc_CacheClearRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_calc_CacheClearRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_calc_CacheClearResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_calc_CacheClearResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_calc_CacheError_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_calc_CacheError_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_calc_MonitoringUpdateRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_calc_MonitoringUpdateRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_calc_MonitoringUpdateResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_calc_MonitoringUpdateResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_calc_ReplicaStatus_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_calc_ReplicaStatus_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_calc_ClusterStatus_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_calc_ClusterStatus_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_calc_ClusterStatus_ReplicasEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_calc_ClusterStatus_ReplicasEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_calc_ReplicaConnectionInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_calc_ReplicaConnectionInfo_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_calc_ReplicaCounters_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_calc_ReplicaCounters_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_calc_CollectedStats_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_calc_CollectedStats_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\013cache.proto\022\004calc\032\rmoniker.proto\"3\n\024Da" +
-      "taSourceGetRequest\022\033\n\002id\030\001 \001(\0132\017.calc.Mo" +
-      "nikerId\"\215\001\n\025DataSourceGetResponse\022$\n\007suc" +
-      "cess\030\001 \001(\0132\021.calc.StoredValueH\000\022#\n\010notFo" +
-      "und\030\002 \001(\0132\017.calc.MonikerIdH\000\022!\n\005error\030d " +
-      "\001(\0132\020.calc.CacheErrorH\000B\006\n\004Resp\"5\n\026Cache" +
-      "InvalidateRequest\022\033\n\002id\030\001 \001(\0132\017.calc.Mon" +
-      "ikerId\"\224\001\n\027CacheInvalidateResponse\022)\n\007su" +
-      "ccess\030\001 \001(\0132\026.google.protobuf.EmptyH\000\022#\n" +
-      "\010notFound\030\002 \001(\0132\017.calc.MonikerIdH\000\022!\n\005er" +
-      "ror\030d \001(\0132\020.calc.CacheErrorH\000B\006\n\004Resp\"\023\n" +
-      "\021CacheClearRequest\"j\n\022CacheClearResponse" +
-      "\022)\n\007success\030\001 \001(\0132\026.google.protobuf.Empt" +
-      "yH\000\022!\n\005error\030d \001(\0132\020.calc.CacheErrorH\000B\006" +
-      "\n\004Resp\"0\n\nCacheError\022\"\n\005error\030\001 \001(\0132\023.ca" +
-      "lc.InternalError\"0\n\027MonitoringUpdateRequ" +
-      "est\022\025\n\rcorrelationId\030\001 \001(\t\"?\n\030Monitoring" +
-      "UpdateResponse\022#\n\006status\030\001 \001(\0132\023.calc.Re" +
-      "plicaStatus\"\271\002\n\rReplicaStatus\022\021\n\treplica" +
-      "Id\030\001 \001(\t\0223\n\016connectionInfo\030\002 \001(\0132\033.calc." +
-      "ReplicaConnectionInfo\022+\n\007started\030\003 \001(\0132\032" +
-      ".google.protobuf.Timestamp\0220\n\014currentClo" +
-      "ck\030\005 \001(\0132\032.google.protobuf.Timestamp\022\'\n\010" +
-      "counters\030\n \001(\0132\025.calc.ReplicaCounters\022,\n" +
-      "\016collectedStats\030\013 \001(\0132\024.calc.CollectedSt" +
-      "ats\022*\n\rclusterStatus\030\014 \001(\0132\023.calc.Cluste" +
-      "rStatus\"\222\001\n\rClusterStatus\0223\n\010replicas\030\001 " +
-      "\003(\0132!.calc.ClusterStatus.ReplicasEntry\032L" +
-      "\n\rReplicasEntry\022\013\n\003key\030\001 \001(\t\022*\n\005value\030\002 " +
-      "\001(\0132\033.calc.ReplicaConnectionInfo:\0028\001\"3\n\025" +
-      "ReplicaConnectionInfo\022\014\n\004host\030\001 \001(\t\022\014\n\004p" +
-      "ort\030\002 \001(\r\"\272\002\n\017ReplicaCounters\022\023\n\013addsCou" +
-      "nter\030\001 \001(\004\022\026\n\016deletesCounter\030\002 \001(\004\022\024\n\014co" +
-      "pysCounter\030\003 \001(\004\022\022\n\ngetCounter\030\004 \001(\004\022\027\n\017" +
-      "containsCounter\030\005 \001(\004\022\030\n\020keySearchCounte" +
-      "r\030\006 \001(\004\022\035\n\025metadataSearchCounter\030\007 \001(\004\022\031" +
-      "\n\021pageSearchCounter\030\010 \001(\004\022\026\n\016largestKeyS" +
-      "ize\030\n \001(\r\022\030\n\020largestValueSize\030\013 \001(\r\022\026\n\016r" +
-      "eplicatedAdds\030\017 \001(\004\022\031\n\021replicatedDeletes" +
-      "\030\020 \001(\004\"w\n\016CollectedStats\022\026\n\016nonExpiredKe" +
-      "ys\030\n \001(\004\022\017\n\007allKeys\030\013 \001(\004\022\022\n\nactiveKeys\030" +
-      "\014 \001(\004\022\023\n\013deletedKeys\030\r \001(\004\022\023\n\013expiredKey" +
-      "s\030\016 \001(\0042P\n\nDataSource\022B\n\003Get\022\032.calc.Data" +
-      "SourceGetRequest\032\033.calc.DataSourceGetRes" +
-      "ponse\"\0000\0012\231\001\n\014CacheControl\022K\n\nInvalidate" +
-      "\022\034.calc.CacheInvalidateRequest\032\035.calc.Ca" +
-      "cheInvalidateResponse\"\000\022<\n\005Clear\022\027.calc." +
-      "CacheClearRequest\032\030.calc.CacheClearRespo" +
-      "nse\"\0002\261\001\n\021MonitoringService\022L\n\tGetStatus" +
-      "\022\035.calc.MonitoringUpdateRequest\032\036.calc.M" +
-      "onitoringUpdateResponse\"\000\022N\n\tSubscribe\022\035" +
-      ".calc.MonitoringUpdateRequest\032\036.calc.Mon" +
-      "itoringUpdateResponse\"\0000\001B\025\252\002\022Calculatio" +
-      "nServiceP\000b\006proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          calc.Moniker.getDescriptor(),
-        }, assigner);
-    internal_static_calc_DataSourceGetRequest_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_calc_DataSourceGetRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_calc_DataSourceGetRequest_descriptor,
-        new java.lang.String[] { "Id", });
-    internal_static_calc_DataSourceGetResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_calc_DataSourceGetResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_calc_DataSourceGetResponse_descriptor,
-        new java.lang.String[] { "Success", "NotFound", "Error", "Resp", });
-    internal_static_calc_CacheInvalidateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_calc_CacheInvalidateRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_calc_CacheInvalidateRequest_descriptor,
-        new java.lang.String[] { "Id", });
-    internal_static_calc_CacheInvalidateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_calc_CacheInvalidateResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_calc_CacheInvalidateResponse_descriptor,
-        new java.lang.String[] { "Success", "NotFound", "Error", "Resp", });
-    internal_static_calc_CacheClearRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_calc_CacheClearRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_calc_CacheClearRequest_descriptor,
-        new java.lang.String[] { });
-    internal_static_calc_CacheClearResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_calc_CacheClearResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_calc_CacheClearResponse_descriptor,
-        new java.lang.String[] { "Success", "Error", "Resp", });
-    internal_static_calc_CacheError_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_calc_CacheError_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_calc_CacheError_descriptor,
-        new java.lang.String[] { "Error", });
-    internal_static_calc_MonitoringUpdateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_calc_MonitoringUpdateRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_calc_MonitoringUpdateRequest_descriptor,
-        new java.lang.String[] { "CorrelationId", });
-    internal_static_calc_MonitoringUpdateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_calc_MonitoringUpdateResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_calc_MonitoringUpdateResponse_descriptor,
-        new java.lang.String[] { "Status", });
-    internal_static_calc_ReplicaStatus_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_calc_ReplicaStatus_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_calc_ReplicaStatus_descriptor,
-        new java.lang.String[] { "ReplicaId", "ConnectionInfo", "Started", "CurrentClock", "Counters", "CollectedStats", "ClusterStatus", });
-    internal_static_calc_ClusterStatus_descriptor =
-      getDescriptor().getMessageTypes().get(10);
-    internal_static_calc_ClusterStatus_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_calc_ClusterStatus_descriptor,
-        new java.lang.String[] { "Replicas", });
-    internal_static_calc_ClusterStatus_ReplicasEntry_descriptor =
-      internal_static_calc_ClusterStatus_descriptor.getNestedTypes().get(0);
-    internal_static_calc_ClusterStatus_ReplicasEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_calc_ClusterStatus_ReplicasEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_calc_ReplicaConnectionInfo_descriptor =
-      getDescriptor().getMessageTypes().get(11);
-    internal_static_calc_ReplicaConnectionInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_calc_ReplicaConnectionInfo_descriptor,
-        new java.lang.String[] { "Host", "Port", });
-    internal_static_calc_ReplicaCounters_descriptor =
-      getDescriptor().getMessageTypes().get(12);
-    internal_static_calc_ReplicaCounters_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_calc_ReplicaCounters_descriptor,
-        new java.lang.String[] { "AddsCounter", "DeletesCounter", "CopysCounter", "GetCounter", "ContainsCounter", "KeySearchCounter", "MetadataSearchCounter", "PageSearchCounter", "LargestKeySize", "LargestValueSize", "ReplicatedAdds", "ReplicatedDeletes", });
-    internal_static_calc_CollectedStats_descriptor =
-      getDescriptor().getMessageTypes().get(13);
-    internal_static_calc_CollectedStats_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_calc_CollectedStats_descriptor,
-        new java.lang.String[] { "NonExpiredKeys", "AllKeys", "ActiveKeys", "DeletedKeys", "ExpiredKeys", });
-    calc.Moniker.getDescriptor();
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+	private Cache() {
+	}
+
+	public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {
+	}
+
+	public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+		registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
+	}
+
+	public interface DataSourceGetRequestOrBuilder extends
+			// @@protoc_insertion_point(interface_extends:calc.DataSourceGetRequest)
+			com.google.protobuf.MessageOrBuilder {
+
+		/**
+		 * <code>.calc.MonikerId id = 1;</code>
+		 */
+		boolean hasId();
+
+		/**
+		 * <code>.calc.MonikerId id = 1;</code>
+		 */
+		calc.Moniker.MonikerId getId();
+
+		/**
+		 * <code>.calc.MonikerId id = 1;</code>
+		 */
+		calc.Moniker.MonikerIdOrBuilder getIdOrBuilder();
+	}
+
+	/**
+	 * Protobuf type {@code calc.DataSourceGetRequest}
+	 */
+	public static final class DataSourceGetRequest extends com.google.protobuf.GeneratedMessageV3 implements
+			// @@protoc_insertion_point(message_implements:calc.DataSourceGetRequest)
+			DataSourceGetRequestOrBuilder {
+		private static final long serialVersionUID = 0L;
+
+		// Use DataSourceGetRequest.newBuilder() to construct.
+		private DataSourceGetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+			super(builder);
+		}
+
+		private DataSourceGetRequest() {
+		}
+
+		@java.lang.Override
+		public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+			return this.unknownFields;
+		}
+
+		private DataSourceGetRequest(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			this();
+			if (extensionRegistry == null) {
+				throw new java.lang.NullPointerException();
+			}
+			int mutable_bitField0_ = 0;
+			com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+					.newBuilder();
+			try {
+				boolean done = false;
+				while (!done) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						done = true;
+						break;
+					case 10: {
+						calc.Moniker.MonikerId.Builder subBuilder = null;
+						if (id_ != null) {
+							subBuilder = id_.toBuilder();
+						}
+						id_ = input.readMessage(calc.Moniker.MonikerId.parser(), extensionRegistry);
+						if (subBuilder != null) {
+							subBuilder.mergeFrom(id_);
+							id_ = subBuilder.buildPartial();
+						}
+
+						break;
+					}
+					default: {
+						if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+							done = true;
+						}
+						break;
+					}
+					}
+				}
+			} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+				throw e.setUnfinishedMessage(this);
+			} catch (java.io.IOException e) {
+				throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+			} finally {
+				this.unknownFields = unknownFields.build();
+				makeExtensionsImmutable();
+			}
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return calc.Cache.internal_static_calc_DataSourceGetRequest_descriptor;
+		}
+
+		@java.lang.Override
+		protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+			return calc.Cache.internal_static_calc_DataSourceGetRequest_fieldAccessorTable
+					.ensureFieldAccessorsInitialized(calc.Cache.DataSourceGetRequest.class,
+							calc.Cache.DataSourceGetRequest.Builder.class);
+		}
+
+		public static final int ID_FIELD_NUMBER = 1;
+		private calc.Moniker.MonikerId id_;
+
+		/**
+		 * <code>.calc.MonikerId id = 1;</code>
+		 */
+		public boolean hasId() {
+			return id_ != null;
+		}
+
+		/**
+		 * <code>.calc.MonikerId id = 1;</code>
+		 */
+		public calc.Moniker.MonikerId getId() {
+			return id_ == null ? calc.Moniker.MonikerId.getDefaultInstance() : id_;
+		}
+
+		/**
+		 * <code>.calc.MonikerId id = 1;</code>
+		 */
+		public calc.Moniker.MonikerIdOrBuilder getIdOrBuilder() {
+			return getId();
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		@java.lang.Override
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized == 1)
+				return true;
+			if (isInitialized == 0)
+				return false;
+
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		@java.lang.Override
+		public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+			if (id_ != null) {
+				output.writeMessage(1, getId());
+			}
+			unknownFields.writeTo(output);
+		}
+
+		@java.lang.Override
+		public int getSerializedSize() {
+			int size = memoizedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			if (id_ != null) {
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getId());
+			}
+			size += unknownFields.getSerializedSize();
+			memoizedSize = size;
+			return size;
+		}
+
+		@java.lang.Override
+		public boolean equals(final java.lang.Object obj) {
+			if (obj == this) {
+				return true;
+			}
+			if (!(obj instanceof calc.Cache.DataSourceGetRequest)) {
+				return super.equals(obj);
+			}
+			calc.Cache.DataSourceGetRequest other = (calc.Cache.DataSourceGetRequest) obj;
+
+			boolean result = true;
+			result = result && (hasId() == other.hasId());
+			if (hasId()) {
+				result = result && getId().equals(other.getId());
+			}
+			result = result && unknownFields.equals(other.unknownFields);
+			return result;
+		}
+
+		@java.lang.Override
+		public int hashCode() {
+			if (memoizedHashCode != 0) {
+				return memoizedHashCode;
+			}
+			int hash = 41;
+			hash = (19 * hash) + getDescriptor().hashCode();
+			if (hasId()) {
+				hash = (37 * hash) + ID_FIELD_NUMBER;
+				hash = (53 * hash) + getId().hashCode();
+			}
+			hash = (29 * hash) + unknownFields.hashCode();
+			memoizedHashCode = hash;
+			return hash;
+		}
+
+		public static calc.Cache.DataSourceGetRequest parseFrom(java.nio.ByteBuffer data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.DataSourceGetRequest parseFrom(java.nio.ByteBuffer data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.DataSourceGetRequest parseFrom(com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.DataSourceGetRequest parseFrom(com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.DataSourceGetRequest parseFrom(byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.DataSourceGetRequest parseFrom(byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.DataSourceGetRequest parseFrom(java.io.InputStream input) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.DataSourceGetRequest parseFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		public static calc.Cache.DataSourceGetRequest parseDelimitedFrom(java.io.InputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.DataSourceGetRequest parseDelimitedFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+					extensionRegistry);
+		}
+
+		public static calc.Cache.DataSourceGetRequest parseFrom(com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.DataSourceGetRequest parseFrom(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		@java.lang.Override
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder() {
+			return DEFAULT_INSTANCE.toBuilder();
+		}
+
+		public static Builder newBuilder(calc.Cache.DataSourceGetRequest prototype) {
+			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+		}
+
+		@java.lang.Override
+		public Builder toBuilder() {
+			return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		/**
+		 * Protobuf type {@code calc.DataSourceGetRequest}
+		 */
+		public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+				// @@protoc_insertion_point(builder_implements:calc.DataSourceGetRequest)
+				calc.Cache.DataSourceGetRequestOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return calc.Cache.internal_static_calc_DataSourceGetRequest_descriptor;
+			}
+
+			@java.lang.Override
+			protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+				return calc.Cache.internal_static_calc_DataSourceGetRequest_fieldAccessorTable
+						.ensureFieldAccessorsInitialized(calc.Cache.DataSourceGetRequest.class,
+								calc.Cache.DataSourceGetRequest.Builder.class);
+			}
+
+			// Construct using calc.Cache.DataSourceGetRequest.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+				}
+			}
+
+			@java.lang.Override
+			public Builder clear() {
+				super.clear();
+				if (idBuilder_ == null) {
+					id_ = null;
+				} else {
+					id_ = null;
+					idBuilder_ = null;
+				}
+				return this;
+			}
+
+			@java.lang.Override
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return calc.Cache.internal_static_calc_DataSourceGetRequest_descriptor;
+			}
+
+			@java.lang.Override
+			public calc.Cache.DataSourceGetRequest getDefaultInstanceForType() {
+				return calc.Cache.DataSourceGetRequest.getDefaultInstance();
+			}
+
+			@java.lang.Override
+			public calc.Cache.DataSourceGetRequest build() {
+				calc.Cache.DataSourceGetRequest result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			@java.lang.Override
+			public calc.Cache.DataSourceGetRequest buildPartial() {
+				calc.Cache.DataSourceGetRequest result = new calc.Cache.DataSourceGetRequest(this);
+				if (idBuilder_ == null) {
+					result.id_ = id_;
+				} else {
+					result.id_ = idBuilder_.build();
+				}
+				onBuilt();
+				return result;
+			}
+
+			@java.lang.Override
+			public Builder clone() {
+				return (Builder) super.clone();
+			}
+
+			@java.lang.Override
+			public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+				return (Builder) super.setField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+				return (Builder) super.clearField(field);
+			}
+
+			@java.lang.Override
+			public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+				return (Builder) super.clearOneof(oneof);
+			}
+
+			@java.lang.Override
+			public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+					java.lang.Object value) {
+				return (Builder) super.setRepeatedField(field, index, value);
+			}
+
+			@java.lang.Override
+			public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+					java.lang.Object value) {
+				return (Builder) super.addRepeatedField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof calc.Cache.DataSourceGetRequest) {
+					return mergeFrom((calc.Cache.DataSourceGetRequest) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(calc.Cache.DataSourceGetRequest other) {
+				if (other == calc.Cache.DataSourceGetRequest.getDefaultInstance())
+					return this;
+				if (other.hasId()) {
+					mergeId(other.getId());
+				}
+				this.mergeUnknownFields(other.unknownFields);
+				onChanged();
+				return this;
+			}
+
+			@java.lang.Override
+			public final boolean isInitialized() {
+				return true;
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+				calc.Cache.DataSourceGetRequest parsedMessage = null;
+				try {
+					parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+				} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+					parsedMessage = (calc.Cache.DataSourceGetRequest) e.getUnfinishedMessage();
+					throw e.unwrapIOException();
+				} finally {
+					if (parsedMessage != null) {
+						mergeFrom(parsedMessage);
+					}
+				}
+				return this;
+			}
+
+			private calc.Moniker.MonikerId id_ = null;
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder> idBuilder_;
+
+			/**
+			 * <code>.calc.MonikerId id = 1;</code>
+			 */
+			public boolean hasId() {
+				return idBuilder_ != null || id_ != null;
+			}
+
+			/**
+			 * <code>.calc.MonikerId id = 1;</code>
+			 */
+			public calc.Moniker.MonikerId getId() {
+				if (idBuilder_ == null) {
+					return id_ == null ? calc.Moniker.MonikerId.getDefaultInstance() : id_;
+				} else {
+					return idBuilder_.getMessage();
+				}
+			}
+
+			/**
+			 * <code>.calc.MonikerId id = 1;</code>
+			 */
+			public Builder setId(calc.Moniker.MonikerId value) {
+				if (idBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					id_ = value;
+					onChanged();
+				} else {
+					idBuilder_.setMessage(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.MonikerId id = 1;</code>
+			 */
+			public Builder setId(calc.Moniker.MonikerId.Builder builderForValue) {
+				if (idBuilder_ == null) {
+					id_ = builderForValue.build();
+					onChanged();
+				} else {
+					idBuilder_.setMessage(builderForValue.build());
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.MonikerId id = 1;</code>
+			 */
+			public Builder mergeId(calc.Moniker.MonikerId value) {
+				if (idBuilder_ == null) {
+					if (id_ != null) {
+						id_ = calc.Moniker.MonikerId.newBuilder(id_).mergeFrom(value).buildPartial();
+					} else {
+						id_ = value;
+					}
+					onChanged();
+				} else {
+					idBuilder_.mergeFrom(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.MonikerId id = 1;</code>
+			 */
+			public Builder clearId() {
+				if (idBuilder_ == null) {
+					id_ = null;
+					onChanged();
+				} else {
+					id_ = null;
+					idBuilder_ = null;
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.MonikerId id = 1;</code>
+			 */
+			public calc.Moniker.MonikerId.Builder getIdBuilder() {
+
+				onChanged();
+				return getIdFieldBuilder().getBuilder();
+			}
+
+			/**
+			 * <code>.calc.MonikerId id = 1;</code>
+			 */
+			public calc.Moniker.MonikerIdOrBuilder getIdOrBuilder() {
+				if (idBuilder_ != null) {
+					return idBuilder_.getMessageOrBuilder();
+				} else {
+					return id_ == null ? calc.Moniker.MonikerId.getDefaultInstance() : id_;
+				}
+			}
+
+			/**
+			 * <code>.calc.MonikerId id = 1;</code>
+			 */
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder> getIdFieldBuilder() {
+				if (idBuilder_ == null) {
+					idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder>(
+							getId(), getParentForChildren(), isClean());
+					id_ = null;
+				}
+				return idBuilder_;
+			}
+
+			@java.lang.Override
+			public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.setUnknownFieldsProto3(unknownFields);
+			}
+
+			@java.lang.Override
+			public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.mergeUnknownFields(unknownFields);
+			}
+
+			// @@protoc_insertion_point(builder_scope:calc.DataSourceGetRequest)
+		}
+
+		// @@protoc_insertion_point(class_scope:calc.DataSourceGetRequest)
+		private static final calc.Cache.DataSourceGetRequest DEFAULT_INSTANCE;
+		static {
+			DEFAULT_INSTANCE = new calc.Cache.DataSourceGetRequest();
+		}
+
+		public static calc.Cache.DataSourceGetRequest getDefaultInstance() {
+			return DEFAULT_INSTANCE;
+		}
+
+		private static final com.google.protobuf.Parser<DataSourceGetRequest> PARSER = new com.google.protobuf.AbstractParser<DataSourceGetRequest>() {
+			@java.lang.Override
+			public DataSourceGetRequest parsePartialFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return new DataSourceGetRequest(input, extensionRegistry);
+			}
+		};
+
+		public static com.google.protobuf.Parser<DataSourceGetRequest> parser() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public com.google.protobuf.Parser<DataSourceGetRequest> getParserForType() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public calc.Cache.DataSourceGetRequest getDefaultInstanceForType() {
+			return DEFAULT_INSTANCE;
+		}
+
+	}
+
+	public interface DataSourceGetResponseOrBuilder extends
+			// @@protoc_insertion_point(interface_extends:calc.DataSourceGetResponse)
+			com.google.protobuf.MessageOrBuilder {
+
+		/**
+		 * <code>.calc.StoredValue success = 1;</code>
+		 */
+		boolean hasSuccess();
+
+		/**
+		 * <code>.calc.StoredValue success = 1;</code>
+		 */
+		calc.Moniker.StoredValue getSuccess();
+
+		/**
+		 * <code>.calc.StoredValue success = 1;</code>
+		 */
+		calc.Moniker.StoredValueOrBuilder getSuccessOrBuilder();
+
+		/**
+		 * <code>.calc.MonikerId notFound = 2;</code>
+		 */
+		boolean hasNotFound();
+
+		/**
+		 * <code>.calc.MonikerId notFound = 2;</code>
+		 */
+		calc.Moniker.MonikerId getNotFound();
+
+		/**
+		 * <code>.calc.MonikerId notFound = 2;</code>
+		 */
+		calc.Moniker.MonikerIdOrBuilder getNotFoundOrBuilder();
+
+		/**
+		 * <code>.calc.CacheError error = 100;</code>
+		 */
+		boolean hasError();
+
+		/**
+		 * <code>.calc.CacheError error = 100;</code>
+		 */
+		calc.Cache.CacheError getError();
+
+		/**
+		 * <code>.calc.CacheError error = 100;</code>
+		 */
+		calc.Cache.CacheErrorOrBuilder getErrorOrBuilder();
+
+		public calc.Cache.DataSourceGetResponse.RespCase getRespCase();
+	}
+
+	/**
+	 * Protobuf type {@code calc.DataSourceGetResponse}
+	 */
+	public static final class DataSourceGetResponse extends com.google.protobuf.GeneratedMessageV3 implements
+			// @@protoc_insertion_point(message_implements:calc.DataSourceGetResponse)
+			DataSourceGetResponseOrBuilder {
+		private static final long serialVersionUID = 0L;
+
+		// Use DataSourceGetResponse.newBuilder() to construct.
+		private DataSourceGetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+			super(builder);
+		}
+
+		private DataSourceGetResponse() {
+		}
+
+		@java.lang.Override
+		public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+			return this.unknownFields;
+		}
+
+		private DataSourceGetResponse(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			this();
+			if (extensionRegistry == null) {
+				throw new java.lang.NullPointerException();
+			}
+			int mutable_bitField0_ = 0;
+			com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+					.newBuilder();
+			try {
+				boolean done = false;
+				while (!done) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						done = true;
+						break;
+					case 10: {
+						calc.Moniker.StoredValue.Builder subBuilder = null;
+						if (respCase_ == 1) {
+							subBuilder = ((calc.Moniker.StoredValue) resp_).toBuilder();
+						}
+						resp_ = input.readMessage(calc.Moniker.StoredValue.parser(), extensionRegistry);
+						if (subBuilder != null) {
+							subBuilder.mergeFrom((calc.Moniker.StoredValue) resp_);
+							resp_ = subBuilder.buildPartial();
+						}
+						respCase_ = 1;
+						break;
+					}
+					case 18: {
+						calc.Moniker.MonikerId.Builder subBuilder = null;
+						if (respCase_ == 2) {
+							subBuilder = ((calc.Moniker.MonikerId) resp_).toBuilder();
+						}
+						resp_ = input.readMessage(calc.Moniker.MonikerId.parser(), extensionRegistry);
+						if (subBuilder != null) {
+							subBuilder.mergeFrom((calc.Moniker.MonikerId) resp_);
+							resp_ = subBuilder.buildPartial();
+						}
+						respCase_ = 2;
+						break;
+					}
+					case 802: {
+						calc.Cache.CacheError.Builder subBuilder = null;
+						if (respCase_ == 100) {
+							subBuilder = ((calc.Cache.CacheError) resp_).toBuilder();
+						}
+						resp_ = input.readMessage(calc.Cache.CacheError.parser(), extensionRegistry);
+						if (subBuilder != null) {
+							subBuilder.mergeFrom((calc.Cache.CacheError) resp_);
+							resp_ = subBuilder.buildPartial();
+						}
+						respCase_ = 100;
+						break;
+					}
+					default: {
+						if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+							done = true;
+						}
+						break;
+					}
+					}
+				}
+			} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+				throw e.setUnfinishedMessage(this);
+			} catch (java.io.IOException e) {
+				throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+			} finally {
+				this.unknownFields = unknownFields.build();
+				makeExtensionsImmutable();
+			}
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return calc.Cache.internal_static_calc_DataSourceGetResponse_descriptor;
+		}
+
+		@java.lang.Override
+		protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+			return calc.Cache.internal_static_calc_DataSourceGetResponse_fieldAccessorTable
+					.ensureFieldAccessorsInitialized(calc.Cache.DataSourceGetResponse.class,
+							calc.Cache.DataSourceGetResponse.Builder.class);
+		}
+
+		private int respCase_ = 0;
+		private java.lang.Object resp_;
+
+		public enum RespCase implements com.google.protobuf.Internal.EnumLite {
+			SUCCESS(1), NOTFOUND(2), ERROR(100), RESP_NOT_SET(0);
+			private final int value;
+
+			private RespCase(int value) {
+				this.value = value;
+			}
+
+			/**
+			 * @deprecated Use {@link #forNumber(int)} instead.
+			 */
+			@java.lang.Deprecated
+			public static RespCase valueOf(int value) {
+				return forNumber(value);
+			}
+
+			public static RespCase forNumber(int value) {
+				switch (value) {
+				case 1:
+					return SUCCESS;
+				case 2:
+					return NOTFOUND;
+				case 100:
+					return ERROR;
+				case 0:
+					return RESP_NOT_SET;
+				default:
+					return null;
+				}
+			}
+
+			public int getNumber() {
+				return this.value;
+			}
+		};
+
+		public RespCase getRespCase() {
+			return RespCase.forNumber(respCase_);
+		}
+
+		public static final int SUCCESS_FIELD_NUMBER = 1;
+
+		/**
+		 * <code>.calc.StoredValue success = 1;</code>
+		 */
+		public boolean hasSuccess() {
+			return respCase_ == 1;
+		}
+
+		/**
+		 * <code>.calc.StoredValue success = 1;</code>
+		 */
+		public calc.Moniker.StoredValue getSuccess() {
+			if (respCase_ == 1) {
+				return (calc.Moniker.StoredValue) resp_;
+			}
+			return calc.Moniker.StoredValue.getDefaultInstance();
+		}
+
+		/**
+		 * <code>.calc.StoredValue success = 1;</code>
+		 */
+		public calc.Moniker.StoredValueOrBuilder getSuccessOrBuilder() {
+			if (respCase_ == 1) {
+				return (calc.Moniker.StoredValue) resp_;
+			}
+			return calc.Moniker.StoredValue.getDefaultInstance();
+		}
+
+		public static final int NOTFOUND_FIELD_NUMBER = 2;
+
+		/**
+		 * <code>.calc.MonikerId notFound = 2;</code>
+		 */
+		public boolean hasNotFound() {
+			return respCase_ == 2;
+		}
+
+		/**
+		 * <code>.calc.MonikerId notFound = 2;</code>
+		 */
+		public calc.Moniker.MonikerId getNotFound() {
+			if (respCase_ == 2) {
+				return (calc.Moniker.MonikerId) resp_;
+			}
+			return calc.Moniker.MonikerId.getDefaultInstance();
+		}
+
+		/**
+		 * <code>.calc.MonikerId notFound = 2;</code>
+		 */
+		public calc.Moniker.MonikerIdOrBuilder getNotFoundOrBuilder() {
+			if (respCase_ == 2) {
+				return (calc.Moniker.MonikerId) resp_;
+			}
+			return calc.Moniker.MonikerId.getDefaultInstance();
+		}
+
+		public static final int ERROR_FIELD_NUMBER = 100;
+
+		/**
+		 * <code>.calc.CacheError error = 100;</code>
+		 */
+		public boolean hasError() {
+			return respCase_ == 100;
+		}
+
+		/**
+		 * <code>.calc.CacheError error = 100;</code>
+		 */
+		public calc.Cache.CacheError getError() {
+			if (respCase_ == 100) {
+				return (calc.Cache.CacheError) resp_;
+			}
+			return calc.Cache.CacheError.getDefaultInstance();
+		}
+
+		/**
+		 * <code>.calc.CacheError error = 100;</code>
+		 */
+		public calc.Cache.CacheErrorOrBuilder getErrorOrBuilder() {
+			if (respCase_ == 100) {
+				return (calc.Cache.CacheError) resp_;
+			}
+			return calc.Cache.CacheError.getDefaultInstance();
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		@java.lang.Override
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized == 1)
+				return true;
+			if (isInitialized == 0)
+				return false;
+
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		@java.lang.Override
+		public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+			if (respCase_ == 1) {
+				output.writeMessage(1, (calc.Moniker.StoredValue) resp_);
+			}
+			if (respCase_ == 2) {
+				output.writeMessage(2, (calc.Moniker.MonikerId) resp_);
+			}
+			if (respCase_ == 100) {
+				output.writeMessage(100, (calc.Cache.CacheError) resp_);
+			}
+			unknownFields.writeTo(output);
+		}
+
+		@java.lang.Override
+		public int getSerializedSize() {
+			int size = memoizedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			if (respCase_ == 1) {
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, (calc.Moniker.StoredValue) resp_);
+			}
+			if (respCase_ == 2) {
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, (calc.Moniker.MonikerId) resp_);
+			}
+			if (respCase_ == 100) {
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(100, (calc.Cache.CacheError) resp_);
+			}
+			size += unknownFields.getSerializedSize();
+			memoizedSize = size;
+			return size;
+		}
+
+		@java.lang.Override
+		public boolean equals(final java.lang.Object obj) {
+			if (obj == this) {
+				return true;
+			}
+			if (!(obj instanceof calc.Cache.DataSourceGetResponse)) {
+				return super.equals(obj);
+			}
+			calc.Cache.DataSourceGetResponse other = (calc.Cache.DataSourceGetResponse) obj;
+
+			boolean result = true;
+			result = result && getRespCase().equals(other.getRespCase());
+			if (!result)
+				return false;
+			switch (respCase_) {
+			case 1:
+				result = result && getSuccess().equals(other.getSuccess());
+				break;
+			case 2:
+				result = result && getNotFound().equals(other.getNotFound());
+				break;
+			case 100:
+				result = result && getError().equals(other.getError());
+				break;
+			case 0:
+			default:
+			}
+			result = result && unknownFields.equals(other.unknownFields);
+			return result;
+		}
+
+		@java.lang.Override
+		public int hashCode() {
+			if (memoizedHashCode != 0) {
+				return memoizedHashCode;
+			}
+			int hash = 41;
+			hash = (19 * hash) + getDescriptor().hashCode();
+			switch (respCase_) {
+			case 1:
+				hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
+				hash = (53 * hash) + getSuccess().hashCode();
+				break;
+			case 2:
+				hash = (37 * hash) + NOTFOUND_FIELD_NUMBER;
+				hash = (53 * hash) + getNotFound().hashCode();
+				break;
+			case 100:
+				hash = (37 * hash) + ERROR_FIELD_NUMBER;
+				hash = (53 * hash) + getError().hashCode();
+				break;
+			case 0:
+			default:
+			}
+			hash = (29 * hash) + unknownFields.hashCode();
+			memoizedHashCode = hash;
+			return hash;
+		}
+
+		public static calc.Cache.DataSourceGetResponse parseFrom(java.nio.ByteBuffer data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.DataSourceGetResponse parseFrom(java.nio.ByteBuffer data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.DataSourceGetResponse parseFrom(com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.DataSourceGetResponse parseFrom(com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.DataSourceGetResponse parseFrom(byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.DataSourceGetResponse parseFrom(byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.DataSourceGetResponse parseFrom(java.io.InputStream input) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.DataSourceGetResponse parseFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		public static calc.Cache.DataSourceGetResponse parseDelimitedFrom(java.io.InputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.DataSourceGetResponse parseDelimitedFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+					extensionRegistry);
+		}
+
+		public static calc.Cache.DataSourceGetResponse parseFrom(com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.DataSourceGetResponse parseFrom(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		@java.lang.Override
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder() {
+			return DEFAULT_INSTANCE.toBuilder();
+		}
+
+		public static Builder newBuilder(calc.Cache.DataSourceGetResponse prototype) {
+			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+		}
+
+		@java.lang.Override
+		public Builder toBuilder() {
+			return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		/**
+		 * Protobuf type {@code calc.DataSourceGetResponse}
+		 */
+		public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+				// @@protoc_insertion_point(builder_implements:calc.DataSourceGetResponse)
+				calc.Cache.DataSourceGetResponseOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return calc.Cache.internal_static_calc_DataSourceGetResponse_descriptor;
+			}
+
+			@java.lang.Override
+			protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+				return calc.Cache.internal_static_calc_DataSourceGetResponse_fieldAccessorTable
+						.ensureFieldAccessorsInitialized(calc.Cache.DataSourceGetResponse.class,
+								calc.Cache.DataSourceGetResponse.Builder.class);
+			}
+
+			// Construct using calc.Cache.DataSourceGetResponse.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+				}
+			}
+
+			@java.lang.Override
+			public Builder clear() {
+				super.clear();
+				respCase_ = 0;
+				resp_ = null;
+				return this;
+			}
+
+			@java.lang.Override
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return calc.Cache.internal_static_calc_DataSourceGetResponse_descriptor;
+			}
+
+			@java.lang.Override
+			public calc.Cache.DataSourceGetResponse getDefaultInstanceForType() {
+				return calc.Cache.DataSourceGetResponse.getDefaultInstance();
+			}
+
+			@java.lang.Override
+			public calc.Cache.DataSourceGetResponse build() {
+				calc.Cache.DataSourceGetResponse result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			@java.lang.Override
+			public calc.Cache.DataSourceGetResponse buildPartial() {
+				calc.Cache.DataSourceGetResponse result = new calc.Cache.DataSourceGetResponse(this);
+				if (respCase_ == 1) {
+					if (successBuilder_ == null) {
+						result.resp_ = resp_;
+					} else {
+						result.resp_ = successBuilder_.build();
+					}
+				}
+				if (respCase_ == 2) {
+					if (notFoundBuilder_ == null) {
+						result.resp_ = resp_;
+					} else {
+						result.resp_ = notFoundBuilder_.build();
+					}
+				}
+				if (respCase_ == 100) {
+					if (errorBuilder_ == null) {
+						result.resp_ = resp_;
+					} else {
+						result.resp_ = errorBuilder_.build();
+					}
+				}
+				result.respCase_ = respCase_;
+				onBuilt();
+				return result;
+			}
+
+			@java.lang.Override
+			public Builder clone() {
+				return (Builder) super.clone();
+			}
+
+			@java.lang.Override
+			public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+				return (Builder) super.setField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+				return (Builder) super.clearField(field);
+			}
+
+			@java.lang.Override
+			public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+				return (Builder) super.clearOneof(oneof);
+			}
+
+			@java.lang.Override
+			public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+					java.lang.Object value) {
+				return (Builder) super.setRepeatedField(field, index, value);
+			}
+
+			@java.lang.Override
+			public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+					java.lang.Object value) {
+				return (Builder) super.addRepeatedField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof calc.Cache.DataSourceGetResponse) {
+					return mergeFrom((calc.Cache.DataSourceGetResponse) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(calc.Cache.DataSourceGetResponse other) {
+				if (other == calc.Cache.DataSourceGetResponse.getDefaultInstance())
+					return this;
+				switch (other.getRespCase()) {
+				case SUCCESS: {
+					mergeSuccess(other.getSuccess());
+					break;
+				}
+				case NOTFOUND: {
+					mergeNotFound(other.getNotFound());
+					break;
+				}
+				case ERROR: {
+					mergeError(other.getError());
+					break;
+				}
+				case RESP_NOT_SET: {
+					break;
+				}
+				}
+				this.mergeUnknownFields(other.unknownFields);
+				onChanged();
+				return this;
+			}
+
+			@java.lang.Override
+			public final boolean isInitialized() {
+				return true;
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+				calc.Cache.DataSourceGetResponse parsedMessage = null;
+				try {
+					parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+				} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+					parsedMessage = (calc.Cache.DataSourceGetResponse) e.getUnfinishedMessage();
+					throw e.unwrapIOException();
+				} finally {
+					if (parsedMessage != null) {
+						mergeFrom(parsedMessage);
+					}
+				}
+				return this;
+			}
+
+			private int respCase_ = 0;
+			private java.lang.Object resp_;
+
+			public RespCase getRespCase() {
+				return RespCase.forNumber(respCase_);
+			}
+
+			public Builder clearResp() {
+				respCase_ = 0;
+				resp_ = null;
+				onChanged();
+				return this;
+			}
+
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Moniker.StoredValue, calc.Moniker.StoredValue.Builder, calc.Moniker.StoredValueOrBuilder> successBuilder_;
+
+			/**
+			 * <code>.calc.StoredValue success = 1;</code>
+			 */
+			public boolean hasSuccess() {
+				return respCase_ == 1;
+			}
+
+			/**
+			 * <code>.calc.StoredValue success = 1;</code>
+			 */
+			public calc.Moniker.StoredValue getSuccess() {
+				if (successBuilder_ == null) {
+					if (respCase_ == 1) {
+						return (calc.Moniker.StoredValue) resp_;
+					}
+					return calc.Moniker.StoredValue.getDefaultInstance();
+				} else {
+					if (respCase_ == 1) {
+						return successBuilder_.getMessage();
+					}
+					return calc.Moniker.StoredValue.getDefaultInstance();
+				}
+			}
+
+			/**
+			 * <code>.calc.StoredValue success = 1;</code>
+			 */
+			public Builder setSuccess(calc.Moniker.StoredValue value) {
+				if (successBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					resp_ = value;
+					onChanged();
+				} else {
+					successBuilder_.setMessage(value);
+				}
+				respCase_ = 1;
+				return this;
+			}
+
+			/**
+			 * <code>.calc.StoredValue success = 1;</code>
+			 */
+			public Builder setSuccess(calc.Moniker.StoredValue.Builder builderForValue) {
+				if (successBuilder_ == null) {
+					resp_ = builderForValue.build();
+					onChanged();
+				} else {
+					successBuilder_.setMessage(builderForValue.build());
+				}
+				respCase_ = 1;
+				return this;
+			}
+
+			/**
+			 * <code>.calc.StoredValue success = 1;</code>
+			 */
+			public Builder mergeSuccess(calc.Moniker.StoredValue value) {
+				if (successBuilder_ == null) {
+					if (respCase_ == 1 && resp_ != calc.Moniker.StoredValue.getDefaultInstance()) {
+						resp_ = calc.Moniker.StoredValue.newBuilder((calc.Moniker.StoredValue) resp_).mergeFrom(value)
+								.buildPartial();
+					} else {
+						resp_ = value;
+					}
+					onChanged();
+				} else {
+					if (respCase_ == 1) {
+						successBuilder_.mergeFrom(value);
+					}
+					successBuilder_.setMessage(value);
+				}
+				respCase_ = 1;
+				return this;
+			}
+
+			/**
+			 * <code>.calc.StoredValue success = 1;</code>
+			 */
+			public Builder clearSuccess() {
+				if (successBuilder_ == null) {
+					if (respCase_ == 1) {
+						respCase_ = 0;
+						resp_ = null;
+						onChanged();
+					}
+				} else {
+					if (respCase_ == 1) {
+						respCase_ = 0;
+						resp_ = null;
+					}
+					successBuilder_.clear();
+				}
+				return this;
+			}
+
+			/**
+			 * <code>.calc.StoredValue success = 1;</code>
+			 */
+			public calc.Moniker.StoredValue.Builder getSuccessBuilder() {
+				return getSuccessFieldBuilder().getBuilder();
+			}
+
+			/**
+			 * <code>.calc.StoredValue success = 1;</code>
+			 */
+			public calc.Moniker.StoredValueOrBuilder getSuccessOrBuilder() {
+				if ((respCase_ == 1) && (successBuilder_ != null)) {
+					return successBuilder_.getMessageOrBuilder();
+				} else {
+					if (respCase_ == 1) {
+						return (calc.Moniker.StoredValue) resp_;
+					}
+					return calc.Moniker.StoredValue.getDefaultInstance();
+				}
+			}
+
+			/**
+			 * <code>.calc.StoredValue success = 1;</code>
+			 */
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Moniker.StoredValue, calc.Moniker.StoredValue.Builder, calc.Moniker.StoredValueOrBuilder> getSuccessFieldBuilder() {
+				if (successBuilder_ == null) {
+					if (!(respCase_ == 1)) {
+						resp_ = calc.Moniker.StoredValue.getDefaultInstance();
+					}
+					successBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<calc.Moniker.StoredValue, calc.Moniker.StoredValue.Builder, calc.Moniker.StoredValueOrBuilder>(
+							(calc.Moniker.StoredValue) resp_, getParentForChildren(), isClean());
+					resp_ = null;
+				}
+				respCase_ = 1;
+				onChanged();
+				;
+				return successBuilder_;
+			}
+
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder> notFoundBuilder_;
+
+			/**
+			 * <code>.calc.MonikerId notFound = 2;</code>
+			 */
+			public boolean hasNotFound() {
+				return respCase_ == 2;
+			}
+
+			/**
+			 * <code>.calc.MonikerId notFound = 2;</code>
+			 */
+			public calc.Moniker.MonikerId getNotFound() {
+				if (notFoundBuilder_ == null) {
+					if (respCase_ == 2) {
+						return (calc.Moniker.MonikerId) resp_;
+					}
+					return calc.Moniker.MonikerId.getDefaultInstance();
+				} else {
+					if (respCase_ == 2) {
+						return notFoundBuilder_.getMessage();
+					}
+					return calc.Moniker.MonikerId.getDefaultInstance();
+				}
+			}
+
+			/**
+			 * <code>.calc.MonikerId notFound = 2;</code>
+			 */
+			public Builder setNotFound(calc.Moniker.MonikerId value) {
+				if (notFoundBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					resp_ = value;
+					onChanged();
+				} else {
+					notFoundBuilder_.setMessage(value);
+				}
+				respCase_ = 2;
+				return this;
+			}
+
+			/**
+			 * <code>.calc.MonikerId notFound = 2;</code>
+			 */
+			public Builder setNotFound(calc.Moniker.MonikerId.Builder builderForValue) {
+				if (notFoundBuilder_ == null) {
+					resp_ = builderForValue.build();
+					onChanged();
+				} else {
+					notFoundBuilder_.setMessage(builderForValue.build());
+				}
+				respCase_ = 2;
+				return this;
+			}
+
+			/**
+			 * <code>.calc.MonikerId notFound = 2;</code>
+			 */
+			public Builder mergeNotFound(calc.Moniker.MonikerId value) {
+				if (notFoundBuilder_ == null) {
+					if (respCase_ == 2 && resp_ != calc.Moniker.MonikerId.getDefaultInstance()) {
+						resp_ = calc.Moniker.MonikerId.newBuilder((calc.Moniker.MonikerId) resp_).mergeFrom(value)
+								.buildPartial();
+					} else {
+						resp_ = value;
+					}
+					onChanged();
+				} else {
+					if (respCase_ == 2) {
+						notFoundBuilder_.mergeFrom(value);
+					}
+					notFoundBuilder_.setMessage(value);
+				}
+				respCase_ = 2;
+				return this;
+			}
+
+			/**
+			 * <code>.calc.MonikerId notFound = 2;</code>
+			 */
+			public Builder clearNotFound() {
+				if (notFoundBuilder_ == null) {
+					if (respCase_ == 2) {
+						respCase_ = 0;
+						resp_ = null;
+						onChanged();
+					}
+				} else {
+					if (respCase_ == 2) {
+						respCase_ = 0;
+						resp_ = null;
+					}
+					notFoundBuilder_.clear();
+				}
+				return this;
+			}
+
+			/**
+			 * <code>.calc.MonikerId notFound = 2;</code>
+			 */
+			public calc.Moniker.MonikerId.Builder getNotFoundBuilder() {
+				return getNotFoundFieldBuilder().getBuilder();
+			}
+
+			/**
+			 * <code>.calc.MonikerId notFound = 2;</code>
+			 */
+			public calc.Moniker.MonikerIdOrBuilder getNotFoundOrBuilder() {
+				if ((respCase_ == 2) && (notFoundBuilder_ != null)) {
+					return notFoundBuilder_.getMessageOrBuilder();
+				} else {
+					if (respCase_ == 2) {
+						return (calc.Moniker.MonikerId) resp_;
+					}
+					return calc.Moniker.MonikerId.getDefaultInstance();
+				}
+			}
+
+			/**
+			 * <code>.calc.MonikerId notFound = 2;</code>
+			 */
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder> getNotFoundFieldBuilder() {
+				if (notFoundBuilder_ == null) {
+					if (!(respCase_ == 2)) {
+						resp_ = calc.Moniker.MonikerId.getDefaultInstance();
+					}
+					notFoundBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder>(
+							(calc.Moniker.MonikerId) resp_, getParentForChildren(), isClean());
+					resp_ = null;
+				}
+				respCase_ = 2;
+				onChanged();
+				;
+				return notFoundBuilder_;
+			}
+
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Cache.CacheError, calc.Cache.CacheError.Builder, calc.Cache.CacheErrorOrBuilder> errorBuilder_;
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public boolean hasError() {
+				return respCase_ == 100;
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public calc.Cache.CacheError getError() {
+				if (errorBuilder_ == null) {
+					if (respCase_ == 100) {
+						return (calc.Cache.CacheError) resp_;
+					}
+					return calc.Cache.CacheError.getDefaultInstance();
+				} else {
+					if (respCase_ == 100) {
+						return errorBuilder_.getMessage();
+					}
+					return calc.Cache.CacheError.getDefaultInstance();
+				}
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public Builder setError(calc.Cache.CacheError value) {
+				if (errorBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					resp_ = value;
+					onChanged();
+				} else {
+					errorBuilder_.setMessage(value);
+				}
+				respCase_ = 100;
+				return this;
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public Builder setError(calc.Cache.CacheError.Builder builderForValue) {
+				if (errorBuilder_ == null) {
+					resp_ = builderForValue.build();
+					onChanged();
+				} else {
+					errorBuilder_.setMessage(builderForValue.build());
+				}
+				respCase_ = 100;
+				return this;
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public Builder mergeError(calc.Cache.CacheError value) {
+				if (errorBuilder_ == null) {
+					if (respCase_ == 100 && resp_ != calc.Cache.CacheError.getDefaultInstance()) {
+						resp_ = calc.Cache.CacheError.newBuilder((calc.Cache.CacheError) resp_).mergeFrom(value)
+								.buildPartial();
+					} else {
+						resp_ = value;
+					}
+					onChanged();
+				} else {
+					if (respCase_ == 100) {
+						errorBuilder_.mergeFrom(value);
+					}
+					errorBuilder_.setMessage(value);
+				}
+				respCase_ = 100;
+				return this;
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public Builder clearError() {
+				if (errorBuilder_ == null) {
+					if (respCase_ == 100) {
+						respCase_ = 0;
+						resp_ = null;
+						onChanged();
+					}
+				} else {
+					if (respCase_ == 100) {
+						respCase_ = 0;
+						resp_ = null;
+					}
+					errorBuilder_.clear();
+				}
+				return this;
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public calc.Cache.CacheError.Builder getErrorBuilder() {
+				return getErrorFieldBuilder().getBuilder();
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public calc.Cache.CacheErrorOrBuilder getErrorOrBuilder() {
+				if ((respCase_ == 100) && (errorBuilder_ != null)) {
+					return errorBuilder_.getMessageOrBuilder();
+				} else {
+					if (respCase_ == 100) {
+						return (calc.Cache.CacheError) resp_;
+					}
+					return calc.Cache.CacheError.getDefaultInstance();
+				}
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Cache.CacheError, calc.Cache.CacheError.Builder, calc.Cache.CacheErrorOrBuilder> getErrorFieldBuilder() {
+				if (errorBuilder_ == null) {
+					if (!(respCase_ == 100)) {
+						resp_ = calc.Cache.CacheError.getDefaultInstance();
+					}
+					errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<calc.Cache.CacheError, calc.Cache.CacheError.Builder, calc.Cache.CacheErrorOrBuilder>(
+							(calc.Cache.CacheError) resp_, getParentForChildren(), isClean());
+					resp_ = null;
+				}
+				respCase_ = 100;
+				onChanged();
+				;
+				return errorBuilder_;
+			}
+
+			@java.lang.Override
+			public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.setUnknownFieldsProto3(unknownFields);
+			}
+
+			@java.lang.Override
+			public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.mergeUnknownFields(unknownFields);
+			}
+
+			// @@protoc_insertion_point(builder_scope:calc.DataSourceGetResponse)
+		}
+
+		// @@protoc_insertion_point(class_scope:calc.DataSourceGetResponse)
+		private static final calc.Cache.DataSourceGetResponse DEFAULT_INSTANCE;
+		static {
+			DEFAULT_INSTANCE = new calc.Cache.DataSourceGetResponse();
+		}
+
+		public static calc.Cache.DataSourceGetResponse getDefaultInstance() {
+			return DEFAULT_INSTANCE;
+		}
+
+		private static final com.google.protobuf.Parser<DataSourceGetResponse> PARSER = new com.google.protobuf.AbstractParser<DataSourceGetResponse>() {
+			@java.lang.Override
+			public DataSourceGetResponse parsePartialFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return new DataSourceGetResponse(input, extensionRegistry);
+			}
+		};
+
+		public static com.google.protobuf.Parser<DataSourceGetResponse> parser() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public com.google.protobuf.Parser<DataSourceGetResponse> getParserForType() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public calc.Cache.DataSourceGetResponse getDefaultInstanceForType() {
+			return DEFAULT_INSTANCE;
+		}
+
+	}
+
+	public interface CacheInvalidateRequestOrBuilder extends
+			// @@protoc_insertion_point(interface_extends:calc.CacheInvalidateRequest)
+			com.google.protobuf.MessageOrBuilder {
+
+		/**
+		 * <code>.calc.MonikerId id = 1;</code>
+		 */
+		boolean hasId();
+
+		/**
+		 * <code>.calc.MonikerId id = 1;</code>
+		 */
+		calc.Moniker.MonikerId getId();
+
+		/**
+		 * <code>.calc.MonikerId id = 1;</code>
+		 */
+		calc.Moniker.MonikerIdOrBuilder getIdOrBuilder();
+	}
+
+	/**
+	 * Protobuf type {@code calc.CacheInvalidateRequest}
+	 */
+	public static final class CacheInvalidateRequest extends com.google.protobuf.GeneratedMessageV3 implements
+			// @@protoc_insertion_point(message_implements:calc.CacheInvalidateRequest)
+			CacheInvalidateRequestOrBuilder {
+		private static final long serialVersionUID = 0L;
+
+		// Use CacheInvalidateRequest.newBuilder() to construct.
+		private CacheInvalidateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+			super(builder);
+		}
+
+		private CacheInvalidateRequest() {
+		}
+
+		@java.lang.Override
+		public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+			return this.unknownFields;
+		}
+
+		private CacheInvalidateRequest(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			this();
+			if (extensionRegistry == null) {
+				throw new java.lang.NullPointerException();
+			}
+			int mutable_bitField0_ = 0;
+			com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+					.newBuilder();
+			try {
+				boolean done = false;
+				while (!done) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						done = true;
+						break;
+					case 10: {
+						calc.Moniker.MonikerId.Builder subBuilder = null;
+						if (id_ != null) {
+							subBuilder = id_.toBuilder();
+						}
+						id_ = input.readMessage(calc.Moniker.MonikerId.parser(), extensionRegistry);
+						if (subBuilder != null) {
+							subBuilder.mergeFrom(id_);
+							id_ = subBuilder.buildPartial();
+						}
+
+						break;
+					}
+					default: {
+						if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+							done = true;
+						}
+						break;
+					}
+					}
+				}
+			} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+				throw e.setUnfinishedMessage(this);
+			} catch (java.io.IOException e) {
+				throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+			} finally {
+				this.unknownFields = unknownFields.build();
+				makeExtensionsImmutable();
+			}
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return calc.Cache.internal_static_calc_CacheInvalidateRequest_descriptor;
+		}
+
+		@java.lang.Override
+		protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+			return calc.Cache.internal_static_calc_CacheInvalidateRequest_fieldAccessorTable
+					.ensureFieldAccessorsInitialized(calc.Cache.CacheInvalidateRequest.class,
+							calc.Cache.CacheInvalidateRequest.Builder.class);
+		}
+
+		public static final int ID_FIELD_NUMBER = 1;
+		private calc.Moniker.MonikerId id_;
+
+		/**
+		 * <code>.calc.MonikerId id = 1;</code>
+		 */
+		public boolean hasId() {
+			return id_ != null;
+		}
+
+		/**
+		 * <code>.calc.MonikerId id = 1;</code>
+		 */
+		public calc.Moniker.MonikerId getId() {
+			return id_ == null ? calc.Moniker.MonikerId.getDefaultInstance() : id_;
+		}
+
+		/**
+		 * <code>.calc.MonikerId id = 1;</code>
+		 */
+		public calc.Moniker.MonikerIdOrBuilder getIdOrBuilder() {
+			return getId();
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		@java.lang.Override
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized == 1)
+				return true;
+			if (isInitialized == 0)
+				return false;
+
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		@java.lang.Override
+		public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+			if (id_ != null) {
+				output.writeMessage(1, getId());
+			}
+			unknownFields.writeTo(output);
+		}
+
+		@java.lang.Override
+		public int getSerializedSize() {
+			int size = memoizedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			if (id_ != null) {
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getId());
+			}
+			size += unknownFields.getSerializedSize();
+			memoizedSize = size;
+			return size;
+		}
+
+		@java.lang.Override
+		public boolean equals(final java.lang.Object obj) {
+			if (obj == this) {
+				return true;
+			}
+			if (!(obj instanceof calc.Cache.CacheInvalidateRequest)) {
+				return super.equals(obj);
+			}
+			calc.Cache.CacheInvalidateRequest other = (calc.Cache.CacheInvalidateRequest) obj;
+
+			boolean result = true;
+			result = result && (hasId() == other.hasId());
+			if (hasId()) {
+				result = result && getId().equals(other.getId());
+			}
+			result = result && unknownFields.equals(other.unknownFields);
+			return result;
+		}
+
+		@java.lang.Override
+		public int hashCode() {
+			if (memoizedHashCode != 0) {
+				return memoizedHashCode;
+			}
+			int hash = 41;
+			hash = (19 * hash) + getDescriptor().hashCode();
+			if (hasId()) {
+				hash = (37 * hash) + ID_FIELD_NUMBER;
+				hash = (53 * hash) + getId().hashCode();
+			}
+			hash = (29 * hash) + unknownFields.hashCode();
+			memoizedHashCode = hash;
+			return hash;
+		}
+
+		public static calc.Cache.CacheInvalidateRequest parseFrom(java.nio.ByteBuffer data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.CacheInvalidateRequest parseFrom(java.nio.ByteBuffer data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheInvalidateRequest parseFrom(com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.CacheInvalidateRequest parseFrom(com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheInvalidateRequest parseFrom(byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.CacheInvalidateRequest parseFrom(byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheInvalidateRequest parseFrom(java.io.InputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.CacheInvalidateRequest parseFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheInvalidateRequest parseDelimitedFrom(java.io.InputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.CacheInvalidateRequest parseDelimitedFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+					extensionRegistry);
+		}
+
+		public static calc.Cache.CacheInvalidateRequest parseFrom(com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.CacheInvalidateRequest parseFrom(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		@java.lang.Override
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder() {
+			return DEFAULT_INSTANCE.toBuilder();
+		}
+
+		public static Builder newBuilder(calc.Cache.CacheInvalidateRequest prototype) {
+			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+		}
+
+		@java.lang.Override
+		public Builder toBuilder() {
+			return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		/**
+		 * Protobuf type {@code calc.CacheInvalidateRequest}
+		 */
+		public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+				// @@protoc_insertion_point(builder_implements:calc.CacheInvalidateRequest)
+				calc.Cache.CacheInvalidateRequestOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return calc.Cache.internal_static_calc_CacheInvalidateRequest_descriptor;
+			}
+
+			@java.lang.Override
+			protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+				return calc.Cache.internal_static_calc_CacheInvalidateRequest_fieldAccessorTable
+						.ensureFieldAccessorsInitialized(calc.Cache.CacheInvalidateRequest.class,
+								calc.Cache.CacheInvalidateRequest.Builder.class);
+			}
+
+			// Construct using calc.Cache.CacheInvalidateRequest.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+				}
+			}
+
+			@java.lang.Override
+			public Builder clear() {
+				super.clear();
+				if (idBuilder_ == null) {
+					id_ = null;
+				} else {
+					id_ = null;
+					idBuilder_ = null;
+				}
+				return this;
+			}
+
+			@java.lang.Override
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return calc.Cache.internal_static_calc_CacheInvalidateRequest_descriptor;
+			}
+
+			@java.lang.Override
+			public calc.Cache.CacheInvalidateRequest getDefaultInstanceForType() {
+				return calc.Cache.CacheInvalidateRequest.getDefaultInstance();
+			}
+
+			@java.lang.Override
+			public calc.Cache.CacheInvalidateRequest build() {
+				calc.Cache.CacheInvalidateRequest result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			@java.lang.Override
+			public calc.Cache.CacheInvalidateRequest buildPartial() {
+				calc.Cache.CacheInvalidateRequest result = new calc.Cache.CacheInvalidateRequest(this);
+				if (idBuilder_ == null) {
+					result.id_ = id_;
+				} else {
+					result.id_ = idBuilder_.build();
+				}
+				onBuilt();
+				return result;
+			}
+
+			@java.lang.Override
+			public Builder clone() {
+				return (Builder) super.clone();
+			}
+
+			@java.lang.Override
+			public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+				return (Builder) super.setField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+				return (Builder) super.clearField(field);
+			}
+
+			@java.lang.Override
+			public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+				return (Builder) super.clearOneof(oneof);
+			}
+
+			@java.lang.Override
+			public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+					java.lang.Object value) {
+				return (Builder) super.setRepeatedField(field, index, value);
+			}
+
+			@java.lang.Override
+			public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+					java.lang.Object value) {
+				return (Builder) super.addRepeatedField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof calc.Cache.CacheInvalidateRequest) {
+					return mergeFrom((calc.Cache.CacheInvalidateRequest) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(calc.Cache.CacheInvalidateRequest other) {
+				if (other == calc.Cache.CacheInvalidateRequest.getDefaultInstance())
+					return this;
+				if (other.hasId()) {
+					mergeId(other.getId());
+				}
+				this.mergeUnknownFields(other.unknownFields);
+				onChanged();
+				return this;
+			}
+
+			@java.lang.Override
+			public final boolean isInitialized() {
+				return true;
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+				calc.Cache.CacheInvalidateRequest parsedMessage = null;
+				try {
+					parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+				} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+					parsedMessage = (calc.Cache.CacheInvalidateRequest) e.getUnfinishedMessage();
+					throw e.unwrapIOException();
+				} finally {
+					if (parsedMessage != null) {
+						mergeFrom(parsedMessage);
+					}
+				}
+				return this;
+			}
+
+			private calc.Moniker.MonikerId id_ = null;
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder> idBuilder_;
+
+			/**
+			 * <code>.calc.MonikerId id = 1;</code>
+			 */
+			public boolean hasId() {
+				return idBuilder_ != null || id_ != null;
+			}
+
+			/**
+			 * <code>.calc.MonikerId id = 1;</code>
+			 */
+			public calc.Moniker.MonikerId getId() {
+				if (idBuilder_ == null) {
+					return id_ == null ? calc.Moniker.MonikerId.getDefaultInstance() : id_;
+				} else {
+					return idBuilder_.getMessage();
+				}
+			}
+
+			/**
+			 * <code>.calc.MonikerId id = 1;</code>
+			 */
+			public Builder setId(calc.Moniker.MonikerId value) {
+				if (idBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					id_ = value;
+					onChanged();
+				} else {
+					idBuilder_.setMessage(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.MonikerId id = 1;</code>
+			 */
+			public Builder setId(calc.Moniker.MonikerId.Builder builderForValue) {
+				if (idBuilder_ == null) {
+					id_ = builderForValue.build();
+					onChanged();
+				} else {
+					idBuilder_.setMessage(builderForValue.build());
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.MonikerId id = 1;</code>
+			 */
+			public Builder mergeId(calc.Moniker.MonikerId value) {
+				if (idBuilder_ == null) {
+					if (id_ != null) {
+						id_ = calc.Moniker.MonikerId.newBuilder(id_).mergeFrom(value).buildPartial();
+					} else {
+						id_ = value;
+					}
+					onChanged();
+				} else {
+					idBuilder_.mergeFrom(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.MonikerId id = 1;</code>
+			 */
+			public Builder clearId() {
+				if (idBuilder_ == null) {
+					id_ = null;
+					onChanged();
+				} else {
+					id_ = null;
+					idBuilder_ = null;
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.MonikerId id = 1;</code>
+			 */
+			public calc.Moniker.MonikerId.Builder getIdBuilder() {
+
+				onChanged();
+				return getIdFieldBuilder().getBuilder();
+			}
+
+			/**
+			 * <code>.calc.MonikerId id = 1;</code>
+			 */
+			public calc.Moniker.MonikerIdOrBuilder getIdOrBuilder() {
+				if (idBuilder_ != null) {
+					return idBuilder_.getMessageOrBuilder();
+				} else {
+					return id_ == null ? calc.Moniker.MonikerId.getDefaultInstance() : id_;
+				}
+			}
+
+			/**
+			 * <code>.calc.MonikerId id = 1;</code>
+			 */
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder> getIdFieldBuilder() {
+				if (idBuilder_ == null) {
+					idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder>(
+							getId(), getParentForChildren(), isClean());
+					id_ = null;
+				}
+				return idBuilder_;
+			}
+
+			@java.lang.Override
+			public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.setUnknownFieldsProto3(unknownFields);
+			}
+
+			@java.lang.Override
+			public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.mergeUnknownFields(unknownFields);
+			}
+
+			// @@protoc_insertion_point(builder_scope:calc.CacheInvalidateRequest)
+		}
+
+		// @@protoc_insertion_point(class_scope:calc.CacheInvalidateRequest)
+		private static final calc.Cache.CacheInvalidateRequest DEFAULT_INSTANCE;
+		static {
+			DEFAULT_INSTANCE = new calc.Cache.CacheInvalidateRequest();
+		}
+
+		public static calc.Cache.CacheInvalidateRequest getDefaultInstance() {
+			return DEFAULT_INSTANCE;
+		}
+
+		private static final com.google.protobuf.Parser<CacheInvalidateRequest> PARSER = new com.google.protobuf.AbstractParser<CacheInvalidateRequest>() {
+			@java.lang.Override
+			public CacheInvalidateRequest parsePartialFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return new CacheInvalidateRequest(input, extensionRegistry);
+			}
+		};
+
+		public static com.google.protobuf.Parser<CacheInvalidateRequest> parser() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public com.google.protobuf.Parser<CacheInvalidateRequest> getParserForType() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public calc.Cache.CacheInvalidateRequest getDefaultInstanceForType() {
+			return DEFAULT_INSTANCE;
+		}
+
+	}
+
+	public interface CacheInvalidateResponseOrBuilder extends
+			// @@protoc_insertion_point(interface_extends:calc.CacheInvalidateResponse)
+			com.google.protobuf.MessageOrBuilder {
+
+		/**
+		 * <code>.google.protobuf.Empty success = 1;</code>
+		 */
+		boolean hasSuccess();
+
+		/**
+		 * <code>.google.protobuf.Empty success = 1;</code>
+		 */
+		com.google.protobuf.Empty getSuccess();
+
+		/**
+		 * <code>.google.protobuf.Empty success = 1;</code>
+		 */
+		com.google.protobuf.EmptyOrBuilder getSuccessOrBuilder();
+
+		/**
+		 * <code>.calc.MonikerId notFound = 2;</code>
+		 */
+		boolean hasNotFound();
+
+		/**
+		 * <code>.calc.MonikerId notFound = 2;</code>
+		 */
+		calc.Moniker.MonikerId getNotFound();
+
+		/**
+		 * <code>.calc.MonikerId notFound = 2;</code>
+		 */
+		calc.Moniker.MonikerIdOrBuilder getNotFoundOrBuilder();
+
+		/**
+		 * <code>.calc.CacheError error = 100;</code>
+		 */
+		boolean hasError();
+
+		/**
+		 * <code>.calc.CacheError error = 100;</code>
+		 */
+		calc.Cache.CacheError getError();
+
+		/**
+		 * <code>.calc.CacheError error = 100;</code>
+		 */
+		calc.Cache.CacheErrorOrBuilder getErrorOrBuilder();
+
+		public calc.Cache.CacheInvalidateResponse.RespCase getRespCase();
+	}
+
+	/**
+	 * Protobuf type {@code calc.CacheInvalidateResponse}
+	 */
+	public static final class CacheInvalidateResponse extends com.google.protobuf.GeneratedMessageV3 implements
+			// @@protoc_insertion_point(message_implements:calc.CacheInvalidateResponse)
+			CacheInvalidateResponseOrBuilder {
+		private static final long serialVersionUID = 0L;
+
+		// Use CacheInvalidateResponse.newBuilder() to construct.
+		private CacheInvalidateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+			super(builder);
+		}
+
+		private CacheInvalidateResponse() {
+		}
+
+		@java.lang.Override
+		public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+			return this.unknownFields;
+		}
+
+		private CacheInvalidateResponse(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			this();
+			if (extensionRegistry == null) {
+				throw new java.lang.NullPointerException();
+			}
+			int mutable_bitField0_ = 0;
+			com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+					.newBuilder();
+			try {
+				boolean done = false;
+				while (!done) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						done = true;
+						break;
+					case 10: {
+						com.google.protobuf.Empty.Builder subBuilder = null;
+						if (respCase_ == 1) {
+							subBuilder = ((com.google.protobuf.Empty) resp_).toBuilder();
+						}
+						resp_ = input.readMessage(com.google.protobuf.Empty.parser(), extensionRegistry);
+						if (subBuilder != null) {
+							subBuilder.mergeFrom((com.google.protobuf.Empty) resp_);
+							resp_ = subBuilder.buildPartial();
+						}
+						respCase_ = 1;
+						break;
+					}
+					case 18: {
+						calc.Moniker.MonikerId.Builder subBuilder = null;
+						if (respCase_ == 2) {
+							subBuilder = ((calc.Moniker.MonikerId) resp_).toBuilder();
+						}
+						resp_ = input.readMessage(calc.Moniker.MonikerId.parser(), extensionRegistry);
+						if (subBuilder != null) {
+							subBuilder.mergeFrom((calc.Moniker.MonikerId) resp_);
+							resp_ = subBuilder.buildPartial();
+						}
+						respCase_ = 2;
+						break;
+					}
+					case 802: {
+						calc.Cache.CacheError.Builder subBuilder = null;
+						if (respCase_ == 100) {
+							subBuilder = ((calc.Cache.CacheError) resp_).toBuilder();
+						}
+						resp_ = input.readMessage(calc.Cache.CacheError.parser(), extensionRegistry);
+						if (subBuilder != null) {
+							subBuilder.mergeFrom((calc.Cache.CacheError) resp_);
+							resp_ = subBuilder.buildPartial();
+						}
+						respCase_ = 100;
+						break;
+					}
+					default: {
+						if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+							done = true;
+						}
+						break;
+					}
+					}
+				}
+			} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+				throw e.setUnfinishedMessage(this);
+			} catch (java.io.IOException e) {
+				throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+			} finally {
+				this.unknownFields = unknownFields.build();
+				makeExtensionsImmutable();
+			}
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return calc.Cache.internal_static_calc_CacheInvalidateResponse_descriptor;
+		}
+
+		@java.lang.Override
+		protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+			return calc.Cache.internal_static_calc_CacheInvalidateResponse_fieldAccessorTable
+					.ensureFieldAccessorsInitialized(calc.Cache.CacheInvalidateResponse.class,
+							calc.Cache.CacheInvalidateResponse.Builder.class);
+		}
+
+		private int respCase_ = 0;
+		private java.lang.Object resp_;
+
+		public enum RespCase implements com.google.protobuf.Internal.EnumLite {
+			SUCCESS(1), NOTFOUND(2), ERROR(100), RESP_NOT_SET(0);
+			private final int value;
+
+			private RespCase(int value) {
+				this.value = value;
+			}
+
+			/**
+			 * @deprecated Use {@link #forNumber(int)} instead.
+			 */
+			@java.lang.Deprecated
+			public static RespCase valueOf(int value) {
+				return forNumber(value);
+			}
+
+			public static RespCase forNumber(int value) {
+				switch (value) {
+				case 1:
+					return SUCCESS;
+				case 2:
+					return NOTFOUND;
+				case 100:
+					return ERROR;
+				case 0:
+					return RESP_NOT_SET;
+				default:
+					return null;
+				}
+			}
+
+			public int getNumber() {
+				return this.value;
+			}
+		};
+
+		public RespCase getRespCase() {
+			return RespCase.forNumber(respCase_);
+		}
+
+		public static final int SUCCESS_FIELD_NUMBER = 1;
+
+		/**
+		 * <code>.google.protobuf.Empty success = 1;</code>
+		 */
+		public boolean hasSuccess() {
+			return respCase_ == 1;
+		}
+
+		/**
+		 * <code>.google.protobuf.Empty success = 1;</code>
+		 */
+		public com.google.protobuf.Empty getSuccess() {
+			if (respCase_ == 1) {
+				return (com.google.protobuf.Empty) resp_;
+			}
+			return com.google.protobuf.Empty.getDefaultInstance();
+		}
+
+		/**
+		 * <code>.google.protobuf.Empty success = 1;</code>
+		 */
+		public com.google.protobuf.EmptyOrBuilder getSuccessOrBuilder() {
+			if (respCase_ == 1) {
+				return (com.google.protobuf.Empty) resp_;
+			}
+			return com.google.protobuf.Empty.getDefaultInstance();
+		}
+
+		public static final int NOTFOUND_FIELD_NUMBER = 2;
+
+		/**
+		 * <code>.calc.MonikerId notFound = 2;</code>
+		 */
+		public boolean hasNotFound() {
+			return respCase_ == 2;
+		}
+
+		/**
+		 * <code>.calc.MonikerId notFound = 2;</code>
+		 */
+		public calc.Moniker.MonikerId getNotFound() {
+			if (respCase_ == 2) {
+				return (calc.Moniker.MonikerId) resp_;
+			}
+			return calc.Moniker.MonikerId.getDefaultInstance();
+		}
+
+		/**
+		 * <code>.calc.MonikerId notFound = 2;</code>
+		 */
+		public calc.Moniker.MonikerIdOrBuilder getNotFoundOrBuilder() {
+			if (respCase_ == 2) {
+				return (calc.Moniker.MonikerId) resp_;
+			}
+			return calc.Moniker.MonikerId.getDefaultInstance();
+		}
+
+		public static final int ERROR_FIELD_NUMBER = 100;
+
+		/**
+		 * <code>.calc.CacheError error = 100;</code>
+		 */
+		public boolean hasError() {
+			return respCase_ == 100;
+		}
+
+		/**
+		 * <code>.calc.CacheError error = 100;</code>
+		 */
+		public calc.Cache.CacheError getError() {
+			if (respCase_ == 100) {
+				return (calc.Cache.CacheError) resp_;
+			}
+			return calc.Cache.CacheError.getDefaultInstance();
+		}
+
+		/**
+		 * <code>.calc.CacheError error = 100;</code>
+		 */
+		public calc.Cache.CacheErrorOrBuilder getErrorOrBuilder() {
+			if (respCase_ == 100) {
+				return (calc.Cache.CacheError) resp_;
+			}
+			return calc.Cache.CacheError.getDefaultInstance();
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		@java.lang.Override
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized == 1)
+				return true;
+			if (isInitialized == 0)
+				return false;
+
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		@java.lang.Override
+		public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+			if (respCase_ == 1) {
+				output.writeMessage(1, (com.google.protobuf.Empty) resp_);
+			}
+			if (respCase_ == 2) {
+				output.writeMessage(2, (calc.Moniker.MonikerId) resp_);
+			}
+			if (respCase_ == 100) {
+				output.writeMessage(100, (calc.Cache.CacheError) resp_);
+			}
+			unknownFields.writeTo(output);
+		}
+
+		@java.lang.Override
+		public int getSerializedSize() {
+			int size = memoizedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			if (respCase_ == 1) {
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, (com.google.protobuf.Empty) resp_);
+			}
+			if (respCase_ == 2) {
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, (calc.Moniker.MonikerId) resp_);
+			}
+			if (respCase_ == 100) {
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(100, (calc.Cache.CacheError) resp_);
+			}
+			size += unknownFields.getSerializedSize();
+			memoizedSize = size;
+			return size;
+		}
+
+		@java.lang.Override
+		public boolean equals(final java.lang.Object obj) {
+			if (obj == this) {
+				return true;
+			}
+			if (!(obj instanceof calc.Cache.CacheInvalidateResponse)) {
+				return super.equals(obj);
+			}
+			calc.Cache.CacheInvalidateResponse other = (calc.Cache.CacheInvalidateResponse) obj;
+
+			boolean result = true;
+			result = result && getRespCase().equals(other.getRespCase());
+			if (!result)
+				return false;
+			switch (respCase_) {
+			case 1:
+				result = result && getSuccess().equals(other.getSuccess());
+				break;
+			case 2:
+				result = result && getNotFound().equals(other.getNotFound());
+				break;
+			case 100:
+				result = result && getError().equals(other.getError());
+				break;
+			case 0:
+			default:
+			}
+			result = result && unknownFields.equals(other.unknownFields);
+			return result;
+		}
+
+		@java.lang.Override
+		public int hashCode() {
+			if (memoizedHashCode != 0) {
+				return memoizedHashCode;
+			}
+			int hash = 41;
+			hash = (19 * hash) + getDescriptor().hashCode();
+			switch (respCase_) {
+			case 1:
+				hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
+				hash = (53 * hash) + getSuccess().hashCode();
+				break;
+			case 2:
+				hash = (37 * hash) + NOTFOUND_FIELD_NUMBER;
+				hash = (53 * hash) + getNotFound().hashCode();
+				break;
+			case 100:
+				hash = (37 * hash) + ERROR_FIELD_NUMBER;
+				hash = (53 * hash) + getError().hashCode();
+				break;
+			case 0:
+			default:
+			}
+			hash = (29 * hash) + unknownFields.hashCode();
+			memoizedHashCode = hash;
+			return hash;
+		}
+
+		public static calc.Cache.CacheInvalidateResponse parseFrom(java.nio.ByteBuffer data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.CacheInvalidateResponse parseFrom(java.nio.ByteBuffer data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheInvalidateResponse parseFrom(com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.CacheInvalidateResponse parseFrom(com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheInvalidateResponse parseFrom(byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.CacheInvalidateResponse parseFrom(byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheInvalidateResponse parseFrom(java.io.InputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.CacheInvalidateResponse parseFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheInvalidateResponse parseDelimitedFrom(java.io.InputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.CacheInvalidateResponse parseDelimitedFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+					extensionRegistry);
+		}
+
+		public static calc.Cache.CacheInvalidateResponse parseFrom(com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.CacheInvalidateResponse parseFrom(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		@java.lang.Override
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder() {
+			return DEFAULT_INSTANCE.toBuilder();
+		}
+
+		public static Builder newBuilder(calc.Cache.CacheInvalidateResponse prototype) {
+			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+		}
+
+		@java.lang.Override
+		public Builder toBuilder() {
+			return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		/**
+		 * Protobuf type {@code calc.CacheInvalidateResponse}
+		 */
+		public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+				// @@protoc_insertion_point(builder_implements:calc.CacheInvalidateResponse)
+				calc.Cache.CacheInvalidateResponseOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return calc.Cache.internal_static_calc_CacheInvalidateResponse_descriptor;
+			}
+
+			@java.lang.Override
+			protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+				return calc.Cache.internal_static_calc_CacheInvalidateResponse_fieldAccessorTable
+						.ensureFieldAccessorsInitialized(calc.Cache.CacheInvalidateResponse.class,
+								calc.Cache.CacheInvalidateResponse.Builder.class);
+			}
+
+			// Construct using calc.Cache.CacheInvalidateResponse.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+				}
+			}
+
+			@java.lang.Override
+			public Builder clear() {
+				super.clear();
+				respCase_ = 0;
+				resp_ = null;
+				return this;
+			}
+
+			@java.lang.Override
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return calc.Cache.internal_static_calc_CacheInvalidateResponse_descriptor;
+			}
+
+			@java.lang.Override
+			public calc.Cache.CacheInvalidateResponse getDefaultInstanceForType() {
+				return calc.Cache.CacheInvalidateResponse.getDefaultInstance();
+			}
+
+			@java.lang.Override
+			public calc.Cache.CacheInvalidateResponse build() {
+				calc.Cache.CacheInvalidateResponse result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			@java.lang.Override
+			public calc.Cache.CacheInvalidateResponse buildPartial() {
+				calc.Cache.CacheInvalidateResponse result = new calc.Cache.CacheInvalidateResponse(this);
+				if (respCase_ == 1) {
+					if (successBuilder_ == null) {
+						result.resp_ = resp_;
+					} else {
+						result.resp_ = successBuilder_.build();
+					}
+				}
+				if (respCase_ == 2) {
+					if (notFoundBuilder_ == null) {
+						result.resp_ = resp_;
+					} else {
+						result.resp_ = notFoundBuilder_.build();
+					}
+				}
+				if (respCase_ == 100) {
+					if (errorBuilder_ == null) {
+						result.resp_ = resp_;
+					} else {
+						result.resp_ = errorBuilder_.build();
+					}
+				}
+				result.respCase_ = respCase_;
+				onBuilt();
+				return result;
+			}
+
+			@java.lang.Override
+			public Builder clone() {
+				return (Builder) super.clone();
+			}
+
+			@java.lang.Override
+			public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+				return (Builder) super.setField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+				return (Builder) super.clearField(field);
+			}
+
+			@java.lang.Override
+			public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+				return (Builder) super.clearOneof(oneof);
+			}
+
+			@java.lang.Override
+			public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+					java.lang.Object value) {
+				return (Builder) super.setRepeatedField(field, index, value);
+			}
+
+			@java.lang.Override
+			public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+					java.lang.Object value) {
+				return (Builder) super.addRepeatedField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof calc.Cache.CacheInvalidateResponse) {
+					return mergeFrom((calc.Cache.CacheInvalidateResponse) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(calc.Cache.CacheInvalidateResponse other) {
+				if (other == calc.Cache.CacheInvalidateResponse.getDefaultInstance())
+					return this;
+				switch (other.getRespCase()) {
+				case SUCCESS: {
+					mergeSuccess(other.getSuccess());
+					break;
+				}
+				case NOTFOUND: {
+					mergeNotFound(other.getNotFound());
+					break;
+				}
+				case ERROR: {
+					mergeError(other.getError());
+					break;
+				}
+				case RESP_NOT_SET: {
+					break;
+				}
+				}
+				this.mergeUnknownFields(other.unknownFields);
+				onChanged();
+				return this;
+			}
+
+			@java.lang.Override
+			public final boolean isInitialized() {
+				return true;
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+				calc.Cache.CacheInvalidateResponse parsedMessage = null;
+				try {
+					parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+				} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+					parsedMessage = (calc.Cache.CacheInvalidateResponse) e.getUnfinishedMessage();
+					throw e.unwrapIOException();
+				} finally {
+					if (parsedMessage != null) {
+						mergeFrom(parsedMessage);
+					}
+				}
+				return this;
+			}
+
+			private int respCase_ = 0;
+			private java.lang.Object resp_;
+
+			public RespCase getRespCase() {
+				return RespCase.forNumber(respCase_);
+			}
+
+			public Builder clearResp() {
+				respCase_ = 0;
+				resp_ = null;
+				onChanged();
+				return this;
+			}
+
+			private com.google.protobuf.SingleFieldBuilderV3<com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> successBuilder_;
+
+			/**
+			 * <code>.google.protobuf.Empty success = 1;</code>
+			 */
+			public boolean hasSuccess() {
+				return respCase_ == 1;
+			}
+
+			/**
+			 * <code>.google.protobuf.Empty success = 1;</code>
+			 */
+			public com.google.protobuf.Empty getSuccess() {
+				if (successBuilder_ == null) {
+					if (respCase_ == 1) {
+						return (com.google.protobuf.Empty) resp_;
+					}
+					return com.google.protobuf.Empty.getDefaultInstance();
+				} else {
+					if (respCase_ == 1) {
+						return successBuilder_.getMessage();
+					}
+					return com.google.protobuf.Empty.getDefaultInstance();
+				}
+			}
+
+			/**
+			 * <code>.google.protobuf.Empty success = 1;</code>
+			 */
+			public Builder setSuccess(com.google.protobuf.Empty value) {
+				if (successBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					resp_ = value;
+					onChanged();
+				} else {
+					successBuilder_.setMessage(value);
+				}
+				respCase_ = 1;
+				return this;
+			}
+
+			/**
+			 * <code>.google.protobuf.Empty success = 1;</code>
+			 */
+			public Builder setSuccess(com.google.protobuf.Empty.Builder builderForValue) {
+				if (successBuilder_ == null) {
+					resp_ = builderForValue.build();
+					onChanged();
+				} else {
+					successBuilder_.setMessage(builderForValue.build());
+				}
+				respCase_ = 1;
+				return this;
+			}
+
+			/**
+			 * <code>.google.protobuf.Empty success = 1;</code>
+			 */
+			public Builder mergeSuccess(com.google.protobuf.Empty value) {
+				if (successBuilder_ == null) {
+					if (respCase_ == 1 && resp_ != com.google.protobuf.Empty.getDefaultInstance()) {
+						resp_ = com.google.protobuf.Empty.newBuilder((com.google.protobuf.Empty) resp_).mergeFrom(value)
+								.buildPartial();
+					} else {
+						resp_ = value;
+					}
+					onChanged();
+				} else {
+					if (respCase_ == 1) {
+						successBuilder_.mergeFrom(value);
+					}
+					successBuilder_.setMessage(value);
+				}
+				respCase_ = 1;
+				return this;
+			}
+
+			/**
+			 * <code>.google.protobuf.Empty success = 1;</code>
+			 */
+			public Builder clearSuccess() {
+				if (successBuilder_ == null) {
+					if (respCase_ == 1) {
+						respCase_ = 0;
+						resp_ = null;
+						onChanged();
+					}
+				} else {
+					if (respCase_ == 1) {
+						respCase_ = 0;
+						resp_ = null;
+					}
+					successBuilder_.clear();
+				}
+				return this;
+			}
+
+			/**
+			 * <code>.google.protobuf.Empty success = 1;</code>
+			 */
+			public com.google.protobuf.Empty.Builder getSuccessBuilder() {
+				return getSuccessFieldBuilder().getBuilder();
+			}
+
+			/**
+			 * <code>.google.protobuf.Empty success = 1;</code>
+			 */
+			public com.google.protobuf.EmptyOrBuilder getSuccessOrBuilder() {
+				if ((respCase_ == 1) && (successBuilder_ != null)) {
+					return successBuilder_.getMessageOrBuilder();
+				} else {
+					if (respCase_ == 1) {
+						return (com.google.protobuf.Empty) resp_;
+					}
+					return com.google.protobuf.Empty.getDefaultInstance();
+				}
+			}
+
+			/**
+			 * <code>.google.protobuf.Empty success = 1;</code>
+			 */
+			private com.google.protobuf.SingleFieldBuilderV3<com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> getSuccessFieldBuilder() {
+				if (successBuilder_ == null) {
+					if (!(respCase_ == 1)) {
+						resp_ = com.google.protobuf.Empty.getDefaultInstance();
+					}
+					successBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder>(
+							(com.google.protobuf.Empty) resp_, getParentForChildren(), isClean());
+					resp_ = null;
+				}
+				respCase_ = 1;
+				onChanged();
+				;
+				return successBuilder_;
+			}
+
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder> notFoundBuilder_;
+
+			/**
+			 * <code>.calc.MonikerId notFound = 2;</code>
+			 */
+			public boolean hasNotFound() {
+				return respCase_ == 2;
+			}
+
+			/**
+			 * <code>.calc.MonikerId notFound = 2;</code>
+			 */
+			public calc.Moniker.MonikerId getNotFound() {
+				if (notFoundBuilder_ == null) {
+					if (respCase_ == 2) {
+						return (calc.Moniker.MonikerId) resp_;
+					}
+					return calc.Moniker.MonikerId.getDefaultInstance();
+				} else {
+					if (respCase_ == 2) {
+						return notFoundBuilder_.getMessage();
+					}
+					return calc.Moniker.MonikerId.getDefaultInstance();
+				}
+			}
+
+			/**
+			 * <code>.calc.MonikerId notFound = 2;</code>
+			 */
+			public Builder setNotFound(calc.Moniker.MonikerId value) {
+				if (notFoundBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					resp_ = value;
+					onChanged();
+				} else {
+					notFoundBuilder_.setMessage(value);
+				}
+				respCase_ = 2;
+				return this;
+			}
+
+			/**
+			 * <code>.calc.MonikerId notFound = 2;</code>
+			 */
+			public Builder setNotFound(calc.Moniker.MonikerId.Builder builderForValue) {
+				if (notFoundBuilder_ == null) {
+					resp_ = builderForValue.build();
+					onChanged();
+				} else {
+					notFoundBuilder_.setMessage(builderForValue.build());
+				}
+				respCase_ = 2;
+				return this;
+			}
+
+			/**
+			 * <code>.calc.MonikerId notFound = 2;</code>
+			 */
+			public Builder mergeNotFound(calc.Moniker.MonikerId value) {
+				if (notFoundBuilder_ == null) {
+					if (respCase_ == 2 && resp_ != calc.Moniker.MonikerId.getDefaultInstance()) {
+						resp_ = calc.Moniker.MonikerId.newBuilder((calc.Moniker.MonikerId) resp_).mergeFrom(value)
+								.buildPartial();
+					} else {
+						resp_ = value;
+					}
+					onChanged();
+				} else {
+					if (respCase_ == 2) {
+						notFoundBuilder_.mergeFrom(value);
+					}
+					notFoundBuilder_.setMessage(value);
+				}
+				respCase_ = 2;
+				return this;
+			}
+
+			/**
+			 * <code>.calc.MonikerId notFound = 2;</code>
+			 */
+			public Builder clearNotFound() {
+				if (notFoundBuilder_ == null) {
+					if (respCase_ == 2) {
+						respCase_ = 0;
+						resp_ = null;
+						onChanged();
+					}
+				} else {
+					if (respCase_ == 2) {
+						respCase_ = 0;
+						resp_ = null;
+					}
+					notFoundBuilder_.clear();
+				}
+				return this;
+			}
+
+			/**
+			 * <code>.calc.MonikerId notFound = 2;</code>
+			 */
+			public calc.Moniker.MonikerId.Builder getNotFoundBuilder() {
+				return getNotFoundFieldBuilder().getBuilder();
+			}
+
+			/**
+			 * <code>.calc.MonikerId notFound = 2;</code>
+			 */
+			public calc.Moniker.MonikerIdOrBuilder getNotFoundOrBuilder() {
+				if ((respCase_ == 2) && (notFoundBuilder_ != null)) {
+					return notFoundBuilder_.getMessageOrBuilder();
+				} else {
+					if (respCase_ == 2) {
+						return (calc.Moniker.MonikerId) resp_;
+					}
+					return calc.Moniker.MonikerId.getDefaultInstance();
+				}
+			}
+
+			/**
+			 * <code>.calc.MonikerId notFound = 2;</code>
+			 */
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder> getNotFoundFieldBuilder() {
+				if (notFoundBuilder_ == null) {
+					if (!(respCase_ == 2)) {
+						resp_ = calc.Moniker.MonikerId.getDefaultInstance();
+					}
+					notFoundBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<calc.Moniker.MonikerId, calc.Moniker.MonikerId.Builder, calc.Moniker.MonikerIdOrBuilder>(
+							(calc.Moniker.MonikerId) resp_, getParentForChildren(), isClean());
+					resp_ = null;
+				}
+				respCase_ = 2;
+				onChanged();
+				;
+				return notFoundBuilder_;
+			}
+
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Cache.CacheError, calc.Cache.CacheError.Builder, calc.Cache.CacheErrorOrBuilder> errorBuilder_;
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public boolean hasError() {
+				return respCase_ == 100;
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public calc.Cache.CacheError getError() {
+				if (errorBuilder_ == null) {
+					if (respCase_ == 100) {
+						return (calc.Cache.CacheError) resp_;
+					}
+					return calc.Cache.CacheError.getDefaultInstance();
+				} else {
+					if (respCase_ == 100) {
+						return errorBuilder_.getMessage();
+					}
+					return calc.Cache.CacheError.getDefaultInstance();
+				}
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public Builder setError(calc.Cache.CacheError value) {
+				if (errorBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					resp_ = value;
+					onChanged();
+				} else {
+					errorBuilder_.setMessage(value);
+				}
+				respCase_ = 100;
+				return this;
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public Builder setError(calc.Cache.CacheError.Builder builderForValue) {
+				if (errorBuilder_ == null) {
+					resp_ = builderForValue.build();
+					onChanged();
+				} else {
+					errorBuilder_.setMessage(builderForValue.build());
+				}
+				respCase_ = 100;
+				return this;
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public Builder mergeError(calc.Cache.CacheError value) {
+				if (errorBuilder_ == null) {
+					if (respCase_ == 100 && resp_ != calc.Cache.CacheError.getDefaultInstance()) {
+						resp_ = calc.Cache.CacheError.newBuilder((calc.Cache.CacheError) resp_).mergeFrom(value)
+								.buildPartial();
+					} else {
+						resp_ = value;
+					}
+					onChanged();
+				} else {
+					if (respCase_ == 100) {
+						errorBuilder_.mergeFrom(value);
+					}
+					errorBuilder_.setMessage(value);
+				}
+				respCase_ = 100;
+				return this;
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public Builder clearError() {
+				if (errorBuilder_ == null) {
+					if (respCase_ == 100) {
+						respCase_ = 0;
+						resp_ = null;
+						onChanged();
+					}
+				} else {
+					if (respCase_ == 100) {
+						respCase_ = 0;
+						resp_ = null;
+					}
+					errorBuilder_.clear();
+				}
+				return this;
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public calc.Cache.CacheError.Builder getErrorBuilder() {
+				return getErrorFieldBuilder().getBuilder();
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public calc.Cache.CacheErrorOrBuilder getErrorOrBuilder() {
+				if ((respCase_ == 100) && (errorBuilder_ != null)) {
+					return errorBuilder_.getMessageOrBuilder();
+				} else {
+					if (respCase_ == 100) {
+						return (calc.Cache.CacheError) resp_;
+					}
+					return calc.Cache.CacheError.getDefaultInstance();
+				}
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Cache.CacheError, calc.Cache.CacheError.Builder, calc.Cache.CacheErrorOrBuilder> getErrorFieldBuilder() {
+				if (errorBuilder_ == null) {
+					if (!(respCase_ == 100)) {
+						resp_ = calc.Cache.CacheError.getDefaultInstance();
+					}
+					errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<calc.Cache.CacheError, calc.Cache.CacheError.Builder, calc.Cache.CacheErrorOrBuilder>(
+							(calc.Cache.CacheError) resp_, getParentForChildren(), isClean());
+					resp_ = null;
+				}
+				respCase_ = 100;
+				onChanged();
+				;
+				return errorBuilder_;
+			}
+
+			@java.lang.Override
+			public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.setUnknownFieldsProto3(unknownFields);
+			}
+
+			@java.lang.Override
+			public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.mergeUnknownFields(unknownFields);
+			}
+
+			// @@protoc_insertion_point(builder_scope:calc.CacheInvalidateResponse)
+		}
+
+		// @@protoc_insertion_point(class_scope:calc.CacheInvalidateResponse)
+		private static final calc.Cache.CacheInvalidateResponse DEFAULT_INSTANCE;
+		static {
+			DEFAULT_INSTANCE = new calc.Cache.CacheInvalidateResponse();
+		}
+
+		public static calc.Cache.CacheInvalidateResponse getDefaultInstance() {
+			return DEFAULT_INSTANCE;
+		}
+
+		private static final com.google.protobuf.Parser<CacheInvalidateResponse> PARSER = new com.google.protobuf.AbstractParser<CacheInvalidateResponse>() {
+			@java.lang.Override
+			public CacheInvalidateResponse parsePartialFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return new CacheInvalidateResponse(input, extensionRegistry);
+			}
+		};
+
+		public static com.google.protobuf.Parser<CacheInvalidateResponse> parser() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public com.google.protobuf.Parser<CacheInvalidateResponse> getParserForType() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public calc.Cache.CacheInvalidateResponse getDefaultInstanceForType() {
+			return DEFAULT_INSTANCE;
+		}
+
+	}
+
+	public interface CacheClearRequestOrBuilder extends
+			// @@protoc_insertion_point(interface_extends:calc.CacheClearRequest)
+			com.google.protobuf.MessageOrBuilder {
+	}
+
+	/**
+	 * Protobuf type {@code calc.CacheClearRequest}
+	 */
+	public static final class CacheClearRequest extends com.google.protobuf.GeneratedMessageV3 implements
+			// @@protoc_insertion_point(message_implements:calc.CacheClearRequest)
+			CacheClearRequestOrBuilder {
+		private static final long serialVersionUID = 0L;
+
+		// Use CacheClearRequest.newBuilder() to construct.
+		private CacheClearRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+			super(builder);
+		}
+
+		private CacheClearRequest() {
+		}
+
+		@java.lang.Override
+		public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+			return this.unknownFields;
+		}
+
+		private CacheClearRequest(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			this();
+			if (extensionRegistry == null) {
+				throw new java.lang.NullPointerException();
+			}
+			com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+					.newBuilder();
+			try {
+				boolean done = false;
+				while (!done) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						done = true;
+						break;
+					default: {
+						if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+							done = true;
+						}
+						break;
+					}
+					}
+				}
+			} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+				throw e.setUnfinishedMessage(this);
+			} catch (java.io.IOException e) {
+				throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+			} finally {
+				this.unknownFields = unknownFields.build();
+				makeExtensionsImmutable();
+			}
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return calc.Cache.internal_static_calc_CacheClearRequest_descriptor;
+		}
+
+		@java.lang.Override
+		protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+			return calc.Cache.internal_static_calc_CacheClearRequest_fieldAccessorTable.ensureFieldAccessorsInitialized(
+					calc.Cache.CacheClearRequest.class, calc.Cache.CacheClearRequest.Builder.class);
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		@java.lang.Override
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized == 1)
+				return true;
+			if (isInitialized == 0)
+				return false;
+
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		@java.lang.Override
+		public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+			unknownFields.writeTo(output);
+		}
+
+		@java.lang.Override
+		public int getSerializedSize() {
+			int size = memoizedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			size += unknownFields.getSerializedSize();
+			memoizedSize = size;
+			return size;
+		}
+
+		@java.lang.Override
+		public boolean equals(final java.lang.Object obj) {
+			if (obj == this) {
+				return true;
+			}
+			if (!(obj instanceof calc.Cache.CacheClearRequest)) {
+				return super.equals(obj);
+			}
+			calc.Cache.CacheClearRequest other = (calc.Cache.CacheClearRequest) obj;
+
+			boolean result = true;
+			result = result && unknownFields.equals(other.unknownFields);
+			return result;
+		}
+
+		@java.lang.Override
+		public int hashCode() {
+			if (memoizedHashCode != 0) {
+				return memoizedHashCode;
+			}
+			int hash = 41;
+			hash = (19 * hash) + getDescriptor().hashCode();
+			hash = (29 * hash) + unknownFields.hashCode();
+			memoizedHashCode = hash;
+			return hash;
+		}
+
+		public static calc.Cache.CacheClearRequest parseFrom(java.nio.ByteBuffer data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.CacheClearRequest parseFrom(java.nio.ByteBuffer data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheClearRequest parseFrom(com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.CacheClearRequest parseFrom(com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheClearRequest parseFrom(byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.CacheClearRequest parseFrom(byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheClearRequest parseFrom(java.io.InputStream input) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.CacheClearRequest parseFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheClearRequest parseDelimitedFrom(java.io.InputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.CacheClearRequest parseDelimitedFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+					extensionRegistry);
+		}
+
+		public static calc.Cache.CacheClearRequest parseFrom(com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.CacheClearRequest parseFrom(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		@java.lang.Override
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder() {
+			return DEFAULT_INSTANCE.toBuilder();
+		}
+
+		public static Builder newBuilder(calc.Cache.CacheClearRequest prototype) {
+			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+		}
+
+		@java.lang.Override
+		public Builder toBuilder() {
+			return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		/**
+		 * Protobuf type {@code calc.CacheClearRequest}
+		 */
+		public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+				// @@protoc_insertion_point(builder_implements:calc.CacheClearRequest)
+				calc.Cache.CacheClearRequestOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return calc.Cache.internal_static_calc_CacheClearRequest_descriptor;
+			}
+
+			@java.lang.Override
+			protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+				return calc.Cache.internal_static_calc_CacheClearRequest_fieldAccessorTable
+						.ensureFieldAccessorsInitialized(calc.Cache.CacheClearRequest.class,
+								calc.Cache.CacheClearRequest.Builder.class);
+			}
+
+			// Construct using calc.Cache.CacheClearRequest.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+				}
+			}
+
+			@java.lang.Override
+			public Builder clear() {
+				super.clear();
+				return this;
+			}
+
+			@java.lang.Override
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return calc.Cache.internal_static_calc_CacheClearRequest_descriptor;
+			}
+
+			@java.lang.Override
+			public calc.Cache.CacheClearRequest getDefaultInstanceForType() {
+				return calc.Cache.CacheClearRequest.getDefaultInstance();
+			}
+
+			@java.lang.Override
+			public calc.Cache.CacheClearRequest build() {
+				calc.Cache.CacheClearRequest result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			@java.lang.Override
+			public calc.Cache.CacheClearRequest buildPartial() {
+				calc.Cache.CacheClearRequest result = new calc.Cache.CacheClearRequest(this);
+				onBuilt();
+				return result;
+			}
+
+			@java.lang.Override
+			public Builder clone() {
+				return (Builder) super.clone();
+			}
+
+			@java.lang.Override
+			public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+				return (Builder) super.setField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+				return (Builder) super.clearField(field);
+			}
+
+			@java.lang.Override
+			public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+				return (Builder) super.clearOneof(oneof);
+			}
+
+			@java.lang.Override
+			public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+					java.lang.Object value) {
+				return (Builder) super.setRepeatedField(field, index, value);
+			}
+
+			@java.lang.Override
+			public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+					java.lang.Object value) {
+				return (Builder) super.addRepeatedField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof calc.Cache.CacheClearRequest) {
+					return mergeFrom((calc.Cache.CacheClearRequest) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(calc.Cache.CacheClearRequest other) {
+				if (other == calc.Cache.CacheClearRequest.getDefaultInstance())
+					return this;
+				this.mergeUnknownFields(other.unknownFields);
+				onChanged();
+				return this;
+			}
+
+			@java.lang.Override
+			public final boolean isInitialized() {
+				return true;
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+				calc.Cache.CacheClearRequest parsedMessage = null;
+				try {
+					parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+				} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+					parsedMessage = (calc.Cache.CacheClearRequest) e.getUnfinishedMessage();
+					throw e.unwrapIOException();
+				} finally {
+					if (parsedMessage != null) {
+						mergeFrom(parsedMessage);
+					}
+				}
+				return this;
+			}
+
+			@java.lang.Override
+			public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.setUnknownFieldsProto3(unknownFields);
+			}
+
+			@java.lang.Override
+			public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.mergeUnknownFields(unknownFields);
+			}
+
+			// @@protoc_insertion_point(builder_scope:calc.CacheClearRequest)
+		}
+
+		// @@protoc_insertion_point(class_scope:calc.CacheClearRequest)
+		private static final calc.Cache.CacheClearRequest DEFAULT_INSTANCE;
+		static {
+			DEFAULT_INSTANCE = new calc.Cache.CacheClearRequest();
+		}
+
+		public static calc.Cache.CacheClearRequest getDefaultInstance() {
+			return DEFAULT_INSTANCE;
+		}
+
+		private static final com.google.protobuf.Parser<CacheClearRequest> PARSER = new com.google.protobuf.AbstractParser<CacheClearRequest>() {
+			@java.lang.Override
+			public CacheClearRequest parsePartialFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return new CacheClearRequest(input, extensionRegistry);
+			}
+		};
+
+		public static com.google.protobuf.Parser<CacheClearRequest> parser() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public com.google.protobuf.Parser<CacheClearRequest> getParserForType() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public calc.Cache.CacheClearRequest getDefaultInstanceForType() {
+			return DEFAULT_INSTANCE;
+		}
+
+	}
+
+	public interface CacheClearResponseOrBuilder extends
+			// @@protoc_insertion_point(interface_extends:calc.CacheClearResponse)
+			com.google.protobuf.MessageOrBuilder {
+
+		/**
+		 * <code>.google.protobuf.Empty success = 1;</code>
+		 */
+		boolean hasSuccess();
+
+		/**
+		 * <code>.google.protobuf.Empty success = 1;</code>
+		 */
+		com.google.protobuf.Empty getSuccess();
+
+		/**
+		 * <code>.google.protobuf.Empty success = 1;</code>
+		 */
+		com.google.protobuf.EmptyOrBuilder getSuccessOrBuilder();
+
+		/**
+		 * <code>.calc.CacheError error = 100;</code>
+		 */
+		boolean hasError();
+
+		/**
+		 * <code>.calc.CacheError error = 100;</code>
+		 */
+		calc.Cache.CacheError getError();
+
+		/**
+		 * <code>.calc.CacheError error = 100;</code>
+		 */
+		calc.Cache.CacheErrorOrBuilder getErrorOrBuilder();
+
+		public calc.Cache.CacheClearResponse.RespCase getRespCase();
+	}
+
+	/**
+	 * Protobuf type {@code calc.CacheClearResponse}
+	 */
+	public static final class CacheClearResponse extends com.google.protobuf.GeneratedMessageV3 implements
+			// @@protoc_insertion_point(message_implements:calc.CacheClearResponse)
+			CacheClearResponseOrBuilder {
+		private static final long serialVersionUID = 0L;
+
+		// Use CacheClearResponse.newBuilder() to construct.
+		private CacheClearResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+			super(builder);
+		}
+
+		private CacheClearResponse() {
+		}
+
+		@java.lang.Override
+		public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+			return this.unknownFields;
+		}
+
+		private CacheClearResponse(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			this();
+			if (extensionRegistry == null) {
+				throw new java.lang.NullPointerException();
+			}
+			int mutable_bitField0_ = 0;
+			com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+					.newBuilder();
+			try {
+				boolean done = false;
+				while (!done) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						done = true;
+						break;
+					case 10: {
+						com.google.protobuf.Empty.Builder subBuilder = null;
+						if (respCase_ == 1) {
+							subBuilder = ((com.google.protobuf.Empty) resp_).toBuilder();
+						}
+						resp_ = input.readMessage(com.google.protobuf.Empty.parser(), extensionRegistry);
+						if (subBuilder != null) {
+							subBuilder.mergeFrom((com.google.protobuf.Empty) resp_);
+							resp_ = subBuilder.buildPartial();
+						}
+						respCase_ = 1;
+						break;
+					}
+					case 802: {
+						calc.Cache.CacheError.Builder subBuilder = null;
+						if (respCase_ == 100) {
+							subBuilder = ((calc.Cache.CacheError) resp_).toBuilder();
+						}
+						resp_ = input.readMessage(calc.Cache.CacheError.parser(), extensionRegistry);
+						if (subBuilder != null) {
+							subBuilder.mergeFrom((calc.Cache.CacheError) resp_);
+							resp_ = subBuilder.buildPartial();
+						}
+						respCase_ = 100;
+						break;
+					}
+					default: {
+						if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+							done = true;
+						}
+						break;
+					}
+					}
+				}
+			} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+				throw e.setUnfinishedMessage(this);
+			} catch (java.io.IOException e) {
+				throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+			} finally {
+				this.unknownFields = unknownFields.build();
+				makeExtensionsImmutable();
+			}
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return calc.Cache.internal_static_calc_CacheClearResponse_descriptor;
+		}
+
+		@java.lang.Override
+		protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+			return calc.Cache.internal_static_calc_CacheClearResponse_fieldAccessorTable
+					.ensureFieldAccessorsInitialized(calc.Cache.CacheClearResponse.class,
+							calc.Cache.CacheClearResponse.Builder.class);
+		}
+
+		private int respCase_ = 0;
+		private java.lang.Object resp_;
+
+		public enum RespCase implements com.google.protobuf.Internal.EnumLite {
+			SUCCESS(1), ERROR(100), RESP_NOT_SET(0);
+			private final int value;
+
+			private RespCase(int value) {
+				this.value = value;
+			}
+
+			/**
+			 * @deprecated Use {@link #forNumber(int)} instead.
+			 */
+			@java.lang.Deprecated
+			public static RespCase valueOf(int value) {
+				return forNumber(value);
+			}
+
+			public static RespCase forNumber(int value) {
+				switch (value) {
+				case 1:
+					return SUCCESS;
+				case 100:
+					return ERROR;
+				case 0:
+					return RESP_NOT_SET;
+				default:
+					return null;
+				}
+			}
+
+			public int getNumber() {
+				return this.value;
+			}
+		};
+
+		public RespCase getRespCase() {
+			return RespCase.forNumber(respCase_);
+		}
+
+		public static final int SUCCESS_FIELD_NUMBER = 1;
+
+		/**
+		 * <code>.google.protobuf.Empty success = 1;</code>
+		 */
+		public boolean hasSuccess() {
+			return respCase_ == 1;
+		}
+
+		/**
+		 * <code>.google.protobuf.Empty success = 1;</code>
+		 */
+		public com.google.protobuf.Empty getSuccess() {
+			if (respCase_ == 1) {
+				return (com.google.protobuf.Empty) resp_;
+			}
+			return com.google.protobuf.Empty.getDefaultInstance();
+		}
+
+		/**
+		 * <code>.google.protobuf.Empty success = 1;</code>
+		 */
+		public com.google.protobuf.EmptyOrBuilder getSuccessOrBuilder() {
+			if (respCase_ == 1) {
+				return (com.google.protobuf.Empty) resp_;
+			}
+			return com.google.protobuf.Empty.getDefaultInstance();
+		}
+
+		public static final int ERROR_FIELD_NUMBER = 100;
+
+		/**
+		 * <code>.calc.CacheError error = 100;</code>
+		 */
+		public boolean hasError() {
+			return respCase_ == 100;
+		}
+
+		/**
+		 * <code>.calc.CacheError error = 100;</code>
+		 */
+		public calc.Cache.CacheError getError() {
+			if (respCase_ == 100) {
+				return (calc.Cache.CacheError) resp_;
+			}
+			return calc.Cache.CacheError.getDefaultInstance();
+		}
+
+		/**
+		 * <code>.calc.CacheError error = 100;</code>
+		 */
+		public calc.Cache.CacheErrorOrBuilder getErrorOrBuilder() {
+			if (respCase_ == 100) {
+				return (calc.Cache.CacheError) resp_;
+			}
+			return calc.Cache.CacheError.getDefaultInstance();
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		@java.lang.Override
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized == 1)
+				return true;
+			if (isInitialized == 0)
+				return false;
+
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		@java.lang.Override
+		public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+			if (respCase_ == 1) {
+				output.writeMessage(1, (com.google.protobuf.Empty) resp_);
+			}
+			if (respCase_ == 100) {
+				output.writeMessage(100, (calc.Cache.CacheError) resp_);
+			}
+			unknownFields.writeTo(output);
+		}
+
+		@java.lang.Override
+		public int getSerializedSize() {
+			int size = memoizedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			if (respCase_ == 1) {
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, (com.google.protobuf.Empty) resp_);
+			}
+			if (respCase_ == 100) {
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(100, (calc.Cache.CacheError) resp_);
+			}
+			size += unknownFields.getSerializedSize();
+			memoizedSize = size;
+			return size;
+		}
+
+		@java.lang.Override
+		public boolean equals(final java.lang.Object obj) {
+			if (obj == this) {
+				return true;
+			}
+			if (!(obj instanceof calc.Cache.CacheClearResponse)) {
+				return super.equals(obj);
+			}
+			calc.Cache.CacheClearResponse other = (calc.Cache.CacheClearResponse) obj;
+
+			boolean result = true;
+			result = result && getRespCase().equals(other.getRespCase());
+			if (!result)
+				return false;
+			switch (respCase_) {
+			case 1:
+				result = result && getSuccess().equals(other.getSuccess());
+				break;
+			case 100:
+				result = result && getError().equals(other.getError());
+				break;
+			case 0:
+			default:
+			}
+			result = result && unknownFields.equals(other.unknownFields);
+			return result;
+		}
+
+		@java.lang.Override
+		public int hashCode() {
+			if (memoizedHashCode != 0) {
+				return memoizedHashCode;
+			}
+			int hash = 41;
+			hash = (19 * hash) + getDescriptor().hashCode();
+			switch (respCase_) {
+			case 1:
+				hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
+				hash = (53 * hash) + getSuccess().hashCode();
+				break;
+			case 100:
+				hash = (37 * hash) + ERROR_FIELD_NUMBER;
+				hash = (53 * hash) + getError().hashCode();
+				break;
+			case 0:
+			default:
+			}
+			hash = (29 * hash) + unknownFields.hashCode();
+			memoizedHashCode = hash;
+			return hash;
+		}
+
+		public static calc.Cache.CacheClearResponse parseFrom(java.nio.ByteBuffer data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.CacheClearResponse parseFrom(java.nio.ByteBuffer data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheClearResponse parseFrom(com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.CacheClearResponse parseFrom(com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheClearResponse parseFrom(byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.CacheClearResponse parseFrom(byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheClearResponse parseFrom(java.io.InputStream input) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.CacheClearResponse parseFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheClearResponse parseDelimitedFrom(java.io.InputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.CacheClearResponse parseDelimitedFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+					extensionRegistry);
+		}
+
+		public static calc.Cache.CacheClearResponse parseFrom(com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.CacheClearResponse parseFrom(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		@java.lang.Override
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder() {
+			return DEFAULT_INSTANCE.toBuilder();
+		}
+
+		public static Builder newBuilder(calc.Cache.CacheClearResponse prototype) {
+			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+		}
+
+		@java.lang.Override
+		public Builder toBuilder() {
+			return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		/**
+		 * Protobuf type {@code calc.CacheClearResponse}
+		 */
+		public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+				// @@protoc_insertion_point(builder_implements:calc.CacheClearResponse)
+				calc.Cache.CacheClearResponseOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return calc.Cache.internal_static_calc_CacheClearResponse_descriptor;
+			}
+
+			@java.lang.Override
+			protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+				return calc.Cache.internal_static_calc_CacheClearResponse_fieldAccessorTable
+						.ensureFieldAccessorsInitialized(calc.Cache.CacheClearResponse.class,
+								calc.Cache.CacheClearResponse.Builder.class);
+			}
+
+			// Construct using calc.Cache.CacheClearResponse.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+				}
+			}
+
+			@java.lang.Override
+			public Builder clear() {
+				super.clear();
+				respCase_ = 0;
+				resp_ = null;
+				return this;
+			}
+
+			@java.lang.Override
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return calc.Cache.internal_static_calc_CacheClearResponse_descriptor;
+			}
+
+			@java.lang.Override
+			public calc.Cache.CacheClearResponse getDefaultInstanceForType() {
+				return calc.Cache.CacheClearResponse.getDefaultInstance();
+			}
+
+			@java.lang.Override
+			public calc.Cache.CacheClearResponse build() {
+				calc.Cache.CacheClearResponse result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			@java.lang.Override
+			public calc.Cache.CacheClearResponse buildPartial() {
+				calc.Cache.CacheClearResponse result = new calc.Cache.CacheClearResponse(this);
+				if (respCase_ == 1) {
+					if (successBuilder_ == null) {
+						result.resp_ = resp_;
+					} else {
+						result.resp_ = successBuilder_.build();
+					}
+				}
+				if (respCase_ == 100) {
+					if (errorBuilder_ == null) {
+						result.resp_ = resp_;
+					} else {
+						result.resp_ = errorBuilder_.build();
+					}
+				}
+				result.respCase_ = respCase_;
+				onBuilt();
+				return result;
+			}
+
+			@java.lang.Override
+			public Builder clone() {
+				return (Builder) super.clone();
+			}
+
+			@java.lang.Override
+			public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+				return (Builder) super.setField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+				return (Builder) super.clearField(field);
+			}
+
+			@java.lang.Override
+			public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+				return (Builder) super.clearOneof(oneof);
+			}
+
+			@java.lang.Override
+			public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+					java.lang.Object value) {
+				return (Builder) super.setRepeatedField(field, index, value);
+			}
+
+			@java.lang.Override
+			public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+					java.lang.Object value) {
+				return (Builder) super.addRepeatedField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof calc.Cache.CacheClearResponse) {
+					return mergeFrom((calc.Cache.CacheClearResponse) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(calc.Cache.CacheClearResponse other) {
+				if (other == calc.Cache.CacheClearResponse.getDefaultInstance())
+					return this;
+				switch (other.getRespCase()) {
+				case SUCCESS: {
+					mergeSuccess(other.getSuccess());
+					break;
+				}
+				case ERROR: {
+					mergeError(other.getError());
+					break;
+				}
+				case RESP_NOT_SET: {
+					break;
+				}
+				}
+				this.mergeUnknownFields(other.unknownFields);
+				onChanged();
+				return this;
+			}
+
+			@java.lang.Override
+			public final boolean isInitialized() {
+				return true;
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+				calc.Cache.CacheClearResponse parsedMessage = null;
+				try {
+					parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+				} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+					parsedMessage = (calc.Cache.CacheClearResponse) e.getUnfinishedMessage();
+					throw e.unwrapIOException();
+				} finally {
+					if (parsedMessage != null) {
+						mergeFrom(parsedMessage);
+					}
+				}
+				return this;
+			}
+
+			private int respCase_ = 0;
+			private java.lang.Object resp_;
+
+			public RespCase getRespCase() {
+				return RespCase.forNumber(respCase_);
+			}
+
+			public Builder clearResp() {
+				respCase_ = 0;
+				resp_ = null;
+				onChanged();
+				return this;
+			}
+
+			private com.google.protobuf.SingleFieldBuilderV3<com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> successBuilder_;
+
+			/**
+			 * <code>.google.protobuf.Empty success = 1;</code>
+			 */
+			public boolean hasSuccess() {
+				return respCase_ == 1;
+			}
+
+			/**
+			 * <code>.google.protobuf.Empty success = 1;</code>
+			 */
+			public com.google.protobuf.Empty getSuccess() {
+				if (successBuilder_ == null) {
+					if (respCase_ == 1) {
+						return (com.google.protobuf.Empty) resp_;
+					}
+					return com.google.protobuf.Empty.getDefaultInstance();
+				} else {
+					if (respCase_ == 1) {
+						return successBuilder_.getMessage();
+					}
+					return com.google.protobuf.Empty.getDefaultInstance();
+				}
+			}
+
+			/**
+			 * <code>.google.protobuf.Empty success = 1;</code>
+			 */
+			public Builder setSuccess(com.google.protobuf.Empty value) {
+				if (successBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					resp_ = value;
+					onChanged();
+				} else {
+					successBuilder_.setMessage(value);
+				}
+				respCase_ = 1;
+				return this;
+			}
+
+			/**
+			 * <code>.google.protobuf.Empty success = 1;</code>
+			 */
+			public Builder setSuccess(com.google.protobuf.Empty.Builder builderForValue) {
+				if (successBuilder_ == null) {
+					resp_ = builderForValue.build();
+					onChanged();
+				} else {
+					successBuilder_.setMessage(builderForValue.build());
+				}
+				respCase_ = 1;
+				return this;
+			}
+
+			/**
+			 * <code>.google.protobuf.Empty success = 1;</code>
+			 */
+			public Builder mergeSuccess(com.google.protobuf.Empty value) {
+				if (successBuilder_ == null) {
+					if (respCase_ == 1 && resp_ != com.google.protobuf.Empty.getDefaultInstance()) {
+						resp_ = com.google.protobuf.Empty.newBuilder((com.google.protobuf.Empty) resp_).mergeFrom(value)
+								.buildPartial();
+					} else {
+						resp_ = value;
+					}
+					onChanged();
+				} else {
+					if (respCase_ == 1) {
+						successBuilder_.mergeFrom(value);
+					}
+					successBuilder_.setMessage(value);
+				}
+				respCase_ = 1;
+				return this;
+			}
+
+			/**
+			 * <code>.google.protobuf.Empty success = 1;</code>
+			 */
+			public Builder clearSuccess() {
+				if (successBuilder_ == null) {
+					if (respCase_ == 1) {
+						respCase_ = 0;
+						resp_ = null;
+						onChanged();
+					}
+				} else {
+					if (respCase_ == 1) {
+						respCase_ = 0;
+						resp_ = null;
+					}
+					successBuilder_.clear();
+				}
+				return this;
+			}
+
+			/**
+			 * <code>.google.protobuf.Empty success = 1;</code>
+			 */
+			public com.google.protobuf.Empty.Builder getSuccessBuilder() {
+				return getSuccessFieldBuilder().getBuilder();
+			}
+
+			/**
+			 * <code>.google.protobuf.Empty success = 1;</code>
+			 */
+			public com.google.protobuf.EmptyOrBuilder getSuccessOrBuilder() {
+				if ((respCase_ == 1) && (successBuilder_ != null)) {
+					return successBuilder_.getMessageOrBuilder();
+				} else {
+					if (respCase_ == 1) {
+						return (com.google.protobuf.Empty) resp_;
+					}
+					return com.google.protobuf.Empty.getDefaultInstance();
+				}
+			}
+
+			/**
+			 * <code>.google.protobuf.Empty success = 1;</code>
+			 */
+			private com.google.protobuf.SingleFieldBuilderV3<com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> getSuccessFieldBuilder() {
+				if (successBuilder_ == null) {
+					if (!(respCase_ == 1)) {
+						resp_ = com.google.protobuf.Empty.getDefaultInstance();
+					}
+					successBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder>(
+							(com.google.protobuf.Empty) resp_, getParentForChildren(), isClean());
+					resp_ = null;
+				}
+				respCase_ = 1;
+				onChanged();
+				;
+				return successBuilder_;
+			}
+
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Cache.CacheError, calc.Cache.CacheError.Builder, calc.Cache.CacheErrorOrBuilder> errorBuilder_;
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public boolean hasError() {
+				return respCase_ == 100;
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public calc.Cache.CacheError getError() {
+				if (errorBuilder_ == null) {
+					if (respCase_ == 100) {
+						return (calc.Cache.CacheError) resp_;
+					}
+					return calc.Cache.CacheError.getDefaultInstance();
+				} else {
+					if (respCase_ == 100) {
+						return errorBuilder_.getMessage();
+					}
+					return calc.Cache.CacheError.getDefaultInstance();
+				}
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public Builder setError(calc.Cache.CacheError value) {
+				if (errorBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					resp_ = value;
+					onChanged();
+				} else {
+					errorBuilder_.setMessage(value);
+				}
+				respCase_ = 100;
+				return this;
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public Builder setError(calc.Cache.CacheError.Builder builderForValue) {
+				if (errorBuilder_ == null) {
+					resp_ = builderForValue.build();
+					onChanged();
+				} else {
+					errorBuilder_.setMessage(builderForValue.build());
+				}
+				respCase_ = 100;
+				return this;
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public Builder mergeError(calc.Cache.CacheError value) {
+				if (errorBuilder_ == null) {
+					if (respCase_ == 100 && resp_ != calc.Cache.CacheError.getDefaultInstance()) {
+						resp_ = calc.Cache.CacheError.newBuilder((calc.Cache.CacheError) resp_).mergeFrom(value)
+								.buildPartial();
+					} else {
+						resp_ = value;
+					}
+					onChanged();
+				} else {
+					if (respCase_ == 100) {
+						errorBuilder_.mergeFrom(value);
+					}
+					errorBuilder_.setMessage(value);
+				}
+				respCase_ = 100;
+				return this;
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public Builder clearError() {
+				if (errorBuilder_ == null) {
+					if (respCase_ == 100) {
+						respCase_ = 0;
+						resp_ = null;
+						onChanged();
+					}
+				} else {
+					if (respCase_ == 100) {
+						respCase_ = 0;
+						resp_ = null;
+					}
+					errorBuilder_.clear();
+				}
+				return this;
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public calc.Cache.CacheError.Builder getErrorBuilder() {
+				return getErrorFieldBuilder().getBuilder();
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			public calc.Cache.CacheErrorOrBuilder getErrorOrBuilder() {
+				if ((respCase_ == 100) && (errorBuilder_ != null)) {
+					return errorBuilder_.getMessageOrBuilder();
+				} else {
+					if (respCase_ == 100) {
+						return (calc.Cache.CacheError) resp_;
+					}
+					return calc.Cache.CacheError.getDefaultInstance();
+				}
+			}
+
+			/**
+			 * <code>.calc.CacheError error = 100;</code>
+			 */
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Cache.CacheError, calc.Cache.CacheError.Builder, calc.Cache.CacheErrorOrBuilder> getErrorFieldBuilder() {
+				if (errorBuilder_ == null) {
+					if (!(respCase_ == 100)) {
+						resp_ = calc.Cache.CacheError.getDefaultInstance();
+					}
+					errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<calc.Cache.CacheError, calc.Cache.CacheError.Builder, calc.Cache.CacheErrorOrBuilder>(
+							(calc.Cache.CacheError) resp_, getParentForChildren(), isClean());
+					resp_ = null;
+				}
+				respCase_ = 100;
+				onChanged();
+				;
+				return errorBuilder_;
+			}
+
+			@java.lang.Override
+			public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.setUnknownFieldsProto3(unknownFields);
+			}
+
+			@java.lang.Override
+			public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.mergeUnknownFields(unknownFields);
+			}
+
+			// @@protoc_insertion_point(builder_scope:calc.CacheClearResponse)
+		}
+
+		// @@protoc_insertion_point(class_scope:calc.CacheClearResponse)
+		private static final calc.Cache.CacheClearResponse DEFAULT_INSTANCE;
+		static {
+			DEFAULT_INSTANCE = new calc.Cache.CacheClearResponse();
+		}
+
+		public static calc.Cache.CacheClearResponse getDefaultInstance() {
+			return DEFAULT_INSTANCE;
+		}
+
+		private static final com.google.protobuf.Parser<CacheClearResponse> PARSER = new com.google.protobuf.AbstractParser<CacheClearResponse>() {
+			@java.lang.Override
+			public CacheClearResponse parsePartialFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return new CacheClearResponse(input, extensionRegistry);
+			}
+		};
+
+		public static com.google.protobuf.Parser<CacheClearResponse> parser() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public com.google.protobuf.Parser<CacheClearResponse> getParserForType() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public calc.Cache.CacheClearResponse getDefaultInstanceForType() {
+			return DEFAULT_INSTANCE;
+		}
+
+	}
+
+	public interface CacheErrorOrBuilder extends
+			// @@protoc_insertion_point(interface_extends:calc.CacheError)
+			com.google.protobuf.MessageOrBuilder {
+
+		/**
+		 * <code>.calc.InternalError error = 1;</code>
+		 */
+		boolean hasError();
+
+		/**
+		 * <code>.calc.InternalError error = 1;</code>
+		 */
+		calc.Moniker.InternalError getError();
+
+		/**
+		 * <code>.calc.InternalError error = 1;</code>
+		 */
+		calc.Moniker.InternalErrorOrBuilder getErrorOrBuilder();
+	}
+
+	/**
+	 * Protobuf type {@code calc.CacheError}
+	 */
+	public static final class CacheError extends com.google.protobuf.GeneratedMessageV3 implements
+			// @@protoc_insertion_point(message_implements:calc.CacheError)
+			CacheErrorOrBuilder {
+		private static final long serialVersionUID = 0L;
+
+		// Use CacheError.newBuilder() to construct.
+		private CacheError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+			super(builder);
+		}
+
+		private CacheError() {
+		}
+
+		@java.lang.Override
+		public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+			return this.unknownFields;
+		}
+
+		private CacheError(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			this();
+			if (extensionRegistry == null) {
+				throw new java.lang.NullPointerException();
+			}
+			int mutable_bitField0_ = 0;
+			com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+					.newBuilder();
+			try {
+				boolean done = false;
+				while (!done) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						done = true;
+						break;
+					case 10: {
+						calc.Moniker.InternalError.Builder subBuilder = null;
+						if (error_ != null) {
+							subBuilder = error_.toBuilder();
+						}
+						error_ = input.readMessage(calc.Moniker.InternalError.parser(), extensionRegistry);
+						if (subBuilder != null) {
+							subBuilder.mergeFrom(error_);
+							error_ = subBuilder.buildPartial();
+						}
+
+						break;
+					}
+					default: {
+						if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+							done = true;
+						}
+						break;
+					}
+					}
+				}
+			} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+				throw e.setUnfinishedMessage(this);
+			} catch (java.io.IOException e) {
+				throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+			} finally {
+				this.unknownFields = unknownFields.build();
+				makeExtensionsImmutable();
+			}
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return calc.Cache.internal_static_calc_CacheError_descriptor;
+		}
+
+		@java.lang.Override
+		protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+			return calc.Cache.internal_static_calc_CacheError_fieldAccessorTable
+					.ensureFieldAccessorsInitialized(calc.Cache.CacheError.class, calc.Cache.CacheError.Builder.class);
+		}
+
+		public static final int ERROR_FIELD_NUMBER = 1;
+		private calc.Moniker.InternalError error_;
+
+		/**
+		 * <code>.calc.InternalError error = 1;</code>
+		 */
+		public boolean hasError() {
+			return error_ != null;
+		}
+
+		/**
+		 * <code>.calc.InternalError error = 1;</code>
+		 */
+		public calc.Moniker.InternalError getError() {
+			return error_ == null ? calc.Moniker.InternalError.getDefaultInstance() : error_;
+		}
+
+		/**
+		 * <code>.calc.InternalError error = 1;</code>
+		 */
+		public calc.Moniker.InternalErrorOrBuilder getErrorOrBuilder() {
+			return getError();
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		@java.lang.Override
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized == 1)
+				return true;
+			if (isInitialized == 0)
+				return false;
+
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		@java.lang.Override
+		public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+			if (error_ != null) {
+				output.writeMessage(1, getError());
+			}
+			unknownFields.writeTo(output);
+		}
+
+		@java.lang.Override
+		public int getSerializedSize() {
+			int size = memoizedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			if (error_ != null) {
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getError());
+			}
+			size += unknownFields.getSerializedSize();
+			memoizedSize = size;
+			return size;
+		}
+
+		@java.lang.Override
+		public boolean equals(final java.lang.Object obj) {
+			if (obj == this) {
+				return true;
+			}
+			if (!(obj instanceof calc.Cache.CacheError)) {
+				return super.equals(obj);
+			}
+			calc.Cache.CacheError other = (calc.Cache.CacheError) obj;
+
+			boolean result = true;
+			result = result && (hasError() == other.hasError());
+			if (hasError()) {
+				result = result && getError().equals(other.getError());
+			}
+			result = result && unknownFields.equals(other.unknownFields);
+			return result;
+		}
+
+		@java.lang.Override
+		public int hashCode() {
+			if (memoizedHashCode != 0) {
+				return memoizedHashCode;
+			}
+			int hash = 41;
+			hash = (19 * hash) + getDescriptor().hashCode();
+			if (hasError()) {
+				hash = (37 * hash) + ERROR_FIELD_NUMBER;
+				hash = (53 * hash) + getError().hashCode();
+			}
+			hash = (29 * hash) + unknownFields.hashCode();
+			memoizedHashCode = hash;
+			return hash;
+		}
+
+		public static calc.Cache.CacheError parseFrom(java.nio.ByteBuffer data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.CacheError parseFrom(java.nio.ByteBuffer data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheError parseFrom(com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.CacheError parseFrom(com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheError parseFrom(byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.CacheError parseFrom(byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheError parseFrom(java.io.InputStream input) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.CacheError parseFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		public static calc.Cache.CacheError parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.CacheError parseDelimitedFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+					extensionRegistry);
+		}
+
+		public static calc.Cache.CacheError parseFrom(com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.CacheError parseFrom(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		@java.lang.Override
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder() {
+			return DEFAULT_INSTANCE.toBuilder();
+		}
+
+		public static Builder newBuilder(calc.Cache.CacheError prototype) {
+			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+		}
+
+		@java.lang.Override
+		public Builder toBuilder() {
+			return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		/**
+		 * Protobuf type {@code calc.CacheError}
+		 */
+		public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+				// @@protoc_insertion_point(builder_implements:calc.CacheError)
+				calc.Cache.CacheErrorOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return calc.Cache.internal_static_calc_CacheError_descriptor;
+			}
+
+			@java.lang.Override
+			protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+				return calc.Cache.internal_static_calc_CacheError_fieldAccessorTable.ensureFieldAccessorsInitialized(
+						calc.Cache.CacheError.class, calc.Cache.CacheError.Builder.class);
+			}
+
+			// Construct using calc.Cache.CacheError.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+				}
+			}
+
+			@java.lang.Override
+			public Builder clear() {
+				super.clear();
+				if (errorBuilder_ == null) {
+					error_ = null;
+				} else {
+					error_ = null;
+					errorBuilder_ = null;
+				}
+				return this;
+			}
+
+			@java.lang.Override
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return calc.Cache.internal_static_calc_CacheError_descriptor;
+			}
+
+			@java.lang.Override
+			public calc.Cache.CacheError getDefaultInstanceForType() {
+				return calc.Cache.CacheError.getDefaultInstance();
+			}
+
+			@java.lang.Override
+			public calc.Cache.CacheError build() {
+				calc.Cache.CacheError result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			@java.lang.Override
+			public calc.Cache.CacheError buildPartial() {
+				calc.Cache.CacheError result = new calc.Cache.CacheError(this);
+				if (errorBuilder_ == null) {
+					result.error_ = error_;
+				} else {
+					result.error_ = errorBuilder_.build();
+				}
+				onBuilt();
+				return result;
+			}
+
+			@java.lang.Override
+			public Builder clone() {
+				return (Builder) super.clone();
+			}
+
+			@java.lang.Override
+			public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+				return (Builder) super.setField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+				return (Builder) super.clearField(field);
+			}
+
+			@java.lang.Override
+			public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+				return (Builder) super.clearOneof(oneof);
+			}
+
+			@java.lang.Override
+			public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+					java.lang.Object value) {
+				return (Builder) super.setRepeatedField(field, index, value);
+			}
+
+			@java.lang.Override
+			public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+					java.lang.Object value) {
+				return (Builder) super.addRepeatedField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof calc.Cache.CacheError) {
+					return mergeFrom((calc.Cache.CacheError) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(calc.Cache.CacheError other) {
+				if (other == calc.Cache.CacheError.getDefaultInstance())
+					return this;
+				if (other.hasError()) {
+					mergeError(other.getError());
+				}
+				this.mergeUnknownFields(other.unknownFields);
+				onChanged();
+				return this;
+			}
+
+			@java.lang.Override
+			public final boolean isInitialized() {
+				return true;
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+				calc.Cache.CacheError parsedMessage = null;
+				try {
+					parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+				} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+					parsedMessage = (calc.Cache.CacheError) e.getUnfinishedMessage();
+					throw e.unwrapIOException();
+				} finally {
+					if (parsedMessage != null) {
+						mergeFrom(parsedMessage);
+					}
+				}
+				return this;
+			}
+
+			private calc.Moniker.InternalError error_ = null;
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Moniker.InternalError, calc.Moniker.InternalError.Builder, calc.Moniker.InternalErrorOrBuilder> errorBuilder_;
+
+			/**
+			 * <code>.calc.InternalError error = 1;</code>
+			 */
+			public boolean hasError() {
+				return errorBuilder_ != null || error_ != null;
+			}
+
+			/**
+			 * <code>.calc.InternalError error = 1;</code>
+			 */
+			public calc.Moniker.InternalError getError() {
+				if (errorBuilder_ == null) {
+					return error_ == null ? calc.Moniker.InternalError.getDefaultInstance() : error_;
+				} else {
+					return errorBuilder_.getMessage();
+				}
+			}
+
+			/**
+			 * <code>.calc.InternalError error = 1;</code>
+			 */
+			public Builder setError(calc.Moniker.InternalError value) {
+				if (errorBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					error_ = value;
+					onChanged();
+				} else {
+					errorBuilder_.setMessage(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.InternalError error = 1;</code>
+			 */
+			public Builder setError(calc.Moniker.InternalError.Builder builderForValue) {
+				if (errorBuilder_ == null) {
+					error_ = builderForValue.build();
+					onChanged();
+				} else {
+					errorBuilder_.setMessage(builderForValue.build());
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.InternalError error = 1;</code>
+			 */
+			public Builder mergeError(calc.Moniker.InternalError value) {
+				if (errorBuilder_ == null) {
+					if (error_ != null) {
+						error_ = calc.Moniker.InternalError.newBuilder(error_).mergeFrom(value).buildPartial();
+					} else {
+						error_ = value;
+					}
+					onChanged();
+				} else {
+					errorBuilder_.mergeFrom(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.InternalError error = 1;</code>
+			 */
+			public Builder clearError() {
+				if (errorBuilder_ == null) {
+					error_ = null;
+					onChanged();
+				} else {
+					error_ = null;
+					errorBuilder_ = null;
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.InternalError error = 1;</code>
+			 */
+			public calc.Moniker.InternalError.Builder getErrorBuilder() {
+
+				onChanged();
+				return getErrorFieldBuilder().getBuilder();
+			}
+
+			/**
+			 * <code>.calc.InternalError error = 1;</code>
+			 */
+			public calc.Moniker.InternalErrorOrBuilder getErrorOrBuilder() {
+				if (errorBuilder_ != null) {
+					return errorBuilder_.getMessageOrBuilder();
+				} else {
+					return error_ == null ? calc.Moniker.InternalError.getDefaultInstance() : error_;
+				}
+			}
+
+			/**
+			 * <code>.calc.InternalError error = 1;</code>
+			 */
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Moniker.InternalError, calc.Moniker.InternalError.Builder, calc.Moniker.InternalErrorOrBuilder> getErrorFieldBuilder() {
+				if (errorBuilder_ == null) {
+					errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<calc.Moniker.InternalError, calc.Moniker.InternalError.Builder, calc.Moniker.InternalErrorOrBuilder>(
+							getError(), getParentForChildren(), isClean());
+					error_ = null;
+				}
+				return errorBuilder_;
+			}
+
+			@java.lang.Override
+			public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.setUnknownFieldsProto3(unknownFields);
+			}
+
+			@java.lang.Override
+			public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.mergeUnknownFields(unknownFields);
+			}
+
+			// @@protoc_insertion_point(builder_scope:calc.CacheError)
+		}
+
+		// @@protoc_insertion_point(class_scope:calc.CacheError)
+		private static final calc.Cache.CacheError DEFAULT_INSTANCE;
+		static {
+			DEFAULT_INSTANCE = new calc.Cache.CacheError();
+		}
+
+		public static calc.Cache.CacheError getDefaultInstance() {
+			return DEFAULT_INSTANCE;
+		}
+
+		private static final com.google.protobuf.Parser<CacheError> PARSER = new com.google.protobuf.AbstractParser<CacheError>() {
+			@java.lang.Override
+			public CacheError parsePartialFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return new CacheError(input, extensionRegistry);
+			}
+		};
+
+		public static com.google.protobuf.Parser<CacheError> parser() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public com.google.protobuf.Parser<CacheError> getParserForType() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public calc.Cache.CacheError getDefaultInstanceForType() {
+			return DEFAULT_INSTANCE;
+		}
+
+	}
+
+	public interface MonitoringUpdateRequestOrBuilder extends
+			// @@protoc_insertion_point(interface_extends:calc.MonitoringUpdateRequest)
+			com.google.protobuf.MessageOrBuilder {
+
+		/**
+		 * <code>string correlationId = 1;</code>
+		 */
+		java.lang.String getCorrelationId();
+
+		/**
+		 * <code>string correlationId = 1;</code>
+		 */
+		com.google.protobuf.ByteString getCorrelationIdBytes();
+	}
+
+	/**
+	 * Protobuf type {@code calc.MonitoringUpdateRequest}
+	 */
+	public static final class MonitoringUpdateRequest extends com.google.protobuf.GeneratedMessageV3 implements
+			// @@protoc_insertion_point(message_implements:calc.MonitoringUpdateRequest)
+			MonitoringUpdateRequestOrBuilder {
+		private static final long serialVersionUID = 0L;
+
+		// Use MonitoringUpdateRequest.newBuilder() to construct.
+		private MonitoringUpdateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+			super(builder);
+		}
+
+		private MonitoringUpdateRequest() {
+			correlationId_ = "";
+		}
+
+		@java.lang.Override
+		public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+			return this.unknownFields;
+		}
+
+		private MonitoringUpdateRequest(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			this();
+			if (extensionRegistry == null) {
+				throw new java.lang.NullPointerException();
+			}
+			int mutable_bitField0_ = 0;
+			com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+					.newBuilder();
+			try {
+				boolean done = false;
+				while (!done) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						done = true;
+						break;
+					case 10: {
+						java.lang.String s = input.readStringRequireUtf8();
+
+						correlationId_ = s;
+						break;
+					}
+					default: {
+						if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+							done = true;
+						}
+						break;
+					}
+					}
+				}
+			} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+				throw e.setUnfinishedMessage(this);
+			} catch (java.io.IOException e) {
+				throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+			} finally {
+				this.unknownFields = unknownFields.build();
+				makeExtensionsImmutable();
+			}
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return calc.Cache.internal_static_calc_MonitoringUpdateRequest_descriptor;
+		}
+
+		@java.lang.Override
+		protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+			return calc.Cache.internal_static_calc_MonitoringUpdateRequest_fieldAccessorTable
+					.ensureFieldAccessorsInitialized(calc.Cache.MonitoringUpdateRequest.class,
+							calc.Cache.MonitoringUpdateRequest.Builder.class);
+		}
+
+		public static final int CORRELATIONID_FIELD_NUMBER = 1;
+		private volatile java.lang.Object correlationId_;
+
+		/**
+		 * <code>string correlationId = 1;</code>
+		 */
+		public java.lang.String getCorrelationId() {
+			java.lang.Object ref = correlationId_;
+			if (ref instanceof java.lang.String) {
+				return (java.lang.String) ref;
+			} else {
+				com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+				java.lang.String s = bs.toStringUtf8();
+				correlationId_ = s;
+				return s;
+			}
+		}
+
+		/**
+		 * <code>string correlationId = 1;</code>
+		 */
+		public com.google.protobuf.ByteString getCorrelationIdBytes() {
+			java.lang.Object ref = correlationId_;
+			if (ref instanceof java.lang.String) {
+				com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+				correlationId_ = b;
+				return b;
+			} else {
+				return (com.google.protobuf.ByteString) ref;
+			}
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		@java.lang.Override
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized == 1)
+				return true;
+			if (isInitialized == 0)
+				return false;
+
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		@java.lang.Override
+		public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+			if (!getCorrelationIdBytes().isEmpty()) {
+				com.google.protobuf.GeneratedMessageV3.writeString(output, 1, correlationId_);
+			}
+			unknownFields.writeTo(output);
+		}
+
+		@java.lang.Override
+		public int getSerializedSize() {
+			int size = memoizedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			if (!getCorrelationIdBytes().isEmpty()) {
+				size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, correlationId_);
+			}
+			size += unknownFields.getSerializedSize();
+			memoizedSize = size;
+			return size;
+		}
+
+		@java.lang.Override
+		public boolean equals(final java.lang.Object obj) {
+			if (obj == this) {
+				return true;
+			}
+			if (!(obj instanceof calc.Cache.MonitoringUpdateRequest)) {
+				return super.equals(obj);
+			}
+			calc.Cache.MonitoringUpdateRequest other = (calc.Cache.MonitoringUpdateRequest) obj;
+
+			boolean result = true;
+			result = result && getCorrelationId().equals(other.getCorrelationId());
+			result = result && unknownFields.equals(other.unknownFields);
+			return result;
+		}
+
+		@java.lang.Override
+		public int hashCode() {
+			if (memoizedHashCode != 0) {
+				return memoizedHashCode;
+			}
+			int hash = 41;
+			hash = (19 * hash) + getDescriptor().hashCode();
+			hash = (37 * hash) + CORRELATIONID_FIELD_NUMBER;
+			hash = (53 * hash) + getCorrelationId().hashCode();
+			hash = (29 * hash) + unknownFields.hashCode();
+			memoizedHashCode = hash;
+			return hash;
+		}
+
+		public static calc.Cache.MonitoringUpdateRequest parseFrom(java.nio.ByteBuffer data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.MonitoringUpdateRequest parseFrom(java.nio.ByteBuffer data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.MonitoringUpdateRequest parseFrom(com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.MonitoringUpdateRequest parseFrom(com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.MonitoringUpdateRequest parseFrom(byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.MonitoringUpdateRequest parseFrom(byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.MonitoringUpdateRequest parseFrom(java.io.InputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.MonitoringUpdateRequest parseFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		public static calc.Cache.MonitoringUpdateRequest parseDelimitedFrom(java.io.InputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.MonitoringUpdateRequest parseDelimitedFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+					extensionRegistry);
+		}
+
+		public static calc.Cache.MonitoringUpdateRequest parseFrom(com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.MonitoringUpdateRequest parseFrom(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		@java.lang.Override
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder() {
+			return DEFAULT_INSTANCE.toBuilder();
+		}
+
+		public static Builder newBuilder(calc.Cache.MonitoringUpdateRequest prototype) {
+			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+		}
+
+		@java.lang.Override
+		public Builder toBuilder() {
+			return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		/**
+		 * Protobuf type {@code calc.MonitoringUpdateRequest}
+		 */
+		public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+				// @@protoc_insertion_point(builder_implements:calc.MonitoringUpdateRequest)
+				calc.Cache.MonitoringUpdateRequestOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return calc.Cache.internal_static_calc_MonitoringUpdateRequest_descriptor;
+			}
+
+			@java.lang.Override
+			protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+				return calc.Cache.internal_static_calc_MonitoringUpdateRequest_fieldAccessorTable
+						.ensureFieldAccessorsInitialized(calc.Cache.MonitoringUpdateRequest.class,
+								calc.Cache.MonitoringUpdateRequest.Builder.class);
+			}
+
+			// Construct using calc.Cache.MonitoringUpdateRequest.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+				}
+			}
+
+			@java.lang.Override
+			public Builder clear() {
+				super.clear();
+				correlationId_ = "";
+
+				return this;
+			}
+
+			@java.lang.Override
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return calc.Cache.internal_static_calc_MonitoringUpdateRequest_descriptor;
+			}
+
+			@java.lang.Override
+			public calc.Cache.MonitoringUpdateRequest getDefaultInstanceForType() {
+				return calc.Cache.MonitoringUpdateRequest.getDefaultInstance();
+			}
+
+			@java.lang.Override
+			public calc.Cache.MonitoringUpdateRequest build() {
+				calc.Cache.MonitoringUpdateRequest result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			@java.lang.Override
+			public calc.Cache.MonitoringUpdateRequest buildPartial() {
+				calc.Cache.MonitoringUpdateRequest result = new calc.Cache.MonitoringUpdateRequest(this);
+				result.correlationId_ = correlationId_;
+				onBuilt();
+				return result;
+			}
+
+			@java.lang.Override
+			public Builder clone() {
+				return (Builder) super.clone();
+			}
+
+			@java.lang.Override
+			public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+				return (Builder) super.setField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+				return (Builder) super.clearField(field);
+			}
+
+			@java.lang.Override
+			public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+				return (Builder) super.clearOneof(oneof);
+			}
+
+			@java.lang.Override
+			public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+					java.lang.Object value) {
+				return (Builder) super.setRepeatedField(field, index, value);
+			}
+
+			@java.lang.Override
+			public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+					java.lang.Object value) {
+				return (Builder) super.addRepeatedField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof calc.Cache.MonitoringUpdateRequest) {
+					return mergeFrom((calc.Cache.MonitoringUpdateRequest) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(calc.Cache.MonitoringUpdateRequest other) {
+				if (other == calc.Cache.MonitoringUpdateRequest.getDefaultInstance())
+					return this;
+				if (!other.getCorrelationId().isEmpty()) {
+					correlationId_ = other.correlationId_;
+					onChanged();
+				}
+				this.mergeUnknownFields(other.unknownFields);
+				onChanged();
+				return this;
+			}
+
+			@java.lang.Override
+			public final boolean isInitialized() {
+				return true;
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+				calc.Cache.MonitoringUpdateRequest parsedMessage = null;
+				try {
+					parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+				} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+					parsedMessage = (calc.Cache.MonitoringUpdateRequest) e.getUnfinishedMessage();
+					throw e.unwrapIOException();
+				} finally {
+					if (parsedMessage != null) {
+						mergeFrom(parsedMessage);
+					}
+				}
+				return this;
+			}
+
+			private java.lang.Object correlationId_ = "";
+
+			/**
+			 * <code>string correlationId = 1;</code>
+			 */
+			public java.lang.String getCorrelationId() {
+				java.lang.Object ref = correlationId_;
+				if (!(ref instanceof java.lang.String)) {
+					com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+					java.lang.String s = bs.toStringUtf8();
+					correlationId_ = s;
+					return s;
+				} else {
+					return (java.lang.String) ref;
+				}
+			}
+
+			/**
+			 * <code>string correlationId = 1;</code>
+			 */
+			public com.google.protobuf.ByteString getCorrelationIdBytes() {
+				java.lang.Object ref = correlationId_;
+				if (ref instanceof String) {
+					com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+							.copyFromUtf8((java.lang.String) ref);
+					correlationId_ = b;
+					return b;
+				} else {
+					return (com.google.protobuf.ByteString) ref;
+				}
+			}
+
+			/**
+			 * <code>string correlationId = 1;</code>
+			 */
+			public Builder setCorrelationId(java.lang.String value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+
+				correlationId_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>string correlationId = 1;</code>
+			 */
+			public Builder clearCorrelationId() {
+
+				correlationId_ = getDefaultInstance().getCorrelationId();
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>string correlationId = 1;</code>
+			 */
+			public Builder setCorrelationIdBytes(com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				checkByteStringIsUtf8(value);
+
+				correlationId_ = value;
+				onChanged();
+				return this;
+			}
+
+			@java.lang.Override
+			public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.setUnknownFieldsProto3(unknownFields);
+			}
+
+			@java.lang.Override
+			public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.mergeUnknownFields(unknownFields);
+			}
+
+			// @@protoc_insertion_point(builder_scope:calc.MonitoringUpdateRequest)
+		}
+
+		// @@protoc_insertion_point(class_scope:calc.MonitoringUpdateRequest)
+		private static final calc.Cache.MonitoringUpdateRequest DEFAULT_INSTANCE;
+		static {
+			DEFAULT_INSTANCE = new calc.Cache.MonitoringUpdateRequest();
+		}
+
+		public static calc.Cache.MonitoringUpdateRequest getDefaultInstance() {
+			return DEFAULT_INSTANCE;
+		}
+
+		private static final com.google.protobuf.Parser<MonitoringUpdateRequest> PARSER = new com.google.protobuf.AbstractParser<MonitoringUpdateRequest>() {
+			@java.lang.Override
+			public MonitoringUpdateRequest parsePartialFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return new MonitoringUpdateRequest(input, extensionRegistry);
+			}
+		};
+
+		public static com.google.protobuf.Parser<MonitoringUpdateRequest> parser() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public com.google.protobuf.Parser<MonitoringUpdateRequest> getParserForType() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public calc.Cache.MonitoringUpdateRequest getDefaultInstanceForType() {
+			return DEFAULT_INSTANCE;
+		}
+
+	}
+
+	public interface MonitoringUpdateResponseOrBuilder extends
+			// @@protoc_insertion_point(interface_extends:calc.MonitoringUpdateResponse)
+			com.google.protobuf.MessageOrBuilder {
+
+		/**
+		 * <code>.calc.ReplicaStatus status = 1;</code>
+		 */
+		boolean hasStatus();
+
+		/**
+		 * <code>.calc.ReplicaStatus status = 1;</code>
+		 */
+		calc.Cache.ReplicaStatus getStatus();
+
+		/**
+		 * <code>.calc.ReplicaStatus status = 1;</code>
+		 */
+		calc.Cache.ReplicaStatusOrBuilder getStatusOrBuilder();
+	}
+
+	/**
+	 * Protobuf type {@code calc.MonitoringUpdateResponse}
+	 */
+	public static final class MonitoringUpdateResponse extends com.google.protobuf.GeneratedMessageV3 implements
+			// @@protoc_insertion_point(message_implements:calc.MonitoringUpdateResponse)
+			MonitoringUpdateResponseOrBuilder {
+		private static final long serialVersionUID = 0L;
+
+		// Use MonitoringUpdateResponse.newBuilder() to construct.
+		private MonitoringUpdateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+			super(builder);
+		}
+
+		private MonitoringUpdateResponse() {
+		}
+
+		@java.lang.Override
+		public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+			return this.unknownFields;
+		}
+
+		private MonitoringUpdateResponse(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			this();
+			if (extensionRegistry == null) {
+				throw new java.lang.NullPointerException();
+			}
+			int mutable_bitField0_ = 0;
+			com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+					.newBuilder();
+			try {
+				boolean done = false;
+				while (!done) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						done = true;
+						break;
+					case 10: {
+						calc.Cache.ReplicaStatus.Builder subBuilder = null;
+						if (status_ != null) {
+							subBuilder = status_.toBuilder();
+						}
+						status_ = input.readMessage(calc.Cache.ReplicaStatus.parser(), extensionRegistry);
+						if (subBuilder != null) {
+							subBuilder.mergeFrom(status_);
+							status_ = subBuilder.buildPartial();
+						}
+
+						break;
+					}
+					default: {
+						if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+							done = true;
+						}
+						break;
+					}
+					}
+				}
+			} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+				throw e.setUnfinishedMessage(this);
+			} catch (java.io.IOException e) {
+				throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+			} finally {
+				this.unknownFields = unknownFields.build();
+				makeExtensionsImmutable();
+			}
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return calc.Cache.internal_static_calc_MonitoringUpdateResponse_descriptor;
+		}
+
+		@java.lang.Override
+		protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+			return calc.Cache.internal_static_calc_MonitoringUpdateResponse_fieldAccessorTable
+					.ensureFieldAccessorsInitialized(calc.Cache.MonitoringUpdateResponse.class,
+							calc.Cache.MonitoringUpdateResponse.Builder.class);
+		}
+
+		public static final int STATUS_FIELD_NUMBER = 1;
+		private calc.Cache.ReplicaStatus status_;
+
+		/**
+		 * <code>.calc.ReplicaStatus status = 1;</code>
+		 */
+		public boolean hasStatus() {
+			return status_ != null;
+		}
+
+		/**
+		 * <code>.calc.ReplicaStatus status = 1;</code>
+		 */
+		public calc.Cache.ReplicaStatus getStatus() {
+			return status_ == null ? calc.Cache.ReplicaStatus.getDefaultInstance() : status_;
+		}
+
+		/**
+		 * <code>.calc.ReplicaStatus status = 1;</code>
+		 */
+		public calc.Cache.ReplicaStatusOrBuilder getStatusOrBuilder() {
+			return getStatus();
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		@java.lang.Override
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized == 1)
+				return true;
+			if (isInitialized == 0)
+				return false;
+
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		@java.lang.Override
+		public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+			if (status_ != null) {
+				output.writeMessage(1, getStatus());
+			}
+			unknownFields.writeTo(output);
+		}
+
+		@java.lang.Override
+		public int getSerializedSize() {
+			int size = memoizedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			if (status_ != null) {
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getStatus());
+			}
+			size += unknownFields.getSerializedSize();
+			memoizedSize = size;
+			return size;
+		}
+
+		@java.lang.Override
+		public boolean equals(final java.lang.Object obj) {
+			if (obj == this) {
+				return true;
+			}
+			if (!(obj instanceof calc.Cache.MonitoringUpdateResponse)) {
+				return super.equals(obj);
+			}
+			calc.Cache.MonitoringUpdateResponse other = (calc.Cache.MonitoringUpdateResponse) obj;
+
+			boolean result = true;
+			result = result && (hasStatus() == other.hasStatus());
+			if (hasStatus()) {
+				result = result && getStatus().equals(other.getStatus());
+			}
+			result = result && unknownFields.equals(other.unknownFields);
+			return result;
+		}
+
+		@java.lang.Override
+		public int hashCode() {
+			if (memoizedHashCode != 0) {
+				return memoizedHashCode;
+			}
+			int hash = 41;
+			hash = (19 * hash) + getDescriptor().hashCode();
+			if (hasStatus()) {
+				hash = (37 * hash) + STATUS_FIELD_NUMBER;
+				hash = (53 * hash) + getStatus().hashCode();
+			}
+			hash = (29 * hash) + unknownFields.hashCode();
+			memoizedHashCode = hash;
+			return hash;
+		}
+
+		public static calc.Cache.MonitoringUpdateResponse parseFrom(java.nio.ByteBuffer data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.MonitoringUpdateResponse parseFrom(java.nio.ByteBuffer data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.MonitoringUpdateResponse parseFrom(com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.MonitoringUpdateResponse parseFrom(com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.MonitoringUpdateResponse parseFrom(byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.MonitoringUpdateResponse parseFrom(byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.MonitoringUpdateResponse parseFrom(java.io.InputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.MonitoringUpdateResponse parseFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		public static calc.Cache.MonitoringUpdateResponse parseDelimitedFrom(java.io.InputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.MonitoringUpdateResponse parseDelimitedFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+					extensionRegistry);
+		}
+
+		public static calc.Cache.MonitoringUpdateResponse parseFrom(com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.MonitoringUpdateResponse parseFrom(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		@java.lang.Override
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder() {
+			return DEFAULT_INSTANCE.toBuilder();
+		}
+
+		public static Builder newBuilder(calc.Cache.MonitoringUpdateResponse prototype) {
+			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+		}
+
+		@java.lang.Override
+		public Builder toBuilder() {
+			return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		/**
+		 * Protobuf type {@code calc.MonitoringUpdateResponse}
+		 */
+		public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+				// @@protoc_insertion_point(builder_implements:calc.MonitoringUpdateResponse)
+				calc.Cache.MonitoringUpdateResponseOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return calc.Cache.internal_static_calc_MonitoringUpdateResponse_descriptor;
+			}
+
+			@java.lang.Override
+			protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+				return calc.Cache.internal_static_calc_MonitoringUpdateResponse_fieldAccessorTable
+						.ensureFieldAccessorsInitialized(calc.Cache.MonitoringUpdateResponse.class,
+								calc.Cache.MonitoringUpdateResponse.Builder.class);
+			}
+
+			// Construct using calc.Cache.MonitoringUpdateResponse.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+				}
+			}
+
+			@java.lang.Override
+			public Builder clear() {
+				super.clear();
+				if (statusBuilder_ == null) {
+					status_ = null;
+				} else {
+					status_ = null;
+					statusBuilder_ = null;
+				}
+				return this;
+			}
+
+			@java.lang.Override
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return calc.Cache.internal_static_calc_MonitoringUpdateResponse_descriptor;
+			}
+
+			@java.lang.Override
+			public calc.Cache.MonitoringUpdateResponse getDefaultInstanceForType() {
+				return calc.Cache.MonitoringUpdateResponse.getDefaultInstance();
+			}
+
+			@java.lang.Override
+			public calc.Cache.MonitoringUpdateResponse build() {
+				calc.Cache.MonitoringUpdateResponse result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			@java.lang.Override
+			public calc.Cache.MonitoringUpdateResponse buildPartial() {
+				calc.Cache.MonitoringUpdateResponse result = new calc.Cache.MonitoringUpdateResponse(this);
+				if (statusBuilder_ == null) {
+					result.status_ = status_;
+				} else {
+					result.status_ = statusBuilder_.build();
+				}
+				onBuilt();
+				return result;
+			}
+
+			@java.lang.Override
+			public Builder clone() {
+				return (Builder) super.clone();
+			}
+
+			@java.lang.Override
+			public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+				return (Builder) super.setField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+				return (Builder) super.clearField(field);
+			}
+
+			@java.lang.Override
+			public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+				return (Builder) super.clearOneof(oneof);
+			}
+
+			@java.lang.Override
+			public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+					java.lang.Object value) {
+				return (Builder) super.setRepeatedField(field, index, value);
+			}
+
+			@java.lang.Override
+			public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+					java.lang.Object value) {
+				return (Builder) super.addRepeatedField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof calc.Cache.MonitoringUpdateResponse) {
+					return mergeFrom((calc.Cache.MonitoringUpdateResponse) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(calc.Cache.MonitoringUpdateResponse other) {
+				if (other == calc.Cache.MonitoringUpdateResponse.getDefaultInstance())
+					return this;
+				if (other.hasStatus()) {
+					mergeStatus(other.getStatus());
+				}
+				this.mergeUnknownFields(other.unknownFields);
+				onChanged();
+				return this;
+			}
+
+			@java.lang.Override
+			public final boolean isInitialized() {
+				return true;
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+				calc.Cache.MonitoringUpdateResponse parsedMessage = null;
+				try {
+					parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+				} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+					parsedMessage = (calc.Cache.MonitoringUpdateResponse) e.getUnfinishedMessage();
+					throw e.unwrapIOException();
+				} finally {
+					if (parsedMessage != null) {
+						mergeFrom(parsedMessage);
+					}
+				}
+				return this;
+			}
+
+			private calc.Cache.ReplicaStatus status_ = null;
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Cache.ReplicaStatus, calc.Cache.ReplicaStatus.Builder, calc.Cache.ReplicaStatusOrBuilder> statusBuilder_;
+
+			/**
+			 * <code>.calc.ReplicaStatus status = 1;</code>
+			 */
+			public boolean hasStatus() {
+				return statusBuilder_ != null || status_ != null;
+			}
+
+			/**
+			 * <code>.calc.ReplicaStatus status = 1;</code>
+			 */
+			public calc.Cache.ReplicaStatus getStatus() {
+				if (statusBuilder_ == null) {
+					return status_ == null ? calc.Cache.ReplicaStatus.getDefaultInstance() : status_;
+				} else {
+					return statusBuilder_.getMessage();
+				}
+			}
+
+			/**
+			 * <code>.calc.ReplicaStatus status = 1;</code>
+			 */
+			public Builder setStatus(calc.Cache.ReplicaStatus value) {
+				if (statusBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					status_ = value;
+					onChanged();
+				} else {
+					statusBuilder_.setMessage(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.ReplicaStatus status = 1;</code>
+			 */
+			public Builder setStatus(calc.Cache.ReplicaStatus.Builder builderForValue) {
+				if (statusBuilder_ == null) {
+					status_ = builderForValue.build();
+					onChanged();
+				} else {
+					statusBuilder_.setMessage(builderForValue.build());
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.ReplicaStatus status = 1;</code>
+			 */
+			public Builder mergeStatus(calc.Cache.ReplicaStatus value) {
+				if (statusBuilder_ == null) {
+					if (status_ != null) {
+						status_ = calc.Cache.ReplicaStatus.newBuilder(status_).mergeFrom(value).buildPartial();
+					} else {
+						status_ = value;
+					}
+					onChanged();
+				} else {
+					statusBuilder_.mergeFrom(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.ReplicaStatus status = 1;</code>
+			 */
+			public Builder clearStatus() {
+				if (statusBuilder_ == null) {
+					status_ = null;
+					onChanged();
+				} else {
+					status_ = null;
+					statusBuilder_ = null;
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.ReplicaStatus status = 1;</code>
+			 */
+			public calc.Cache.ReplicaStatus.Builder getStatusBuilder() {
+
+				onChanged();
+				return getStatusFieldBuilder().getBuilder();
+			}
+
+			/**
+			 * <code>.calc.ReplicaStatus status = 1;</code>
+			 */
+			public calc.Cache.ReplicaStatusOrBuilder getStatusOrBuilder() {
+				if (statusBuilder_ != null) {
+					return statusBuilder_.getMessageOrBuilder();
+				} else {
+					return status_ == null ? calc.Cache.ReplicaStatus.getDefaultInstance() : status_;
+				}
+			}
+
+			/**
+			 * <code>.calc.ReplicaStatus status = 1;</code>
+			 */
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Cache.ReplicaStatus, calc.Cache.ReplicaStatus.Builder, calc.Cache.ReplicaStatusOrBuilder> getStatusFieldBuilder() {
+				if (statusBuilder_ == null) {
+					statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<calc.Cache.ReplicaStatus, calc.Cache.ReplicaStatus.Builder, calc.Cache.ReplicaStatusOrBuilder>(
+							getStatus(), getParentForChildren(), isClean());
+					status_ = null;
+				}
+				return statusBuilder_;
+			}
+
+			@java.lang.Override
+			public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.setUnknownFieldsProto3(unknownFields);
+			}
+
+			@java.lang.Override
+			public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.mergeUnknownFields(unknownFields);
+			}
+
+			// @@protoc_insertion_point(builder_scope:calc.MonitoringUpdateResponse)
+		}
+
+		// @@protoc_insertion_point(class_scope:calc.MonitoringUpdateResponse)
+		private static final calc.Cache.MonitoringUpdateResponse DEFAULT_INSTANCE;
+		static {
+			DEFAULT_INSTANCE = new calc.Cache.MonitoringUpdateResponse();
+		}
+
+		public static calc.Cache.MonitoringUpdateResponse getDefaultInstance() {
+			return DEFAULT_INSTANCE;
+		}
+
+		private static final com.google.protobuf.Parser<MonitoringUpdateResponse> PARSER = new com.google.protobuf.AbstractParser<MonitoringUpdateResponse>() {
+			@java.lang.Override
+			public MonitoringUpdateResponse parsePartialFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return new MonitoringUpdateResponse(input, extensionRegistry);
+			}
+		};
+
+		public static com.google.protobuf.Parser<MonitoringUpdateResponse> parser() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public com.google.protobuf.Parser<MonitoringUpdateResponse> getParserForType() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public calc.Cache.MonitoringUpdateResponse getDefaultInstanceForType() {
+			return DEFAULT_INSTANCE;
+		}
+
+	}
+
+	public interface ReplicaStatusOrBuilder extends
+			// @@protoc_insertion_point(interface_extends:calc.ReplicaStatus)
+			com.google.protobuf.MessageOrBuilder {
+
+		/**
+		 * <code>string replicaId = 1;</code>
+		 */
+		java.lang.String getReplicaId();
+
+		/**
+		 * <code>string replicaId = 1;</code>
+		 */
+		com.google.protobuf.ByteString getReplicaIdBytes();
+
+		/**
+		 * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
+		 */
+		boolean hasConnectionInfo();
+
+		/**
+		 * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
+		 */
+		calc.Cache.ReplicaConnectionInfo getConnectionInfo();
+
+		/**
+		 * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
+		 */
+		calc.Cache.ReplicaConnectionInfoOrBuilder getConnectionInfoOrBuilder();
+
+		/**
+		 * <code>.google.protobuf.Timestamp started = 3;</code>
+		 */
+		boolean hasStarted();
+
+		/**
+		 * <code>.google.protobuf.Timestamp started = 3;</code>
+		 */
+		com.google.protobuf.Timestamp getStarted();
+
+		/**
+		 * <code>.google.protobuf.Timestamp started = 3;</code>
+		 */
+		com.google.protobuf.TimestampOrBuilder getStartedOrBuilder();
+
+		/**
+		 * <pre>
+		 * ReplicaConfig replicaConfig = 4;
+		 * </pre>
+		 *
+		 * <code>.google.protobuf.Timestamp currentClock = 5;</code>
+		 */
+		boolean hasCurrentClock();
+
+		/**
+		 * <pre>
+		 * ReplicaConfig replicaConfig = 4;
+		 * </pre>
+		 *
+		 * <code>.google.protobuf.Timestamp currentClock = 5;</code>
+		 */
+		com.google.protobuf.Timestamp getCurrentClock();
+
+		/**
+		 * <pre>
+		 * ReplicaConfig replicaConfig = 4;
+		 * </pre>
+		 *
+		 * <code>.google.protobuf.Timestamp currentClock = 5;</code>
+		 */
+		com.google.protobuf.TimestampOrBuilder getCurrentClockOrBuilder();
+
+		/**
+		 * <code>.calc.ReplicaCounters counters = 10;</code>
+		 */
+		boolean hasCounters();
+
+		/**
+		 * <code>.calc.ReplicaCounters counters = 10;</code>
+		 */
+		calc.Cache.ReplicaCounters getCounters();
+
+		/**
+		 * <code>.calc.ReplicaCounters counters = 10;</code>
+		 */
+		calc.Cache.ReplicaCountersOrBuilder getCountersOrBuilder();
+
+		/**
+		 * <code>.calc.CollectedStats collectedStats = 11;</code>
+		 */
+		boolean hasCollectedStats();
+
+		/**
+		 * <code>.calc.CollectedStats collectedStats = 11;</code>
+		 */
+		calc.Cache.CollectedStats getCollectedStats();
+
+		/**
+		 * <code>.calc.CollectedStats collectedStats = 11;</code>
+		 */
+		calc.Cache.CollectedStatsOrBuilder getCollectedStatsOrBuilder();
+
+		/**
+		 * <code>.calc.ClusterStatus clusterStatus = 12;</code>
+		 */
+		boolean hasClusterStatus();
+
+		/**
+		 * <code>.calc.ClusterStatus clusterStatus = 12;</code>
+		 */
+		calc.Cache.ClusterStatus getClusterStatus();
+
+		/**
+		 * <code>.calc.ClusterStatus clusterStatus = 12;</code>
+		 */
+		calc.Cache.ClusterStatusOrBuilder getClusterStatusOrBuilder();
+	}
+
+	/**
+	 * Protobuf type {@code calc.ReplicaStatus}
+	 */
+	public static final class ReplicaStatus extends com.google.protobuf.GeneratedMessageV3 implements
+			// @@protoc_insertion_point(message_implements:calc.ReplicaStatus)
+			ReplicaStatusOrBuilder {
+		private static final long serialVersionUID = 0L;
+
+		// Use ReplicaStatus.newBuilder() to construct.
+		private ReplicaStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+			super(builder);
+		}
+
+		private ReplicaStatus() {
+			replicaId_ = "";
+		}
+
+		@java.lang.Override
+		public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+			return this.unknownFields;
+		}
+
+		private ReplicaStatus(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			this();
+			if (extensionRegistry == null) {
+				throw new java.lang.NullPointerException();
+			}
+			int mutable_bitField0_ = 0;
+			com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+					.newBuilder();
+			try {
+				boolean done = false;
+				while (!done) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						done = true;
+						break;
+					case 10: {
+						java.lang.String s = input.readStringRequireUtf8();
+
+						replicaId_ = s;
+						break;
+					}
+					case 18: {
+						calc.Cache.ReplicaConnectionInfo.Builder subBuilder = null;
+						if (connectionInfo_ != null) {
+							subBuilder = connectionInfo_.toBuilder();
+						}
+						connectionInfo_ = input.readMessage(calc.Cache.ReplicaConnectionInfo.parser(),
+								extensionRegistry);
+						if (subBuilder != null) {
+							subBuilder.mergeFrom(connectionInfo_);
+							connectionInfo_ = subBuilder.buildPartial();
+						}
+
+						break;
+					}
+					case 26: {
+						com.google.protobuf.Timestamp.Builder subBuilder = null;
+						if (started_ != null) {
+							subBuilder = started_.toBuilder();
+						}
+						started_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+						if (subBuilder != null) {
+							subBuilder.mergeFrom(started_);
+							started_ = subBuilder.buildPartial();
+						}
+
+						break;
+					}
+					case 42: {
+						com.google.protobuf.Timestamp.Builder subBuilder = null;
+						if (currentClock_ != null) {
+							subBuilder = currentClock_.toBuilder();
+						}
+						currentClock_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+						if (subBuilder != null) {
+							subBuilder.mergeFrom(currentClock_);
+							currentClock_ = subBuilder.buildPartial();
+						}
+
+						break;
+					}
+					case 82: {
+						calc.Cache.ReplicaCounters.Builder subBuilder = null;
+						if (counters_ != null) {
+							subBuilder = counters_.toBuilder();
+						}
+						counters_ = input.readMessage(calc.Cache.ReplicaCounters.parser(), extensionRegistry);
+						if (subBuilder != null) {
+							subBuilder.mergeFrom(counters_);
+							counters_ = subBuilder.buildPartial();
+						}
+
+						break;
+					}
+					case 90: {
+						calc.Cache.CollectedStats.Builder subBuilder = null;
+						if (collectedStats_ != null) {
+							subBuilder = collectedStats_.toBuilder();
+						}
+						collectedStats_ = input.readMessage(calc.Cache.CollectedStats.parser(), extensionRegistry);
+						if (subBuilder != null) {
+							subBuilder.mergeFrom(collectedStats_);
+							collectedStats_ = subBuilder.buildPartial();
+						}
+
+						break;
+					}
+					case 98: {
+						calc.Cache.ClusterStatus.Builder subBuilder = null;
+						if (clusterStatus_ != null) {
+							subBuilder = clusterStatus_.toBuilder();
+						}
+						clusterStatus_ = input.readMessage(calc.Cache.ClusterStatus.parser(), extensionRegistry);
+						if (subBuilder != null) {
+							subBuilder.mergeFrom(clusterStatus_);
+							clusterStatus_ = subBuilder.buildPartial();
+						}
+
+						break;
+					}
+					default: {
+						if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+							done = true;
+						}
+						break;
+					}
+					}
+				}
+			} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+				throw e.setUnfinishedMessage(this);
+			} catch (java.io.IOException e) {
+				throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+			} finally {
+				this.unknownFields = unknownFields.build();
+				makeExtensionsImmutable();
+			}
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return calc.Cache.internal_static_calc_ReplicaStatus_descriptor;
+		}
+
+		@java.lang.Override
+		protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+			return calc.Cache.internal_static_calc_ReplicaStatus_fieldAccessorTable.ensureFieldAccessorsInitialized(
+					calc.Cache.ReplicaStatus.class, calc.Cache.ReplicaStatus.Builder.class);
+		}
+
+		public static final int REPLICAID_FIELD_NUMBER = 1;
+		private volatile java.lang.Object replicaId_;
+
+		/**
+		 * <code>string replicaId = 1;</code>
+		 */
+		public java.lang.String getReplicaId() {
+			java.lang.Object ref = replicaId_;
+			if (ref instanceof java.lang.String) {
+				return (java.lang.String) ref;
+			} else {
+				com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+				java.lang.String s = bs.toStringUtf8();
+				replicaId_ = s;
+				return s;
+			}
+		}
+
+		/**
+		 * <code>string replicaId = 1;</code>
+		 */
+		public com.google.protobuf.ByteString getReplicaIdBytes() {
+			java.lang.Object ref = replicaId_;
+			if (ref instanceof java.lang.String) {
+				com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+				replicaId_ = b;
+				return b;
+			} else {
+				return (com.google.protobuf.ByteString) ref;
+			}
+		}
+
+		public static final int CONNECTIONINFO_FIELD_NUMBER = 2;
+		private calc.Cache.ReplicaConnectionInfo connectionInfo_;
+
+		/**
+		 * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
+		 */
+		public boolean hasConnectionInfo() {
+			return connectionInfo_ != null;
+		}
+
+		/**
+		 * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
+		 */
+		public calc.Cache.ReplicaConnectionInfo getConnectionInfo() {
+			return connectionInfo_ == null ? calc.Cache.ReplicaConnectionInfo.getDefaultInstance() : connectionInfo_;
+		}
+
+		/**
+		 * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
+		 */
+		public calc.Cache.ReplicaConnectionInfoOrBuilder getConnectionInfoOrBuilder() {
+			return getConnectionInfo();
+		}
+
+		public static final int STARTED_FIELD_NUMBER = 3;
+		private com.google.protobuf.Timestamp started_;
+
+		/**
+		 * <code>.google.protobuf.Timestamp started = 3;</code>
+		 */
+		public boolean hasStarted() {
+			return started_ != null;
+		}
+
+		/**
+		 * <code>.google.protobuf.Timestamp started = 3;</code>
+		 */
+		public com.google.protobuf.Timestamp getStarted() {
+			return started_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : started_;
+		}
+
+		/**
+		 * <code>.google.protobuf.Timestamp started = 3;</code>
+		 */
+		public com.google.protobuf.TimestampOrBuilder getStartedOrBuilder() {
+			return getStarted();
+		}
+
+		public static final int CURRENTCLOCK_FIELD_NUMBER = 5;
+		private com.google.protobuf.Timestamp currentClock_;
+
+		/**
+		 * <pre>
+		 * ReplicaConfig replicaConfig = 4;
+		 * </pre>
+		 *
+		 * <code>.google.protobuf.Timestamp currentClock = 5;</code>
+		 */
+		public boolean hasCurrentClock() {
+			return currentClock_ != null;
+		}
+
+		/**
+		 * <pre>
+		 * ReplicaConfig replicaConfig = 4;
+		 * </pre>
+		 *
+		 * <code>.google.protobuf.Timestamp currentClock = 5;</code>
+		 */
+		public com.google.protobuf.Timestamp getCurrentClock() {
+			return currentClock_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : currentClock_;
+		}
+
+		/**
+		 * <pre>
+		 * ReplicaConfig replicaConfig = 4;
+		 * </pre>
+		 *
+		 * <code>.google.protobuf.Timestamp currentClock = 5;</code>
+		 */
+		public com.google.protobuf.TimestampOrBuilder getCurrentClockOrBuilder() {
+			return getCurrentClock();
+		}
+
+		public static final int COUNTERS_FIELD_NUMBER = 10;
+		private calc.Cache.ReplicaCounters counters_;
+
+		/**
+		 * <code>.calc.ReplicaCounters counters = 10;</code>
+		 */
+		public boolean hasCounters() {
+			return counters_ != null;
+		}
+
+		/**
+		 * <code>.calc.ReplicaCounters counters = 10;</code>
+		 */
+		public calc.Cache.ReplicaCounters getCounters() {
+			return counters_ == null ? calc.Cache.ReplicaCounters.getDefaultInstance() : counters_;
+		}
+
+		/**
+		 * <code>.calc.ReplicaCounters counters = 10;</code>
+		 */
+		public calc.Cache.ReplicaCountersOrBuilder getCountersOrBuilder() {
+			return getCounters();
+		}
+
+		public static final int COLLECTEDSTATS_FIELD_NUMBER = 11;
+		private calc.Cache.CollectedStats collectedStats_;
+
+		/**
+		 * <code>.calc.CollectedStats collectedStats = 11;</code>
+		 */
+		public boolean hasCollectedStats() {
+			return collectedStats_ != null;
+		}
+
+		/**
+		 * <code>.calc.CollectedStats collectedStats = 11;</code>
+		 */
+		public calc.Cache.CollectedStats getCollectedStats() {
+			return collectedStats_ == null ? calc.Cache.CollectedStats.getDefaultInstance() : collectedStats_;
+		}
+
+		/**
+		 * <code>.calc.CollectedStats collectedStats = 11;</code>
+		 */
+		public calc.Cache.CollectedStatsOrBuilder getCollectedStatsOrBuilder() {
+			return getCollectedStats();
+		}
+
+		public static final int CLUSTERSTATUS_FIELD_NUMBER = 12;
+		private calc.Cache.ClusterStatus clusterStatus_;
+
+		/**
+		 * <code>.calc.ClusterStatus clusterStatus = 12;</code>
+		 */
+		public boolean hasClusterStatus() {
+			return clusterStatus_ != null;
+		}
+
+		/**
+		 * <code>.calc.ClusterStatus clusterStatus = 12;</code>
+		 */
+		public calc.Cache.ClusterStatus getClusterStatus() {
+			return clusterStatus_ == null ? calc.Cache.ClusterStatus.getDefaultInstance() : clusterStatus_;
+		}
+
+		/**
+		 * <code>.calc.ClusterStatus clusterStatus = 12;</code>
+		 */
+		public calc.Cache.ClusterStatusOrBuilder getClusterStatusOrBuilder() {
+			return getClusterStatus();
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		@java.lang.Override
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized == 1)
+				return true;
+			if (isInitialized == 0)
+				return false;
+
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		@java.lang.Override
+		public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+			if (!getReplicaIdBytes().isEmpty()) {
+				com.google.protobuf.GeneratedMessageV3.writeString(output, 1, replicaId_);
+			}
+			if (connectionInfo_ != null) {
+				output.writeMessage(2, getConnectionInfo());
+			}
+			if (started_ != null) {
+				output.writeMessage(3, getStarted());
+			}
+			if (currentClock_ != null) {
+				output.writeMessage(5, getCurrentClock());
+			}
+			if (counters_ != null) {
+				output.writeMessage(10, getCounters());
+			}
+			if (collectedStats_ != null) {
+				output.writeMessage(11, getCollectedStats());
+			}
+			if (clusterStatus_ != null) {
+				output.writeMessage(12, getClusterStatus());
+			}
+			unknownFields.writeTo(output);
+		}
+
+		@java.lang.Override
+		public int getSerializedSize() {
+			int size = memoizedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			if (!getReplicaIdBytes().isEmpty()) {
+				size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, replicaId_);
+			}
+			if (connectionInfo_ != null) {
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getConnectionInfo());
+			}
+			if (started_ != null) {
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getStarted());
+			}
+			if (currentClock_ != null) {
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCurrentClock());
+			}
+			if (counters_ != null) {
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getCounters());
+			}
+			if (collectedStats_ != null) {
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getCollectedStats());
+			}
+			if (clusterStatus_ != null) {
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getClusterStatus());
+			}
+			size += unknownFields.getSerializedSize();
+			memoizedSize = size;
+			return size;
+		}
+
+		@java.lang.Override
+		public boolean equals(final java.lang.Object obj) {
+			if (obj == this) {
+				return true;
+			}
+			if (!(obj instanceof calc.Cache.ReplicaStatus)) {
+				return super.equals(obj);
+			}
+			calc.Cache.ReplicaStatus other = (calc.Cache.ReplicaStatus) obj;
+
+			boolean result = true;
+			result = result && getReplicaId().equals(other.getReplicaId());
+			result = result && (hasConnectionInfo() == other.hasConnectionInfo());
+			if (hasConnectionInfo()) {
+				result = result && getConnectionInfo().equals(other.getConnectionInfo());
+			}
+			result = result && (hasStarted() == other.hasStarted());
+			if (hasStarted()) {
+				result = result && getStarted().equals(other.getStarted());
+			}
+			result = result && (hasCurrentClock() == other.hasCurrentClock());
+			if (hasCurrentClock()) {
+				result = result && getCurrentClock().equals(other.getCurrentClock());
+			}
+			result = result && (hasCounters() == other.hasCounters());
+			if (hasCounters()) {
+				result = result && getCounters().equals(other.getCounters());
+			}
+			result = result && (hasCollectedStats() == other.hasCollectedStats());
+			if (hasCollectedStats()) {
+				result = result && getCollectedStats().equals(other.getCollectedStats());
+			}
+			result = result && (hasClusterStatus() == other.hasClusterStatus());
+			if (hasClusterStatus()) {
+				result = result && getClusterStatus().equals(other.getClusterStatus());
+			}
+			result = result && unknownFields.equals(other.unknownFields);
+			return result;
+		}
+
+		@java.lang.Override
+		public int hashCode() {
+			if (memoizedHashCode != 0) {
+				return memoizedHashCode;
+			}
+			int hash = 41;
+			hash = (19 * hash) + getDescriptor().hashCode();
+			hash = (37 * hash) + REPLICAID_FIELD_NUMBER;
+			hash = (53 * hash) + getReplicaId().hashCode();
+			if (hasConnectionInfo()) {
+				hash = (37 * hash) + CONNECTIONINFO_FIELD_NUMBER;
+				hash = (53 * hash) + getConnectionInfo().hashCode();
+			}
+			if (hasStarted()) {
+				hash = (37 * hash) + STARTED_FIELD_NUMBER;
+				hash = (53 * hash) + getStarted().hashCode();
+			}
+			if (hasCurrentClock()) {
+				hash = (37 * hash) + CURRENTCLOCK_FIELD_NUMBER;
+				hash = (53 * hash) + getCurrentClock().hashCode();
+			}
+			if (hasCounters()) {
+				hash = (37 * hash) + COUNTERS_FIELD_NUMBER;
+				hash = (53 * hash) + getCounters().hashCode();
+			}
+			if (hasCollectedStats()) {
+				hash = (37 * hash) + COLLECTEDSTATS_FIELD_NUMBER;
+				hash = (53 * hash) + getCollectedStats().hashCode();
+			}
+			if (hasClusterStatus()) {
+				hash = (37 * hash) + CLUSTERSTATUS_FIELD_NUMBER;
+				hash = (53 * hash) + getClusterStatus().hashCode();
+			}
+			hash = (29 * hash) + unknownFields.hashCode();
+			memoizedHashCode = hash;
+			return hash;
+		}
+
+		public static calc.Cache.ReplicaStatus parseFrom(java.nio.ByteBuffer data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.ReplicaStatus parseFrom(java.nio.ByteBuffer data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.ReplicaStatus parseFrom(com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.ReplicaStatus parseFrom(com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.ReplicaStatus parseFrom(byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.ReplicaStatus parseFrom(byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.ReplicaStatus parseFrom(java.io.InputStream input) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.ReplicaStatus parseFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		public static calc.Cache.ReplicaStatus parseDelimitedFrom(java.io.InputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.ReplicaStatus parseDelimitedFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+					extensionRegistry);
+		}
+
+		public static calc.Cache.ReplicaStatus parseFrom(com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.ReplicaStatus parseFrom(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		@java.lang.Override
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder() {
+			return DEFAULT_INSTANCE.toBuilder();
+		}
+
+		public static Builder newBuilder(calc.Cache.ReplicaStatus prototype) {
+			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+		}
+
+		@java.lang.Override
+		public Builder toBuilder() {
+			return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		/**
+		 * Protobuf type {@code calc.ReplicaStatus}
+		 */
+		public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+				// @@protoc_insertion_point(builder_implements:calc.ReplicaStatus)
+				calc.Cache.ReplicaStatusOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return calc.Cache.internal_static_calc_ReplicaStatus_descriptor;
+			}
+
+			@java.lang.Override
+			protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+				return calc.Cache.internal_static_calc_ReplicaStatus_fieldAccessorTable.ensureFieldAccessorsInitialized(
+						calc.Cache.ReplicaStatus.class, calc.Cache.ReplicaStatus.Builder.class);
+			}
+
+			// Construct using calc.Cache.ReplicaStatus.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+				}
+			}
+
+			@java.lang.Override
+			public Builder clear() {
+				super.clear();
+				replicaId_ = "";
+
+				if (connectionInfoBuilder_ == null) {
+					connectionInfo_ = null;
+				} else {
+					connectionInfo_ = null;
+					connectionInfoBuilder_ = null;
+				}
+				if (startedBuilder_ == null) {
+					started_ = null;
+				} else {
+					started_ = null;
+					startedBuilder_ = null;
+				}
+				if (currentClockBuilder_ == null) {
+					currentClock_ = null;
+				} else {
+					currentClock_ = null;
+					currentClockBuilder_ = null;
+				}
+				if (countersBuilder_ == null) {
+					counters_ = null;
+				} else {
+					counters_ = null;
+					countersBuilder_ = null;
+				}
+				if (collectedStatsBuilder_ == null) {
+					collectedStats_ = null;
+				} else {
+					collectedStats_ = null;
+					collectedStatsBuilder_ = null;
+				}
+				if (clusterStatusBuilder_ == null) {
+					clusterStatus_ = null;
+				} else {
+					clusterStatus_ = null;
+					clusterStatusBuilder_ = null;
+				}
+				return this;
+			}
+
+			@java.lang.Override
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return calc.Cache.internal_static_calc_ReplicaStatus_descriptor;
+			}
+
+			@java.lang.Override
+			public calc.Cache.ReplicaStatus getDefaultInstanceForType() {
+				return calc.Cache.ReplicaStatus.getDefaultInstance();
+			}
+
+			@java.lang.Override
+			public calc.Cache.ReplicaStatus build() {
+				calc.Cache.ReplicaStatus result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			@java.lang.Override
+			public calc.Cache.ReplicaStatus buildPartial() {
+				calc.Cache.ReplicaStatus result = new calc.Cache.ReplicaStatus(this);
+				result.replicaId_ = replicaId_;
+				if (connectionInfoBuilder_ == null) {
+					result.connectionInfo_ = connectionInfo_;
+				} else {
+					result.connectionInfo_ = connectionInfoBuilder_.build();
+				}
+				if (startedBuilder_ == null) {
+					result.started_ = started_;
+				} else {
+					result.started_ = startedBuilder_.build();
+				}
+				if (currentClockBuilder_ == null) {
+					result.currentClock_ = currentClock_;
+				} else {
+					result.currentClock_ = currentClockBuilder_.build();
+				}
+				if (countersBuilder_ == null) {
+					result.counters_ = counters_;
+				} else {
+					result.counters_ = countersBuilder_.build();
+				}
+				if (collectedStatsBuilder_ == null) {
+					result.collectedStats_ = collectedStats_;
+				} else {
+					result.collectedStats_ = collectedStatsBuilder_.build();
+				}
+				if (clusterStatusBuilder_ == null) {
+					result.clusterStatus_ = clusterStatus_;
+				} else {
+					result.clusterStatus_ = clusterStatusBuilder_.build();
+				}
+				onBuilt();
+				return result;
+			}
+
+			@java.lang.Override
+			public Builder clone() {
+				return (Builder) super.clone();
+			}
+
+			@java.lang.Override
+			public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+				return (Builder) super.setField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+				return (Builder) super.clearField(field);
+			}
+
+			@java.lang.Override
+			public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+				return (Builder) super.clearOneof(oneof);
+			}
+
+			@java.lang.Override
+			public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+					java.lang.Object value) {
+				return (Builder) super.setRepeatedField(field, index, value);
+			}
+
+			@java.lang.Override
+			public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+					java.lang.Object value) {
+				return (Builder) super.addRepeatedField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof calc.Cache.ReplicaStatus) {
+					return mergeFrom((calc.Cache.ReplicaStatus) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(calc.Cache.ReplicaStatus other) {
+				if (other == calc.Cache.ReplicaStatus.getDefaultInstance())
+					return this;
+				if (!other.getReplicaId().isEmpty()) {
+					replicaId_ = other.replicaId_;
+					onChanged();
+				}
+				if (other.hasConnectionInfo()) {
+					mergeConnectionInfo(other.getConnectionInfo());
+				}
+				if (other.hasStarted()) {
+					mergeStarted(other.getStarted());
+				}
+				if (other.hasCurrentClock()) {
+					mergeCurrentClock(other.getCurrentClock());
+				}
+				if (other.hasCounters()) {
+					mergeCounters(other.getCounters());
+				}
+				if (other.hasCollectedStats()) {
+					mergeCollectedStats(other.getCollectedStats());
+				}
+				if (other.hasClusterStatus()) {
+					mergeClusterStatus(other.getClusterStatus());
+				}
+				this.mergeUnknownFields(other.unknownFields);
+				onChanged();
+				return this;
+			}
+
+			@java.lang.Override
+			public final boolean isInitialized() {
+				return true;
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+				calc.Cache.ReplicaStatus parsedMessage = null;
+				try {
+					parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+				} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+					parsedMessage = (calc.Cache.ReplicaStatus) e.getUnfinishedMessage();
+					throw e.unwrapIOException();
+				} finally {
+					if (parsedMessage != null) {
+						mergeFrom(parsedMessage);
+					}
+				}
+				return this;
+			}
+
+			private java.lang.Object replicaId_ = "";
+
+			/**
+			 * <code>string replicaId = 1;</code>
+			 */
+			public java.lang.String getReplicaId() {
+				java.lang.Object ref = replicaId_;
+				if (!(ref instanceof java.lang.String)) {
+					com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+					java.lang.String s = bs.toStringUtf8();
+					replicaId_ = s;
+					return s;
+				} else {
+					return (java.lang.String) ref;
+				}
+			}
+
+			/**
+			 * <code>string replicaId = 1;</code>
+			 */
+			public com.google.protobuf.ByteString getReplicaIdBytes() {
+				java.lang.Object ref = replicaId_;
+				if (ref instanceof String) {
+					com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+							.copyFromUtf8((java.lang.String) ref);
+					replicaId_ = b;
+					return b;
+				} else {
+					return (com.google.protobuf.ByteString) ref;
+				}
+			}
+
+			/**
+			 * <code>string replicaId = 1;</code>
+			 */
+			public Builder setReplicaId(java.lang.String value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+
+				replicaId_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>string replicaId = 1;</code>
+			 */
+			public Builder clearReplicaId() {
+
+				replicaId_ = getDefaultInstance().getReplicaId();
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>string replicaId = 1;</code>
+			 */
+			public Builder setReplicaIdBytes(com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				checkByteStringIsUtf8(value);
+
+				replicaId_ = value;
+				onChanged();
+				return this;
+			}
+
+			private calc.Cache.ReplicaConnectionInfo connectionInfo_ = null;
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Cache.ReplicaConnectionInfo, calc.Cache.ReplicaConnectionInfo.Builder, calc.Cache.ReplicaConnectionInfoOrBuilder> connectionInfoBuilder_;
+
+			/**
+			 * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
+			 */
+			public boolean hasConnectionInfo() {
+				return connectionInfoBuilder_ != null || connectionInfo_ != null;
+			}
+
+			/**
+			 * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
+			 */
+			public calc.Cache.ReplicaConnectionInfo getConnectionInfo() {
+				if (connectionInfoBuilder_ == null) {
+					return connectionInfo_ == null ? calc.Cache.ReplicaConnectionInfo.getDefaultInstance()
+							: connectionInfo_;
+				} else {
+					return connectionInfoBuilder_.getMessage();
+				}
+			}
+
+			/**
+			 * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
+			 */
+			public Builder setConnectionInfo(calc.Cache.ReplicaConnectionInfo value) {
+				if (connectionInfoBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					connectionInfo_ = value;
+					onChanged();
+				} else {
+					connectionInfoBuilder_.setMessage(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
+			 */
+			public Builder setConnectionInfo(calc.Cache.ReplicaConnectionInfo.Builder builderForValue) {
+				if (connectionInfoBuilder_ == null) {
+					connectionInfo_ = builderForValue.build();
+					onChanged();
+				} else {
+					connectionInfoBuilder_.setMessage(builderForValue.build());
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
+			 */
+			public Builder mergeConnectionInfo(calc.Cache.ReplicaConnectionInfo value) {
+				if (connectionInfoBuilder_ == null) {
+					if (connectionInfo_ != null) {
+						connectionInfo_ = calc.Cache.ReplicaConnectionInfo.newBuilder(connectionInfo_).mergeFrom(value)
+								.buildPartial();
+					} else {
+						connectionInfo_ = value;
+					}
+					onChanged();
+				} else {
+					connectionInfoBuilder_.mergeFrom(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
+			 */
+			public Builder clearConnectionInfo() {
+				if (connectionInfoBuilder_ == null) {
+					connectionInfo_ = null;
+					onChanged();
+				} else {
+					connectionInfo_ = null;
+					connectionInfoBuilder_ = null;
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
+			 */
+			public calc.Cache.ReplicaConnectionInfo.Builder getConnectionInfoBuilder() {
+
+				onChanged();
+				return getConnectionInfoFieldBuilder().getBuilder();
+			}
+
+			/**
+			 * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
+			 */
+			public calc.Cache.ReplicaConnectionInfoOrBuilder getConnectionInfoOrBuilder() {
+				if (connectionInfoBuilder_ != null) {
+					return connectionInfoBuilder_.getMessageOrBuilder();
+				} else {
+					return connectionInfo_ == null ? calc.Cache.ReplicaConnectionInfo.getDefaultInstance()
+							: connectionInfo_;
+				}
+			}
+
+			/**
+			 * <code>.calc.ReplicaConnectionInfo connectionInfo = 2;</code>
+			 */
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Cache.ReplicaConnectionInfo, calc.Cache.ReplicaConnectionInfo.Builder, calc.Cache.ReplicaConnectionInfoOrBuilder> getConnectionInfoFieldBuilder() {
+				if (connectionInfoBuilder_ == null) {
+					connectionInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<calc.Cache.ReplicaConnectionInfo, calc.Cache.ReplicaConnectionInfo.Builder, calc.Cache.ReplicaConnectionInfoOrBuilder>(
+							getConnectionInfo(), getParentForChildren(), isClean());
+					connectionInfo_ = null;
+				}
+				return connectionInfoBuilder_;
+			}
+
+			private com.google.protobuf.Timestamp started_ = null;
+			private com.google.protobuf.SingleFieldBuilderV3<com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startedBuilder_;
+
+			/**
+			 * <code>.google.protobuf.Timestamp started = 3;</code>
+			 */
+			public boolean hasStarted() {
+				return startedBuilder_ != null || started_ != null;
+			}
+
+			/**
+			 * <code>.google.protobuf.Timestamp started = 3;</code>
+			 */
+			public com.google.protobuf.Timestamp getStarted() {
+				if (startedBuilder_ == null) {
+					return started_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : started_;
+				} else {
+					return startedBuilder_.getMessage();
+				}
+			}
+
+			/**
+			 * <code>.google.protobuf.Timestamp started = 3;</code>
+			 */
+			public Builder setStarted(com.google.protobuf.Timestamp value) {
+				if (startedBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					started_ = value;
+					onChanged();
+				} else {
+					startedBuilder_.setMessage(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.google.protobuf.Timestamp started = 3;</code>
+			 */
+			public Builder setStarted(com.google.protobuf.Timestamp.Builder builderForValue) {
+				if (startedBuilder_ == null) {
+					started_ = builderForValue.build();
+					onChanged();
+				} else {
+					startedBuilder_.setMessage(builderForValue.build());
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.google.protobuf.Timestamp started = 3;</code>
+			 */
+			public Builder mergeStarted(com.google.protobuf.Timestamp value) {
+				if (startedBuilder_ == null) {
+					if (started_ != null) {
+						started_ = com.google.protobuf.Timestamp.newBuilder(started_).mergeFrom(value).buildPartial();
+					} else {
+						started_ = value;
+					}
+					onChanged();
+				} else {
+					startedBuilder_.mergeFrom(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.google.protobuf.Timestamp started = 3;</code>
+			 */
+			public Builder clearStarted() {
+				if (startedBuilder_ == null) {
+					started_ = null;
+					onChanged();
+				} else {
+					started_ = null;
+					startedBuilder_ = null;
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.google.protobuf.Timestamp started = 3;</code>
+			 */
+			public com.google.protobuf.Timestamp.Builder getStartedBuilder() {
+
+				onChanged();
+				return getStartedFieldBuilder().getBuilder();
+			}
+
+			/**
+			 * <code>.google.protobuf.Timestamp started = 3;</code>
+			 */
+			public com.google.protobuf.TimestampOrBuilder getStartedOrBuilder() {
+				if (startedBuilder_ != null) {
+					return startedBuilder_.getMessageOrBuilder();
+				} else {
+					return started_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : started_;
+				}
+			}
+
+			/**
+			 * <code>.google.protobuf.Timestamp started = 3;</code>
+			 */
+			private com.google.protobuf.SingleFieldBuilderV3<com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> getStartedFieldBuilder() {
+				if (startedBuilder_ == null) {
+					startedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+							getStarted(), getParentForChildren(), isClean());
+					started_ = null;
+				}
+				return startedBuilder_;
+			}
+
+			private com.google.protobuf.Timestamp currentClock_ = null;
+			private com.google.protobuf.SingleFieldBuilderV3<com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> currentClockBuilder_;
+
+			/**
+			 * <pre>
+			 * ReplicaConfig replicaConfig = 4;
+			 * </pre>
+			 *
+			 * <code>.google.protobuf.Timestamp currentClock = 5;</code>
+			 */
+			public boolean hasCurrentClock() {
+				return currentClockBuilder_ != null || currentClock_ != null;
+			}
+
+			/**
+			 * <pre>
+			 * ReplicaConfig replicaConfig = 4;
+			 * </pre>
+			 *
+			 * <code>.google.protobuf.Timestamp currentClock = 5;</code>
+			 */
+			public com.google.protobuf.Timestamp getCurrentClock() {
+				if (currentClockBuilder_ == null) {
+					return currentClock_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : currentClock_;
+				} else {
+					return currentClockBuilder_.getMessage();
+				}
+			}
+
+			/**
+			 * <pre>
+			 * ReplicaConfig replicaConfig = 4;
+			 * </pre>
+			 *
+			 * <code>.google.protobuf.Timestamp currentClock = 5;</code>
+			 */
+			public Builder setCurrentClock(com.google.protobuf.Timestamp value) {
+				if (currentClockBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					currentClock_ = value;
+					onChanged();
+				} else {
+					currentClockBuilder_.setMessage(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <pre>
+			 * ReplicaConfig replicaConfig = 4;
+			 * </pre>
+			 *
+			 * <code>.google.protobuf.Timestamp currentClock = 5;</code>
+			 */
+			public Builder setCurrentClock(com.google.protobuf.Timestamp.Builder builderForValue) {
+				if (currentClockBuilder_ == null) {
+					currentClock_ = builderForValue.build();
+					onChanged();
+				} else {
+					currentClockBuilder_.setMessage(builderForValue.build());
+				}
+
+				return this;
+			}
+
+			/**
+			 * <pre>
+			 * ReplicaConfig replicaConfig = 4;
+			 * </pre>
+			 *
+			 * <code>.google.protobuf.Timestamp currentClock = 5;</code>
+			 */
+			public Builder mergeCurrentClock(com.google.protobuf.Timestamp value) {
+				if (currentClockBuilder_ == null) {
+					if (currentClock_ != null) {
+						currentClock_ = com.google.protobuf.Timestamp.newBuilder(currentClock_).mergeFrom(value)
+								.buildPartial();
+					} else {
+						currentClock_ = value;
+					}
+					onChanged();
+				} else {
+					currentClockBuilder_.mergeFrom(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <pre>
+			 * ReplicaConfig replicaConfig = 4;
+			 * </pre>
+			 *
+			 * <code>.google.protobuf.Timestamp currentClock = 5;</code>
+			 */
+			public Builder clearCurrentClock() {
+				if (currentClockBuilder_ == null) {
+					currentClock_ = null;
+					onChanged();
+				} else {
+					currentClock_ = null;
+					currentClockBuilder_ = null;
+				}
+
+				return this;
+			}
+
+			/**
+			 * <pre>
+			 * ReplicaConfig replicaConfig = 4;
+			 * </pre>
+			 *
+			 * <code>.google.protobuf.Timestamp currentClock = 5;</code>
+			 */
+			public com.google.protobuf.Timestamp.Builder getCurrentClockBuilder() {
+
+				onChanged();
+				return getCurrentClockFieldBuilder().getBuilder();
+			}
+
+			/**
+			 * <pre>
+			 * ReplicaConfig replicaConfig = 4;
+			 * </pre>
+			 *
+			 * <code>.google.protobuf.Timestamp currentClock = 5;</code>
+			 */
+			public com.google.protobuf.TimestampOrBuilder getCurrentClockOrBuilder() {
+				if (currentClockBuilder_ != null) {
+					return currentClockBuilder_.getMessageOrBuilder();
+				} else {
+					return currentClock_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : currentClock_;
+				}
+			}
+
+			/**
+			 * <pre>
+			 * ReplicaConfig replicaConfig = 4;
+			 * </pre>
+			 *
+			 * <code>.google.protobuf.Timestamp currentClock = 5;</code>
+			 */
+			private com.google.protobuf.SingleFieldBuilderV3<com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> getCurrentClockFieldBuilder() {
+				if (currentClockBuilder_ == null) {
+					currentClockBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+							getCurrentClock(), getParentForChildren(), isClean());
+					currentClock_ = null;
+				}
+				return currentClockBuilder_;
+			}
+
+			private calc.Cache.ReplicaCounters counters_ = null;
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Cache.ReplicaCounters, calc.Cache.ReplicaCounters.Builder, calc.Cache.ReplicaCountersOrBuilder> countersBuilder_;
+
+			/**
+			 * <code>.calc.ReplicaCounters counters = 10;</code>
+			 */
+			public boolean hasCounters() {
+				return countersBuilder_ != null || counters_ != null;
+			}
+
+			/**
+			 * <code>.calc.ReplicaCounters counters = 10;</code>
+			 */
+			public calc.Cache.ReplicaCounters getCounters() {
+				if (countersBuilder_ == null) {
+					return counters_ == null ? calc.Cache.ReplicaCounters.getDefaultInstance() : counters_;
+				} else {
+					return countersBuilder_.getMessage();
+				}
+			}
+
+			/**
+			 * <code>.calc.ReplicaCounters counters = 10;</code>
+			 */
+			public Builder setCounters(calc.Cache.ReplicaCounters value) {
+				if (countersBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					counters_ = value;
+					onChanged();
+				} else {
+					countersBuilder_.setMessage(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.ReplicaCounters counters = 10;</code>
+			 */
+			public Builder setCounters(calc.Cache.ReplicaCounters.Builder builderForValue) {
+				if (countersBuilder_ == null) {
+					counters_ = builderForValue.build();
+					onChanged();
+				} else {
+					countersBuilder_.setMessage(builderForValue.build());
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.ReplicaCounters counters = 10;</code>
+			 */
+			public Builder mergeCounters(calc.Cache.ReplicaCounters value) {
+				if (countersBuilder_ == null) {
+					if (counters_ != null) {
+						counters_ = calc.Cache.ReplicaCounters.newBuilder(counters_).mergeFrom(value).buildPartial();
+					} else {
+						counters_ = value;
+					}
+					onChanged();
+				} else {
+					countersBuilder_.mergeFrom(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.ReplicaCounters counters = 10;</code>
+			 */
+			public Builder clearCounters() {
+				if (countersBuilder_ == null) {
+					counters_ = null;
+					onChanged();
+				} else {
+					counters_ = null;
+					countersBuilder_ = null;
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.ReplicaCounters counters = 10;</code>
+			 */
+			public calc.Cache.ReplicaCounters.Builder getCountersBuilder() {
+
+				onChanged();
+				return getCountersFieldBuilder().getBuilder();
+			}
+
+			/**
+			 * <code>.calc.ReplicaCounters counters = 10;</code>
+			 */
+			public calc.Cache.ReplicaCountersOrBuilder getCountersOrBuilder() {
+				if (countersBuilder_ != null) {
+					return countersBuilder_.getMessageOrBuilder();
+				} else {
+					return counters_ == null ? calc.Cache.ReplicaCounters.getDefaultInstance() : counters_;
+				}
+			}
+
+			/**
+			 * <code>.calc.ReplicaCounters counters = 10;</code>
+			 */
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Cache.ReplicaCounters, calc.Cache.ReplicaCounters.Builder, calc.Cache.ReplicaCountersOrBuilder> getCountersFieldBuilder() {
+				if (countersBuilder_ == null) {
+					countersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<calc.Cache.ReplicaCounters, calc.Cache.ReplicaCounters.Builder, calc.Cache.ReplicaCountersOrBuilder>(
+							getCounters(), getParentForChildren(), isClean());
+					counters_ = null;
+				}
+				return countersBuilder_;
+			}
+
+			private calc.Cache.CollectedStats collectedStats_ = null;
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Cache.CollectedStats, calc.Cache.CollectedStats.Builder, calc.Cache.CollectedStatsOrBuilder> collectedStatsBuilder_;
+
+			/**
+			 * <code>.calc.CollectedStats collectedStats = 11;</code>
+			 */
+			public boolean hasCollectedStats() {
+				return collectedStatsBuilder_ != null || collectedStats_ != null;
+			}
+
+			/**
+			 * <code>.calc.CollectedStats collectedStats = 11;</code>
+			 */
+			public calc.Cache.CollectedStats getCollectedStats() {
+				if (collectedStatsBuilder_ == null) {
+					return collectedStats_ == null ? calc.Cache.CollectedStats.getDefaultInstance() : collectedStats_;
+				} else {
+					return collectedStatsBuilder_.getMessage();
+				}
+			}
+
+			/**
+			 * <code>.calc.CollectedStats collectedStats = 11;</code>
+			 */
+			public Builder setCollectedStats(calc.Cache.CollectedStats value) {
+				if (collectedStatsBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					collectedStats_ = value;
+					onChanged();
+				} else {
+					collectedStatsBuilder_.setMessage(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.CollectedStats collectedStats = 11;</code>
+			 */
+			public Builder setCollectedStats(calc.Cache.CollectedStats.Builder builderForValue) {
+				if (collectedStatsBuilder_ == null) {
+					collectedStats_ = builderForValue.build();
+					onChanged();
+				} else {
+					collectedStatsBuilder_.setMessage(builderForValue.build());
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.CollectedStats collectedStats = 11;</code>
+			 */
+			public Builder mergeCollectedStats(calc.Cache.CollectedStats value) {
+				if (collectedStatsBuilder_ == null) {
+					if (collectedStats_ != null) {
+						collectedStats_ = calc.Cache.CollectedStats.newBuilder(collectedStats_).mergeFrom(value)
+								.buildPartial();
+					} else {
+						collectedStats_ = value;
+					}
+					onChanged();
+				} else {
+					collectedStatsBuilder_.mergeFrom(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.CollectedStats collectedStats = 11;</code>
+			 */
+			public Builder clearCollectedStats() {
+				if (collectedStatsBuilder_ == null) {
+					collectedStats_ = null;
+					onChanged();
+				} else {
+					collectedStats_ = null;
+					collectedStatsBuilder_ = null;
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.CollectedStats collectedStats = 11;</code>
+			 */
+			public calc.Cache.CollectedStats.Builder getCollectedStatsBuilder() {
+
+				onChanged();
+				return getCollectedStatsFieldBuilder().getBuilder();
+			}
+
+			/**
+			 * <code>.calc.CollectedStats collectedStats = 11;</code>
+			 */
+			public calc.Cache.CollectedStatsOrBuilder getCollectedStatsOrBuilder() {
+				if (collectedStatsBuilder_ != null) {
+					return collectedStatsBuilder_.getMessageOrBuilder();
+				} else {
+					return collectedStats_ == null ? calc.Cache.CollectedStats.getDefaultInstance() : collectedStats_;
+				}
+			}
+
+			/**
+			 * <code>.calc.CollectedStats collectedStats = 11;</code>
+			 */
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Cache.CollectedStats, calc.Cache.CollectedStats.Builder, calc.Cache.CollectedStatsOrBuilder> getCollectedStatsFieldBuilder() {
+				if (collectedStatsBuilder_ == null) {
+					collectedStatsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<calc.Cache.CollectedStats, calc.Cache.CollectedStats.Builder, calc.Cache.CollectedStatsOrBuilder>(
+							getCollectedStats(), getParentForChildren(), isClean());
+					collectedStats_ = null;
+				}
+				return collectedStatsBuilder_;
+			}
+
+			private calc.Cache.ClusterStatus clusterStatus_ = null;
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Cache.ClusterStatus, calc.Cache.ClusterStatus.Builder, calc.Cache.ClusterStatusOrBuilder> clusterStatusBuilder_;
+
+			/**
+			 * <code>.calc.ClusterStatus clusterStatus = 12;</code>
+			 */
+			public boolean hasClusterStatus() {
+				return clusterStatusBuilder_ != null || clusterStatus_ != null;
+			}
+
+			/**
+			 * <code>.calc.ClusterStatus clusterStatus = 12;</code>
+			 */
+			public calc.Cache.ClusterStatus getClusterStatus() {
+				if (clusterStatusBuilder_ == null) {
+					return clusterStatus_ == null ? calc.Cache.ClusterStatus.getDefaultInstance() : clusterStatus_;
+				} else {
+					return clusterStatusBuilder_.getMessage();
+				}
+			}
+
+			/**
+			 * <code>.calc.ClusterStatus clusterStatus = 12;</code>
+			 */
+			public Builder setClusterStatus(calc.Cache.ClusterStatus value) {
+				if (clusterStatusBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					clusterStatus_ = value;
+					onChanged();
+				} else {
+					clusterStatusBuilder_.setMessage(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.ClusterStatus clusterStatus = 12;</code>
+			 */
+			public Builder setClusterStatus(calc.Cache.ClusterStatus.Builder builderForValue) {
+				if (clusterStatusBuilder_ == null) {
+					clusterStatus_ = builderForValue.build();
+					onChanged();
+				} else {
+					clusterStatusBuilder_.setMessage(builderForValue.build());
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.ClusterStatus clusterStatus = 12;</code>
+			 */
+			public Builder mergeClusterStatus(calc.Cache.ClusterStatus value) {
+				if (clusterStatusBuilder_ == null) {
+					if (clusterStatus_ != null) {
+						clusterStatus_ = calc.Cache.ClusterStatus.newBuilder(clusterStatus_).mergeFrom(value)
+								.buildPartial();
+					} else {
+						clusterStatus_ = value;
+					}
+					onChanged();
+				} else {
+					clusterStatusBuilder_.mergeFrom(value);
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.ClusterStatus clusterStatus = 12;</code>
+			 */
+			public Builder clearClusterStatus() {
+				if (clusterStatusBuilder_ == null) {
+					clusterStatus_ = null;
+					onChanged();
+				} else {
+					clusterStatus_ = null;
+					clusterStatusBuilder_ = null;
+				}
+
+				return this;
+			}
+
+			/**
+			 * <code>.calc.ClusterStatus clusterStatus = 12;</code>
+			 */
+			public calc.Cache.ClusterStatus.Builder getClusterStatusBuilder() {
+
+				onChanged();
+				return getClusterStatusFieldBuilder().getBuilder();
+			}
+
+			/**
+			 * <code>.calc.ClusterStatus clusterStatus = 12;</code>
+			 */
+			public calc.Cache.ClusterStatusOrBuilder getClusterStatusOrBuilder() {
+				if (clusterStatusBuilder_ != null) {
+					return clusterStatusBuilder_.getMessageOrBuilder();
+				} else {
+					return clusterStatus_ == null ? calc.Cache.ClusterStatus.getDefaultInstance() : clusterStatus_;
+				}
+			}
+
+			/**
+			 * <code>.calc.ClusterStatus clusterStatus = 12;</code>
+			 */
+			private com.google.protobuf.SingleFieldBuilderV3<calc.Cache.ClusterStatus, calc.Cache.ClusterStatus.Builder, calc.Cache.ClusterStatusOrBuilder> getClusterStatusFieldBuilder() {
+				if (clusterStatusBuilder_ == null) {
+					clusterStatusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<calc.Cache.ClusterStatus, calc.Cache.ClusterStatus.Builder, calc.Cache.ClusterStatusOrBuilder>(
+							getClusterStatus(), getParentForChildren(), isClean());
+					clusterStatus_ = null;
+				}
+				return clusterStatusBuilder_;
+			}
+
+			@java.lang.Override
+			public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.setUnknownFieldsProto3(unknownFields);
+			}
+
+			@java.lang.Override
+			public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.mergeUnknownFields(unknownFields);
+			}
+
+			// @@protoc_insertion_point(builder_scope:calc.ReplicaStatus)
+		}
+
+		// @@protoc_insertion_point(class_scope:calc.ReplicaStatus)
+		private static final calc.Cache.ReplicaStatus DEFAULT_INSTANCE;
+		static {
+			DEFAULT_INSTANCE = new calc.Cache.ReplicaStatus();
+		}
+
+		public static calc.Cache.ReplicaStatus getDefaultInstance() {
+			return DEFAULT_INSTANCE;
+		}
+
+		private static final com.google.protobuf.Parser<ReplicaStatus> PARSER = new com.google.protobuf.AbstractParser<ReplicaStatus>() {
+			@java.lang.Override
+			public ReplicaStatus parsePartialFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return new ReplicaStatus(input, extensionRegistry);
+			}
+		};
+
+		public static com.google.protobuf.Parser<ReplicaStatus> parser() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public com.google.protobuf.Parser<ReplicaStatus> getParserForType() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public calc.Cache.ReplicaStatus getDefaultInstanceForType() {
+			return DEFAULT_INSTANCE;
+		}
+
+	}
+
+	public interface ClusterStatusOrBuilder extends
+			// @@protoc_insertion_point(interface_extends:calc.ClusterStatus)
+			com.google.protobuf.MessageOrBuilder {
+
+		/**
+		 * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
+		 */
+		int getReplicasCount();
+
+		/**
+		 * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
+		 */
+		boolean containsReplicas(java.lang.String key);
+
+		/**
+		 * Use {@link #getReplicasMap()} instead.
+		 */
+		@java.lang.Deprecated
+		java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> getReplicas();
+
+		/**
+		 * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
+		 */
+		java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> getReplicasMap();
+
+		/**
+		 * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
+		 */
+
+		calc.Cache.ReplicaConnectionInfo getReplicasOrDefault(java.lang.String key,
+				calc.Cache.ReplicaConnectionInfo defaultValue);
+
+		/**
+		 * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
+		 */
+
+		calc.Cache.ReplicaConnectionInfo getReplicasOrThrow(java.lang.String key);
+	}
+
+	/**
+	 * Protobuf type {@code calc.ClusterStatus}
+	 */
+	public static final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3 implements
+			// @@protoc_insertion_point(message_implements:calc.ClusterStatus)
+			ClusterStatusOrBuilder {
+		private static final long serialVersionUID = 0L;
+
+		// Use ClusterStatus.newBuilder() to construct.
+		private ClusterStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+			super(builder);
+		}
+
+		private ClusterStatus() {
+		}
+
+		@java.lang.Override
+		public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+			return this.unknownFields;
+		}
+
+		private ClusterStatus(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			this();
+			if (extensionRegistry == null) {
+				throw new java.lang.NullPointerException();
+			}
+			int mutable_bitField0_ = 0;
+			com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+					.newBuilder();
+			try {
+				boolean done = false;
+				while (!done) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						done = true;
+						break;
+					case 10: {
+						if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+							replicas_ = com.google.protobuf.MapField
+									.newMapField(ReplicasDefaultEntryHolder.defaultEntry);
+							mutable_bitField0_ |= 0x00000001;
+						}
+						com.google.protobuf.MapEntry<java.lang.String, calc.Cache.ReplicaConnectionInfo> replicas__ = input
+								.readMessage(ReplicasDefaultEntryHolder.defaultEntry.getParserForType(),
+										extensionRegistry);
+						replicas_.getMutableMap().put(replicas__.getKey(), replicas__.getValue());
+						break;
+					}
+					default: {
+						if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+							done = true;
+						}
+						break;
+					}
+					}
+				}
+			} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+				throw e.setUnfinishedMessage(this);
+			} catch (java.io.IOException e) {
+				throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+			} finally {
+				this.unknownFields = unknownFields.build();
+				makeExtensionsImmutable();
+			}
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return calc.Cache.internal_static_calc_ClusterStatus_descriptor;
+		}
+
+		@SuppressWarnings({ "rawtypes" })
+		@java.lang.Override
+		protected com.google.protobuf.MapField internalGetMapField(int number) {
+			switch (number) {
+			case 1:
+				return internalGetReplicas();
+			default:
+				throw new RuntimeException("Invalid map field number: " + number);
+			}
+		}
+
+		@java.lang.Override
+		protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+			return calc.Cache.internal_static_calc_ClusterStatus_fieldAccessorTable.ensureFieldAccessorsInitialized(
+					calc.Cache.ClusterStatus.class, calc.Cache.ClusterStatus.Builder.class);
+		}
+
+		public static final int REPLICAS_FIELD_NUMBER = 1;
+
+		private static final class ReplicasDefaultEntryHolder {
+			static final com.google.protobuf.MapEntry<java.lang.String, calc.Cache.ReplicaConnectionInfo> defaultEntry = com.google.protobuf.MapEntry.<java.lang.String, calc.Cache.ReplicaConnectionInfo>newDefaultInstance(
+					calc.Cache.internal_static_calc_ClusterStatus_ReplicasEntry_descriptor,
+					com.google.protobuf.WireFormat.FieldType.STRING, "",
+					com.google.protobuf.WireFormat.FieldType.MESSAGE,
+					calc.Cache.ReplicaConnectionInfo.getDefaultInstance());
+		}
+
+		private com.google.protobuf.MapField<java.lang.String, calc.Cache.ReplicaConnectionInfo> replicas_;
+
+		private com.google.protobuf.MapField<java.lang.String, calc.Cache.ReplicaConnectionInfo> internalGetReplicas() {
+			if (replicas_ == null) {
+				return com.google.protobuf.MapField.emptyMapField(ReplicasDefaultEntryHolder.defaultEntry);
+			}
+			return replicas_;
+		}
+
+		public int getReplicasCount() {
+			return internalGetReplicas().getMap().size();
+		}
+
+		/**
+		 * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
+		 */
+
+		public boolean containsReplicas(java.lang.String key) {
+			if (key == null) {
+				throw new java.lang.NullPointerException();
+			}
+			return internalGetReplicas().getMap().containsKey(key);
+		}
+
+		/**
+		 * Use {@link #getReplicasMap()} instead.
+		 */
+		@java.lang.Deprecated
+		public java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> getReplicas() {
+			return getReplicasMap();
+		}
+
+		/**
+		 * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
+		 */
+
+		public java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> getReplicasMap() {
+			return internalGetReplicas().getMap();
+		}
+
+		/**
+		 * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
+		 */
+
+		public calc.Cache.ReplicaConnectionInfo getReplicasOrDefault(java.lang.String key,
+				calc.Cache.ReplicaConnectionInfo defaultValue) {
+			if (key == null) {
+				throw new java.lang.NullPointerException();
+			}
+			java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> map = internalGetReplicas().getMap();
+			return map.containsKey(key) ? map.get(key) : defaultValue;
+		}
+
+		/**
+		 * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
+		 */
+
+		public calc.Cache.ReplicaConnectionInfo getReplicasOrThrow(java.lang.String key) {
+			if (key == null) {
+				throw new java.lang.NullPointerException();
+			}
+			java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> map = internalGetReplicas().getMap();
+			if (!map.containsKey(key)) {
+				throw new java.lang.IllegalArgumentException();
+			}
+			return map.get(key);
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		@java.lang.Override
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized == 1)
+				return true;
+			if (isInitialized == 0)
+				return false;
+
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		@java.lang.Override
+		public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+			com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(output, internalGetReplicas(),
+					ReplicasDefaultEntryHolder.defaultEntry, 1);
+			unknownFields.writeTo(output);
+		}
+
+		@java.lang.Override
+		public int getSerializedSize() {
+			int size = memoizedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			for (java.util.Map.Entry<java.lang.String, calc.Cache.ReplicaConnectionInfo> entry : internalGetReplicas()
+					.getMap().entrySet()) {
+				com.google.protobuf.MapEntry<java.lang.String, calc.Cache.ReplicaConnectionInfo> replicas__ = ReplicasDefaultEntryHolder.defaultEntry
+						.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build();
+				size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, replicas__);
+			}
+			size += unknownFields.getSerializedSize();
+			memoizedSize = size;
+			return size;
+		}
+
+		@java.lang.Override
+		public boolean equals(final java.lang.Object obj) {
+			if (obj == this) {
+				return true;
+			}
+			if (!(obj instanceof calc.Cache.ClusterStatus)) {
+				return super.equals(obj);
+			}
+			calc.Cache.ClusterStatus other = (calc.Cache.ClusterStatus) obj;
+
+			boolean result = true;
+			result = result && internalGetReplicas().equals(other.internalGetReplicas());
+			result = result && unknownFields.equals(other.unknownFields);
+			return result;
+		}
+
+		@java.lang.Override
+		public int hashCode() {
+			if (memoizedHashCode != 0) {
+				return memoizedHashCode;
+			}
+			int hash = 41;
+			hash = (19 * hash) + getDescriptor().hashCode();
+			if (!internalGetReplicas().getMap().isEmpty()) {
+				hash = (37 * hash) + REPLICAS_FIELD_NUMBER;
+				hash = (53 * hash) + internalGetReplicas().hashCode();
+			}
+			hash = (29 * hash) + unknownFields.hashCode();
+			memoizedHashCode = hash;
+			return hash;
+		}
+
+		public static calc.Cache.ClusterStatus parseFrom(java.nio.ByteBuffer data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.ClusterStatus parseFrom(java.nio.ByteBuffer data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.ClusterStatus parseFrom(com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.ClusterStatus parseFrom(com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.ClusterStatus parseFrom(byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.ClusterStatus parseFrom(byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.ClusterStatus parseFrom(java.io.InputStream input) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.ClusterStatus parseFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		public static calc.Cache.ClusterStatus parseDelimitedFrom(java.io.InputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.ClusterStatus parseDelimitedFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+					extensionRegistry);
+		}
+
+		public static calc.Cache.ClusterStatus parseFrom(com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.ClusterStatus parseFrom(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		@java.lang.Override
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder() {
+			return DEFAULT_INSTANCE.toBuilder();
+		}
+
+		public static Builder newBuilder(calc.Cache.ClusterStatus prototype) {
+			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+		}
+
+		@java.lang.Override
+		public Builder toBuilder() {
+			return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		/**
+		 * Protobuf type {@code calc.ClusterStatus}
+		 */
+		public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+				// @@protoc_insertion_point(builder_implements:calc.ClusterStatus)
+				calc.Cache.ClusterStatusOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return calc.Cache.internal_static_calc_ClusterStatus_descriptor;
+			}
+
+			@SuppressWarnings({ "rawtypes" })
+			protected com.google.protobuf.MapField internalGetMapField(int number) {
+				switch (number) {
+				case 1:
+					return internalGetReplicas();
+				default:
+					throw new RuntimeException("Invalid map field number: " + number);
+				}
+			}
+
+			@SuppressWarnings({ "rawtypes" })
+			protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+				switch (number) {
+				case 1:
+					return internalGetMutableReplicas();
+				default:
+					throw new RuntimeException("Invalid map field number: " + number);
+				}
+			}
+
+			@java.lang.Override
+			protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+				return calc.Cache.internal_static_calc_ClusterStatus_fieldAccessorTable.ensureFieldAccessorsInitialized(
+						calc.Cache.ClusterStatus.class, calc.Cache.ClusterStatus.Builder.class);
+			}
+
+			// Construct using calc.Cache.ClusterStatus.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+				}
+			}
+
+			@java.lang.Override
+			public Builder clear() {
+				super.clear();
+				internalGetMutableReplicas().clear();
+				return this;
+			}
+
+			@java.lang.Override
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return calc.Cache.internal_static_calc_ClusterStatus_descriptor;
+			}
+
+			@java.lang.Override
+			public calc.Cache.ClusterStatus getDefaultInstanceForType() {
+				return calc.Cache.ClusterStatus.getDefaultInstance();
+			}
+
+			@java.lang.Override
+			public calc.Cache.ClusterStatus build() {
+				calc.Cache.ClusterStatus result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			@java.lang.Override
+			public calc.Cache.ClusterStatus buildPartial() {
+				calc.Cache.ClusterStatus result = new calc.Cache.ClusterStatus(this);
+				int from_bitField0_ = bitField0_;
+				result.replicas_ = internalGetReplicas();
+				result.replicas_.makeImmutable();
+				onBuilt();
+				return result;
+			}
+
+			@java.lang.Override
+			public Builder clone() {
+				return (Builder) super.clone();
+			}
+
+			@java.lang.Override
+			public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+				return (Builder) super.setField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+				return (Builder) super.clearField(field);
+			}
+
+			@java.lang.Override
+			public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+				return (Builder) super.clearOneof(oneof);
+			}
+
+			@java.lang.Override
+			public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+					java.lang.Object value) {
+				return (Builder) super.setRepeatedField(field, index, value);
+			}
+
+			@java.lang.Override
+			public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+					java.lang.Object value) {
+				return (Builder) super.addRepeatedField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof calc.Cache.ClusterStatus) {
+					return mergeFrom((calc.Cache.ClusterStatus) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(calc.Cache.ClusterStatus other) {
+				if (other == calc.Cache.ClusterStatus.getDefaultInstance())
+					return this;
+				internalGetMutableReplicas().mergeFrom(other.internalGetReplicas());
+				this.mergeUnknownFields(other.unknownFields);
+				onChanged();
+				return this;
+			}
+
+			@java.lang.Override
+			public final boolean isInitialized() {
+				return true;
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+				calc.Cache.ClusterStatus parsedMessage = null;
+				try {
+					parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+				} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+					parsedMessage = (calc.Cache.ClusterStatus) e.getUnfinishedMessage();
+					throw e.unwrapIOException();
+				} finally {
+					if (parsedMessage != null) {
+						mergeFrom(parsedMessage);
+					}
+				}
+				return this;
+			}
+
+			private int bitField0_;
+
+			private com.google.protobuf.MapField<java.lang.String, calc.Cache.ReplicaConnectionInfo> replicas_;
+
+			private com.google.protobuf.MapField<java.lang.String, calc.Cache.ReplicaConnectionInfo> internalGetReplicas() {
+				if (replicas_ == null) {
+					return com.google.protobuf.MapField.emptyMapField(ReplicasDefaultEntryHolder.defaultEntry);
+				}
+				return replicas_;
+			}
+
+			private com.google.protobuf.MapField<java.lang.String, calc.Cache.ReplicaConnectionInfo> internalGetMutableReplicas() {
+				onChanged();
+				;
+				if (replicas_ == null) {
+					replicas_ = com.google.protobuf.MapField.newMapField(ReplicasDefaultEntryHolder.defaultEntry);
+				}
+				if (!replicas_.isMutable()) {
+					replicas_ = replicas_.copy();
+				}
+				return replicas_;
+			}
+
+			public int getReplicasCount() {
+				return internalGetReplicas().getMap().size();
+			}
+
+			/**
+			 * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
+			 */
+
+			public boolean containsReplicas(java.lang.String key) {
+				if (key == null) {
+					throw new java.lang.NullPointerException();
+				}
+				return internalGetReplicas().getMap().containsKey(key);
+			}
+
+			/**
+			 * Use {@link #getReplicasMap()} instead.
+			 */
+			@java.lang.Deprecated
+			public java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> getReplicas() {
+				return getReplicasMap();
+			}
+
+			/**
+			 * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
+			 */
+
+			public java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> getReplicasMap() {
+				return internalGetReplicas().getMap();
+			}
+
+			/**
+			 * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
+			 */
+
+			public calc.Cache.ReplicaConnectionInfo getReplicasOrDefault(java.lang.String key,
+					calc.Cache.ReplicaConnectionInfo defaultValue) {
+				if (key == null) {
+					throw new java.lang.NullPointerException();
+				}
+				java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> map = internalGetReplicas().getMap();
+				return map.containsKey(key) ? map.get(key) : defaultValue;
+			}
+
+			/**
+			 * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
+			 */
+
+			public calc.Cache.ReplicaConnectionInfo getReplicasOrThrow(java.lang.String key) {
+				if (key == null) {
+					throw new java.lang.NullPointerException();
+				}
+				java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> map = internalGetReplicas().getMap();
+				if (!map.containsKey(key)) {
+					throw new java.lang.IllegalArgumentException();
+				}
+				return map.get(key);
+			}
+
+			public Builder clearReplicas() {
+				internalGetMutableReplicas().getMutableMap().clear();
+				return this;
+			}
+
+			/**
+			 * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
+			 */
+
+			public Builder removeReplicas(java.lang.String key) {
+				if (key == null) {
+					throw new java.lang.NullPointerException();
+				}
+				internalGetMutableReplicas().getMutableMap().remove(key);
+				return this;
+			}
+
+			/**
+			 * Use alternate mutation accessors instead.
+			 */
+			@java.lang.Deprecated
+			public java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> getMutableReplicas() {
+				return internalGetMutableReplicas().getMutableMap();
+			}
+
+			/**
+			 * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
+			 */
+			public Builder putReplicas(java.lang.String key, calc.Cache.ReplicaConnectionInfo value) {
+				if (key == null) {
+					throw new java.lang.NullPointerException();
+				}
+				if (value == null) {
+					throw new java.lang.NullPointerException();
+				}
+				internalGetMutableReplicas().getMutableMap().put(key, value);
+				return this;
+			}
+
+			/**
+			 * <code>map&lt;string, .calc.ReplicaConnectionInfo&gt; replicas = 1;</code>
+			 */
+
+			public Builder putAllReplicas(java.util.Map<java.lang.String, calc.Cache.ReplicaConnectionInfo> values) {
+				internalGetMutableReplicas().getMutableMap().putAll(values);
+				return this;
+			}
+
+			@java.lang.Override
+			public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.setUnknownFieldsProto3(unknownFields);
+			}
+
+			@java.lang.Override
+			public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.mergeUnknownFields(unknownFields);
+			}
+
+			// @@protoc_insertion_point(builder_scope:calc.ClusterStatus)
+		}
+
+		// @@protoc_insertion_point(class_scope:calc.ClusterStatus)
+		private static final calc.Cache.ClusterStatus DEFAULT_INSTANCE;
+		static {
+			DEFAULT_INSTANCE = new calc.Cache.ClusterStatus();
+		}
+
+		public static calc.Cache.ClusterStatus getDefaultInstance() {
+			return DEFAULT_INSTANCE;
+		}
+
+		private static final com.google.protobuf.Parser<ClusterStatus> PARSER = new com.google.protobuf.AbstractParser<ClusterStatus>() {
+			@java.lang.Override
+			public ClusterStatus parsePartialFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return new ClusterStatus(input, extensionRegistry);
+			}
+		};
+
+		public static com.google.protobuf.Parser<ClusterStatus> parser() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public com.google.protobuf.Parser<ClusterStatus> getParserForType() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public calc.Cache.ClusterStatus getDefaultInstanceForType() {
+			return DEFAULT_INSTANCE;
+		}
+
+	}
+
+	public interface ReplicaConnectionInfoOrBuilder extends
+			// @@protoc_insertion_point(interface_extends:calc.ReplicaConnectionInfo)
+			com.google.protobuf.MessageOrBuilder {
+
+		/**
+		 * <code>string host = 1;</code>
+		 */
+		java.lang.String getHost();
+
+		/**
+		 * <code>string host = 1;</code>
+		 */
+		com.google.protobuf.ByteString getHostBytes();
+
+		/**
+		 * <pre>
+		 * Some other metadata?
+		 * </pre>
+		 *
+		 * <code>uint32 port = 2;</code>
+		 */
+		int getPort();
+	}
+
+	/**
+	 * Protobuf type {@code calc.ReplicaConnectionInfo}
+	 */
+	public static final class ReplicaConnectionInfo extends com.google.protobuf.GeneratedMessageV3 implements
+			// @@protoc_insertion_point(message_implements:calc.ReplicaConnectionInfo)
+			ReplicaConnectionInfoOrBuilder {
+		private static final long serialVersionUID = 0L;
+
+		// Use ReplicaConnectionInfo.newBuilder() to construct.
+		private ReplicaConnectionInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+			super(builder);
+		}
+
+		private ReplicaConnectionInfo() {
+			host_ = "";
+			port_ = 0;
+		}
+
+		@java.lang.Override
+		public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+			return this.unknownFields;
+		}
+
+		private ReplicaConnectionInfo(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			this();
+			if (extensionRegistry == null) {
+				throw new java.lang.NullPointerException();
+			}
+			int mutable_bitField0_ = 0;
+			com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+					.newBuilder();
+			try {
+				boolean done = false;
+				while (!done) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						done = true;
+						break;
+					case 10: {
+						java.lang.String s = input.readStringRequireUtf8();
+
+						host_ = s;
+						break;
+					}
+					case 16: {
+
+						port_ = input.readUInt32();
+						break;
+					}
+					default: {
+						if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+							done = true;
+						}
+						break;
+					}
+					}
+				}
+			} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+				throw e.setUnfinishedMessage(this);
+			} catch (java.io.IOException e) {
+				throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+			} finally {
+				this.unknownFields = unknownFields.build();
+				makeExtensionsImmutable();
+			}
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return calc.Cache.internal_static_calc_ReplicaConnectionInfo_descriptor;
+		}
+
+		@java.lang.Override
+		protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+			return calc.Cache.internal_static_calc_ReplicaConnectionInfo_fieldAccessorTable
+					.ensureFieldAccessorsInitialized(calc.Cache.ReplicaConnectionInfo.class,
+							calc.Cache.ReplicaConnectionInfo.Builder.class);
+		}
+
+		public static final int HOST_FIELD_NUMBER = 1;
+		private volatile java.lang.Object host_;
+
+		/**
+		 * <code>string host = 1;</code>
+		 */
+		public java.lang.String getHost() {
+			java.lang.Object ref = host_;
+			if (ref instanceof java.lang.String) {
+				return (java.lang.String) ref;
+			} else {
+				com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+				java.lang.String s = bs.toStringUtf8();
+				host_ = s;
+				return s;
+			}
+		}
+
+		/**
+		 * <code>string host = 1;</code>
+		 */
+		public com.google.protobuf.ByteString getHostBytes() {
+			java.lang.Object ref = host_;
+			if (ref instanceof java.lang.String) {
+				com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+				host_ = b;
+				return b;
+			} else {
+				return (com.google.protobuf.ByteString) ref;
+			}
+		}
+
+		public static final int PORT_FIELD_NUMBER = 2;
+		private int port_;
+
+		/**
+		 * <pre>
+		 * Some other metadata?
+		 * </pre>
+		 *
+		 * <code>uint32 port = 2;</code>
+		 */
+		public int getPort() {
+			return port_;
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		@java.lang.Override
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized == 1)
+				return true;
+			if (isInitialized == 0)
+				return false;
+
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		@java.lang.Override
+		public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+			if (!getHostBytes().isEmpty()) {
+				com.google.protobuf.GeneratedMessageV3.writeString(output, 1, host_);
+			}
+			if (port_ != 0) {
+				output.writeUInt32(2, port_);
+			}
+			unknownFields.writeTo(output);
+		}
+
+		@java.lang.Override
+		public int getSerializedSize() {
+			int size = memoizedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			if (!getHostBytes().isEmpty()) {
+				size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, host_);
+			}
+			if (port_ != 0) {
+				size += com.google.protobuf.CodedOutputStream.computeUInt32Size(2, port_);
+			}
+			size += unknownFields.getSerializedSize();
+			memoizedSize = size;
+			return size;
+		}
+
+		@java.lang.Override
+		public boolean equals(final java.lang.Object obj) {
+			if (obj == this) {
+				return true;
+			}
+			if (!(obj instanceof calc.Cache.ReplicaConnectionInfo)) {
+				return super.equals(obj);
+			}
+			calc.Cache.ReplicaConnectionInfo other = (calc.Cache.ReplicaConnectionInfo) obj;
+
+			boolean result = true;
+			result = result && getHost().equals(other.getHost());
+			result = result && (getPort() == other.getPort());
+			result = result && unknownFields.equals(other.unknownFields);
+			return result;
+		}
+
+		@java.lang.Override
+		public int hashCode() {
+			if (memoizedHashCode != 0) {
+				return memoizedHashCode;
+			}
+			int hash = 41;
+			hash = (19 * hash) + getDescriptor().hashCode();
+			hash = (37 * hash) + HOST_FIELD_NUMBER;
+			hash = (53 * hash) + getHost().hashCode();
+			hash = (37 * hash) + PORT_FIELD_NUMBER;
+			hash = (53 * hash) + getPort();
+			hash = (29 * hash) + unknownFields.hashCode();
+			memoizedHashCode = hash;
+			return hash;
+		}
+
+		public static calc.Cache.ReplicaConnectionInfo parseFrom(java.nio.ByteBuffer data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.ReplicaConnectionInfo parseFrom(java.nio.ByteBuffer data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.ReplicaConnectionInfo parseFrom(com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.ReplicaConnectionInfo parseFrom(com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.ReplicaConnectionInfo parseFrom(byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.ReplicaConnectionInfo parseFrom(byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.ReplicaConnectionInfo parseFrom(java.io.InputStream input) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.ReplicaConnectionInfo parseFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		public static calc.Cache.ReplicaConnectionInfo parseDelimitedFrom(java.io.InputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.ReplicaConnectionInfo parseDelimitedFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+					extensionRegistry);
+		}
+
+		public static calc.Cache.ReplicaConnectionInfo parseFrom(com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.ReplicaConnectionInfo parseFrom(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		@java.lang.Override
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder() {
+			return DEFAULT_INSTANCE.toBuilder();
+		}
+
+		public static Builder newBuilder(calc.Cache.ReplicaConnectionInfo prototype) {
+			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+		}
+
+		@java.lang.Override
+		public Builder toBuilder() {
+			return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		/**
+		 * Protobuf type {@code calc.ReplicaConnectionInfo}
+		 */
+		public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+				// @@protoc_insertion_point(builder_implements:calc.ReplicaConnectionInfo)
+				calc.Cache.ReplicaConnectionInfoOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return calc.Cache.internal_static_calc_ReplicaConnectionInfo_descriptor;
+			}
+
+			@java.lang.Override
+			protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+				return calc.Cache.internal_static_calc_ReplicaConnectionInfo_fieldAccessorTable
+						.ensureFieldAccessorsInitialized(calc.Cache.ReplicaConnectionInfo.class,
+								calc.Cache.ReplicaConnectionInfo.Builder.class);
+			}
+
+			// Construct using calc.Cache.ReplicaConnectionInfo.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+				}
+			}
+
+			@java.lang.Override
+			public Builder clear() {
+				super.clear();
+				host_ = "";
+
+				port_ = 0;
+
+				return this;
+			}
+
+			@java.lang.Override
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return calc.Cache.internal_static_calc_ReplicaConnectionInfo_descriptor;
+			}
+
+			@java.lang.Override
+			public calc.Cache.ReplicaConnectionInfo getDefaultInstanceForType() {
+				return calc.Cache.ReplicaConnectionInfo.getDefaultInstance();
+			}
+
+			@java.lang.Override
+			public calc.Cache.ReplicaConnectionInfo build() {
+				calc.Cache.ReplicaConnectionInfo result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			@java.lang.Override
+			public calc.Cache.ReplicaConnectionInfo buildPartial() {
+				calc.Cache.ReplicaConnectionInfo result = new calc.Cache.ReplicaConnectionInfo(this);
+				result.host_ = host_;
+				result.port_ = port_;
+				onBuilt();
+				return result;
+			}
+
+			@java.lang.Override
+			public Builder clone() {
+				return (Builder) super.clone();
+			}
+
+			@java.lang.Override
+			public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+				return (Builder) super.setField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+				return (Builder) super.clearField(field);
+			}
+
+			@java.lang.Override
+			public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+				return (Builder) super.clearOneof(oneof);
+			}
+
+			@java.lang.Override
+			public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+					java.lang.Object value) {
+				return (Builder) super.setRepeatedField(field, index, value);
+			}
+
+			@java.lang.Override
+			public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+					java.lang.Object value) {
+				return (Builder) super.addRepeatedField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof calc.Cache.ReplicaConnectionInfo) {
+					return mergeFrom((calc.Cache.ReplicaConnectionInfo) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(calc.Cache.ReplicaConnectionInfo other) {
+				if (other == calc.Cache.ReplicaConnectionInfo.getDefaultInstance())
+					return this;
+				if (!other.getHost().isEmpty()) {
+					host_ = other.host_;
+					onChanged();
+				}
+				if (other.getPort() != 0) {
+					setPort(other.getPort());
+				}
+				this.mergeUnknownFields(other.unknownFields);
+				onChanged();
+				return this;
+			}
+
+			@java.lang.Override
+			public final boolean isInitialized() {
+				return true;
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+				calc.Cache.ReplicaConnectionInfo parsedMessage = null;
+				try {
+					parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+				} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+					parsedMessage = (calc.Cache.ReplicaConnectionInfo) e.getUnfinishedMessage();
+					throw e.unwrapIOException();
+				} finally {
+					if (parsedMessage != null) {
+						mergeFrom(parsedMessage);
+					}
+				}
+				return this;
+			}
+
+			private java.lang.Object host_ = "";
+
+			/**
+			 * <code>string host = 1;</code>
+			 */
+			public java.lang.String getHost() {
+				java.lang.Object ref = host_;
+				if (!(ref instanceof java.lang.String)) {
+					com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+					java.lang.String s = bs.toStringUtf8();
+					host_ = s;
+					return s;
+				} else {
+					return (java.lang.String) ref;
+				}
+			}
+
+			/**
+			 * <code>string host = 1;</code>
+			 */
+			public com.google.protobuf.ByteString getHostBytes() {
+				java.lang.Object ref = host_;
+				if (ref instanceof String) {
+					com.google.protobuf.ByteString b = com.google.protobuf.ByteString
+							.copyFromUtf8((java.lang.String) ref);
+					host_ = b;
+					return b;
+				} else {
+					return (com.google.protobuf.ByteString) ref;
+				}
+			}
+
+			/**
+			 * <code>string host = 1;</code>
+			 */
+			public Builder setHost(java.lang.String value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+
+				host_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>string host = 1;</code>
+			 */
+			public Builder clearHost() {
+
+				host_ = getDefaultInstance().getHost();
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>string host = 1;</code>
+			 */
+			public Builder setHostBytes(com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				checkByteStringIsUtf8(value);
+
+				host_ = value;
+				onChanged();
+				return this;
+			}
+
+			private int port_;
+
+			/**
+			 * <pre>
+			 * Some other metadata?
+			 * </pre>
+			 *
+			 * <code>uint32 port = 2;</code>
+			 */
+			public int getPort() {
+				return port_;
+			}
+
+			/**
+			 * <pre>
+			 * Some other metadata?
+			 * </pre>
+			 *
+			 * <code>uint32 port = 2;</code>
+			 */
+			public Builder setPort(int value) {
+
+				port_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <pre>
+			 * Some other metadata?
+			 * </pre>
+			 *
+			 * <code>uint32 port = 2;</code>
+			 */
+			public Builder clearPort() {
+
+				port_ = 0;
+				onChanged();
+				return this;
+			}
+
+			@java.lang.Override
+			public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.setUnknownFieldsProto3(unknownFields);
+			}
+
+			@java.lang.Override
+			public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.mergeUnknownFields(unknownFields);
+			}
+
+			// @@protoc_insertion_point(builder_scope:calc.ReplicaConnectionInfo)
+		}
+
+		// @@protoc_insertion_point(class_scope:calc.ReplicaConnectionInfo)
+		private static final calc.Cache.ReplicaConnectionInfo DEFAULT_INSTANCE;
+		static {
+			DEFAULT_INSTANCE = new calc.Cache.ReplicaConnectionInfo();
+		}
+
+		public static calc.Cache.ReplicaConnectionInfo getDefaultInstance() {
+			return DEFAULT_INSTANCE;
+		}
+
+		private static final com.google.protobuf.Parser<ReplicaConnectionInfo> PARSER = new com.google.protobuf.AbstractParser<ReplicaConnectionInfo>() {
+			@java.lang.Override
+			public ReplicaConnectionInfo parsePartialFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return new ReplicaConnectionInfo(input, extensionRegistry);
+			}
+		};
+
+		public static com.google.protobuf.Parser<ReplicaConnectionInfo> parser() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public com.google.protobuf.Parser<ReplicaConnectionInfo> getParserForType() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public calc.Cache.ReplicaConnectionInfo getDefaultInstanceForType() {
+			return DEFAULT_INSTANCE;
+		}
+
+	}
+
+	public interface ReplicaCountersOrBuilder extends
+			// @@protoc_insertion_point(interface_extends:calc.ReplicaCounters)
+			com.google.protobuf.MessageOrBuilder {
+
+		/**
+		 * <code>uint64 addsCounter = 1;</code>
+		 */
+		long getAddsCounter();
+
+		/**
+		 * <code>uint64 deletesCounter = 2;</code>
+		 */
+		long getDeletesCounter();
+
+		/**
+		 * <code>uint64 copysCounter = 3;</code>
+		 */
+		long getCopysCounter();
+
+		/**
+		 * <code>uint64 getCounter = 4;</code>
+		 */
+		long getGetCounter();
+
+		/**
+		 * <code>uint64 containsCounter = 5;</code>
+		 */
+		long getContainsCounter();
+
+		/**
+		 * <code>uint64 keySearchCounter = 6;</code>
+		 */
+		long getKeySearchCounter();
+
+		/**
+		 * <code>uint64 metadataSearchCounter = 7;</code>
+		 */
+		long getMetadataSearchCounter();
+
+		/**
+		 * <code>uint64 pageSearchCounter = 8;</code>
+		 */
+		long getPageSearchCounter();
+
+		/**
+		 * <code>uint32 largestKeySize = 10;</code>
+		 */
+		int getLargestKeySize();
+
+		/**
+		 * <code>uint32 largestValueSize = 11;</code>
+		 */
+		int getLargestValueSize();
+
+		/**
+		 * <code>uint64 replicatedAdds = 15;</code>
+		 */
+		long getReplicatedAdds();
+
+		/**
+		 * <code>uint64 replicatedDeletes = 16;</code>
+		 */
+		long getReplicatedDeletes();
+	}
+
+	/**
+	 * Protobuf type {@code calc.ReplicaCounters}
+	 */
+	public static final class ReplicaCounters extends com.google.protobuf.GeneratedMessageV3 implements
+			// @@protoc_insertion_point(message_implements:calc.ReplicaCounters)
+			ReplicaCountersOrBuilder {
+		private static final long serialVersionUID = 0L;
+
+		// Use ReplicaCounters.newBuilder() to construct.
+		private ReplicaCounters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+			super(builder);
+		}
+
+		private ReplicaCounters() {
+			addsCounter_ = 0L;
+			deletesCounter_ = 0L;
+			copysCounter_ = 0L;
+			getCounter_ = 0L;
+			containsCounter_ = 0L;
+			keySearchCounter_ = 0L;
+			metadataSearchCounter_ = 0L;
+			pageSearchCounter_ = 0L;
+			largestKeySize_ = 0;
+			largestValueSize_ = 0;
+			replicatedAdds_ = 0L;
+			replicatedDeletes_ = 0L;
+		}
+
+		@java.lang.Override
+		public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+			return this.unknownFields;
+		}
+
+		private ReplicaCounters(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			this();
+			if (extensionRegistry == null) {
+				throw new java.lang.NullPointerException();
+			}
+			int mutable_bitField0_ = 0;
+			com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+					.newBuilder();
+			try {
+				boolean done = false;
+				while (!done) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						done = true;
+						break;
+					case 8: {
+
+						addsCounter_ = input.readUInt64();
+						break;
+					}
+					case 16: {
+
+						deletesCounter_ = input.readUInt64();
+						break;
+					}
+					case 24: {
+
+						copysCounter_ = input.readUInt64();
+						break;
+					}
+					case 32: {
+
+						getCounter_ = input.readUInt64();
+						break;
+					}
+					case 40: {
+
+						containsCounter_ = input.readUInt64();
+						break;
+					}
+					case 48: {
+
+						keySearchCounter_ = input.readUInt64();
+						break;
+					}
+					case 56: {
+
+						metadataSearchCounter_ = input.readUInt64();
+						break;
+					}
+					case 64: {
+
+						pageSearchCounter_ = input.readUInt64();
+						break;
+					}
+					case 80: {
+
+						largestKeySize_ = input.readUInt32();
+						break;
+					}
+					case 88: {
+
+						largestValueSize_ = input.readUInt32();
+						break;
+					}
+					case 120: {
+
+						replicatedAdds_ = input.readUInt64();
+						break;
+					}
+					case 128: {
+
+						replicatedDeletes_ = input.readUInt64();
+						break;
+					}
+					default: {
+						if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+							done = true;
+						}
+						break;
+					}
+					}
+				}
+			} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+				throw e.setUnfinishedMessage(this);
+			} catch (java.io.IOException e) {
+				throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+			} finally {
+				this.unknownFields = unknownFields.build();
+				makeExtensionsImmutable();
+			}
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return calc.Cache.internal_static_calc_ReplicaCounters_descriptor;
+		}
+
+		@java.lang.Override
+		protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+			return calc.Cache.internal_static_calc_ReplicaCounters_fieldAccessorTable.ensureFieldAccessorsInitialized(
+					calc.Cache.ReplicaCounters.class, calc.Cache.ReplicaCounters.Builder.class);
+		}
+
+		public static final int ADDSCOUNTER_FIELD_NUMBER = 1;
+		private long addsCounter_;
+
+		/**
+		 * <code>uint64 addsCounter = 1;</code>
+		 */
+		public long getAddsCounter() {
+			return addsCounter_;
+		}
+
+		public static final int DELETESCOUNTER_FIELD_NUMBER = 2;
+		private long deletesCounter_;
+
+		/**
+		 * <code>uint64 deletesCounter = 2;</code>
+		 */
+		public long getDeletesCounter() {
+			return deletesCounter_;
+		}
+
+		public static final int COPYSCOUNTER_FIELD_NUMBER = 3;
+		private long copysCounter_;
+
+		/**
+		 * <code>uint64 copysCounter = 3;</code>
+		 */
+		public long getCopysCounter() {
+			return copysCounter_;
+		}
+
+		public static final int GETCOUNTER_FIELD_NUMBER = 4;
+		private long getCounter_;
+
+		/**
+		 * <code>uint64 getCounter = 4;</code>
+		 */
+		public long getGetCounter() {
+			return getCounter_;
+		}
+
+		public static final int CONTAINSCOUNTER_FIELD_NUMBER = 5;
+		private long containsCounter_;
+
+		/**
+		 * <code>uint64 containsCounter = 5;</code>
+		 */
+		public long getContainsCounter() {
+			return containsCounter_;
+		}
+
+		public static final int KEYSEARCHCOUNTER_FIELD_NUMBER = 6;
+		private long keySearchCounter_;
+
+		/**
+		 * <code>uint64 keySearchCounter = 6;</code>
+		 */
+		public long getKeySearchCounter() {
+			return keySearchCounter_;
+		}
+
+		public static final int METADATASEARCHCOUNTER_FIELD_NUMBER = 7;
+		private long metadataSearchCounter_;
+
+		/**
+		 * <code>uint64 metadataSearchCounter = 7;</code>
+		 */
+		public long getMetadataSearchCounter() {
+			return metadataSearchCounter_;
+		}
+
+		public static final int PAGESEARCHCOUNTER_FIELD_NUMBER = 8;
+		private long pageSearchCounter_;
+
+		/**
+		 * <code>uint64 pageSearchCounter = 8;</code>
+		 */
+		public long getPageSearchCounter() {
+			return pageSearchCounter_;
+		}
+
+		public static final int LARGESTKEYSIZE_FIELD_NUMBER = 10;
+		private int largestKeySize_;
+
+		/**
+		 * <code>uint32 largestKeySize = 10;</code>
+		 */
+		public int getLargestKeySize() {
+			return largestKeySize_;
+		}
+
+		public static final int LARGESTVALUESIZE_FIELD_NUMBER = 11;
+		private int largestValueSize_;
+
+		/**
+		 * <code>uint32 largestValueSize = 11;</code>
+		 */
+		public int getLargestValueSize() {
+			return largestValueSize_;
+		}
+
+		public static final int REPLICATEDADDS_FIELD_NUMBER = 15;
+		private long replicatedAdds_;
+
+		/**
+		 * <code>uint64 replicatedAdds = 15;</code>
+		 */
+		public long getReplicatedAdds() {
+			return replicatedAdds_;
+		}
+
+		public static final int REPLICATEDDELETES_FIELD_NUMBER = 16;
+		private long replicatedDeletes_;
+
+		/**
+		 * <code>uint64 replicatedDeletes = 16;</code>
+		 */
+		public long getReplicatedDeletes() {
+			return replicatedDeletes_;
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		@java.lang.Override
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized == 1)
+				return true;
+			if (isInitialized == 0)
+				return false;
+
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		@java.lang.Override
+		public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+			if (addsCounter_ != 0L) {
+				output.writeUInt64(1, addsCounter_);
+			}
+			if (deletesCounter_ != 0L) {
+				output.writeUInt64(2, deletesCounter_);
+			}
+			if (copysCounter_ != 0L) {
+				output.writeUInt64(3, copysCounter_);
+			}
+			if (getCounter_ != 0L) {
+				output.writeUInt64(4, getCounter_);
+			}
+			if (containsCounter_ != 0L) {
+				output.writeUInt64(5, containsCounter_);
+			}
+			if (keySearchCounter_ != 0L) {
+				output.writeUInt64(6, keySearchCounter_);
+			}
+			if (metadataSearchCounter_ != 0L) {
+				output.writeUInt64(7, metadataSearchCounter_);
+			}
+			if (pageSearchCounter_ != 0L) {
+				output.writeUInt64(8, pageSearchCounter_);
+			}
+			if (largestKeySize_ != 0) {
+				output.writeUInt32(10, largestKeySize_);
+			}
+			if (largestValueSize_ != 0) {
+				output.writeUInt32(11, largestValueSize_);
+			}
+			if (replicatedAdds_ != 0L) {
+				output.writeUInt64(15, replicatedAdds_);
+			}
+			if (replicatedDeletes_ != 0L) {
+				output.writeUInt64(16, replicatedDeletes_);
+			}
+			unknownFields.writeTo(output);
+		}
+
+		@java.lang.Override
+		public int getSerializedSize() {
+			int size = memoizedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			if (addsCounter_ != 0L) {
+				size += com.google.protobuf.CodedOutputStream.computeUInt64Size(1, addsCounter_);
+			}
+			if (deletesCounter_ != 0L) {
+				size += com.google.protobuf.CodedOutputStream.computeUInt64Size(2, deletesCounter_);
+			}
+			if (copysCounter_ != 0L) {
+				size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3, copysCounter_);
+			}
+			if (getCounter_ != 0L) {
+				size += com.google.protobuf.CodedOutputStream.computeUInt64Size(4, getCounter_);
+			}
+			if (containsCounter_ != 0L) {
+				size += com.google.protobuf.CodedOutputStream.computeUInt64Size(5, containsCounter_);
+			}
+			if (keySearchCounter_ != 0L) {
+				size += com.google.protobuf.CodedOutputStream.computeUInt64Size(6, keySearchCounter_);
+			}
+			if (metadataSearchCounter_ != 0L) {
+				size += com.google.protobuf.CodedOutputStream.computeUInt64Size(7, metadataSearchCounter_);
+			}
+			if (pageSearchCounter_ != 0L) {
+				size += com.google.protobuf.CodedOutputStream.computeUInt64Size(8, pageSearchCounter_);
+			}
+			if (largestKeySize_ != 0) {
+				size += com.google.protobuf.CodedOutputStream.computeUInt32Size(10, largestKeySize_);
+			}
+			if (largestValueSize_ != 0) {
+				size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, largestValueSize_);
+			}
+			if (replicatedAdds_ != 0L) {
+				size += com.google.protobuf.CodedOutputStream.computeUInt64Size(15, replicatedAdds_);
+			}
+			if (replicatedDeletes_ != 0L) {
+				size += com.google.protobuf.CodedOutputStream.computeUInt64Size(16, replicatedDeletes_);
+			}
+			size += unknownFields.getSerializedSize();
+			memoizedSize = size;
+			return size;
+		}
+
+		@java.lang.Override
+		public boolean equals(final java.lang.Object obj) {
+			if (obj == this) {
+				return true;
+			}
+			if (!(obj instanceof calc.Cache.ReplicaCounters)) {
+				return super.equals(obj);
+			}
+			calc.Cache.ReplicaCounters other = (calc.Cache.ReplicaCounters) obj;
+
+			boolean result = true;
+			result = result && (getAddsCounter() == other.getAddsCounter());
+			result = result && (getDeletesCounter() == other.getDeletesCounter());
+			result = result && (getCopysCounter() == other.getCopysCounter());
+			result = result && (getGetCounter() == other.getGetCounter());
+			result = result && (getContainsCounter() == other.getContainsCounter());
+			result = result && (getKeySearchCounter() == other.getKeySearchCounter());
+			result = result && (getMetadataSearchCounter() == other.getMetadataSearchCounter());
+			result = result && (getPageSearchCounter() == other.getPageSearchCounter());
+			result = result && (getLargestKeySize() == other.getLargestKeySize());
+			result = result && (getLargestValueSize() == other.getLargestValueSize());
+			result = result && (getReplicatedAdds() == other.getReplicatedAdds());
+			result = result && (getReplicatedDeletes() == other.getReplicatedDeletes());
+			result = result && unknownFields.equals(other.unknownFields);
+			return result;
+		}
+
+		@java.lang.Override
+		public int hashCode() {
+			if (memoizedHashCode != 0) {
+				return memoizedHashCode;
+			}
+			int hash = 41;
+			hash = (19 * hash) + getDescriptor().hashCode();
+			hash = (37 * hash) + ADDSCOUNTER_FIELD_NUMBER;
+			hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAddsCounter());
+			hash = (37 * hash) + DELETESCOUNTER_FIELD_NUMBER;
+			hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDeletesCounter());
+			hash = (37 * hash) + COPYSCOUNTER_FIELD_NUMBER;
+			hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCopysCounter());
+			hash = (37 * hash) + GETCOUNTER_FIELD_NUMBER;
+			hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getGetCounter());
+			hash = (37 * hash) + CONTAINSCOUNTER_FIELD_NUMBER;
+			hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getContainsCounter());
+			hash = (37 * hash) + KEYSEARCHCOUNTER_FIELD_NUMBER;
+			hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getKeySearchCounter());
+			hash = (37 * hash) + METADATASEARCHCOUNTER_FIELD_NUMBER;
+			hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMetadataSearchCounter());
+			hash = (37 * hash) + PAGESEARCHCOUNTER_FIELD_NUMBER;
+			hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPageSearchCounter());
+			hash = (37 * hash) + LARGESTKEYSIZE_FIELD_NUMBER;
+			hash = (53 * hash) + getLargestKeySize();
+			hash = (37 * hash) + LARGESTVALUESIZE_FIELD_NUMBER;
+			hash = (53 * hash) + getLargestValueSize();
+			hash = (37 * hash) + REPLICATEDADDS_FIELD_NUMBER;
+			hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getReplicatedAdds());
+			hash = (37 * hash) + REPLICATEDDELETES_FIELD_NUMBER;
+			hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getReplicatedDeletes());
+			hash = (29 * hash) + unknownFields.hashCode();
+			memoizedHashCode = hash;
+			return hash;
+		}
+
+		public static calc.Cache.ReplicaCounters parseFrom(java.nio.ByteBuffer data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.ReplicaCounters parseFrom(java.nio.ByteBuffer data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.ReplicaCounters parseFrom(com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.ReplicaCounters parseFrom(com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.ReplicaCounters parseFrom(byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.ReplicaCounters parseFrom(byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.ReplicaCounters parseFrom(java.io.InputStream input) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.ReplicaCounters parseFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		public static calc.Cache.ReplicaCounters parseDelimitedFrom(java.io.InputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.ReplicaCounters parseDelimitedFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+					extensionRegistry);
+		}
+
+		public static calc.Cache.ReplicaCounters parseFrom(com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.ReplicaCounters parseFrom(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		@java.lang.Override
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder() {
+			return DEFAULT_INSTANCE.toBuilder();
+		}
+
+		public static Builder newBuilder(calc.Cache.ReplicaCounters prototype) {
+			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+		}
+
+		@java.lang.Override
+		public Builder toBuilder() {
+			return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		/**
+		 * Protobuf type {@code calc.ReplicaCounters}
+		 */
+		public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+				// @@protoc_insertion_point(builder_implements:calc.ReplicaCounters)
+				calc.Cache.ReplicaCountersOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return calc.Cache.internal_static_calc_ReplicaCounters_descriptor;
+			}
+
+			@java.lang.Override
+			protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+				return calc.Cache.internal_static_calc_ReplicaCounters_fieldAccessorTable
+						.ensureFieldAccessorsInitialized(calc.Cache.ReplicaCounters.class,
+								calc.Cache.ReplicaCounters.Builder.class);
+			}
+
+			// Construct using calc.Cache.ReplicaCounters.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+				}
+			}
+
+			@java.lang.Override
+			public Builder clear() {
+				super.clear();
+				addsCounter_ = 0L;
+
+				deletesCounter_ = 0L;
+
+				copysCounter_ = 0L;
+
+				getCounter_ = 0L;
+
+				containsCounter_ = 0L;
+
+				keySearchCounter_ = 0L;
+
+				metadataSearchCounter_ = 0L;
+
+				pageSearchCounter_ = 0L;
+
+				largestKeySize_ = 0;
+
+				largestValueSize_ = 0;
+
+				replicatedAdds_ = 0L;
+
+				replicatedDeletes_ = 0L;
+
+				return this;
+			}
+
+			@java.lang.Override
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return calc.Cache.internal_static_calc_ReplicaCounters_descriptor;
+			}
+
+			@java.lang.Override
+			public calc.Cache.ReplicaCounters getDefaultInstanceForType() {
+				return calc.Cache.ReplicaCounters.getDefaultInstance();
+			}
+
+			@java.lang.Override
+			public calc.Cache.ReplicaCounters build() {
+				calc.Cache.ReplicaCounters result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			@java.lang.Override
+			public calc.Cache.ReplicaCounters buildPartial() {
+				calc.Cache.ReplicaCounters result = new calc.Cache.ReplicaCounters(this);
+				result.addsCounter_ = addsCounter_;
+				result.deletesCounter_ = deletesCounter_;
+				result.copysCounter_ = copysCounter_;
+				result.getCounter_ = getCounter_;
+				result.containsCounter_ = containsCounter_;
+				result.keySearchCounter_ = keySearchCounter_;
+				result.metadataSearchCounter_ = metadataSearchCounter_;
+				result.pageSearchCounter_ = pageSearchCounter_;
+				result.largestKeySize_ = largestKeySize_;
+				result.largestValueSize_ = largestValueSize_;
+				result.replicatedAdds_ = replicatedAdds_;
+				result.replicatedDeletes_ = replicatedDeletes_;
+				onBuilt();
+				return result;
+			}
+
+			@java.lang.Override
+			public Builder clone() {
+				return (Builder) super.clone();
+			}
+
+			@java.lang.Override
+			public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+				return (Builder) super.setField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+				return (Builder) super.clearField(field);
+			}
+
+			@java.lang.Override
+			public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+				return (Builder) super.clearOneof(oneof);
+			}
+
+			@java.lang.Override
+			public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+					java.lang.Object value) {
+				return (Builder) super.setRepeatedField(field, index, value);
+			}
+
+			@java.lang.Override
+			public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+					java.lang.Object value) {
+				return (Builder) super.addRepeatedField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof calc.Cache.ReplicaCounters) {
+					return mergeFrom((calc.Cache.ReplicaCounters) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(calc.Cache.ReplicaCounters other) {
+				if (other == calc.Cache.ReplicaCounters.getDefaultInstance())
+					return this;
+				if (other.getAddsCounter() != 0L) {
+					setAddsCounter(other.getAddsCounter());
+				}
+				if (other.getDeletesCounter() != 0L) {
+					setDeletesCounter(other.getDeletesCounter());
+				}
+				if (other.getCopysCounter() != 0L) {
+					setCopysCounter(other.getCopysCounter());
+				}
+				if (other.getGetCounter() != 0L) {
+					setGetCounter(other.getGetCounter());
+				}
+				if (other.getContainsCounter() != 0L) {
+					setContainsCounter(other.getContainsCounter());
+				}
+				if (other.getKeySearchCounter() != 0L) {
+					setKeySearchCounter(other.getKeySearchCounter());
+				}
+				if (other.getMetadataSearchCounter() != 0L) {
+					setMetadataSearchCounter(other.getMetadataSearchCounter());
+				}
+				if (other.getPageSearchCounter() != 0L) {
+					setPageSearchCounter(other.getPageSearchCounter());
+				}
+				if (other.getLargestKeySize() != 0) {
+					setLargestKeySize(other.getLargestKeySize());
+				}
+				if (other.getLargestValueSize() != 0) {
+					setLargestValueSize(other.getLargestValueSize());
+				}
+				if (other.getReplicatedAdds() != 0L) {
+					setReplicatedAdds(other.getReplicatedAdds());
+				}
+				if (other.getReplicatedDeletes() != 0L) {
+					setReplicatedDeletes(other.getReplicatedDeletes());
+				}
+				this.mergeUnknownFields(other.unknownFields);
+				onChanged();
+				return this;
+			}
+
+			@java.lang.Override
+			public final boolean isInitialized() {
+				return true;
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+				calc.Cache.ReplicaCounters parsedMessage = null;
+				try {
+					parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+				} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+					parsedMessage = (calc.Cache.ReplicaCounters) e.getUnfinishedMessage();
+					throw e.unwrapIOException();
+				} finally {
+					if (parsedMessage != null) {
+						mergeFrom(parsedMessage);
+					}
+				}
+				return this;
+			}
+
+			private long addsCounter_;
+
+			/**
+			 * <code>uint64 addsCounter = 1;</code>
+			 */
+			public long getAddsCounter() {
+				return addsCounter_;
+			}
+
+			/**
+			 * <code>uint64 addsCounter = 1;</code>
+			 */
+			public Builder setAddsCounter(long value) {
+
+				addsCounter_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>uint64 addsCounter = 1;</code>
+			 */
+			public Builder clearAddsCounter() {
+
+				addsCounter_ = 0L;
+				onChanged();
+				return this;
+			}
+
+			private long deletesCounter_;
+
+			/**
+			 * <code>uint64 deletesCounter = 2;</code>
+			 */
+			public long getDeletesCounter() {
+				return deletesCounter_;
+			}
+
+			/**
+			 * <code>uint64 deletesCounter = 2;</code>
+			 */
+			public Builder setDeletesCounter(long value) {
+
+				deletesCounter_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>uint64 deletesCounter = 2;</code>
+			 */
+			public Builder clearDeletesCounter() {
+
+				deletesCounter_ = 0L;
+				onChanged();
+				return this;
+			}
+
+			private long copysCounter_;
+
+			/**
+			 * <code>uint64 copysCounter = 3;</code>
+			 */
+			public long getCopysCounter() {
+				return copysCounter_;
+			}
+
+			/**
+			 * <code>uint64 copysCounter = 3;</code>
+			 */
+			public Builder setCopysCounter(long value) {
+
+				copysCounter_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>uint64 copysCounter = 3;</code>
+			 */
+			public Builder clearCopysCounter() {
+
+				copysCounter_ = 0L;
+				onChanged();
+				return this;
+			}
+
+			private long getCounter_;
+
+			/**
+			 * <code>uint64 getCounter = 4;</code>
+			 */
+			public long getGetCounter() {
+				return getCounter_;
+			}
+
+			/**
+			 * <code>uint64 getCounter = 4;</code>
+			 */
+			public Builder setGetCounter(long value) {
+
+				getCounter_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>uint64 getCounter = 4;</code>
+			 */
+			public Builder clearGetCounter() {
+
+				getCounter_ = 0L;
+				onChanged();
+				return this;
+			}
+
+			private long containsCounter_;
+
+			/**
+			 * <code>uint64 containsCounter = 5;</code>
+			 */
+			public long getContainsCounter() {
+				return containsCounter_;
+			}
+
+			/**
+			 * <code>uint64 containsCounter = 5;</code>
+			 */
+			public Builder setContainsCounter(long value) {
+
+				containsCounter_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>uint64 containsCounter = 5;</code>
+			 */
+			public Builder clearContainsCounter() {
+
+				containsCounter_ = 0L;
+				onChanged();
+				return this;
+			}
+
+			private long keySearchCounter_;
+
+			/**
+			 * <code>uint64 keySearchCounter = 6;</code>
+			 */
+			public long getKeySearchCounter() {
+				return keySearchCounter_;
+			}
+
+			/**
+			 * <code>uint64 keySearchCounter = 6;</code>
+			 */
+			public Builder setKeySearchCounter(long value) {
+
+				keySearchCounter_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>uint64 keySearchCounter = 6;</code>
+			 */
+			public Builder clearKeySearchCounter() {
+
+				keySearchCounter_ = 0L;
+				onChanged();
+				return this;
+			}
+
+			private long metadataSearchCounter_;
+
+			/**
+			 * <code>uint64 metadataSearchCounter = 7;</code>
+			 */
+			public long getMetadataSearchCounter() {
+				return metadataSearchCounter_;
+			}
+
+			/**
+			 * <code>uint64 metadataSearchCounter = 7;</code>
+			 */
+			public Builder setMetadataSearchCounter(long value) {
+
+				metadataSearchCounter_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>uint64 metadataSearchCounter = 7;</code>
+			 */
+			public Builder clearMetadataSearchCounter() {
+
+				metadataSearchCounter_ = 0L;
+				onChanged();
+				return this;
+			}
+
+			private long pageSearchCounter_;
+
+			/**
+			 * <code>uint64 pageSearchCounter = 8;</code>
+			 */
+			public long getPageSearchCounter() {
+				return pageSearchCounter_;
+			}
+
+			/**
+			 * <code>uint64 pageSearchCounter = 8;</code>
+			 */
+			public Builder setPageSearchCounter(long value) {
+
+				pageSearchCounter_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>uint64 pageSearchCounter = 8;</code>
+			 */
+			public Builder clearPageSearchCounter() {
+
+				pageSearchCounter_ = 0L;
+				onChanged();
+				return this;
+			}
+
+			private int largestKeySize_;
+
+			/**
+			 * <code>uint32 largestKeySize = 10;</code>
+			 */
+			public int getLargestKeySize() {
+				return largestKeySize_;
+			}
+
+			/**
+			 * <code>uint32 largestKeySize = 10;</code>
+			 */
+			public Builder setLargestKeySize(int value) {
+
+				largestKeySize_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>uint32 largestKeySize = 10;</code>
+			 */
+			public Builder clearLargestKeySize() {
+
+				largestKeySize_ = 0;
+				onChanged();
+				return this;
+			}
+
+			private int largestValueSize_;
+
+			/**
+			 * <code>uint32 largestValueSize = 11;</code>
+			 */
+			public int getLargestValueSize() {
+				return largestValueSize_;
+			}
+
+			/**
+			 * <code>uint32 largestValueSize = 11;</code>
+			 */
+			public Builder setLargestValueSize(int value) {
+
+				largestValueSize_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>uint32 largestValueSize = 11;</code>
+			 */
+			public Builder clearLargestValueSize() {
+
+				largestValueSize_ = 0;
+				onChanged();
+				return this;
+			}
+
+			private long replicatedAdds_;
+
+			/**
+			 * <code>uint64 replicatedAdds = 15;</code>
+			 */
+			public long getReplicatedAdds() {
+				return replicatedAdds_;
+			}
+
+			/**
+			 * <code>uint64 replicatedAdds = 15;</code>
+			 */
+			public Builder setReplicatedAdds(long value) {
+
+				replicatedAdds_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>uint64 replicatedAdds = 15;</code>
+			 */
+			public Builder clearReplicatedAdds() {
+
+				replicatedAdds_ = 0L;
+				onChanged();
+				return this;
+			}
+
+			private long replicatedDeletes_;
+
+			/**
+			 * <code>uint64 replicatedDeletes = 16;</code>
+			 */
+			public long getReplicatedDeletes() {
+				return replicatedDeletes_;
+			}
+
+			/**
+			 * <code>uint64 replicatedDeletes = 16;</code>
+			 */
+			public Builder setReplicatedDeletes(long value) {
+
+				replicatedDeletes_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>uint64 replicatedDeletes = 16;</code>
+			 */
+			public Builder clearReplicatedDeletes() {
+
+				replicatedDeletes_ = 0L;
+				onChanged();
+				return this;
+			}
+
+			@java.lang.Override
+			public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.setUnknownFieldsProto3(unknownFields);
+			}
+
+			@java.lang.Override
+			public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.mergeUnknownFields(unknownFields);
+			}
+
+			// @@protoc_insertion_point(builder_scope:calc.ReplicaCounters)
+		}
+
+		// @@protoc_insertion_point(class_scope:calc.ReplicaCounters)
+		private static final calc.Cache.ReplicaCounters DEFAULT_INSTANCE;
+		static {
+			DEFAULT_INSTANCE = new calc.Cache.ReplicaCounters();
+		}
+
+		public static calc.Cache.ReplicaCounters getDefaultInstance() {
+			return DEFAULT_INSTANCE;
+		}
+
+		private static final com.google.protobuf.Parser<ReplicaCounters> PARSER = new com.google.protobuf.AbstractParser<ReplicaCounters>() {
+			@java.lang.Override
+			public ReplicaCounters parsePartialFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return new ReplicaCounters(input, extensionRegistry);
+			}
+		};
+
+		public static com.google.protobuf.Parser<ReplicaCounters> parser() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public com.google.protobuf.Parser<ReplicaCounters> getParserForType() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public calc.Cache.ReplicaCounters getDefaultInstanceForType() {
+			return DEFAULT_INSTANCE;
+		}
+
+	}
+
+	public interface CollectedStatsOrBuilder extends
+			// @@protoc_insertion_point(interface_extends:calc.CollectedStats)
+			com.google.protobuf.MessageOrBuilder {
+
+		/**
+		 * <code>uint64 nonExpiredKeys = 10;</code>
+		 */
+		long getNonExpiredKeys();
+
+		/**
+		 * <code>uint64 allKeys = 11;</code>
+		 */
+		long getAllKeys();
+
+		/**
+		 * <code>uint64 activeKeys = 12;</code>
+		 */
+		long getActiveKeys();
+
+		/**
+		 * <code>uint64 deletedKeys = 13;</code>
+		 */
+		long getDeletedKeys();
+
+		/**
+		 * <code>uint64 expiredKeys = 14;</code>
+		 */
+		long getExpiredKeys();
+	}
+
+	/**
+	 * Protobuf type {@code calc.CollectedStats}
+	 */
+	public static final class CollectedStats extends com.google.protobuf.GeneratedMessageV3 implements
+			// @@protoc_insertion_point(message_implements:calc.CollectedStats)
+			CollectedStatsOrBuilder {
+		private static final long serialVersionUID = 0L;
+
+		// Use CollectedStats.newBuilder() to construct.
+		private CollectedStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+			super(builder);
+		}
+
+		private CollectedStats() {
+			nonExpiredKeys_ = 0L;
+			allKeys_ = 0L;
+			activeKeys_ = 0L;
+			deletedKeys_ = 0L;
+			expiredKeys_ = 0L;
+		}
+
+		@java.lang.Override
+		public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+			return this.unknownFields;
+		}
+
+		private CollectedStats(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			this();
+			if (extensionRegistry == null) {
+				throw new java.lang.NullPointerException();
+			}
+			int mutable_bitField0_ = 0;
+			com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+					.newBuilder();
+			try {
+				boolean done = false;
+				while (!done) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						done = true;
+						break;
+					case 80: {
+
+						nonExpiredKeys_ = input.readUInt64();
+						break;
+					}
+					case 88: {
+
+						allKeys_ = input.readUInt64();
+						break;
+					}
+					case 96: {
+
+						activeKeys_ = input.readUInt64();
+						break;
+					}
+					case 104: {
+
+						deletedKeys_ = input.readUInt64();
+						break;
+					}
+					case 112: {
+
+						expiredKeys_ = input.readUInt64();
+						break;
+					}
+					default: {
+						if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+							done = true;
+						}
+						break;
+					}
+					}
+				}
+			} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+				throw e.setUnfinishedMessage(this);
+			} catch (java.io.IOException e) {
+				throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+			} finally {
+				this.unknownFields = unknownFields.build();
+				makeExtensionsImmutable();
+			}
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return calc.Cache.internal_static_calc_CollectedStats_descriptor;
+		}
+
+		@java.lang.Override
+		protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+			return calc.Cache.internal_static_calc_CollectedStats_fieldAccessorTable.ensureFieldAccessorsInitialized(
+					calc.Cache.CollectedStats.class, calc.Cache.CollectedStats.Builder.class);
+		}
+
+		public static final int NONEXPIREDKEYS_FIELD_NUMBER = 10;
+		private long nonExpiredKeys_;
+
+		/**
+		 * <code>uint64 nonExpiredKeys = 10;</code>
+		 */
+		public long getNonExpiredKeys() {
+			return nonExpiredKeys_;
+		}
+
+		public static final int ALLKEYS_FIELD_NUMBER = 11;
+		private long allKeys_;
+
+		/**
+		 * <code>uint64 allKeys = 11;</code>
+		 */
+		public long getAllKeys() {
+			return allKeys_;
+		}
+
+		public static final int ACTIVEKEYS_FIELD_NUMBER = 12;
+		private long activeKeys_;
+
+		/**
+		 * <code>uint64 activeKeys = 12;</code>
+		 */
+		public long getActiveKeys() {
+			return activeKeys_;
+		}
+
+		public static final int DELETEDKEYS_FIELD_NUMBER = 13;
+		private long deletedKeys_;
+
+		/**
+		 * <code>uint64 deletedKeys = 13;</code>
+		 */
+		public long getDeletedKeys() {
+			return deletedKeys_;
+		}
+
+		public static final int EXPIREDKEYS_FIELD_NUMBER = 14;
+		private long expiredKeys_;
+
+		/**
+		 * <code>uint64 expiredKeys = 14;</code>
+		 */
+		public long getExpiredKeys() {
+			return expiredKeys_;
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		@java.lang.Override
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized == 1)
+				return true;
+			if (isInitialized == 0)
+				return false;
+
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		@java.lang.Override
+		public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+			if (nonExpiredKeys_ != 0L) {
+				output.writeUInt64(10, nonExpiredKeys_);
+			}
+			if (allKeys_ != 0L) {
+				output.writeUInt64(11, allKeys_);
+			}
+			if (activeKeys_ != 0L) {
+				output.writeUInt64(12, activeKeys_);
+			}
+			if (deletedKeys_ != 0L) {
+				output.writeUInt64(13, deletedKeys_);
+			}
+			if (expiredKeys_ != 0L) {
+				output.writeUInt64(14, expiredKeys_);
+			}
+			unknownFields.writeTo(output);
+		}
+
+		@java.lang.Override
+		public int getSerializedSize() {
+			int size = memoizedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			if (nonExpiredKeys_ != 0L) {
+				size += com.google.protobuf.CodedOutputStream.computeUInt64Size(10, nonExpiredKeys_);
+			}
+			if (allKeys_ != 0L) {
+				size += com.google.protobuf.CodedOutputStream.computeUInt64Size(11, allKeys_);
+			}
+			if (activeKeys_ != 0L) {
+				size += com.google.protobuf.CodedOutputStream.computeUInt64Size(12, activeKeys_);
+			}
+			if (deletedKeys_ != 0L) {
+				size += com.google.protobuf.CodedOutputStream.computeUInt64Size(13, deletedKeys_);
+			}
+			if (expiredKeys_ != 0L) {
+				size += com.google.protobuf.CodedOutputStream.computeUInt64Size(14, expiredKeys_);
+			}
+			size += unknownFields.getSerializedSize();
+			memoizedSize = size;
+			return size;
+		}
+
+		@java.lang.Override
+		public boolean equals(final java.lang.Object obj) {
+			if (obj == this) {
+				return true;
+			}
+			if (!(obj instanceof calc.Cache.CollectedStats)) {
+				return super.equals(obj);
+			}
+			calc.Cache.CollectedStats other = (calc.Cache.CollectedStats) obj;
+
+			boolean result = true;
+			result = result && (getNonExpiredKeys() == other.getNonExpiredKeys());
+			result = result && (getAllKeys() == other.getAllKeys());
+			result = result && (getActiveKeys() == other.getActiveKeys());
+			result = result && (getDeletedKeys() == other.getDeletedKeys());
+			result = result && (getExpiredKeys() == other.getExpiredKeys());
+			result = result && unknownFields.equals(other.unknownFields);
+			return result;
+		}
+
+		@java.lang.Override
+		public int hashCode() {
+			if (memoizedHashCode != 0) {
+				return memoizedHashCode;
+			}
+			int hash = 41;
+			hash = (19 * hash) + getDescriptor().hashCode();
+			hash = (37 * hash) + NONEXPIREDKEYS_FIELD_NUMBER;
+			hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getNonExpiredKeys());
+			hash = (37 * hash) + ALLKEYS_FIELD_NUMBER;
+			hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAllKeys());
+			hash = (37 * hash) + ACTIVEKEYS_FIELD_NUMBER;
+			hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getActiveKeys());
+			hash = (37 * hash) + DELETEDKEYS_FIELD_NUMBER;
+			hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDeletedKeys());
+			hash = (37 * hash) + EXPIREDKEYS_FIELD_NUMBER;
+			hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getExpiredKeys());
+			hash = (29 * hash) + unknownFields.hashCode();
+			memoizedHashCode = hash;
+			return hash;
+		}
+
+		public static calc.Cache.CollectedStats parseFrom(java.nio.ByteBuffer data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.CollectedStats parseFrom(java.nio.ByteBuffer data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.CollectedStats parseFrom(com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.CollectedStats parseFrom(com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.CollectedStats parseFrom(byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data);
+		}
+
+		public static calc.Cache.CollectedStats parseFrom(byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return PARSER.parseFrom(data, extensionRegistry);
+		}
+
+		public static calc.Cache.CollectedStats parseFrom(java.io.InputStream input) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.CollectedStats parseFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		public static calc.Cache.CollectedStats parseDelimitedFrom(java.io.InputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.CollectedStats parseDelimitedFrom(java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input,
+					extensionRegistry);
+		}
+
+		public static calc.Cache.CollectedStats parseFrom(com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+		}
+
+		public static calc.Cache.CollectedStats parseFrom(com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
+		}
+
+		@java.lang.Override
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder() {
+			return DEFAULT_INSTANCE.toBuilder();
+		}
+
+		public static Builder newBuilder(calc.Cache.CollectedStats prototype) {
+			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+		}
+
+		@java.lang.Override
+		public Builder toBuilder() {
+			return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		/**
+		 * Protobuf type {@code calc.CollectedStats}
+		 */
+		public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+				// @@protoc_insertion_point(builder_implements:calc.CollectedStats)
+				calc.Cache.CollectedStatsOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return calc.Cache.internal_static_calc_CollectedStats_descriptor;
+			}
+
+			@java.lang.Override
+			protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+				return calc.Cache.internal_static_calc_CollectedStats_fieldAccessorTable
+						.ensureFieldAccessorsInitialized(calc.Cache.CollectedStats.class,
+								calc.Cache.CollectedStats.Builder.class);
+			}
+
+			// Construct using calc.Cache.CollectedStats.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+				}
+			}
+
+			@java.lang.Override
+			public Builder clear() {
+				super.clear();
+				nonExpiredKeys_ = 0L;
+
+				allKeys_ = 0L;
+
+				activeKeys_ = 0L;
+
+				deletedKeys_ = 0L;
+
+				expiredKeys_ = 0L;
+
+				return this;
+			}
+
+			@java.lang.Override
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return calc.Cache.internal_static_calc_CollectedStats_descriptor;
+			}
+
+			@java.lang.Override
+			public calc.Cache.CollectedStats getDefaultInstanceForType() {
+				return calc.Cache.CollectedStats.getDefaultInstance();
+			}
+
+			@java.lang.Override
+			public calc.Cache.CollectedStats build() {
+				calc.Cache.CollectedStats result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			@java.lang.Override
+			public calc.Cache.CollectedStats buildPartial() {
+				calc.Cache.CollectedStats result = new calc.Cache.CollectedStats(this);
+				result.nonExpiredKeys_ = nonExpiredKeys_;
+				result.allKeys_ = allKeys_;
+				result.activeKeys_ = activeKeys_;
+				result.deletedKeys_ = deletedKeys_;
+				result.expiredKeys_ = expiredKeys_;
+				onBuilt();
+				return result;
+			}
+
+			@java.lang.Override
+			public Builder clone() {
+				return (Builder) super.clone();
+			}
+
+			@java.lang.Override
+			public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+				return (Builder) super.setField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+				return (Builder) super.clearField(field);
+			}
+
+			@java.lang.Override
+			public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+				return (Builder) super.clearOneof(oneof);
+			}
+
+			@java.lang.Override
+			public Builder setRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field, int index,
+					java.lang.Object value) {
+				return (Builder) super.setRepeatedField(field, index, value);
+			}
+
+			@java.lang.Override
+			public Builder addRepeatedField(com.google.protobuf.Descriptors.FieldDescriptor field,
+					java.lang.Object value) {
+				return (Builder) super.addRepeatedField(field, value);
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof calc.Cache.CollectedStats) {
+					return mergeFrom((calc.Cache.CollectedStats) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(calc.Cache.CollectedStats other) {
+				if (other == calc.Cache.CollectedStats.getDefaultInstance())
+					return this;
+				if (other.getNonExpiredKeys() != 0L) {
+					setNonExpiredKeys(other.getNonExpiredKeys());
+				}
+				if (other.getAllKeys() != 0L) {
+					setAllKeys(other.getAllKeys());
+				}
+				if (other.getActiveKeys() != 0L) {
+					setActiveKeys(other.getActiveKeys());
+				}
+				if (other.getDeletedKeys() != 0L) {
+					setDeletedKeys(other.getDeletedKeys());
+				}
+				if (other.getExpiredKeys() != 0L) {
+					setExpiredKeys(other.getExpiredKeys());
+				}
+				this.mergeUnknownFields(other.unknownFields);
+				onChanged();
+				return this;
+			}
+
+			@java.lang.Override
+			public final boolean isInitialized() {
+				return true;
+			}
+
+			@java.lang.Override
+			public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+				calc.Cache.CollectedStats parsedMessage = null;
+				try {
+					parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+				} catch (com.google.protobuf.InvalidProtocolBufferException e) {
+					parsedMessage = (calc.Cache.CollectedStats) e.getUnfinishedMessage();
+					throw e.unwrapIOException();
+				} finally {
+					if (parsedMessage != null) {
+						mergeFrom(parsedMessage);
+					}
+				}
+				return this;
+			}
+
+			private long nonExpiredKeys_;
+
+			/**
+			 * <code>uint64 nonExpiredKeys = 10;</code>
+			 */
+			public long getNonExpiredKeys() {
+				return nonExpiredKeys_;
+			}
+
+			/**
+			 * <code>uint64 nonExpiredKeys = 10;</code>
+			 */
+			public Builder setNonExpiredKeys(long value) {
+
+				nonExpiredKeys_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>uint64 nonExpiredKeys = 10;</code>
+			 */
+			public Builder clearNonExpiredKeys() {
+
+				nonExpiredKeys_ = 0L;
+				onChanged();
+				return this;
+			}
+
+			private long allKeys_;
+
+			/**
+			 * <code>uint64 allKeys = 11;</code>
+			 */
+			public long getAllKeys() {
+				return allKeys_;
+			}
+
+			/**
+			 * <code>uint64 allKeys = 11;</code>
+			 */
+			public Builder setAllKeys(long value) {
+
+				allKeys_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>uint64 allKeys = 11;</code>
+			 */
+			public Builder clearAllKeys() {
+
+				allKeys_ = 0L;
+				onChanged();
+				return this;
+			}
+
+			private long activeKeys_;
+
+			/**
+			 * <code>uint64 activeKeys = 12;</code>
+			 */
+			public long getActiveKeys() {
+				return activeKeys_;
+			}
+
+			/**
+			 * <code>uint64 activeKeys = 12;</code>
+			 */
+			public Builder setActiveKeys(long value) {
+
+				activeKeys_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>uint64 activeKeys = 12;</code>
+			 */
+			public Builder clearActiveKeys() {
+
+				activeKeys_ = 0L;
+				onChanged();
+				return this;
+			}
+
+			private long deletedKeys_;
+
+			/**
+			 * <code>uint64 deletedKeys = 13;</code>
+			 */
+			public long getDeletedKeys() {
+				return deletedKeys_;
+			}
+
+			/**
+			 * <code>uint64 deletedKeys = 13;</code>
+			 */
+			public Builder setDeletedKeys(long value) {
+
+				deletedKeys_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>uint64 deletedKeys = 13;</code>
+			 */
+			public Builder clearDeletedKeys() {
+
+				deletedKeys_ = 0L;
+				onChanged();
+				return this;
+			}
+
+			private long expiredKeys_;
+
+			/**
+			 * <code>uint64 expiredKeys = 14;</code>
+			 */
+			public long getExpiredKeys() {
+				return expiredKeys_;
+			}
+
+			/**
+			 * <code>uint64 expiredKeys = 14;</code>
+			 */
+			public Builder setExpiredKeys(long value) {
+
+				expiredKeys_ = value;
+				onChanged();
+				return this;
+			}
+
+			/**
+			 * <code>uint64 expiredKeys = 14;</code>
+			 */
+			public Builder clearExpiredKeys() {
+
+				expiredKeys_ = 0L;
+				onChanged();
+				return this;
+			}
+
+			@java.lang.Override
+			public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.setUnknownFieldsProto3(unknownFields);
+			}
+
+			@java.lang.Override
+			public final Builder mergeUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+				return super.mergeUnknownFields(unknownFields);
+			}
+
+			// @@protoc_insertion_point(builder_scope:calc.CollectedStats)
+		}
+
+		// @@protoc_insertion_point(class_scope:calc.CollectedStats)
+		private static final calc.Cache.CollectedStats DEFAULT_INSTANCE;
+		static {
+			DEFAULT_INSTANCE = new calc.Cache.CollectedStats();
+		}
+
+		public static calc.Cache.CollectedStats getDefaultInstance() {
+			return DEFAULT_INSTANCE;
+		}
+
+		private static final com.google.protobuf.Parser<CollectedStats> PARSER = new com.google.protobuf.AbstractParser<CollectedStats>() {
+			@java.lang.Override
+			public CollectedStats parsePartialFrom(com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return new CollectedStats(input, extensionRegistry);
+			}
+		};
+
+		public static com.google.protobuf.Parser<CollectedStats> parser() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public com.google.protobuf.Parser<CollectedStats> getParserForType() {
+			return PARSER;
+		}
+
+		@java.lang.Override
+		public calc.Cache.CollectedStats getDefaultInstanceForType() {
+			return DEFAULT_INSTANCE;
+		}
+
+	}
+
+	private static final com.google.protobuf.Descriptors.Descriptor internal_static_calc_DataSourceGetRequest_descriptor;
+	private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_calc_DataSourceGetRequest_fieldAccessorTable;
+	private static final com.google.protobuf.Descriptors.Descriptor internal_static_calc_DataSourceGetResponse_descriptor;
+	private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_calc_DataSourceGetResponse_fieldAccessorTable;
+	private static final com.google.protobuf.Descriptors.Descriptor internal_static_calc_CacheInvalidateRequest_descriptor;
+	private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_calc_CacheInvalidateRequest_fieldAccessorTable;
+	private static final com.google.protobuf.Descriptors.Descriptor internal_static_calc_CacheInvalidateResponse_descriptor;
+	private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_calc_CacheInvalidateResponse_fieldAccessorTable;
+	private static final com.google.protobuf.Descriptors.Descriptor internal_static_calc_CacheClearRequest_descriptor;
+	private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_calc_CacheClearRequest_fieldAccessorTable;
+	private static final com.google.protobuf.Descriptors.Descriptor internal_static_calc_CacheClearResponse_descriptor;
+	private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_calc_CacheClearResponse_fieldAccessorTable;
+	private static final com.google.protobuf.Descriptors.Descriptor internal_static_calc_CacheError_descriptor;
+	private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_calc_CacheError_fieldAccessorTable;
+	private static final com.google.protobuf.Descriptors.Descriptor internal_static_calc_MonitoringUpdateRequest_descriptor;
+	private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_calc_MonitoringUpdateRequest_fieldAccessorTable;
+	private static final com.google.protobuf.Descriptors.Descriptor internal_static_calc_MonitoringUpdateResponse_descriptor;
+	private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_calc_MonitoringUpdateResponse_fieldAccessorTable;
+	private static final com.google.protobuf.Descriptors.Descriptor internal_static_calc_ReplicaStatus_descriptor;
+	private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_calc_ReplicaStatus_fieldAccessorTable;
+	private static final com.google.protobuf.Descriptors.Descriptor internal_static_calc_ClusterStatus_descriptor;
+	private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_calc_ClusterStatus_fieldAccessorTable;
+	private static final com.google.protobuf.Descriptors.Descriptor internal_static_calc_ClusterStatus_ReplicasEntry_descriptor;
+	private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_calc_ClusterStatus_ReplicasEntry_fieldAccessorTable;
+	private static final com.google.protobuf.Descriptors.Descriptor internal_static_calc_ReplicaConnectionInfo_descriptor;
+	private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_calc_ReplicaConnectionInfo_fieldAccessorTable;
+	private static final com.google.protobuf.Descriptors.Descriptor internal_static_calc_ReplicaCounters_descriptor;
+	private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_calc_ReplicaCounters_fieldAccessorTable;
+	private static final com.google.protobuf.Descriptors.Descriptor internal_static_calc_CollectedStats_descriptor;
+	private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_calc_CollectedStats_fieldAccessorTable;
+
+	public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+		return descriptor;
+	}
+
+	private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+	static {
+		java.lang.String[] descriptorData = { "\n\013cache.proto\022\004calc\032\rmoniker.proto\"3\n\024Da"
+				+ "taSourceGetRequest\022\033\n\002id\030\001 \001(\0132\017.calc.Mo"
+				+ "nikerId\"\215\001\n\025DataSourceGetResponse\022$\n\007suc"
+				+ "cess\030\001 \001(\0132\021.calc.StoredValueH\000\022#\n\010notFo"
+				+ "und\030\002 \001(\0132\017.calc.MonikerIdH\000\022!\n\005error\030d "
+				+ "\001(\0132\020.calc.CacheErrorH\000B\006\n\004Resp\"5\n\026Cache"
+				+ "InvalidateRequest\022\033\n\002id\030\001 \001(\0132\017.calc.Mon"
+				+ "ikerId\"\224\001\n\027CacheInvalidateResponse\022)\n\007su"
+				+ "ccess\030\001 \001(\0132\026.google.protobuf.EmptyH\000\022#\n"
+				+ "\010notFound\030\002 \001(\0132\017.calc.MonikerIdH\000\022!\n\005er"
+				+ "ror\030d \001(\0132\020.calc.CacheErrorH\000B\006\n\004Resp\"\023\n"
+				+ "\021CacheClearRequest\"j\n\022CacheClearResponse"
+				+ "\022)\n\007success\030\001 \001(\0132\026.google.protobuf.Empt"
+				+ "yH\000\022!\n\005error\030d \001(\0132\020.calc.CacheErrorH\000B\006"
+				+ "\n\004Resp\"0\n\nCacheError\022\"\n\005error\030\001 \001(\0132\023.ca"
+				+ "lc.InternalError\"0\n\027MonitoringUpdateRequ"
+				+ "est\022\025\n\rcorrelationId\030\001 \001(\t\"?\n\030Monitoring"
+				+ "UpdateResponse\022#\n\006status\030\001 \001(\0132\023.calc.Re"
+				+ "plicaStatus\"\271\002\n\rReplicaStatus\022\021\n\treplica"
+				+ "Id\030\001 \001(\t\0223\n\016connectionInfo\030\002 \001(\0132\033.calc."
+				+ "ReplicaConnectionInfo\022+\n\007started\030\003 \001(\0132\032"
+				+ ".google.protobuf.Timestamp\0220\n\014currentClo"
+				+ "ck\030\005 \001(\0132\032.google.protobuf.Timestamp\022\'\n\010"
+				+ "counters\030\n \001(\0132\025.calc.ReplicaCounters\022,\n"
+				+ "\016collectedStats\030\013 \001(\0132\024.calc.CollectedSt"
+				+ "ats\022*\n\rclusterStatus\030\014 \001(\0132\023.calc.Cluste"
+				+ "rStatus\"\222\001\n\rClusterStatus\0223\n\010replicas\030\001 "
+				+ "\003(\0132!.calc.ClusterStatus.ReplicasEntry\032L"
+				+ "\n\rReplicasEntry\022\013\n\003key\030\001 \001(\t\022*\n\005value\030\002 "
+				+ "\001(\0132\033.calc.ReplicaConnectionInfo:\0028\001\"3\n\025"
+				+ "ReplicaConnectionInfo\022\014\n\004host\030\001 \001(\t\022\014\n\004p"
+				+ "ort\030\002 \001(\r\"\272\002\n\017ReplicaCounters\022\023\n\013addsCou"
+				+ "nter\030\001 \001(\004\022\026\n\016deletesCounter\030\002 \001(\004\022\024\n\014co"
+				+ "pysCounter\030\003 \001(\004\022\022\n\ngetCounter\030\004 \001(\004\022\027\n\017"
+				+ "containsCounter\030\005 \001(\004\022\030\n\020keySearchCounte"
+				+ "r\030\006 \001(\004\022\035\n\025metadataSearchCounter\030\007 \001(\004\022\031"
+				+ "\n\021pageSearchCounter\030\010 \001(\004\022\026\n\016largestKeyS"
+				+ "ize\030\n \001(\r\022\030\n\020largestValueSize\030\013 \001(\r\022\026\n\016r"
+				+ "eplicatedAdds\030\017 \001(\004\022\031\n\021replicatedDeletes"
+				+ "\030\020 \001(\004\"w\n\016CollectedStats\022\026\n\016nonExpiredKe"
+				+ "ys\030\n \001(\004\022\017\n\007allKeys\030\013 \001(\004\022\022\n\nactiveKeys\030"
+				+ "\014 \001(\004\022\023\n\013deletedKeys\030\r \001(\004\022\023\n\013expiredKey"
+				+ "s\030\016 \001(\0042P\n\nDataSource\022B\n\003Get\022\032.calc.Data"
+				+ "SourceGetRequest\032\033.calc.DataSourceGetRes"
+				+ "ponse\"\0000\0012\231\001\n\014CacheControl\022K\n\nInvalidate"
+				+ "\022\034.calc.CacheInvalidateRequest\032\035.calc.Ca"
+				+ "cheInvalidateResponse\"\000\022<\n\005Clear\022\027.calc."
+				+ "CacheClearRequest\032\030.calc.CacheClearRespo"
+				+ "nse\"\0002\261\001\n\021MonitoringService\022L\n\tGetStatus"
+				+ "\022\035.calc.MonitoringUpdateRequest\032\036.calc.M"
+				+ "onitoringUpdateResponse\"\000\022N\n\tSubscribe\022\035"
+				+ ".calc.MonitoringUpdateRequest\032\036.calc.Mon"
+				+ "itoringUpdateResponse\"\0000\001B\025\252\002\022Calculatio" + "nServiceP\000b\006proto3" };
+		com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner = new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
+			public com.google.protobuf.ExtensionRegistry assignDescriptors(
+					com.google.protobuf.Descriptors.FileDescriptor root) {
+				descriptor = root;
+				return null;
+			}
+		};
+		com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(descriptorData,
+				new com.google.protobuf.Descriptors.FileDescriptor[] { calc.Moniker.getDescriptor(), }, assigner);
+		internal_static_calc_DataSourceGetRequest_descriptor = getDescriptor().getMessageTypes().get(0);
+		internal_static_calc_DataSourceGetRequest_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+				internal_static_calc_DataSourceGetRequest_descriptor, new java.lang.String[] { "Id", });
+		internal_static_calc_DataSourceGetResponse_descriptor = getDescriptor().getMessageTypes().get(1);
+		internal_static_calc_DataSourceGetResponse_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+				internal_static_calc_DataSourceGetResponse_descriptor,
+				new java.lang.String[] { "Success", "NotFound", "Error", "Resp", });
+		internal_static_calc_CacheInvalidateRequest_descriptor = getDescriptor().getMessageTypes().get(2);
+		internal_static_calc_CacheInvalidateRequest_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+				internal_static_calc_CacheInvalidateRequest_descriptor, new java.lang.String[] { "Id", });
+		internal_static_calc_CacheInvalidateResponse_descriptor = getDescriptor().getMessageTypes().get(3);
+		internal_static_calc_CacheInvalidateResponse_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+				internal_static_calc_CacheInvalidateResponse_descriptor,
+				new java.lang.String[] { "Success", "NotFound", "Error", "Resp", });
+		internal_static_calc_CacheClearRequest_descriptor = getDescriptor().getMessageTypes().get(4);
+		internal_static_calc_CacheClearRequest_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+				internal_static_calc_CacheClearRequest_descriptor, new java.lang.String[] {});
+		internal_static_calc_CacheClearResponse_descriptor = getDescriptor().getMessageTypes().get(5);
+		internal_static_calc_CacheClearResponse_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+				internal_static_calc_CacheClearResponse_descriptor,
+				new java.lang.String[] { "Success", "Error", "Resp", });
+		internal_static_calc_CacheError_descriptor = getDescriptor().getMessageTypes().get(6);
+		internal_static_calc_CacheError_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+				internal_static_calc_CacheError_descriptor, new java.lang.String[] { "Error", });
+		internal_static_calc_MonitoringUpdateRequest_descriptor = getDescriptor().getMessageTypes().get(7);
+		internal_static_calc_MonitoringUpdateRequest_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+				internal_static_calc_MonitoringUpdateRequest_descriptor, new java.lang.String[] { "CorrelationId", });
+		internal_static_calc_MonitoringUpdateResponse_descriptor = getDescriptor().getMessageTypes().get(8);
+		internal_static_calc_MonitoringUpdateResponse_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+				internal_static_calc_MonitoringUpdateResponse_descriptor, new java.lang.String[] { "Status", });
+		internal_static_calc_ReplicaStatus_descriptor = getDescriptor().getMessageTypes().get(9);
+		internal_static_calc_ReplicaStatus_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+				internal_static_calc_ReplicaStatus_descriptor, new java.lang.String[] { "ReplicaId", "ConnectionInfo",
+						"Started", "CurrentClock", "Counters", "CollectedStats", "ClusterStatus", });
+		internal_static_calc_ClusterStatus_descriptor = getDescriptor().getMessageTypes().get(10);
+		internal_static_calc_ClusterStatus_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+				internal_static_calc_ClusterStatus_descriptor, new java.lang.String[] { "Replicas", });
+		internal_static_calc_ClusterStatus_ReplicasEntry_descriptor = internal_static_calc_ClusterStatus_descriptor
+				.getNestedTypes().get(0);
+		internal_static_calc_ClusterStatus_ReplicasEntry_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+				internal_static_calc_ClusterStatus_ReplicasEntry_descriptor,
+				new java.lang.String[] { "Key", "Value", });
+		internal_static_calc_ReplicaConnectionInfo_descriptor = getDescriptor().getMessageTypes().get(11);
+		internal_static_calc_ReplicaConnectionInfo_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+				internal_static_calc_ReplicaConnectionInfo_descriptor, new java.lang.String[] { "Host", "Port", });
+		internal_static_calc_ReplicaCounters_descriptor = getDescriptor().getMessageTypes().get(12);
+		internal_static_calc_ReplicaCounters_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+				internal_static_calc_ReplicaCounters_descriptor,
+				new java.lang.String[] { "AddsCounter", "DeletesCounter", "CopysCounter", "GetCounter",
+						"ContainsCounter", "KeySearchCounter", "MetadataSearchCounter", "PageSearchCounter",
+						"LargestKeySize", "LargestValueSize", "ReplicatedAdds", "ReplicatedDeletes", });
+		internal_static_calc_CollectedStats_descriptor = getDescriptor().getMessageTypes().get(13);
+		internal_static_calc_CollectedStats_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+				internal_static_calc_CollectedStats_descriptor,
+				new java.lang.String[] { "NonExpiredKeys", "AllKeys", "ActiveKeys", "DeletedKeys", "ExpiredKeys", });
+		calc.Moniker.getDescriptor();
+	}
+
+	// @@protoc_insertion_point(outer_class_scope)
 }
