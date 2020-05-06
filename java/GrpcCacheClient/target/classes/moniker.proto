@@ -1,0 +1,123 @@
+syntax = "proto3";
+
+option csharp_namespace = "CalculationService";
+
+package calc;
+
+import public "google/protobuf/empty.proto";
+import public "google/protobuf/timestamp.proto";
+
+
+message PointInTime {
+  google.protobuf.Timestamp time = 1;
+  // TODO: Think a version based identifier probably (VectorClock?)
+}
+
+
+message MonikerIdentifier {
+  string key  = 1;
+}
+
+message MonikerVersionId {
+  MonikerIdentifier id        = 1;
+  uint64            version   = 2; // TODO: Maybe VectorClock or UUID based?
+  PointInTime       timestamp = 5;
+}
+
+message MonikerVersionPartId {
+  MonikerIdentifier   id          = 1;
+  uint64              version     = 2; // TODO: Maybe VectorClock or UUID based?
+  uint32              partIndex   = 3;
+  uint32              partsCount  = 4;
+  PointInTime         timestamp   = 5;
+  StoredValueChecksum checksum    = 6;
+}
+
+message MonikerId {
+  oneof moniker {
+    MonikerIdentifier latest  = 1;
+    MonikerVersionId  version = 2;
+  }
+}
+
+message StoredValueChecksum {
+  uint64 hash = 1; // SipHash_2_4 (64bit) should be good enough and also can be used as a Unique Value Identifier
+}
+
+message StoredValue {
+  message Metadata {                          // TODO: Add security settings?
+    string creator                      = 1;
+    google.protobuf.Timestamp createdAt = 2;  // TODO Use more distributed friendly time like VectorClock?
+  }
+  message JsonString {
+    string json = 1;
+  }
+  message SparkQuery {
+    string serverUri  = 1;
+    string query      = 2;
+  }
+  message ParquetFile {
+    string path = 1;
+  }
+  MonikerVersionPartId  id        = 1;
+  Metadata              metadata  = 2;
+  oneof value {
+    bytes  bytesValue           = 10;
+    string stringValue          = 11;
+    JsonString jsonValue        = 12;
+    SparkQuery sparkValue       = 13;
+    ParquetFile parquetFile     = 14;
+//    CalculatorRun calculatorRun = 15;  
+  }
+}
+
+message InternalError {
+  message MissingArgument {
+    string required  = 1;
+    uint64 remaining = 2;
+  }
+
+  message IdentifierDecodingError {
+    message StackLine {
+      string message = 1;
+      string field   = 2;
+    }
+    /// A 'best effort' root cause description.
+    string description       = 1;
+    /// A stack of (message, field) name pairs, which identify the specific
+    /// message type and field where decoding failed. The stack contains an
+    /// entry per level of nesting.
+    repeated StackLine stack = 2;
+  }
+
+  message ValueEncodingError {
+    uint64 required  = 1;
+    uint64 remaining = 2;
+  }
+
+  message ValueDecodingError {
+    message StackLine {
+      string message = 1;
+      string field   = 2;
+    }
+    string description       = 1;
+    repeated StackLine stack = 2;
+  }
+
+  oneof Cause {
+    MissingArgument         missingRequiredArgument   = 1;
+    IdentifierDecodingError identifierDecodingError   = 2;
+    ValueEncodingError      storageValueEncodingError = 3;
+    ValueDecodingError      storageValueDecodingError = 4;
+    string                  storageError              = 5;
+    string                  operationAborted          = 6;
+    string                  valueError                = 7;
+    google.protobuf.Empty   notAuthorized             = 10;
+    google.protobuf.Empty   serviceNotAvailable       = 20;
+  }
+}
+
+
+////////////////////////////////////////////
+// Model Parameters
+////////////////////////////////////////////
