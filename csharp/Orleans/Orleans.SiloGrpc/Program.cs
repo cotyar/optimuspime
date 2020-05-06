@@ -1,4 +1,5 @@
 using System;
+using System.Net;
 using CalculationService.Services;
 using Grpc.Core;
 using Microsoft.AspNetCore.Builder;
@@ -7,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Orleans.Configuration;
 using Orleans.Grains.Sample;
 using Orleans.Hosting;
 using Orleans.SiloGrpc.Services;
@@ -88,6 +90,27 @@ namespace Orleans.SiloGrpc
                         manager.AddApplicationPart(typeof(WeatherGrain).Assembly).WithReferences();
                     });
                     builder.UseLocalhostClustering();
+                    // builder.UseDevelopmentClustering((IPEndPoint) null /*IPEndPoint.Parse("127.0.0.1:11111")*/);
+                    builder.Configure<ClusterOptions>(options =>
+                    {
+                        options.ClusterId = "Megathon Cluster";
+                        options.ServiceId = "ASF Caching";
+                    });
+                    // builder.ConfigureEndpoints(siloPort: 11111, gatewayPort: 30001);
+                    builder.Configure<EndpointOptions>(options =>
+                    {
+                        // Port to use for Silo-to-Silo
+                        options.SiloPort = 11111;
+                        // Port to use for the gateway
+                        options.GatewayPort = 30000;
+                        // IP Address to advertise in the cluster
+                        // options.AdvertisedIPAddress = IPAddress.Parse("172.16.0.42");
+                        // The socket used for silo-to-silo will bind to this endpoint
+                        options.GatewayListeningEndpoint = new IPEndPoint(IPAddress.Any, 30000);
+                        // The socket used by the gateway will bind to this endpoint
+                        options.SiloListeningEndpoint = new IPEndPoint(IPAddress.Any, 11111);
+
+                    });
                     builder.AddMemoryGrainStorageAsDefault();
                     builder.AddSimpleMessageStreamProvider("SMS");
                     builder.AddMemoryGrainStorage("PubSubStore");

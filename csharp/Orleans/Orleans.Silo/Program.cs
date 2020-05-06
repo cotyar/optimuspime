@@ -1,9 +1,13 @@
+using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Orleans.Configuration;
 using Orleans.Grains.Sample;
 using Orleans.Hosting;
 using Orleans.Silo.Api;
@@ -88,13 +92,25 @@ namespace Orleans.Silo
                     {
                         manager.AddApplicationPart(typeof(WeatherGrain).Assembly).WithReferences();
                     });
-                    builder.UseLocalhostClustering();
+                    // builder.UseLocalhostClustering();
+                    var ipAddress = Dns.GetHostEntry(Dns.GetHostName()).AddressList
+                        .LastOrDefault();//(ip => ip.AddressFamily == AddressFamily.InterNetwork);
+                    // builder.UseDevelopmentClustering(IPEndPoint.Parse(":11111"));
+                    builder.UseDevelopmentClustering(new IPEndPoint(ipAddress ?? IPAddress.Any, 11111));
+                    // builder.UseDevelopmentClustering(new IPEndPoint(IPAddress.Any, 11111));
+                    builder.Configure<ClusterOptions>(options =>
+                    {
+                        options.ClusterId = "Megathon Cluster";
+                        options.ServiceId = "ASF Caching";
+                    });
+                    builder.ConfigureEndpoints(siloPort: 11112, gatewayPort: 30002);
                     builder.AddMemoryGrainStorageAsDefault();
                     builder.AddSimpleMessageStreamProvider("SMS");
                     builder.AddMemoryGrainStorage("PubSubStore");
                     builder.UseDashboard(options =>
                     {
                         options.HideTrace = true;
+                        options.Host = "0.0.0.0";
                         options.Port = 8083;
                     });
                 });

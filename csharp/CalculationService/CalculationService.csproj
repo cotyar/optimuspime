@@ -11,6 +11,7 @@
         <PackageReference Include="Google.Protobuf.Tools" Version="3.11.4" />
         <PackageReference Include="Grpc.AspNetCore" Version="2.28.0" />
         <PackageReference Include="Grpc.Net.Client" Version="2.28.0" />
+        <PackageReference Include="Parquet.Net" Version="3.7.1" />
         <PackageReference Include="System.Linq.Async" Version="4.1.1" />
 
         <ProjectReference Include="..\GrpcHttp\Microsoft.AspNetCore.Grpc.HttpApi\Microsoft.AspNetCore.Grpc.HttpApi.csproj" />

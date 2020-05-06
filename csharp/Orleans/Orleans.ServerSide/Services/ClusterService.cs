@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Orleans.Configuration;
 using Orleans.Hosting;
 using Orleans.Grains.Sample;
 
@@ -17,9 +19,19 @@ namespace Orleans.Blazor.ServerSide.Services
         {
             _logger = logger;
 
+            var gateways = new[]
+            {
+                IPEndPoint.Parse("127.0.0.1:11111"),
+                IPEndPoint.Parse("127.0.0.1:11112")
+            };
             Client = new ClientBuilder()
                 .ConfigureApplicationParts(manager => manager.AddApplicationPart(typeof(IWeatherGrain).Assembly).WithReferences())
                 .UseLocalhostClustering()
+                .Configure<ClusterOptions>(options =>
+                {
+                    options.ClusterId = "Megathon Cluster";
+                    options.ServiceId = "ASF Caching";
+                })
                 .AddSimpleMessageStreamProvider("SMS")
                 .Build();
         }
