@@ -1,0 +1,19 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+version: '3.4'
+
+services:
+  orleans-cache:
+    image: orleans-cache
+    build:
+      context: .
+      dockerfile: Orleans/Orleans.SiloGrpc/Dockerfile
+    ports:
+      - 8080
+      - 8082
+  fake-datasource:
+    image: fake-datasource
+    build:
+      context: .
+      dockerfile: CalculationService/Dockerfile
+    ports:
+      - 8085

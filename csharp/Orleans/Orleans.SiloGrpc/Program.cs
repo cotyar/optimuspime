@@ -56,7 +56,7 @@ namespace Orleans.SiloGrpc
                                     });
                             });
                         })
-                        .UseUrls("http://localhost:8082");
+                        .UseUrls("http://0.0.0.0:8082");
                 })
                 .ConfigureLogging(builder =>
                 {
@@ -76,7 +76,7 @@ namespace Orleans.SiloGrpc
                     });
                     services.AddGrpcClient<CalculationService.DataSource.DataSourceClient>(o =>
                     {
-                        o.Address = new Uri("http://localhost:8085");
+                        o.Address = new Uri("http://127.0.0.1:8085");
                         o.ChannelOptionsActions.Add(options => options.Credentials = ChannelCredentials.Insecure); // TODO: Probably not needed
                     });
                 })

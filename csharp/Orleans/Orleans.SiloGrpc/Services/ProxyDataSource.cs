@@ -19,7 +19,7 @@ namespace Orleans.SiloGrpc.Services
         public ProxyDataSource(ILogger<FakeDataSource> logger)
         {
             _logger = logger;
-            _channel = GrpcChannel.ForAddress("http://localhost:8085");
+            _channel = GrpcChannel.ForAddress("http://127.0.0.1:8085");
         }
 
         public override async Task Get(DataSourceGetRequest request, IServerStreamWriter<DataSourceGetResponse> responseStream, ServerCallContext context)

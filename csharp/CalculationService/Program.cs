@@ -17,7 +17,7 @@ namespace CalculationService
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("http://localhost:8085");
+                    webBuilder.UseUrls("http://0.0.0.0:8085");
                 });
     }
 }
