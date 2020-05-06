@@ -6,6 +6,8 @@ using CalculationService;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
+using Orleans.SiloGrpc.Utils;
+
 // using FastHashes;
 
 namespace Orleans.SiloGrpc.Services
@@ -30,20 +32,13 @@ namespace Orleans.SiloGrpc.Services
 
         public override async Task Get(DataSourceGetRequest request, IServerStreamWriter<DataSourceGetResponse> responseStream, ServerCallContext context)
         {
-            static PointInTime ToPointInTime(DateTimeOffset dto) => new PointInTime { Time = Timestamp.FromDateTimeOffset(dto) };
-
             var requestUid = Guid.NewGuid().ToString(); // TODO: Bind the UID to the request 
             _logger.LogInformation($"Started processing Get request: '{requestUid}' from '{context.Peer}'");
             
             foreach (var i in Enumerable.Range(0, _rowsInTheResponse))
             {
                 var value = _fixture.Create<string>();
-                var (id, version, timestamp) = request.Id.MonikerCase switch
-                {
-                    MonikerId.MonikerOneofCase.Latest => (request.Id.Latest, 0UL, ToPointInTime(DateTimeOffset.Now)),
-                    MonikerId.MonikerOneofCase.Version => (request.Id.Version.Id, request.Id.Version.Version, ToPointInTime(DateTimeOffset.Now.Date) /*request.Id.Version.Timestamp*/),
-                    _ => throw new NotImplementedException()
-                };
+                var (id, version, timestamp) = request.Deconstruct();
                 var response = new DataSourceGetResponse
                 {
                     Success = new StoredValue

@@ -8,6 +8,7 @@ using Grpc.Core;
 using Grpc.Net.Client;
 using Microsoft.Extensions.Logging;
 using Orleans.Grains.Cache;
+using Orleans.SiloGrpc.Utils;
 
 // using FastHashes;
 
@@ -31,24 +32,10 @@ namespace Orleans.SiloGrpc.Services
             var requestUid = Guid.NewGuid().ToString(); // TODO: Bind the UID to the request 
             _logger.LogInformation($"Started processing Invalidate request: '{requestUid}' from '{context.Peer}'");
             
-            var (grainKey, monikerVersionPartId) = request.Id.MonikerCase switch // TODO: Change GrainKey calculation logic to an unbreakable one
-            {
-                MonikerId.MonikerOneofCase.None => throw new ArgumentException("MonikerId is missing"),
-                MonikerId.MonikerOneofCase.Latest => ($"{request.Id.Latest.Key}||{0}", new MonikerVersionPartId
-                {
-                    Id = request.Id.Version.Id,
-                    Version = request.Id.Version.Version
-                }),
-                MonikerId.MonikerOneofCase.Version => ($"{request.Id.Version.Id.Key}||{request.Id.Version.Version}", new MonikerVersionPartId
-                {
-                    Id = request.Id.Version.Id,
-                    Version = request.Id.Version.Version
-                }),
-                _ => throw new NotImplementedException("Impossible case")
-            };
-            
             try
             {
+                var (grainKey, monikerVersionPartId) = request.Id.ToGrainKey();
+
                 await Task.Run(() => _orleansClient.GetGrain<ICacheItemGrain>(grainKey).InvalidateAsync());
 
                 return new CacheInvalidateResponse { Success = new Empty() };

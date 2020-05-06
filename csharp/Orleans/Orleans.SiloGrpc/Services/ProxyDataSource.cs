@@ -13,10 +13,10 @@ namespace Orleans.SiloGrpc.Services
 {
     public class ProxyDataSource : DataSource.DataSourceBase
     {
-        private readonly ILogger<FakeDataSource> _logger;
+        private readonly ILogger<ProxyDataSource> _logger;
         private readonly GrpcChannel _channel;
 
-        public ProxyDataSource(ILogger<FakeDataSource> logger)
+        public ProxyDataSource(ILogger<ProxyDataSource> logger)
         {
             _logger = logger;
             _channel = GrpcChannel.ForAddress("http://127.0.0.1:8085");
