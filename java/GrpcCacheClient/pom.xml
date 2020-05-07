@@ -37,7 +37,7 @@
 
 	<build>
 		<defaultGoal>clean generate-sources compile install</defaultGoal>
-
+		<finalName>GrpcClientServer</finalName>
 		<plugins>
 			<!-- compile proto file into java files. -->
 			<plugin>
