@@ -5,6 +5,28 @@ namespace CalculationService.Utils
 {
     public static class IdUtils
     {
+        public static (string, MonikerVersionPartId) ToGrainKey(this MonikerId monikerId)
+        {
+            var (grainKey, monikerVersionPartId) =
+                monikerId.MonikerCase switch // TODO: Change GrainKey calculation logic to an unbreakable one
+                {
+                    MonikerId.MonikerOneofCase.None => throw new ArgumentException("MonikerId is missing"),
+                    MonikerId.MonikerOneofCase.Latest => ($"{monikerId.Latest.Key}||{0}", new MonikerVersionPartId
+                    {
+                        Id = monikerId.Version.Id,
+                        Version = monikerId.Version.Version
+                    }),
+                    MonikerId.MonikerOneofCase.Version => ($"{monikerId.Version.Id.Key}||{monikerId.Version.Version}",
+                        new MonikerVersionPartId
+                        {
+                            Id = monikerId.Version.Id,
+                            Version = monikerId.Version.Version
+                        }),
+                    _ => throw new NotImplementedException("Impossible case")
+                };
+            return (grainKey, monikerVersionPartId);
+        }
+        
         public static (MonikerIdentifier, ulong, PointInTime) Deconstruct(this DataSourceGetRequest request)
         {
             return request.Id.MonikerCase switch
